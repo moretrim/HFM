@@ -405,15 +405,15 @@
 	}
 
 	clergymen = {
-		culture = south_german
+		culture = ashkenazi
 		religion = jewish
-		size = 5 
+		size = 25 
 	}
 
 	artisans = {
-		culture = south_german
+		culture = ashkenazi
 		religion = jewish
-		size = 495
+		size = 2595
 	}
 }
 #Sankt Polten (88000/22000 POPS)
@@ -616,5 +616,29 @@
 		culture = hungarian
 		religion = protestant
 		size = 1790   
+	}
+	
+	clergymen = {
+		culture = croat
+		religion = catholic
+		size = 225
+	}
+
+	artisans = {
+		culture = croat
+		religion = catholic
+		size = 900
+	}
+
+	soldiers = {
+		culture = croat
+		religion = catholic
+		size = 250
+	}
+
+	farmers = {
+		culture = croat
+		religion = catholic
+		size = 5625
 	}
 }

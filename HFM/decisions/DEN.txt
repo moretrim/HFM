@@ -115,6 +115,7 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = selling_dane_india
+			prestige = -5
 			1309 = { owner = { country_event = 36224 } }
 		}
 		

@@ -20,9 +20,9 @@ political_decisions = {
 		effect = {
 			set_country_flag = build_the_tsr
 			treasury = -75000
-			1082 = { infrastructure = 1 }
-			1083 = { infrastructure = 1 }
-			1059 = { infrastructure = 1 }
+			1082 = { infrastructure = 2 }
+			1083 = { infrastructure = 2 }
+			1059 = { infrastructure = 2 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -45,7 +45,7 @@ political_decisions = {
 			effect = {
 				set_country_flag = build_the_manchurian_railway
 				treasury = -15000
-				1481 = { infrastructure = 1 }
+				1481 = { infrastructure = 2 }
 				diplomatic_influence = { who = MCK value = 50 }
 			}
 			ai_will_do = {

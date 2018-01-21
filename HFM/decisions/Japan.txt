@@ -633,17 +633,34 @@ political_decisions = {
 		}
 		
 		allow = {
-			war = no
-			is_our_vassal = KOR
+			NOT = { war_with = KOR	}
 			NOT = { truce_with = KOR }
-			KOR = {
-				civilized = yes
-				in_sphere = THIS
-				NOT = {
-					any_owned_province = {
-						has_province_modifier = peasant_revolt
+			OR = {
+				AND = {
+					KOR = {
+						ai = yes
+						civilized = no
+						in_sphere = THIS
+					}
+					ai = yes
+					war_with = RUS
+				}
+				AND = {
+					is_our_vassal = KOR
+					year = 1910
+				}
+				KOR = {
+					civilized = yes
+					in_sphere = THIS
+					NOT = {
+						any_owned_province = {
+							has_province_modifier = peasant_revolt
+						}
 					}
 				}
+				owns = 1632
+				owns = 1625
+				owns = 1619
 			}
 		}
 		
@@ -1140,7 +1157,7 @@ political_decisions = {
 			owns = 2562
 			owns = 2681
 			owns = 2406
-			NOT = { has_country_flag = taiwan_administration }
+			NOT = { has_global_flag = taiwan_administration }
 		}
 		allow = {
 			civilized = yes
@@ -1172,7 +1189,58 @@ political_decisions = {
 				change_province_name = "Tainan Cho"
 				state_scope = { change_region_name = "Takasago" }
 			}
-			set_country_flag = taiwan_administration
+			TAI = { government = colonial_company add_accepted_culture = japanese }
+			set_global_flag = taiwan_administration
+		}	
+	}
+	
+	taiwan_administration_china = {
+		picture = taiwan_china
+		potential = {
+			OR = {
+				tag = TAI
+				tag = FJN
+				tag = CHI
+				tag = KMT
+				tag = QNG
+			}
+			owns = 1485
+			owns = 2562
+			owns = 2681
+			owns = 2406
+			has_global_flag = taiwan_administration
+		}
+		allow = {
+			owns = 1485
+			owns = 2562
+			owns = 2681
+			owns = 2406
+		}
+		effect = {
+			prestige = 1
+			2681 = {
+				add_core = TAI
+				remove_core = FJN
+				change_province_name = "Taipei"
+			}
+			2562 = {
+				add_core = TAI
+				remove_core = FJN
+				change_province_name = "Taitung"
+			}
+			2406 = {
+				add_core = TAI
+				remove_core = FJN
+				change_province_name = "Penghu"
+			}
+			1485 = {
+				add_core = TAI
+				remove_core = FJN
+				change_province_name = "Tainan"
+				state_scope = { change_region_name = "Taiwan" }
+			}
+			TAI = { government = democracy remove_accepted_culture = japanese }
+			clr_global_flag = taiwan_administration
 		}	
 	}
 	
@@ -1412,6 +1480,7 @@ political_decisions = {
 	anglo_japanese_alliance = {
 		picture = treaty_signing
 		potential = {
+			year = 1895
 			OR = {
 				tag = JAP
 				tag = TKG
@@ -1744,8 +1813,6 @@ political_decisions = {
 			set_country_flag = shinbutsu_bunri_declared
 			any_pop = { limit = { has_pop_religion = mahayana } consciousness = 1 }
 			any_pop = { limit = { has_pop_religion = shinto } militancy = -1 }
-			set_country_flag = shinto_country
-			clr_country_flag = mahayana_country
 			religion = shinto
 		}
 		

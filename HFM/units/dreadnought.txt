@@ -16,7 +16,7 @@ dreadnought = {
 	#Core Abilities
 	priority = 60
 	max_strength = 100
-	default_organisation = 30
+	default_organisation = 45
 	maximum_speed = 10
 	weighted_value = 100.0
 
@@ -37,7 +37,7 @@ dreadnought = {
 	
 	supply_consumption = 1.0
 	supply_cost = {
-		steamer_convoy = 1.6
+		steamer_convoy = 1.8
 		artillery = 0.8
 		canned_food = 1
 		telephones = 0.02

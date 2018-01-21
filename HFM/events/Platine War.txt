@@ -223,6 +223,7 @@ country_event = {
 		}
 		prestige = -10
 		government = democracy
+		political_reform = regionalism
 		ruling_party_ideology = liberal
 		random_owned = {
 			limit = { NOT = { owner = { slavery = no_slavery } } }
@@ -307,6 +308,7 @@ country_event = {
 	}
 	option = {
 		name = "EVTOPT46610B"
+		political_reform = regionalism
 		ENT = { set_country_flag = rosas_refused_to_step_down }
 		ai_chance = {
 			factor = 90
@@ -315,6 +317,9 @@ country_event = {
 	
 	option = {
 		name = "EVTOPT46610C" #Change to Buenos Aires
+		ARC = {
+			political_reform = regionalism
+		}
 		any_country = {
 			clr_country_flag = urquiza_statement
 			clr_country_flag = will_not_support_entre_rios
@@ -387,6 +392,7 @@ country_event = {
 		SBA = {
 			add_country_modifier = { name = unrecognized_country duration = 3650 }
 			add_country_modifier = { name = caudillo_leaders duration = 3650 }
+			add_country_modifier = { name = america_new_world duration = 3650 }
 			any_country = { limit = { capital_scope = { continent = south_america } } relation = { who = SBA value = -110 } }
 		}
 		change_tag_no_core_switch = SBA
@@ -524,6 +530,7 @@ country_event = {
 	news_desc_medium = "EVTDESC46611_NEWS_MEDIUM"
 	news_desc_short = "EVTDESC46611_NEWS_SHORT"
 	picture = "urquiza_victory"
+	major = yes
 	
 	is_triggered_only = yes
 	
@@ -536,6 +543,7 @@ country_event = {
 		prestige = 2
 		government = democracy
 		ruling_party_ideology = liberal
+		political_reform = unitary
 		random_owned = {
 			limit = { NOT = { owner = { slavery = no_slavery } } }
 			owner = { political_reform = no_slavery }
@@ -639,6 +647,7 @@ country_event = {
 				clr_country_flag = will_not_support_entre_rios
 				clr_country_flag = will_support_entre_rios
 			}
+			political_reform = federalism
 			prestige = 2
 			clr_global_flag = entre_rios_rebellion
 			set_country_flag = entre_rios_has_happened
@@ -663,6 +672,7 @@ country_event = {
 	option = {
 		name = "EVTOPT46612B"		#Continue as Federation
 		prestige = 2
+		political_reform = federalism
 		clr_global_flag = entre_rios_rebellion
 		set_country_flag = rosas_victory_new_regime
 		set_country_flag = entre_rios_has_happened

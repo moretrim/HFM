@@ -667,10 +667,13 @@ country_event = {
 			NOT = { tag = BAN }
 			sphere_owner = { neighbour = THIS }
 		}
-		OR = {
-			NOT = { tag = NEN }
-			has_country_flag = usstatehood_we_have_applied
-			USA = { ai = yes }
+		AND = {
+			OR = {
+				NOT = { tag = NEN }
+				has_country_flag = usstatehood_we_have_applied
+				USA = { ai = yes }
+			}
+			139 = { owned_by = USA }
 		}
 		NOT = {
 			tag = KUK
@@ -684,6 +687,15 @@ country_event = {
 			tag = UBD
 			tag = INO
 			tag = IRE
+			tag = BRT
+			tag = LIE
+			tag = VLG
+			tag = SMR
+			tag = LEG
+			AND = {
+				tag = RHI
+				is_culture_group = french
+			}
 		}
 		NOT = { has_country_flag = post_colonial_country }
 	}
@@ -971,6 +983,7 @@ country_event = {
 			remove_country_modifier = political_education
 			remove_country_modifier = cult_of_personality
 			remove_country_modifier = the_terror
+			political_reform = unitary
 	}
 }
 
@@ -2703,3 +2716,58 @@ country_event = {
 	}
 }
 
+#Set up Railroading Colonization
+country_event = {
+	id = 99977
+	title = "EVTNAME99977"
+	desc = "EVTDESC99977"
+	picture = "abraham_speech"
+	major = yes
+		
+	trigger = {
+		ai = no
+		NOT = { has_global_flag = railroad_setup }
+	}
+	
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT99977OPTA"
+		set_global_flag = yes_railroad
+		set_global_flag = railroad_setup
+	}
+	
+	option = {
+		name = "EVT99977OPTB"
+		set_global_flag = railroad_setup
+	}
+}
+
+#Enable/Disable Splendid Isolation
+country_event = {
+	id = 6016815
+	title = "EVTNAME6016815"
+	desc = "EVTDESC6016815"
+	picture = "abraham_speech"
+	major = yes
+		
+	trigger = {
+		ai = no
+		NOT = { has_global_flag = isolation_setup }
+	}
+	
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT6016814OPTA"
+		set_global_flag = yes_isolation
+		set_global_flag = isolation_setup
+	}
+	
+	option = {
+		name = "EVT6016815OPTB"
+		set_global_flag = isolation_setup
+	}
+}

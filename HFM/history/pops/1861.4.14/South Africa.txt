@@ -1787,32 +1787,32 @@
 	}
 
 	aristocrats = {
-		culture = southern_bantu
+		culture = african_minor
 		religion = animist
 		size = 51.5
 	}
 
 	clergymen = {
-		culture = southern_bantu
+		culture = african_minor
 		religion = animist
 		size = 77.25
 	}
 
 	artisans = {
-		culture = southern_bantu
+		culture = african_minor
 		religion = animist
 		size = 154.5
 	}
 
 	soldiers = {
-		culture = southern_bantu
+		culture = african_minor
 		religion = animist
 		size= 25
 
 	}
 
 	farmers = {
-		culture = southern_bantu
+		culture = african_minor
 		religion = animist
 		size = 4611.0
 	}

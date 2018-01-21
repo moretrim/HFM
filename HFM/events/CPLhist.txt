@@ -59,6 +59,10 @@ country_event = {
 					is_core = CPL
 					pop_majority_culture = polish
 				}
+				NOT = { is_core = SIB }
+				NOT = { is_core = URA }
+				NOT = { is_core = YAK }
+				NOT = { is_core = KAM }
 			}
 			secede_province = CPL 
 		}
@@ -437,6 +441,13 @@ country_event = {
 			modifier = {
 				factor = 2
 				relation = { who = FROM value = 100 }
+			}
+			modifier = {
+				factor = 3
+				OR = {
+					tag = PRU
+					tag = NGF
+				}
 			}
 		}
 	}

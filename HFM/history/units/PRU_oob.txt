@@ -1,118 +1,113 @@
 #German Minors
-NEH = {
-	value = 200
+NCT = {
+	value = 225
 	level = 5
 	influence_value = 100
 }
 
 SGM = {
-	value = 200
+	value = 225
 	level = 5
 	influence_value = 100
 	military_access = yes
 }
 
 ANH = {
-	value = 200
+	value = 225
 	level = 5
-	influence_value = 0
+	influence_value = 100
 	military_access = yes
 }
 BRA = {
-	value = 200
+	value = 225
 	level = 5
-	influence_value = 0
+	influence_value = 100
 	military_access = yes
 }
 BRE = {
-	value = 200
+	value = 225
 	level = 5
-	influence_value = 0
+	influence_value = 100
 	military_access = yes
 }
 COB = {
-	value = 200
+	value = 225
 	level = 5
-	influence_value = 0
+	influence_value = 100
 	military_access = yes
 }
 FRM = {
-	value = 200
-	level = 5
-	influence_value = 0
+	value = 225
+	level = 2
+	influence_value = 100
 	military_access = yes
 }
 HAM = {
-	value = 200
+	value = 225
 	level = 5
-	influence_value = 0
+	influence_value = 100
 	military_access = yes
 }
 HAN = {
 	value = 125
-	level = 3
-	influence_value = 0
+	level = 2
 	military_access = yes
 }
 HEK = {
-	value = 200
-	level = 5
-	influence_value = 0
+	value = 125
+	level = 1
 	military_access = yes
 }
 HES = {
-	value = 200
-	level = 5
-	influence_value = 0
+	value = 100
+	level = 1
 	military_access = yes
 }
 LIP = {
-	value = 200
+	value = 225
 	level = 5
-	influence_value = 0
+	influence_value = 100
 	military_access = yes
 }
 LUB = {
-	value = 200
+	value = 225
 	level = 5
-	influence_value = 0
+	influence_value = 100
 	military_access = yes
 }
 
 MEC = {
-	value = 200
+	value = 225
 	level = 5
-	influence_value = 0
+	influence_value = 100
 	military_access = yes
 }
 MEI = {
-	value = 200
+	value = 225
 	level = 5
-	influence_value = 0
+	influence_value = 100
 	military_access = yes
 }
 NAS = {
-	value = 200
-	level = 5
-	influence_value = 0
+	value = 125
+	level = 2
 	military_access = yes
 }
 OLD = {
-	value = 200
-	level = 5
-	influence_value = 0
+	value = 225
+	level = 3
+	influence_value = 50
 	military_access = yes
 }
 SAX = {
 	value = 50
 	level = 3
-	influence_value = 0
 	military_access = yes
 }
 WEI = {
-	value = 200
+	value = 225
 	level = 5
-	influence_value = 0
+	influence_value = 100
 	military_access = yes
 }
 BAV = {
@@ -133,6 +128,36 @@ WUR = {
 	influence_value = 0
 	military_access = yes
 }
+SCL = {
+	value = 125
+	level = 3
+	influence_value = 25
+	military_access = yes
+}
+REU = {
+	value = 125
+	level = 2
+	military_access = yes
+}
+SWG = {
+	value = 225
+	level = 5
+	influence_value = 100
+	military_access = yes
+}
+
+WLD = {
+	value = 225
+	level = 5
+	influence_value = 100
+	military_access = yes
+}
+
+SWH = {
+	value = 500
+	level = 4
+	influence_value = 50
+}
 
 #Europe
 KRA = {
@@ -149,7 +174,7 @@ ENG = { value = 25 }
 FRA = { value = -50 }
 AUS = { value = 150 }
 USA = { value = 25 }
-RUS = { value = 80 }
+RUS = { value = 150 }
 TUR = { value = 25 }
 SPA = { value = 0 }
 
@@ -178,8 +203,14 @@ BEL = {
 #Army
 
 army = {
-	name = "I. Korps"
+	name = "I. Armee-Korps"
 	location = 549
+	regiment = {
+		name= "Regiment der Gardes du Corps"
+		type = guard
+		home = 549
+	}	
+
 	regiment = {
 		name= "I. Linieninfanteriebrigade"
 		type = infantry
@@ -243,7 +274,7 @@ army = {
 }
 
 army = {
-	name = "II. Korps"
+	name = "II. Armee-Korps"
 	location = 682
 	
 	regiment = {
@@ -303,7 +334,7 @@ army = {
 }
 
 army = {
-	name = "III. Korps"
+	name = "III. Armee-Korps"
 	location = 695
 	
 	regiment = {
@@ -363,7 +394,7 @@ army = {
 }
 
 army = {
-	name = "IV. Korps"
+	name = "IV. Armee-Korps"
 	location = 548
 	
 	regiment = {
@@ -423,7 +454,7 @@ army = {
 }
 
 army = {
-	name = "V. Korps"
+	name = "V. Armee-Korps"
 	location = 575
 
 	regiment = {
@@ -489,7 +520,7 @@ army = {
 }
 
 army = {
-	name = "VI. Korps"
+	name = "VI. Armee-Korps"
 	location = 574
 	
 	regiment = {
@@ -614,3 +645,4 @@ leader = {
 	background = aristocrat
 	prestige = 0.9
 }
+	

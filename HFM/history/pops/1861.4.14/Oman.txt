@@ -94,7 +94,7 @@
 	}
 
 	slaves = {
-		culture = lacustrine_bantu #african_minor
+		culture = african_minor
 		religion = animist
 		size = 2100.0
 	}
@@ -247,7 +247,7 @@
 	}
 
 	slaves = {
-		culture = lacustrine_bantu #african_minor
+		culture = african_minor
 		religion = animist
 		size = 1025
 	}

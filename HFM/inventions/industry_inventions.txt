@@ -770,7 +770,7 @@ pit_coal = {
 	}
 	effect = {
 		rgo_goods_output = {
-			coal = 0.5
+			coal = 0.8
 		}
 	}
 }
@@ -789,7 +789,7 @@ coke = {
 	}
 	effect = {
 		rgo_goods_output = {
-			coal = 0.5
+			coal = 1.5
 		}
 	}
 }
@@ -828,7 +828,7 @@ advanced_ore_grinding_processes = {
 	}
 	effect = {
 		rgo_goods_output = {
-			iron = 0.25
+			iron = 0.3
 		}
 	}
 }
@@ -847,7 +847,7 @@ advanced_ore_smelting_processes = {
 	}
 	effect = {
 		rgo_goods_output = {
-			iron = 0.25
+			iron = 0.3
 		}
 	}
 }
@@ -869,6 +869,9 @@ bessemer_steel = {
 	effect = {
 		factory_goods_throughput = {
 			steel = 0.05
+		}
+		rgo_goods_output = {
+			iron = 0.3
 		}
 	}
 }

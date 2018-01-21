@@ -45,8 +45,8 @@
 	}
 
 	slaves = {
-		culture = berber
-		religion = sunni
+		culture = african_minor
+		religion = animist
 		size = 5150.0
 	}
 
@@ -107,7 +107,7 @@
 	}
 
 	slaves = {
-		culture = forest_bantu
+		culture = african_minor
 		religion = animist
 		size = 2060.0
 	}
@@ -157,7 +157,7 @@
 	}
 
 	slaves = {
-		culture = forest_bantu
+		culture = african_minor
 		religion = animist
 		size = 3090.0
 	}
@@ -195,7 +195,7 @@
 	}
 
 	slaves = {
-		culture = forest_bantu
+		culture = african_minor
 		religion = animist
 		size = 12360.0
 	}
@@ -245,7 +245,7 @@
 	}
 
 	slaves = {
-		culture = forest_bantu
+		culture = african_minor
 		religion = animist
 		size = 5150.0
 	}
@@ -283,7 +283,7 @@
 	}
 
 	slaves = {
-		culture = forest_bantu
+		culture = african_minor
 		religion = animist
 		size = 4120.0
 	}

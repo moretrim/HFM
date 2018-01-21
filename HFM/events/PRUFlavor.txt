@@ -790,7 +790,7 @@ country_event = {
 			government = prussian_constitutionalism
 			government = hms_government
 		}
-		NEH = {
+		NCT = {
 			exists = yes
 			ai = yes
 			OR = {
@@ -809,12 +809,12 @@ country_event = {
 
 	option = {
 		name = "EVTOPTA34613"
-		NEH = { government = democracy any_pop = { militancy = -9 consciousness = -9 } }
-		relation = { who = NEH value = -400 }
-		leave_alliance = NEH
+		NCT = { government = democracy any_pop = { militancy = -9 consciousness = -9 } }
+		relation = { who = NCT value = -400 }
+		leave_alliance = NCT
 		any_country = {
 			limit = { is_greater_power = yes }
-			diplomatic_influence = { who = NEH value = -400 }
+			diplomatic_influence = { who = NCT value = -400 }
 		}
 		ai_chance = { factor = 0.95 }
 	}
@@ -823,12 +823,12 @@ country_event = {
 		name = "EVTOPTB34613"
 		prestige = -5
 		badboy = -1
-		leave_alliance = NEH
+		leave_alliance = NCT
 		SWI = {
-			release_vassal = NEH
-			inherit = NEH
+			release_vassal = NCT
+			inherit = NCT
 		}
-		608 = { remove_core = NEH }
+		608 = { remove_core = NCT }
 		relation = { who = SWI value = 75 }
 		diplomatic_influence = { who = SWI value = 50 }
 		ai_chance = { factor = 0.05 }
@@ -875,17 +875,17 @@ country_event = {
 
 	option = {
 		name = "EVTOPTA34614"
-		leave_alliance = NEH
+		leave_alliance = NCT
 		608 = {
 			remove_core = GER
 			remove_core = NGF
 			remove_core = PRU
-			remove_core = NEH
+			remove_core = NCT
 		}
 		random_country = {
 			limit = {
 				exists = yes
-				tag = NEH
+				tag = NCT
 				OR = {
 					vassal_of = SWI
 					is_vassal = no
@@ -905,7 +905,7 @@ country_event = {
 
 	trigger = {
 		NOT = { has_country_flag = neuchatel_crisis_escalated }
-		NEH = {
+		NCT = {
 			ai = yes
 			exists = yes
 			NOT = { government = absolute_monarchy }
@@ -951,10 +951,10 @@ country_event = {
 		}
 		relation = { who = SWI value = -400 }
 		diplomatic_influence = { who = SWI value = -400 }
-		relation = { who = NEH value = -400 }
-		diplomatic_influence = { who = NEH value = -400 }
-		leave_alliance = NEH
-		release_vassal = NEH
+		relation = { who = NCT value = -400 }
+		diplomatic_influence = { who = NCT value = -400 }
+		leave_alliance = NCT
+		release_vassal = NCT
 		ENG = {
 			create_alliance = SWI
 			set_country_flag = supports_switzerland
@@ -1010,16 +1010,16 @@ country_event = {
 	option = {
 		name = "EVTOPTB34615"
 		prestige = 5
-		leave_alliance = NEH
-		release_vassal = NEH
+		leave_alliance = NCT
+		release_vassal = NCT
 		608 = { remove_core = NGF }
 		608 = { remove_core = GER }
 		608 = { remove_core = PRU }
-		608 = { remove_core = NEH }
+		608 = { remove_core = NCT }
 		random_country = {
 			limit = {
 				exists = yes
-				tag = NEH
+				tag = NCT
 				ai = yes
 				OR = {
 					vassal_of = SWI

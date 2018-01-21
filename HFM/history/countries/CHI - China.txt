@@ -8,8 +8,9 @@ culture = min
 culture = zhuang
 culture = yue
 culture = yi
+culture = hanhui
 religion = mahayana
-government = absolute_monarchy
+government = democracy
 plurality = 0.0
 nationalvalue = nv_autocracy
 literacy = 0.08
@@ -35,12 +36,16 @@ unemployment_subsidies = no_subsidies
 pensions = no_pensions
 school_reforms = no_schools
 
+
 #New Reforms
 conscription = two_year_draft
 debt_law = serfdom
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = all_voting_pops
+child_labor = child_labor_legal
+citizens_rights = all_voting_pops
 border_policy = closed_borders
+centralization = regionalism
+colonial_policy = no_colonies 
 
 set_country_flag = mahayana_country
 

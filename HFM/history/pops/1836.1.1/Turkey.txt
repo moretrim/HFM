@@ -47,7 +47,7 @@
 	artisans = {
 		culture = greek
 		religion = orthodox
-		size = 1000
+		size = 8000
 	}
 	
 	soldiers = {

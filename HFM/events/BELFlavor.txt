@@ -328,6 +328,7 @@ country_event = {
 			secede_province = NET
 		}
 		NET = { country_event = 36711 }
+		set_country_flag = signed_treaty_of_london
 		ai_chance = {
 			factor = 80
 		}
@@ -336,10 +337,10 @@ country_event = {
 	option = {
 		name = "EVT36710OPTB"
 		badboy = 2
-		random_owned = {
-			limit = { LUX = { exists = no } }
-			398 = { remove_core = LUX }
-		}
+		#random_owned = {
+			#limit = { LUX = { exists = no } }
+			#398 = { remove_core = LUX }
+		#}
 		NET = {
 			relation = { who = THIS value = -200 }
 			diplomatic_influence = { who = THIS value = -200 }
@@ -406,7 +407,7 @@ country_event = {
 	option = {
 		name = "EVT36711OPTA"
 		set_country_flag = signed_treaty_of_london
-		remove_accepted_culture = flemish
+		prestige = 5
 		397 = { remove_core = NET }
 		BEL_394 = { remove_core = NET }
 		BEL_387 = { remove_core = NET }
@@ -418,6 +419,7 @@ country_event = {
 						tag = PRU
 						tag = NGF
 						tag = GER
+						tag = GCF
 					}
 					neighbour = LBG
 					exists = yes
@@ -434,6 +436,7 @@ country_event = {
 					OR = {
 						tag = PRU
 						tag = NGF
+						tag = GCF
 						tag = GER
 						tag = FRA
 						tag = AUS

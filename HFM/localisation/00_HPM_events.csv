@@ -218,6 +218,10 @@ ezo_republic;Ezo Republic;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME36981;The Suez Canal Company;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTDESC36981;$FROMCOUNTRY_ADJ$ investors organized in $CAPITAL$ the Suez Canal Company for the construction and maintenance of the Suez Canal. The move was made to secure the necessary influence to begin the construction works in Suez and guarantee no other great powers will interfere with it.;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVT36981OPTA;We may soon see the canal completed.;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME46610102;The $COUNTRY_ADJ$ Crisis of $YEAR$;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTDESC46610102;By 1895 $COUNTRY$ had had a dispute with a neighbor about the territory of Guayana Esequiba for over half a century. The territorial claims were originally those of the Spanish Empire (inherited by $COUNTRY$ after its independence in 1830) and of the Dutch Empire (with the acquisition of the Dutch territories of Essequibo, Demerara and Berbice in 1814), having remained unsettled over previous centuries. The basis of the dispute is the advocacy of a particular division of the territory deriving from a mid-nineteenth-century survey commissioned by the country that owns Guyana. This division is known as the "Schomburgk Line", after the German naturalist who surveyed the territory. In October 1886 they declared the Line to be the provisional frontier of Guiana with $COUNTRY$, and in February 1887 $COUNTRY$ severed diplomatic relations. The discovery of gold in El Callao in $COUNTRY$ heated up the dispute, with several foreigners crossing the frontier to find gold. The situation changed after we obtained the services of William L. Scruggs, former US Ambassador to Colombia and Venezuela. We can use him as a lobbyist to try and get the US to intervene on our behalf in this dispute and put the disputer for international arbitration.;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVT46610102OPTA;Remind the Americans of the Monroe Doctrine.;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVT46610102OPTB;We can settle this peacefully.;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME46610101;The Treaty of Petrópolis;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTDESC46610101;The $FROMCOUNTRY_ADJ$ government is holding talks in the Brazilian city of Petrópolis to end tensions over the territory known as Acre. Claimed by multiple countries and without a clear border demarcation, several incursions of foreigners from neighboring countries searching for rubber sparked a few incidents and the de facto owner of the territory, $COUNTRY$, is now offering us monetary compensation, a friendship treaty as well as the possibility of funding a railway construction in our country in exchange for us dropping any claims we have over the area.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;;;;
 EVT46610101OPTA;Sounds like a good deal, we agree.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;;;;
@@ -320,7 +324,7 @@ EVTNAME110044;Disband the Persian Cossack Brigade.;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,
 EVTDESC110044;With the end of the times of troubles comes the question of accountability. It appears the most bloody unit that took part in the repression was the Persian Cossack Brigade. Not only do they surpass everyone by the quantity, but also by the sheer intensity of their massacres. This comes as a shock as it used to be the most elite troop of the country but it seems like Caucasians have the thirst for bloodshed rushing through their veins. Now we have no choice but to disband it and put their leaders to trial.;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT110044OPTA;They cannot be forgiven, we won't take the risk.;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVTNAME110060;The Bear Flag Revolt;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
-EVTDESC110060;In June 1846, a number of American immigrants in Alta California raised and rebelled against the local Mexican government before seizing military control the area to the north of the San Francisco Bay, in the present-day state of California. The immigrants had not been allowed to buy or rent land and had been threatened with expulsion because Mexican officials were concerned about the incoming influx of unregulated Americans in a climate of quickly rising tensions with the US. The term "California Republic" appeared on the flag the insurgents raised and indicated their aspiration of forming a republican government for California. The flag featured an image of a California grizzly bear and became known as the Bear Flag and the revolt as the Bear Flag Revolt.;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVTDESC110060;In $YEAR$, a number of American immigrants in Alta California raised and rebelled against the local Mexican government before seizing military control the area to the north of the San Francisco Bay, in the present-day state of California. The immigrants had not been allowed to buy or rent land and had been threatened with expulsion because Mexican officials were concerned about the incoming influx of unregulated Americans in a climate of quickly rising tensions with the US. The term "California Republic" appeared on the flag the insurgents raised and indicated their aspiration of forming a republican government for California. The flag featured an image of a California grizzly bear and became known as the Bear Flag and the revolt as the Bear Flag Revolt.;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT110060OPTA;American saboteurs, that is all! Down with them!;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT110060OPTB;We cannot afford that at the moment... Let them go.;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT110060OPTC;Long live the Republic of California!;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
@@ -759,6 +763,7 @@ EVTDESC16458;The $FROMCOUNTRY_ADJ$ government approached us with a friendship tr
 EVTOPTA16458;We accept the proposal.;;;;;;;;;;;;x
 EVTOPTB16458;We will not stand for this.;;;;;;;;;;;;x
 EVTNAME36626;Breakdown in Negotiations;;;;;;;;;;;;x
+EVTDESC36626;Negotiations with the $COUNTRY_ADJ$ government over the Virgin Islands purchase broke down and they don't seem willing to discuss this topic anymore.;;;;;;;;;;;;x
 EVTOPTA36226;Fools!;;;;;;;;;;;;x
 EVTOPTB44104;We should encourage more states to adopt his ideas.;;;;;;;;;;;;x
 EVTNAME97119;The Death of the Last Mughal Emperor;;;;;;;;;;;;x
@@ -841,6 +846,7 @@ EVTNAME36224;The Danish India;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC36224;During the Napoleonic Wars, the British attacked Danish shipping, and devastated the Danish East India Company's India trade. In May 1801 – August 1802 and 1808 – 20 September 1815 the British even occupied Dansborg and Frederiksnagore. The Danish colonies went into decline and now the Danish are looking for a new owner for them.;;;;;;;;;;;;;;;;;;;;x;;
 EVTOPTA36224;We will buy it.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTOPTB36224;We are not interested.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+gadsden_purchase_title;The Gadsden Purchase;;;;;;;;;;;;;;;;;;;;x;;
 EVTNAME16457;$FROMCOUNTRY_ADJ$ Government Breaks Down the Negotiations;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC16457;The $FROMCOUNTRY_ADJ$ government, not happy with the terms, broke down negotiations over the purchase of land the settlement of other issues.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTOPTA16457;What a waste of time.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
@@ -868,7 +874,7 @@ EVTDESC32555;$FROMCOUNTRY_ADJ$ government reacted to our annexation of Bluefield
 EVT32555OPTA;If they want it, they can try to come and get it.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVT32555OPTB;We can't risk war.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTNAME32554;$FROMCOUNTRY_ADJ$ Reparations;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
-EVTDESC32554;Although highly irritated by our annexation of Bluefields, the $FROMCOUNTRY_ADJ$ government agreed to recognize our sovereignty og the territory in exchange for reparations.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTDESC32554;Although highly irritated by our annexation of Bluefields, the $FROMCOUNTRY_ADJ$ government agreed to recognize our rights on the territory in exchange for reparations.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVT32554OPTA;Fair enough.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVT32554OPTB;Never, the territory is rightfully ours.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTNAME32553;$FROMCOUNTRY$ Crisis of $YEAR$;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
@@ -899,8 +905,8 @@ EVTNAME315001;The End of the $PROVINCENAME$ Gold Rush;;;;;;;;;;;;x,,,,,,,,,,,,,,
 EVTDESC315001;Several mines in $PROVINCENAME$ have been drying up, stopping production altogether or reducing it so much as not to be relevant anymore. Other locations are being prospected for gold and the old gold provinces are changing their production, leading to a severe change in the production and demographics of our country.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTOPTA315001;Let's hope they find more gold.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTNAME33040;An Industrialized Society;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
-EVTDESC33040;After enjoying a birthrate boom during the early 19th century, population growth in Germany started to decline to levels more similar to those of its neighbors in $YEAR$. Families are now having fewer children and overall birthrates are not as before as the population moves from the fields to the cities and the German society become more and more industrialized.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
-EVT33040OPTA;But that won't slow Germany down.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTDESC33040;After enjoying a birthrate boom during the early 19th century, population growth in $COUNTRY$ started to decline to levels more similar to those of its neighbors in $YEAR$. Families are now having less children and overall birthrates are not as before as the population moves from the fields to the cities and the $COUNTRY_ADJ$ society become more and more industrialized.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVT33040OPTA;But that won't slow $COUNTRYNAME$ down.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTNAME37240;Abd al-Qadir's Insurrection;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC37240;In 1871 the civil authorities repudiated guarantees made to tribal chieftains by the previous military government for loans to replenish their seed supply. This act alienated even pro-$COUNTRY_ADJ$ Muslim leaders, while it undercut their ability to control their people. It was against this background of misery and hopelessness that the stricken Kabyles rose in revolt. The revolt was triggered by the extension of civil authority to previously self-governing tribal reserves and the abrogation of commitments made by the military government, but it clearly had its basis in more long-standing grievances.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVT37240OPTA;They will be put down.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
@@ -1007,6 +1013,9 @@ EVTNAME97122;The Thai Border;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC97122;Kelantan and Kedah, Sultanates under the Rattanakosin Kingdom of Siam, are majority Muslim states that border our colonies but that don't have quite well defined frontiers with it. We should push for a treaty to include these sultanates, formerly part of Johore, in our colonies and to mark our border with Siam.;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVT97122OPTA;Try to strike a deal.;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVT97122OPTB;Don't bother.;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTNAME986502;The United Principalities;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTDESC986502;With the unification of Wallachia and Moldavia, the status of the new country - calling itself Romania - changed, and they got more freedom to govern their territory as they please.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVT986502OPTA;But they are still bound to us.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTNAME5001001;Trans-Siberian Railway;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC5001001;The first stage of the railway linking Chelyabinsk and Novonikolayevsk has been completed with the construction of a bridge over the river Ob. Sadly the riverbanks near Tomsk were too swampy, so the bridge had to be constructed farther south, and a new settlement of "Novonikolayevsk" has been constructed at the river crossing. From now on this town will serve as the regional hub for transportation.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTNAME5001002;Trans-Siberian Railway;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
@@ -1035,6 +1044,7 @@ EVTDESC443037;Everywhere in the $COUNTRY_ADJ$ colonies serfs are being stripped 
 EVT443036OPTA;Make no distinctions, every serf is equal.;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTNAME443036;The Homeland Slavery Decree of $YEAR$;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC443036;Everywhere in the $COUNTRY_ADJ$ mainland serfs are being stripped of their rights and forced in slavery. In practice, this doesn't change their lives much, as they already lived in conditions of near slavery. The loss of the few rights they had is bound to cause an impact, they will not be happy. We can mitigate this impact by limiting the scope of the new decree.;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVT443036OPTA;Make no distinctions, every serf is equal.;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVT443036OPTB;Only the serfs that are not of part our heritage.;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTNAME443035;The Abolition of Serfdom;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC443035;Our King has decided that it's time to abolish serfdom - and replace it with something else. Serfs who occupied a plot of land were required to work for the Lord of the Manor who owned that land, and in return were entitled to protection, justice and the right to exploit certain fields within the manor to maintain their own subsistence. These rights have now been rescinded and the condition of virtual slavery that the serfs lived turned into real slavery. But the question of where this new decree will apply still remains.;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
@@ -1045,6 +1055,9 @@ EVTNAME3697010;The Afghan-British Settlement of $YEAR$;;;;;;;;;;;x,,,,,,,,,,,,,,
 EVTDESC3697010;Our claims in India is a constant source of conflict with the Indian Princes and occasionally even the British government itself. In $YEAR$, Mortimer Durand was dispatched to Kabul by the government of British India to sign an agreement with Amir Abdur Rahman Khan for fixing the limits of their respective spheres of influence as well as improving diplomatic relations and trade. Signing this agreement means relinquishing our claims in India, but it also means normalizing relations with the British.;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVT3697010OPTA;We agree.;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVT3697010OPTB;We won't give up our claims.;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTNAME6016808;The Bukovinan Protectorate;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTDESC6016808;With the recent enclave in Bukovina formed, we have no option but to grant them greater autonomy to rule themselves.;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVT6016808PTA;Damn.;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTNAME325500;Organizing Kazakhstan;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTNAME32549;Organizing Uzbekistan;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTNAME32548;Organizing Turkmenistan;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
@@ -1227,6 +1240,7 @@ EVT443009OPTA;The Catholics.;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVT443009OPTB;The Protestants.;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVT443009OPTC;The Orthodox.;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVT443009OPTD;The Coptics.;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVT443009OPTE;All Christians.;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME443008;Christianity In Our Empire;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTDESC443008;Now we are looking for data about specific regions in our empire. Where should we look for the data?;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVT443008OPTA;In the colonies.;;;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -1262,6 +1276,9 @@ EVTOPTB441268;They will have to take it by force.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,
 EVTNAME441267;End of Homesteading;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTDESC441267;The Land Policy and Management Act of $YEAR$ ended homesteading as government policy had shifted to retaining control of public lands. This shift of policy came as our new government priorities arise and the old government policies are being revised.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTOPTA441267;No one shall have land for free anymore.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
+EVTNAME97121;Downfall of Lan Xang;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
+EVTDESC97121;The Lao union has fallen to defeat. We can no longer hold the nation together.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
+EVT97121OPTA;A disaster!;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTNAME95658;Kota Bahru Founded;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTDESC95658;Kota Bharu was established by Sultan Muhammad II of Kelantan in $YEAR$ as Kelantan's capital. Prior to this date, Kota Bharu was known as Kuala Kelantan. Before Kota Bharu assumed the role, the Kelantanese capital was Kota Kubang Labu.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVT95658OPTA;Glory to Kelantan!;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
@@ -1334,6 +1351,8 @@ EVTNAME952501;The Sultanates Refuse;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTDESC952501;The Sultanates of Yogyakarta and Surakarta refused our demand and expelled our diplomats of their courts.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVT952501OPTA;This requires immediate action.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVT952501OPTB;It's better to forgive and forget.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
+EVTNAME6016803;Serfs Freed in $COUNTRY$;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
+EVTDESC6016803;In $YEAR$, the serfs in $COUNTRY$ were freed by the government. The question remains, however, to who the lands the serfs worked on belong. The aristocracy claims the land is theirs and the serfs should find their own lands, while the serfs argue that the land is theirs by the right of use.;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTNAME952500;The Dutch Demand;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTDESC952500;The Dutch demand that we submit ourselves to their direct control, as a colonial province, so they may bring civilization to our people.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVT952500OPTA;We have no choice but to surrender.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
@@ -1356,6 +1375,9 @@ EVTNAME3697006;The Pioneer Column;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVTDESC3697006;The Pioneer Column was a force raised by Cecil Rhodes and his British South Africa Company in $YEAR$ and used in his efforts to annex the territory of Mashonaland. Rhodes was anxious to secure Matabeleland and Mashonaland before the Germans, Portuguese or Boers did. His first step was to persuade the Matabele King Lobengula to sign a treaty giving him rights to mining and administration (but not settlement as such) in the area of Mashonaland which was ruled by the King by use of coercion and murderous raids involved tribute-taking and abduction of young men and women. Using his Concession between Rhodes' British South Africa Company and Lobengula, he then sought and obtained a charter from the British government allowing him to act. The column crossed the river Tuli into Matabeleland and halted at a naturally flat and marshy meadow bounded by a steep rocky hill, raising the British union flag.;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,
 EVT3697006OPTA;For $COUNTRY$!;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVT3697006OPTB;To our pioneers!;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
+EVTNAME5000059;Sanctions Lifted;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
+EVTDESC5000059;After our defeat and the imposed restrictions in our nation's military, the great powers are more keen to lift up the trade restrictions they put in place.;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
+EVTOPT5000059A;That's for the best.;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVTNAME5000002;The Polish Uprising;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVTDESC5000002;;After Russia was defeated in war, the Poles, Lithuanians and other minorities in Russia are getting restless. The uprising began as a spontaneous protest by young Poles against conscription into the Imperial Russian Army. It was soon joined by high-ranking Polish-Lithuanian officers and various politicians. In Vilnius alone 116 demonstrations were held in $YEAR$. Much of these manifestations in Vilnius ended in clashes with the Imperial Russian Army. In spite of Russian police and Cossack interference, a symbolic meeting of hymn-singing Poles and Lithuanians took place on the bridge across Niemen River. The crowds sang "God protect Poland" in Lithuanian and Belorussian. If we join the Uprising now, we might be able to gather arms and international support.;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVTOPT5000002A;The Poles will get their freedom.;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
@@ -1374,6 +1396,8 @@ EVTDESC32532;"In $YEAR$ I was quartered in Outer Manchuria. An order came from $
 EVT32532OPTA;For the Glory of $COUNTRY$!;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTDESC232000003;One of our explorers found a massive body of water in Africa, and he claims that it's the true source of the Nile! Upon preliminary reports, it seems that what was found is a huge lake that might as well be the source of the Nile. He insists we should call this discovery Lake Victoria.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTOPTA232000003;Oh well.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
+EVTDESC232000003;One of our explorers found a massive body of water in Africa, and he claims that it's the true source of the Nile! Upon preliminary reports, it seems that what was found is a huge lake that might as well be the source of the Nile. He insists we should call this discovery Lake Victoria.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
+EVTOPTA232000003;Oh well.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTNAME232000000;The Source of the Nile Discovered?;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTDESC232000000;I saw, about four miles to the left, a sheet of water, which ultimately proved to be a creek and the southernmost part of what the Arabs call the Ukerewe Sea. Convinced that I finally found the source of the Nile, I went down a grassy and jungly depression into a deep, dirty, viscid nullah, which communicated with the southern end of the creek, which we named Jordan. As we followed the creek, that increased in breadth as it extended northwards, we saw many little islands in Ukerewe, well wooded, standing boldly out of the water. The journey continued through another tortuous day until we reached the village of Isamiro, where the view was clearer and better. In the distant horizon a calm sea line started to appear between north and west. Even in a well known country the view would have attracted attention for its placid beauty, he thought to himself. He felt he had solved the great old riddle.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTOPTA232000000;We shall name it...;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
@@ -1381,6 +1405,9 @@ EVTOPTB232000000;Perhaps it should be called...;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
 EVTOPTC232000000;Our $MONARCHTITLE$ would be satisfied with the name...;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTOPTD232000000;This great body of water will be known as...;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTOPTE232000000;We need a name worthy of it's beauty...;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
+EVTNAME441277;The Liberian Claims;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
+EVTDESC441277;The early days of Liberia were marked by constant frontier troubles with the French on the Ivory Coast and the British at Sierra Leone. The Liberians tried to extend their authority inland, although they were still unable to control all of the coastal area they claimed. In the wake of the Scramble for Africa, several deals were made with the indigenous people in inland Liberia that allowed us to claim and occupy the land under the principle of effective occupation.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
+EVTOPTA441277;Great!;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTNAME441266;The Colony of Liberia;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTDESC441266;In 1820, the American Colonization Society (ACS) began sending African American volunteers to the Pepper Coast to establish a colony for freed African Americans. The ACS, a private organization supported by prominent American politicians such as Abraham Lincoln, Henry Clay, and James Monroe, believed repatriation was preferable to emancipation of slaves, and they founded a colony on what is known as Liberia. The colony of Liberia was poor and economically dependent on the ACS, resulting that by the 1840s, the ACS was effectively bankrupt: Liberia had become a financial burden for it. When the American Colonization Society intimated that Liberia should cease its dependency on it, Joseph Roberts, the colony first black governor, proclaimed it an independent republic in $YEAR$.;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTOPTA441266;We recognize Liberia's independence.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
@@ -1416,6 +1443,9 @@ EVT49517OPTA;Let us extend the $COUNTRY_ADJ$ Empire.;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME49516;Lourenço Marques;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTDESC49516;On the northern bank of Espírito Santo Estuary of Delagoa Bay, an inlet of the Indian Ocean, Lourenço Marques was named after the Portuguese navigator. The forts and trading stations that the Portuguese established, abandoned and reoccupied on the north bank of the river, were all called Lourenço Marques. Our previous settlement in the area was entirely destroyed by the natives, and now it's the time to get it back. Our advisors tell us that sending a military expedition to secure the town should be enough for now. They also report come that the city of Inhambane, destroyed by Soshangane in 1834, was rebuilt and prosper, allowing us to exert control over its surrounding territories once again.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVT49516OPTA;Lourenço Marques was once ours, and it shall be again!;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
+EVTNAME49515;The Mozambique Company;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
+EVTDESC49515;The Mozambique Company was a Portuguese company established in $YEAR$ with a capital stock of about 5 million dollars obtained from financiers from Germany, the United Kingdom and South Africa. Isaacman and Isaacman report that the firm was capitalized at 40,000 pounds, and that British and French capital quickly predominated. The company got a concession to explore the area of Mossurize for a period of 50 years. Around the same time, Portuguese landholder and imperialist Joaquim Carlos Paiva de Andrada established a base at a river mouth in the Sofala province, bringing the old and unmanned forts in the coast of Sofala back to use and cementing Portuguese control in the region.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,
+EVT49515OPTA;Great news!;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTNAME49514;The Sultanate of Mataka;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVTDESC49514;Several years ago, an European expedition accompanied by black guides and workers entered the lands of Mwembe with a purpose that is not fully understood, theoretically in direction of Lake Niassa. Somewhere along the Yao territory the expedition was ambushed, the Europeans were killed and the Africans enslaved. It is said among the Wayao that Ce Bwonomali devoured the head of the commanding officer after he sprinkled it with piri-piri pepper and declared that it was "fish." It is also said he kept the skull which now served to make libations, passing this legacy to his successor, and that hence forth, all the Mataka used for the same purpose. \n Our military leaders proposed a payback in the form of a military expedition against these barbarians so we can bring this uncivilized territory under our control.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
 EVT49514OPTA;This can't stand.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,
@@ -1446,11 +1476,15 @@ EVT33038OPTA;For the greater good of Germany, we stand together.;;;;;;;;;;;;;;;;
 EVT33038OPTB;Our path is not together.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVT33038OPTC;For Germany!;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVT33039OPTB;North and South should walk together!;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVT33038OPTA;The Rhine is German!;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME33037;The Rhine Question;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTDESC33037;The territories of the Left Bank of the Rhine, which French troops had conquered in 1795, had been returned to German (mostly Prussian) control after the 1815 Congress of Vienna, forming the Rhine Province. On $YEAR$, France shifted its focus to the Rhine, and the French government, led by Adolphe Thiers, restated its claim to the areas on the left bank, to re-establish the Rhine as a natural border.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVT33037OPTA;The Rhine is France's natural eastern border.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVT33037OPTB;Send an apology to the Germans.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVT33037OPTC;Let's go a step beyond that claim.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME33036;Lüderitz Bay;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTDESC33036;First discovered by Europeans in 1487 by the Portuguese explorer Bartolomeu Dias, the small coastal area known as Angra Pequena was made into a trading station by German trader Adolf Lüderitz in 1883 who renamed it Lüderitz and concluded treaties with the neighboring chiefs, who ceded large tracts of country to the newcomers. Under the belief that Britain was about to claim the area as a protectorate, Lüderitz transferred his rights over Angra Pequena on $YEAR$ to the German Government, which renamed it to Lüderitzbucht (Lüderitz Bay). Our advisor now defend establishing a colony further north, in the place the natives call Otjozondjii, known in German as Swakopmund.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVT33036OPTA;This will help us gain a foothold in the region.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME3697002;German Ambitions in Africa;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTDESC3697002;The Germans have been making more and more frequent expeditions to west Africa near Cape Colony. Each passing day, they found cities and name places. If we are to forestall German ambitions in the region and to ensure safe passage of British ships around the Cape, we need to secure Ezorongondo.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVT3697002OPTA;It's for the best.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -1910,6 +1944,9 @@ EVTDESC4661005;Today, on the year of our Lord $YEAR$, Juan Manuel de Rosas, the 
 EVTOPT4661005A;He shall reign with absolute power!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
 EVTOPT4661005B;The king shall delegate some powers.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
 EVTOPT4661005C;The monarchy will be a democratic one.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
+EVTNAME4661004;Corrientes and Entre-Rios;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
+EVTDESC4661004;The provinces of Corrientes and Entre-Rios long have been close. Now, with the rebellion of Corrientes and our conquest of the province, the governor of Entre Rios made several political moves that brought the province under his influence.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
+EVTOPT4661004A;That shouldn't be too much trouble.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
 EVTNAME4661010;Paraguay Declares Independence;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
 EVTDESC4661010;The Congress of Paraguay formulated and declared an unilateral declaration of independence from the Argentine Confederation. While the provinces long had self rule, they were nominally part of our country and as such we have claims over it. Or we had, until they declared their independence from the Confederation.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
 EVT4661010PTA;We recognize the right of the Paraguayans to rule themselves.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
@@ -2026,6 +2063,12 @@ EVTNAME97675;China in Chaos;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC97675;The Chinese have fallen into warring factions, all but crumbling their power and leaving us an advantage we would be fools not to exploit. The Line of Advantage policy dictates that we should strike, and strike soon.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT97675OPTA;We should take advantage while we can.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT97675OPTB;This is not in our best interest.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVTNAME97600;Sakoku;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTDESC97600;Meaning 'locked country', Sakoku was the foreign relations policy of Japan instituted by the Tokugawa shogunate in the 17th century, with no foreigner allowed to enter the country on pain of death. While some contact with westerners was permitted in the south, at the Dejima trade enclave in particular, such contact was strictly regulated and kept Japan in a state of isolation from the rest of the world.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,
+EVT97600OPTA;This is the proper way for Japan.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVTNAME97601;Rangaku;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTDESC97601;Meaning 'Western Learning', Rangaku referred to the body of knowledge developed by Japan through its contacts with the Dutch enclave at Dejima. Despite the enforced isolation of the nation, this policy of learning allowed western influences to spread -- particularly in the southern domains of Satsuma and Choshu.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVT97601OPTA;To resist the westerners, we must learn their ways.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVTNAME97605;Kurofune;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC97605;More 'black ships' have appeared off our shores, these ones commanded by an American named Commodore Matthew Perry. The ill-tempered westerner is demanding an end to the Japanese policy of Sokoku -- specifically trading rights in several ports, extraterritoriality for American sailors and protection for their shipwrecks. At first he demanded to negotiate with the Emperor, but that is impossible. Thus it falls to the Shogun to either agree to his demands, risking the appearance of weakness, or refuse and bring the wrath of the Americans upon us.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,
 EVT97605OPTA;We have little choice but to agree.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
@@ -2794,6 +2837,10 @@ EVTNAME97020;The Republican Coup D'Etat;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC97020;With the monarchy already weakened by the death of King Carlos, republican opponents have been able to gather considerable support in the capital. Members of the Carbonária, republican youth, and elements of the army have instigated a coup d'état in the palace. The young King Manuel and his family have reportedly escaped for exile to England, and only days later a new Portuguese Republic has been declared in Lisbon.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,
 EVT97020OPTA;Long live the Republic!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,
 EVT97020OPTB;Try to keep power with the monarchy!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,
+EVTNAME49511;Portuguese Mozambique;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTDESC49511;We must strive to consolidate our hold on Mozambique. For the glory of Portugal!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVT49511OPTA;We shall consider it.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVT49511OPTB;This is not in our interests.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTNAME44330;The Dominion of Newfoundland;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC44330;The colony of $COUNTRY_ADJ$ Newfoundland has asked to be governed as an autonomous dominion within the empire.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVT44330OPTA;This can only be good for the empire.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
@@ -4610,6 +4657,8 @@ EVT160004OPTA;Hooray!!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVT160006OPTA;The war must continue!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVT160006OPTB;We cannot afford the repercussions of a draft.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVT160007OPTB;We are not ready to wage such a war.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
+EVTNAME160008;The Taiping Are Victorious!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
+EVTDESC160008;We have overthrown the hated Manchu and taken control of all China. Now, as the world watches, the true test comes: transforming the nation into the true Heavenly Kingdom.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVT160012OPTA;Collect the pamphlets and silence these missionaries -- now.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVT160012OPTB;We shall tolerate this, for now.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVT160013OPTA;This cannot be tolerated!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
@@ -4651,10 +4700,10 @@ EVT164600OPTB;Crush them. This will not be tolerated.;;;;;;;;;;;;x,,,,,,,,,,,,
 EVT164601OPTA;Root them out. This cannot be permitted.;;;;;;;;;;;;x,,,,,,,,,,,,
 EVT164601OPTB;Make minor reforms to appease the revolutionaries.;;;;;;;;;;;;x,,,,,,,,,,,,
 EVTNAME1645091;The Mandate of Heaven;;;;;;;;;;;;x,,,,,,,,,,,,
-EVTDESC1645091;By Divine Right, the Emperor is ruler of all under Heaven.;;;;;;;;;;;;x,,,,,,,,,,,,
+EVTDESC1645091;The Mandate of Heaven was a Chinese political and religious doctrine used to justify the rule of the emperor of China. According to this belief, heaven (tian)—which embodies the natural order and will of the universe—bestows the mandate on a just ruler, the Son of Heaven.\n\nIf a ruler was overthrown, this was interpreted as an indication that the ruler was unworthy, and had lost the mandate. It was also a common belief that natural disasters such as famine and flood were signs of heaven's displeasure with the ruler, so there would often be revolts following major disasters as citizens saw these as signs that the Mandate of Heaven had been withdrawn.;;;;;;;;;;;;x,,,,,,,,,,,,
 EVT1645091OPTA;Of course.;;;;;;;;;;;;x,,,,,,,,,,,,
 EVTNAME1645092;Loss of the Mandate of Heaven;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
-EVTDESC1645092;Clearly, China has lost faith in the Manchu.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVTDESC1645092;With the humiliation of defeat against foreign invaders, horrific natural disasters, and numerous rebellions across the land, it seems the Manchu emperors have lost the divine right to rule...;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT1645092OPTA;Oh no!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT1316175OPTA;The barbarians will learn to bow.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT1316175OPTB;Avoid angering the barbarians.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
@@ -4662,13 +4711,13 @@ EVT1316176OPTA;Is this emperor a madman?;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT1316176OPTB;We cannot afford a war at the moment.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT1316180OPTA;They shall receive a chilly reception in our court.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT1316180OPTB;This is not the time to provoke them.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
-EVTNAME164506;The Huang He Floods!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
-EVTDESC164506;The enormous Huang He river has flooded!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVTNAME164506;The Huang He Floods of $YEAR$!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVTDESC164506;The Yellow River or Huang He is the second longest river of China with a total length of 5,464 km, the Huang He is "the cradle of Chinese civilization" as its basin, specifically, the Wei valley that cuts across the long Ordos loop, was the birthplace of ancient Chinese civilizations and the most prosperous region in early Chinese history. \n\nHowever, because of frequent devastating floods and course changes produced by the continual elevation of the river bed, sometimes above the level of its surrounding farm fields, it also has the names China's Sorrow and 'Scourge of the Han People'.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVTNAME164507;The Huang He bursts it's banks again!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
-EVTDESC164507;The enormous Huang He river has flooded again!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVTDESC164507;The enormous Huang He river has flooded again! Due to the massive financial cost of the 'Opium War' against the foreign barbarians, we can do little to aid the victims...;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT164507OPTA;But we haven't cleared up after last time yet.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVTNAME164508;The Huang He bursts it's banks once more!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
-EVTDESC164508;The enormous Huang He river has flooded yet again!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVTDESC164508;The enormous Huang He river has flooded yet again, the resulting death toll is in the tens of thousands.!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT164508OPTA;Not again!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVTNAME1316080;Foreigners Peddling Opium!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVTDESC1316080;The foreign dogs are selling opium in the southern provinces!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
@@ -4738,10 +4787,10 @@ EVTDESC1316176;Relations have been cool with $FROMCOUNTRY$, laced with bitternes
 EVTNAME1316180;Empire of the Great Qing;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC1316180;China has no need for, nor interest in, foreigners and their gifts no matter how ingenious they may be. It is only due to the emperor's generosity that foreigners are allowed to trade at all, and all such trade must take place at our will. The yi barbarians should tremble as they obey us and show no negligence! Barbarians shall bow down before the Chinese emperor in the manner customary for tributary envoys.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVTNAME1316181;The Arrow Incident;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
-EVTDESC1316181;Qing officials recently boarded the Arrow, a Chinese-owned ship (a lorcha) that was suspected of piracy and smuggling. Twelve Chinese crew members were arrested on suspicion of piracy by the Qing authorities. British officials have demanded the release of the sailors, however, claiming that because the ship had recently been British-registered, it was under their protection. They also demand reparations. The Imperial court has been enraged by this claim, suggesting that agreeing to British demands would give smugglers free reign throughout China.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,
+EVTDESC1316181;$COUNTRY_ADJ$ officials recently boarded the Arrow, a Chinese-owned ship (a lorcha) that was suspected of piracy and smuggling. Twelve Chinese crew members were arrested on suspicion of piracy by the $COUNTRY_ADJ$ authorities. British officials have demanded the release of the sailors, however, claiming that because the ship had recently been British-registered, it was under their protection. They also demand reparations. The Imperial court has been enraged by this claim, suggesting that agreeing to British demands would give smugglers free reign throughout China.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,
 EVT1316181OPTA;Punish the pirates!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT1316181OPTB;Relent to the British demands.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
-EVTDESC1316182;Qing officials recently boarded the Arrow, a ship that -- according to all reports -- was flying British colors at the time. The Chinese claim this isn't the case, and we've received news that they intend to crack down on the opium trade throughout the Empire. The British government is up in arms, saying that we must exert our influence over the Qing if we are to retain our position in the Far East.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
+EVTDESC1316182;$FROMCOUNTRY_ADJ$ officials recently boarded the Arrow, a ship that -- according to all reports -- was flying British colors at the time. The Chinese claim this isn't the case, and we've received news that they intend to crack down on the opium trade throughout the Empire. The British government is up in arms, saying that we must exert our influence over the $FROMCOUNTRY_ADJ$ if we are to retain our position in the Far East.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVTNAME131709;The Kowloon Incident;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC131709;An incident that began with drunken sailors murdering a Chinese man has escalated into a larger crisis with the Qing government. We have insisted that these sailors be tried by a British judge -- the barbaric Chinese judicial system would result in these men getting anything but a fair trial. The Chinese have demanded the men be turned over, and what's more that they be given the right to punish British citizens as needed. The confrontation has resulted in larger trade sanctions being applied against British merchants, and threats of worse. Our prestige as an Empire to be reckoned with is being threatened.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVTNAME131710;The Unequal Treaty;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
@@ -4798,6 +4847,9 @@ EVT152009874OPTA;A dark day for $COUNTRY$.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVTNAME152009875;The Fall of the Palace of Westminster;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVTDESC152009875;Scattered gunfire can be heard echoing through the empty streets of London as the last pockets of resistance to the $FROMCOUNTRY_ADJ$ occupation are quelled. The parliament houses in the Palace of Westminster lay empty while $FROMCOUNTRY_ADJ$ soldiers run up and down placing explosives in the silent corridors. A $FROMCOUNTRY_ADJ$ general silently read the orders that came from the $FROMCOUNTRY_ADJ$ capital with instructions to destroy the Palace in an attempt to crush the $COUNTRY_ADJ$ spirit. The explosives are detonated at the same time as the Clock Tower bell strike its precise hourly strike. The tower is engulfed by flames as parts of the western palace collapse, with pieces of the Big Ben landing on the Thames along with other debris while nearby buildings are hit by flaming debris and catch fire. $FROMCOUNTRY_ADJ$ soldiers watch and cherish from a safe distance as the glass that once contained the phrase "DOMINE SALVAM FAC REGINAM NOSTRAM VICTORIAM PRIMAM" rains on the ground. Nearby, $FROMCOUNTRY_ADJ$ soldiers storm the Buckingham Palace just to find out that the $MONARCHTITLE$ has already fled the country. They hoist the $FROMCOUNTRY_ADJ$ flag and turn to see the smoke rising in the horizon. London is lost.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT36967OPTB;Declare war now!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVTNAME500004;Polish Freedom;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVTDESC500004;For too long the lands of Poland have been partitioned and divided among imperialistic foreigners. No more! Today, we shake off the remnants of foreign rule from our country, paving the way for the future of Poland.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVTOPT500004A;Huzzah!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
 EVTNAME1000;Socialists;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 EVTDESC1000;Karl Marx has published The Communist Manifesto, which has led to workers in $COUNTRY$ to found a party dedicated to advancing the agenda laid out therein. They call themselves socialists and believe in a land ruled by the workers, where the workers control the means of production. Equality, justice, solidarity and democracy are other vital points in the socialists ideology.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 EVTOPTA1000;Workers of the world, Unite!;;;;;;;;;;;;;;;;;;;;;;x;;;;
@@ -4875,3 +4927,6 @@ EVTDESC900010;Our glorious armies have defeated the Italians. Truly Allah is on 
 EVT900010OPTA;Allahu Akbar!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC441290;With the purchase of Alaska from the Russians many in the US are calling for the immediate annexation of all territory south of the Yukon River. Those in favor of the idea claim that it is our destiny to establish a contiguous federation from Juneau to Tampa. If we follow through with this demand we can rest assured that the British will not be happy.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC441295;The Americans have issued us an ultimatum. They are demanding we renounce and secede all our possessions along the Yukon River and down the continental divide to the American's newly purchased Alaskan colony. Refusing would most definitely mean a costly war in North America over more sparsely populated territory.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTNAME500060;The Grand Campaign.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTDESC500060;Let's change a few things that can't be done outside events or are easier to do through here.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTOPT500060A;Done.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,

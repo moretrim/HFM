@@ -16,6 +16,9 @@ political_decisions = {
 			prestige = 10
 			set_country_flag = pedro_said_it_best
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	
 	

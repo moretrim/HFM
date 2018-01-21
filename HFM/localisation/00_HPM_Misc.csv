@@ -81,7 +81,7 @@ fourteen_hours_desc;Working hours legislation aims to not only reduce the worklo
 twelve_hours_desc;Working hours legislation aims to not only reduce the workload, but it also gives the right to a minimum number of holidays each year, restricts excessive night work and establishes the right to vacations, all this without a reduction of the workers' salaries. While wages grow and working hours decline, the people have more time for leisure and for consuming, driving demand up. At twelve hours per day, workers are starting to have time to spend with their families and are quickly becoming common visitors of taverns and cabarets after work.;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 ten_hours_desc;Working hours legislation aims to not only reduce the workload, but it also gives the right to a minimum number of holidays each year, restricts excessive night work and establishes the right to vacations, all this without a reduction of the workers' salaries. While wages grow and working hours decline, the people have more time for leisure and for consuming, driving demand up. Weekends without work are a common occurrence and white-collar workers have a system of annual vacations.;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;;;;;;;;;;x;;;;
 eight_hours_desc;Working hours legislation aims to not only reduce the workload, but it also gives the right to a minimum number of holidays each year, restricts excessive night work and establishes the right to vacations, all this without a reduction of the workers' salaries. While wages grow and working hours decline, the people have more time for leisure and for consuming, driving demand up. At eight hours per day, almost all workers have the right to weekends off and annual vacations. Free time for leisure is at an all time high and the entertainment industry is in the middle of a boom. All over our country resorts emerge thanks to cheap hotels and inexpensive railway fares, widespread banking holidays and we watch the fading of many religious prohibitions against secular activities on Sundays.;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
-work_hours;Max. Work Hours;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+work_hours;Work Hours;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 movement_fourteen_hours;Maximum Work Hours Movement;;;;;;;;;;;;;;;;;;;;;x
 movement_twelve_hours;Maximum Work Hours Movement;;;;;;;;;;;;;;;;;;;;;x
 movement_ten_hours;Maximum Work Hours Movement;;;;;;;;;;;;;;;;;;;;;x
@@ -228,9 +228,7 @@ ammunition_factory_desc;Swaging, rather than casting, was the preferred manufact
 canned_food_factory_desc;The canning concept is based on experimental food preservation work in glass containers by the French inventor Nicholas Appert. The fabrication of most cans results in at least one "rim", a narrow ring whose outside diameter is slightly larger than that of the rest of the can. The flat surfaces of rimmed cans are recessed from the edge of any rim (toward the middle of the can) by about the width of the rim: the inside diameter of a rim, adjacent to this recessed surface, is slightly smaller than the inside diameter of the rest of the can. Canned food is mainly used for military rations.;;;;;;;;;;;;;;;;;;;x;;;;
 dye_factory;Synthetic Dyeworks;;;;;;;;;;;;;;;;;;;x;;;;
 dye_factory_desc;Natural dye is only present in small amounts and its extraction is often inefficient, so they are usually expensive. In an experiment with a compound called aniline, one of the simplest chemical components of coal tar, one inventor discovered that an alcohol extracted purple color, which readily dyed silk, and was much more stable in sunlight than any other purple dye in use. In the Synthetic Dyeworks dyes are mixed, synthesized in a reactor, filtered for impurities, dried out and then blended. Along the way many other additives, solvents and chemical compounds are used to instigate reactions.;;;;;;;;;;;;;;;;;;;x;;;;
-liquor;Beverages;;;;;;;;;;;;;;;;;;;;x;;;;
-liquor_distillery;Bottling Works;;;;;;;;;;;;;;;;;;;;x;;;;
-liquor_distillery_desc;The earliest reference to carbonated ginger beer is in a Practical Treatise on Brewing. published in 1809. The drinking of either natural or artificial mineral water was considered at the time to be a healthy practice, and was promoted by advocates of temperance. Pharmacists selling mineral waters began to add herbs and chemicals to unflavored mineral water. They used birch bark, dandelion, sarsaparilla, fruit extracts, and other substances. Flavorings were also added to improve the taste.;;;;;;;;;;;;;;;;;;;x;;;;
+liquor_distillery_desc;The continuous still allowed the alcohol industry to reach new levels of productivity. The still consists of a first column (called the analyzer) in a column still that has steam rising and wash descending through several levels. The second column (called the rectifier) carries the alcohol from the wash, where it circulates until it can condense at the required strength. It behaves like a series of single pot stills, formed in a long vertical tube. The tube is filled with either porous packing or bubble plates. The rising vapor, starts to condense in the cooler, higher level of the column.;;;;;;;;;;;;;;;;;;;x;;;;
 winery_desc;The wine-making process involves the fermentation of fruit, with natural yeast or not, as well as blending. The malo-lactic conversion happens after, which is a bacterial process which converts "crisp, green apple" malic acid to "soft, creamy" lactic acid softening the taste of the wine. The wine is sometimes transferred to oak barrels to mature for a period of weeks or months. The wine must be settled or clarified and adjustments made prior to bottling. The process produces wastewater, pomace, and lees that require collection, treatment, and disposal or beneficial use.;;;;;;;;;;;;;;;;;;x;;;;
 lumber_mill;Sawmill;;;;;;;;;;;;;;;;;;x;;;;
 lumber_mill_desc;At the sawmill, the logs are cut into boards using equipment such as circular saws and bandsaws. This is called conversion. The first stage of conversion is a process called breaking down, which means rough sawing. The second stage is called resawing and refers to more accurate / precise cutting and finishing, such as planing and further machining. The introduction of steam power in the 19th century created many new possibilities for mills, with steam powered sawmills being far more mechanized and scrap lumber from the mill providing a ready fuel source for firing the boiler.;;;;;;;;;;;;;;;;;;x;;;;
@@ -279,6 +277,8 @@ sepoy_rebellion;Sepoy Rebellion;;;;;;;;;;;;;;;;;;;;;x
 IS_SUBSTATE_OF;Is a substate;;;;;;;;;;;;;;;;;;;;;x
 IS_NOT_SUBSTATE_OF;Is NOT a substate;;;;;;;;;;;;;;;;;;;;x
 public_illumination;Public Illumination;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+czech_tech_school;Škoda Works;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+japanese_tech_school;Shukensen-Riekisen;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 IS_NOT_IN_A_SPHERE;Not in a sphere of influence.;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 HOLD_ELECTION_BUTTON;Hold Election;;;;;;;;;;;;;;;;;;;;;;;;;;;x
 HOLD_ELECTION;Hold Election\n;;;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -326,7 +326,7 @@ islamic_fundamentalists_desc;Islamic fundamentalists believe that Islam is based
 islamic_fundamentalists_army;Islamic Fundamentalists;;;;;;;;;;;;x,,,
 theocracy;Theocracy;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 artillery_production_desc;The Industrial Revolution of the 19th century affected practically all areas of human endeavour, and the production of artillery was no exception. What had previously been a lengthy process of cast molding bronze cannons would -- in the hands of luminaries of the industry, such as Alfred Krupp or Hiram Maxim -- become an industrialized and exact science.;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
-australian;Australian;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+australian;Australasian;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 serfdom_not_abolished;Serfdom not abolished;;;;;;;;;;;;;;;;;;;;;;;;x
 theocratic_government;Theocratic Government;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 communist_gov;Communist Regime;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
@@ -528,6 +528,7 @@ limited_citizenship_desc;This party supports politics to limit citizenship and p
 full_citizenship_desc;This party supports that every vote is equal.;;;;;;;;;;;;;;;;;;;;x;;;;
 movement_censored_press;Campaign for more Press Freedom;;;;;;;;;;;x
 revolution_n_counter_researched;Revolution and Counterrevolution Researched;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+can_create_vassals;Can Create Vassal;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 crisis_begin_researched;Crisis Event Triggered;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 medicine_invented;Researched Medicine;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 germs_invented;Invented Germ Theory;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
@@ -729,7 +730,7 @@ breton;Breton;;;;;;;;;;;;x
 pan_albanian;Albanian;;;;;;;;;;;;x
 occitan;Occitan;Occitain;Occitanisch;;;;;;;;;;;x
 picard;Picard;;;;;;;;;;;;x
-western_slavic;Wend;;;;;;;;;;;;;;;;;;;;x
+western_slavic;Western Slavic;;;;;;;;;;;;;;;;;;;;x
 anglo_african;Anglo African;;;;;;;;;;;;x
 jewish_cultures;Jewish Cultures;;;;;;;;;;;;x
 itsekari;Ijaw;;;;;;;;;;;;x

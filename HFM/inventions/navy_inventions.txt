@@ -456,7 +456,7 @@ steamer_automatic_construction_plants = {
 	}
 	effect = {
 		factory_goods_throughput = {
-			steamer_convoy = 0.10
+			steamer_convoy = 0.20
 		}
 	}
 }

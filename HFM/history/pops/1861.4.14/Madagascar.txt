@@ -139,7 +139,7 @@
 	}
 
 	slaves = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = animist
 		size = 8240.0
 	}
@@ -177,37 +177,37 @@
 #Toamasina (116000/29000 POPS)
 2119 = {
 	aristocrats = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 231.75
 	}
 
 	clergymen = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 128.75
 	}
 
 	artisans = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 515.0
 	}
 
 	soldiers = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 128.75
 	}
 
 	farmers = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 4145.75
 	}
 
 	slaves = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = animist
 		size = 7210.0
 	}
@@ -287,37 +287,37 @@
 #Antsiranana (104000/26000 POPS)
 2120 = {
 	aristocrats = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 180.25
 	}
 
 	clergymen = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 103.0
 	}
 
 	artisans = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 515.0
 	}
 
 	soldiers = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 103.0
 	}
 
 	farmers = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 3218.75
 	}
 
 	slaves = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = animist
 		size = 6180.0
 	}
@@ -357,31 +357,31 @@
 #Ampanihy (228000/57000 POPS)
 2117 = {
 	aristocrats = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = animist
 		size = 489.25
 	}
 
 	clergymen = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = animist
 		size = 257.5
 	}
 
 	artisans = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = animist
 		size = 1287.5
 	}
 
 	soldiers = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = animist
 		size = 257.5
 	}
 
 	farmers = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = animist
 		size = 23458.25
 	}
@@ -419,37 +419,37 @@
 #Mahajanga (188000/47000 POPS)
 2121 = {
 	aristocrats = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 540.75
 	}
 
 	clergymen = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 283.25
 	}
 
 	artisans = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 1133.0
 	}
 
 	soldiers = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 283.25
 	}
 
 	farmers = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 13673.25
 	}
 
 	slaves = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = animist
 		size = 10866.5
 	}
@@ -487,37 +487,37 @@
 #Toliara (172000/43000 POPS)
 2122 = {
 	aristocrats = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 309.0
 	}
 
 	clergymen = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 154.5
 	}
 
 	artisans = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 669.5
 	}
 
 	soldiers = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 180.25
 	}
 
 	farmers = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = sunni
 		size = 3836.75
 	}
 
 	slaves = {
-		culture = malagasy #african_minor
+		culture = african_minor
 		religion = animist
 		size = 11330.0
 	}

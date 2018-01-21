@@ -225,12 +225,23 @@ political_decisions = {
 		picture = map_central_america
 		potential = {
 			2190 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = north_america } } } }
-			2189 = { owned_by = THIS }
+			2189 = { 
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+						war = no
+						is_greater_power = no
+					}
+				}
+			}
 			BLZ = { exists = no }
 			OR = {
 				primary_culture = central_american
 				primary_culture = mexican
 				primary_culture = mayan
+				primary_culture = spanish
 			}
 			NOT = { has_country_flag = belize_purchase }
 		}
@@ -338,11 +349,22 @@ political_decisions = {
 		picture = moskito_coast_reserve
 		potential = {
 			2200 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = north_america } } } }
-			2197 = { owned_by = THIS }
+			2197 = { 
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+						war = no
+						is_greater_power = no
+					}
+				}
+			}
 			OR = {
 				primary_culture = central_american
 				primary_culture = mexican
 				primary_culture = mayan
+				primary_culture = spanish
 			}
 			NOT = { has_global_flag = miskito_crisis }
 		}

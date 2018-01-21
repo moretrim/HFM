@@ -23,7 +23,7 @@
 	artisans = {
 		culture = south_german
 		religion = catholic
-		size = 1100
+		size = 3100
 	}
 
 	soldiers = {
@@ -35,7 +35,7 @@
 	farmers = {
 		culture = south_german
 		religion = catholic
-		size = 3150
+		size = 10150
 	}
 
 	clergymen = {
@@ -59,7 +59,7 @@
 	farmers = {
 		culture = slovene
 		religion = catholic
-		size = 22500
+		size = 12500
 	}
 	
 	serfs = {
@@ -118,7 +118,7 @@
 	farmers = {
 		culture = slovene
 		religion = catholic
-		size = 43150
+		size = 53150
 	}
 	
 	serfs = {

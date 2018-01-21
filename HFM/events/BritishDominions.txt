@@ -7,6 +7,7 @@ country_event = {
 	desc = "EVTDESC44330"
 	picture = "danishgovernment"
 
+	major = yes
 
 	trigger = {
 		war = no
@@ -55,7 +56,13 @@ country_event = {
 		NEW = {
 			all_core = { remove_core = THIS remove_core = ENG }
 		}
-		release_vassal = NEW
+		any_owned = { 
+			limit = { 
+				is_core = NEW
+			}
+			secede_province = NEW
+		}
+		create_vassal = NEW
 		NEW = {
 			prestige = -80
 		}
@@ -246,6 +253,8 @@ country_event = {
 	desc = "EVTDESC44332"
 	picture = "danishgovernment"
 
+	major = yes
+
 	trigger = {
 		war = no
 		year = 1901
@@ -293,7 +302,13 @@ country_event = {
 		AST = {
 			all_core = { remove_core = THIS remove_core = ENG }
 		}
-		release_vassal = AST
+		any_owned = { 
+			limit = { 
+				is_core = AST
+			}
+			secede_province = AST
+		}
+		create_vassal = AST
 		AST = { prestige = -80 }
 		relation = {
 			who = AST
@@ -439,6 +454,8 @@ country_event = {
 	desc = "EVTDESC44333"
 	picture = "danishgovernment"
 
+	major = yes
+
 	trigger = {
 		war = no
 		year = 1907
@@ -490,7 +507,13 @@ country_event = {
 			set_country_flag = post_colonial_country
 			all_core = { remove_core = THIS remove_core = ENG }
 		}
-		release_vassal = NZL
+		any_owned = { 
+			limit = { 
+				is_core = NZL
+			}
+			secede_province = NZL
+		}
+		create_vassal = NZL
 		NZL = {
 			prestige = -80
 			capital = 2512
@@ -520,6 +543,10 @@ country_event = {
 			modifier = {
 				factor = 0.25
 				government = absolute_monarchy
+			}
+			modifier = {
+				factor = 1.5
+				exists = AST
 			}
 			modifier = {
 				factor = 1.5
@@ -641,6 +668,8 @@ country_event = {
 	desc = "EVTDESC44334"
 	picture = "danishgovernment"
 
+	major = yes
+
 	trigger = {
 		war = no
 		year = 1909
@@ -697,6 +726,7 @@ country_event = {
 		random_owned = { limit = { province_id = 2558 } change_province_name = "De Aar" add_core = SAF }
 		random_owned = { limit = { province_id = 2093 } change_province_name = "Calvinia" add_core = SAF }
 		random_owned = { limit = { province_id = 2094 } change_province_name = "Kimberley" add_core = SAF }
+		random_owned = { limit = { province_id = 3273 } change_province_name = "Pietersburg" }
 		random_owned = { limit = { province_id = 2111 } change_province_name = "Durban" add_core = SAF }
 		random_owned = { limit = { province_id = 2105 } state_scope = { change_region_name = "Transvaal" } }
 		random_owned = { limit = { province_id = 2102 } state_scope = { change_region_name = "Vrystaat" } }
@@ -1091,7 +1121,7 @@ country_event = {
 				2598 = { empty = no }
 				9 = { empty = no }
 				11 = { empty = no }
-				#12 = { empty = yes } #Reliance
+				12 = { empty = yes } #Reliance
 				OR = {
 					owns = 43
 					owns = 2596
@@ -1105,7 +1135,7 @@ country_event = {
 				2598 = { empty = no }
 				9 = { empty = no }
 				11 = { empty = no }
-				#12 = { empty = no }
+				12 = { empty = no }
 				10 = { empty = yes } #Inuvik
 				OR = {
 					owns = 9
@@ -1152,7 +1182,7 @@ country_event = {
 				2598 = { empty = no }
 				9 = { empty = no }
 				11 = { empty = no }
-				#12 = { empty = no }
+				12 = { empty = no }
 				10 = { empty = yes }
 				OR = {
 					9 = { owned_by = THIS }
@@ -1161,6 +1191,24 @@ country_event = {
 			}
 			owner = { prestige = -3 }
 			10 = { secede_province = THIS add_core = RPL any_pop = { literacy = -0.99 } }
+		}
+		random_owned = {
+			limit = {
+				6 = { empty = no }
+				7 = { empty = no }
+				8 = { empty = no }
+				2596 = { empty = no }
+				2598 = { empty = no }
+				9 = { empty = no }
+				11 = { empty = no }
+				12 = { empty = yes }
+				OR = {
+					43 = { owned_by = THIS }
+					2596 = { owned_by = THIS }
+				}
+			}
+			owner = { prestige = -3 }
+			12 = { secede_province = THIS add_core = RPL any_pop = { literacy = -0.99 } }
 		}
 		random_owned = {
 			limit = {

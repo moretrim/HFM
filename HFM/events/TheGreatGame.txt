@@ -12,7 +12,10 @@ country_event = {
 		tag = ENG
 		is_disarmed = no
 		is_greater_power = yes
-		RUS = { is_greater_power = yes }
+		OR = {
+			RUS = { is_greater_power = yes }
+			RUS = { is_secondary_power = yes }	
+		}
 		OR = {
 			government = absolute_monarchy
 			government = prussian_constitutionalism
@@ -77,10 +80,7 @@ country_event = {
 				exists = yes
 				civilized = no
 				is_vassal = no
-				OR = {
-					NOT = { has_country_flag = border_incident_UK  }
-					ENG = { ai = yes }
-				}
+				NOT = { has_country_flag = border_incident_UK  }
 				neighbour = ENG
 				neighbour = RUS
 				NOT = {
@@ -241,8 +241,12 @@ country_event = {
 			state_n_government = 1
 		}
 		modifier = {
-			factor = 0.5
+			factor = 0.3
 			nationalism_n_imperialism = 1
+		}
+		modifier = {
+			factor = 0.1
+			revolution_n_counterrevolution = 1
 		}
 		modifier = {
 			factor = 0.5
@@ -653,10 +657,6 @@ country_event = {
 	
 	mean_time_to_happen = {
 		months = 30
-		modifier = {
-			factor = 1.5
-			ai = no
-		}
 		modifier = {
 			factor = 0.8
 			ideological_thought = 1

@@ -30,11 +30,14 @@ school_reforms = no_schools
 conscription = two_year_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = primary_culture_only
+child_labor = child_labor_legal
+citizens_rights = primary_culture_only
 border_policy = open_borders
+centralization = unitary
+colonial_policy = no_colonies 
 
 set_country_flag = catholic_country
-
+set_country_flag = existing_country
 set_country_flag = new_world_nation
 
 ruling_party = CUB_conservative_3

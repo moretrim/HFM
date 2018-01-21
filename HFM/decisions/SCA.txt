@@ -181,6 +181,7 @@ political_decisions = {
 			prestige = 20
 			all_core = { add_core = SCA remove_core = THIS }
 			change_tag = SCA
+			political_reform = federalism
 			remove_country_modifier = kalmar_union
 			remove_country_modifier = leader_of_kalmar
 			remove_country_modifier = customs_union

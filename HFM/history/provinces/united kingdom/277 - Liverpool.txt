@@ -3,6 +3,7 @@ controller = ENG
 add_core = ENG
 trade_goods = fish
 life_rating = 40
+terrain = liverpool
 railroad = 1
 party_loyalty = {
 	ideology = conservative
@@ -18,7 +19,7 @@ state_building = {
 	upgrade = yes
 }
 state_building = {
-	level = 1
+	level = 2
 	building = steel_factory
 	upgrade = yes
 }
@@ -28,7 +29,7 @@ state_building = {
 	upgrade = yes
 }
 state_building = {
-	level = 1
+	level = 2
 	building = liquor_distillery
 	upgrade = yes
 }

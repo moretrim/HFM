@@ -1,5 +1,10 @@
-owner = AUS
-controller = AUS
-add_core = VEN
-trade_goods = iron
-life_rating = 35
+trade_goods = timber
+terrain = new_world_boreal
+life_rating = 10
+colonial = 2
+1861.1.1 = {
+	owner = ENG
+	controller = ENG
+	add_core = RPL
+	colonial = 2
+}

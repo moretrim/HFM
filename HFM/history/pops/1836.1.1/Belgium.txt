@@ -58,7 +58,7 @@
 	clerks = {
 		culture = flemish
 		religion = catholic
-		size = 2150
+		size = 2550
 	}
 
 	craftsmen = {
@@ -118,7 +118,7 @@
 	clerks = {
 		culture = wallonian
 		religion = catholic
-		size = 300
+		size = 900
 	}
 
 	craftsmen = {
@@ -382,7 +382,7 @@
 	craftsmen = {
 		culture = wallonian
 		religion = catholic
-		size = 14000
+		size = 10000
 	}
 
 	artisans = {
@@ -519,6 +519,18 @@
 		religion = catholic
 		size = 12000
 	}
+	
+	craftsmen = {
+		culture = wallonian
+		religion = catholic
+		size = 10000
+	}
+	
+	craftsmen = {
+		culture = flemish
+		religion = catholic
+		size = 6000
+	}
 }
 #Charleroi (396000/99000 POPS)
 394 = {
@@ -599,13 +611,13 @@
 	clerks = {
 		culture = wallonian
 		religion = catholic
-		size = 100
+		size = 1100
 	}
 	
 	craftsmen = {
 		culture = wallonian
 		religion = catholic
-		size = 3000
+		size = 4000
 	}
 
 	artisans = {
@@ -623,7 +635,7 @@
 	farmers = {
 		culture = wallonian
 		religion = catholic
-		size = 17800
+		size = 29800
 	}
 	
 	farmers = {

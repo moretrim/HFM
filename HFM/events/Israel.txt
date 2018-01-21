@@ -34,6 +34,10 @@ country_event = {
 			918 = { add_core = PLS }
 		}
 		add_country_modifier = {
+			name = new_country
+			duration = 1095
+		}
+		add_country_modifier = {
 			name = small_country_draft
 			duration = 1825
 		}
@@ -203,6 +207,7 @@ province_event = {
 		has_province_modifier = jewish_diaspora
 		owner = {
 			NOT = { border_policy = closed_borders }
+			NOT = { has_country_modifier = jewish_diaspora }
 			war = no
 		}
 		ISR = {

@@ -10,6 +10,7 @@ country_event = {
 	picture = "destroyed_forest"
 	
 	fire_only_once = yes
+	major = yes
 	
 	trigger = {
 		year = 1908
@@ -40,6 +41,7 @@ country_event = {
 	picture = "pelee"
 	
 	fire_only_once = yes
+	major = yes
 	
 	trigger = {
 		year = 1883
@@ -71,6 +73,7 @@ country_event = {
 	picture = "earthquake"
 	
 	fire_only_once = yes
+	major = yes
 	
 	trigger = {
 		year = 1906

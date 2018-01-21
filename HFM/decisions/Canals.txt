@@ -18,17 +18,13 @@ political_decisions = {
 			invention = machine_tools
 			invention = nitroglycerin
 			iron_steamers = 1
-			OR = {
-				money = 50000
-				ai = yes
-			}
+			money = 75000
 		}
 		effect = {
 			set_global_flag = kiel_under_construction
 			369 = { secede_province = THIS }
 			country_event = 36976
 		}
-		
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -60,10 +56,8 @@ political_decisions = {
 			invention = machine_tools
 			invention = nitroglycerin		
 			iron_steamers = 1
-			OR = {
-				money = 100000
-				ai = yes
-			}
+			money = 250000
+
 		}
 		
 		effect = {
@@ -73,7 +67,7 @@ political_decisions = {
 					NOT = { tag = THIS }
 					owns = 1755
 				}
-				treasury = 30000
+				treasury = 75000
 			}
 			1755 = { secede_province = THIS add_core = THIS }
 			country_event = 36970
@@ -99,12 +93,23 @@ political_decisions = {
 			1755 = {
 				owner = {
 					OR = {
-						AND = {
-							part_of_sphere = no
-							capital_scope = { continent = europe }
-						}
+						part_of_sphere = no 
 						in_sphere = THIS
 					}
+				}
+			}
+			OR = {
+				AND = {
+					tag = FRA
+					year = 1870
+				}
+				AND = {
+					tag = ENG
+					year = 1855
+				}
+				AND = {
+					is_greater_power = yes
+					ai = no
 				}
 			}
 		}
@@ -114,17 +119,14 @@ political_decisions = {
 			invention = nitroglycerin		
 			iron_steamers = 1
 			business_banks = 1
+			money = 50100
 			1755 = { owner = { NOT = { truce_with = THIS war_with = THIS is_greater_power = yes } } }
-			OR = {
-				money = 20000
-				ai = yes
-			}
 		}
 		
 		effect = {
 			set_global_flag = suez_canal_company_founded
 			prestige = 5
-			treasury = -20000
+			treasury = -50000
 			1755 = { owner = { relation = { who = THIS value = 75 } country_event = 36981 } }
 		}
 		
@@ -153,18 +155,26 @@ political_decisions = {
 			NOT = { 1755 = { owner = { military_score = THIS } } }
 			OR = {
 				AND = {
-					money = 50000
+					money = 200000
 					1755 = { owner = { NOT = { part_of_sphere = yes } } }
 				}
 				1755 = { owner = { in_sphere = THIS } }
 			}
 		}
 		effect = {
-			random_country = { limit = { owns = 1755 NOT = { in_sphere = THIS } } THIS = { treasury = -50000 } }
+			random_country = { limit = { owns = 1755 NOT = { in_sphere = THIS } } THIS = { treasury = -200000 } }
 			1755 = { owner = { country_event = 36980 } }
 			1755 = { secede_province = THIS }
 		}
-		ai_will_do = { factor = 1 }
+		ai_will_do = {
+			factor = 1
+			modifier = { factor = 0 month = 1 NOT = { month = 2 } }
+			modifier = { factor = 0 month = 3 NOT = { month = 4 } }
+			modifier = { factor = 0 month = 5 NOT = { month = 6 } }
+			modifier = { factor = 0 month = 7 NOT = { month = 8 } }
+			modifier = { factor = 0 month = 9 NOT = { month = 10 } }
+			modifier = { factor = 0 month = 11 NOT = { month = 12 } }
+		}
 	}
 
 	build_panama_canal = {
@@ -188,10 +198,7 @@ political_decisions = {
 			invention = nitroglycerin
 			iron_steamers = 1
 			invention = prophylaxis_against_malaria
-			OR = {
-				money = 200000
-				ai = yes
-			}
+			money = 250000
 		}
 		effect = {
 			random_country = {
@@ -236,7 +243,7 @@ political_decisions = {
 			NOT = { 1723 = { owner = { military_score = THIS } } }
 			OR = {
 				AND = {
-					money = 50000
+					money = 500000
 					1723 = { owner = { NOT = { part_of_sphere = yes } } }
 				}
 				1723 = { owner = { in_sphere = THIS } }
@@ -244,11 +251,19 @@ political_decisions = {
 		}
 		
 		effect = {
-			random_country = { limit = { owns = 1723 NOT = { in_sphere = THIS } } THIS = { treasury = -50000 } }
+			random_country = { limit = { owns = 1723 NOT = { in_sphere = THIS } } THIS = { treasury = -500000 } }
 			1723 = { owner = { country_event = 36980 } }
 			1723 = { secede_province = THIS }
 		}
 		
-		ai_will_do = { factor = 1 }
+		ai_will_do = {
+			factor = 1
+			modifier = { factor = 0 month = 1 NOT = { month = 2 } }
+			modifier = { factor = 0 month = 3 NOT = { month = 4 } }
+			modifier = { factor = 0 month = 5 NOT = { month = 6 } }
+			modifier = { factor = 0 month = 7 NOT = { month = 8 } }
+			modifier = { factor = 0 month = 9 NOT = { month = 10 } }
+			modifier = { factor = 0 month = 11 NOT = { month = 12 } }
+		}
 	}
 }

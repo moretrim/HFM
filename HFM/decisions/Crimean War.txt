@@ -15,7 +15,15 @@ political_decisions = {
 		}
 		
 		allow = {
-			nationalism_n_imperialism = 1
+			OR = { 
+				nationalism_n_imperialism = 1
+				AND = { 
+					year = 1855
+					has_country_modifier = louis_napoleon_iii
+					has_country_flag = 2nd_empire
+					NOT = { has_country_flag = louis_deposed }
+				}
+			}
 			war = no
 			TUR = {
 				war = no
@@ -99,6 +107,7 @@ political_decisions = {
 					tag = ENG
 					has_country_flag = england_protecting_interests
 				}
+				diplomatic_influence = { who = TUR value = 100 }
 				leave_alliance = THIS
 			}
 			random_country = {
@@ -113,6 +122,8 @@ political_decisions = {
 					NOT = { tag = TUR }
 					NOT = { tag = FRA }
 					NOT = { tag = THIS }
+					NOT = { tag = PRU }
+					NOT = { tag = NGF }
 					NOT = { alliance_with = THIS }
 					capital_scope = { continent = europe }
 				}
@@ -167,13 +178,13 @@ political_decisions = {
 			random_country = {
 				limit = {
 					tag = TUR
-					ROM = {
+					URP = {
 						exists = yes
 						ai = yes
 						is_vassal = no
 					}
 				}
-				create_vassal = ROM
+				create_vassal = URP
 			}
 			random_country = {
 				limit = {
@@ -183,10 +194,10 @@ political_decisions = {
 						ai = yes
 						exists = yes
 					}
-					ROM = { exists = no }
+					URP = { exists = no }
 				}
 				inherit = MOL
-				change_tag = ROM
+				change_tag = URP
 				795 = { remove_core = SIE }
 			}
 			random_country = {
@@ -194,9 +205,9 @@ political_decisions = {
 					tag = WAL
 					exists = yes
 					MOL = { exists = no }
-					ROM = { exists = no }
+					URP = { exists = no }
 				}
-				change_tag = ROM
+				change_tag = URP
 				795 = { remove_core = SIE }
 			}
 			random_country = {
@@ -204,10 +215,10 @@ political_decisions = {
 					tag = MOL
 					exists = yes
 					ai = no
-					ROM = { exists = no }
+					URP = { exists = no }
 				}
 				inherit = WAL
-				change_tag = ROM
+				change_tag = URP
 				795 = { remove_core = SIE }
 				capital = 664
 			}
@@ -225,7 +236,7 @@ political_decisions = {
 				limit = {
 					tag = RUS
 					owns = 678
-					ROM = {
+					URP = {
 						exists = yes
 						OR = {
 							ai = yes
@@ -235,7 +246,20 @@ political_decisions = {
 				}
 				country_event = 97510
 			}
-			ROM = { any_owned = { limit = { is_core = ROM } remove_core = WAL remove_core = MOL } }
+			URP = { any_owned = { limit = { is_core = ROM } remove_core = WAL remove_core = MOL add_core = ROM add_core = URP } }
+			TUR = {
+				release_vassal = URP
+				leave_alliance = URP
+				prestige = -10
+			}
+			any_country = {
+				limit = {
+					war_with = TUR
+					war_with = URP
+				}
+				end_war = URP
+			}
+			967 = { naval_base = -2 fort = -1 }
 		}
 		
 		ai_will_do = {
@@ -258,12 +282,35 @@ political_decisions = {
 			OR = {
 				has_recently_lost_war = no
 				has_country_flag = crimean_surrender
+				TUR = {
+					is_disarmed = yes
+					truce_with = RUS
+				}
 			}
 		}
 		
 		effect = {
 			prestige = 20
 			set_global_flag = treaty_of_paris_russia
+			
+			badboy = 5
+			
+			#Removes Turkish Cores from the Balkans
+			TUR_674 = { remove_core = TUR } # Dobrudja
+			TUR_788 = { remove_core = TUR } # Bosnia
+			TUR_810 = { remove_core = TUR } # Bulgaria
+			TUR_809 = { remove_core = TUR remove_core = RUM } #Eastern Rumelia
+			TUR_803 = { remove_core = TUR } # S.Serbia
+			MON_2582 = { remove_core = TUR } # Montenegro
+			TUR_853 = { remove_core = TUR } # Albania
+			TUR_832 = { remove_core = TUR } # Thessalia
+			TUR_805 = { remove_core = TUR } # S. Macedonia
+			TUR_823 = { remove_core = TUR } # E. Macedonia
+			TUR_806 = { remove_core = TUR } # N. Macedonia
+			847 = { remove_core = TUR } #Chania
+			848 = { remove_core = TUR } #Iraklion
+			
+			#Romania
 			random_country = {
 				limit = {
 					tag = WAL
@@ -308,17 +355,23 @@ political_decisions = {
 				release_vassal = ROM
 				leave_alliance = ROM
 			}
+			ROM = { any_owned = { limit = { is_core = ROM } remove_core = WAL remove_core = MOL } }
+			
 			random_country = {
 				limit = {
 					tag = TUR
-					THIS = { has_country_flag = crimean_surrender }
+					OR = {
+						THIS = { has_country_flag = crimean_surrender }
+						TUR = {
+							is_disarmed = yes
+						}
+					}
 				}
 				country_event = 97512
 				RUS = { treasury = 250000 }
 			}
-			relation = { who = ROM value = 400 }
-			diplomatic_influence = { who = ROM value = 200 }
 			diplomatic_influence = { who = TUR value = 50 }
+			
 			FRA = {
 				diplomatic_influence = { who = TUR value = -200 }
 				leave_alliance = TUR
@@ -331,7 +384,7 @@ political_decisions = {
 				diplomatic_influence = { who = TUR value = -200 }
 				leave_alliance = TUR
 			}
-			ROM = { any_owned = { limit = { is_core = ROM } remove_core = WAL remove_core = MOL } }
+			
 		}
 	}
 }

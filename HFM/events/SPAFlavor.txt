@@ -10,6 +10,7 @@ country_event = {
 		OR = {
 			tag = SPA
 			tag = SPC
+			tag = IBR
 		}
 		year = 1837
 		NOT = { year = 1840 }
@@ -294,6 +295,7 @@ country_event = {
 		OR = {
 			tag = SPA
 			tag = SPC
+			tag = IBR
 		}
 		year = 1854
 		government = hms_government
@@ -337,6 +339,84 @@ country_event = {
 		treasury = 10000
 		aristocrats = { militancy = 3 consciousness = 4 money = -100 }
 		capitalists = { militancy = 3 consciousness = 4 money = -100 }
+	}
+}
+
+#Madoz's Deamortisation
+country_event = {
+
+	id = 37708
+
+	trigger = {
+		OR = {
+			tag = SPA
+			tag = SPC
+			tag = IBR
+		}
+		year = 1842
+		NOT = {
+			year = 1846
+		}
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 5
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1855
+		}
+
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1856
+		}
+	}
+
+	title = "EVTNAME37707"
+	desc = "EVTDESC37707"
+	picture = "Administration"
+
+	option = {
+		name = "EVTOPTA37708"
+		officers = {
+			militancy = 1
+			consciousness = 1
+		}
+		soldiers = {
+			militancy = 1
+			consciousness = 1
+		}
+		artisans = {
+			militancy = -1
+			consciousness = -1
+		}
+		craftsmen = {
+			militancy = -1
+			consciousness = -1
+		}
+	}
+
+	option = {
+		name = "EVTOPTB37708"
+		officers = {
+			militancy = -1
+			consciousness = -1
+		}
+		soldiers = {
+			militancy = -1
+			consciousness = -1
+		}
+		artisans = {
+			militancy = 1
+			consciousness = 1
+		}
+		craftsmen = {
+			militancy = 1
+			consciousness = 1
+		}
 	}
 }
 

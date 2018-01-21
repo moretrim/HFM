@@ -356,6 +356,7 @@ country_event = {
 	picture = "wanted"
 	
 	trigger = {
+		NOT = { has_country_flag = spectator }
 		NOT = {
 			poor_strata_everyday_needs = 0.8
 		}

@@ -108,18 +108,18 @@ annex_california = {
 		has_global_flag = bear_flag_revolt
 		has_global_flag = mexican_american_war
 		has_country_flag = hasmanifestdestiny
-###		OR = {  has_country_flag = treaty_of_guadalupe_hidalgo
-###			MEX = { has_recently_lost_war = yes } 
-###		}
+		war = no
 		NOT = { has_country_flag = second_velasco }
 		NOT = { has_country_flag = annex_california }
 	}
 		
 	allow = {
-		prestige = 50
+		prestige = 35
 		war = no
+		has_recently_lost_war = no
+		owns = 100
+		owns = 105
 		CAL = {
-			war = no
 			OR = {
 				is_vassal = no
 				vassal_of = USA
@@ -133,7 +133,19 @@ annex_california = {
 		
 	effect = {
 		set_country_flag = annex_california
-		CAL = { country_event = 110062 }
+		CAL = {
+			end_war = MEX
+		}
+		any_country = {
+			limit = {
+				tag = MEX
+				}
+			end_war = CAL
+		}
+		relation = {
+			who = CAL
+			value = 200
+		}
 	}
 
 	ai_will_do = { factor = 1 }

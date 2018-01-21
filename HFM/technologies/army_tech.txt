@@ -1064,6 +1064,11 @@ muzzle_loaded_rifles = {
 		}
 		
 		modifier = {
+			factor = 10
+			tag = PRU
+		}
+		
+		modifier = {
 			factor = 3
 			OR = {
 				tech_school = army_tech_school
@@ -1085,6 +1090,10 @@ breech_loaded_rifles = {
 	
 	ai_chance = {
 		factor = 4
+		modifier = {
+			factor = 100
+			tag = PRU
+		}
 		modifier = {
 			factor = 10
 			is_greater_power = yes
@@ -3036,7 +3045,7 @@ military_directionism = {
 }
 aeronautics = {
 	area = military_science
-	year = 1914
+	year = 1903
 	cost = 21600
 	army_base = {
 		default_organisation = 10

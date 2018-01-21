@@ -71,7 +71,19 @@
 	farmers = {
 		culture = min
 		religion = mahayana
-		size = 165000
+		size = 125000
+	}
+	
+	farmers = {
+		culture = hakka
+		religion = mahayana
+		size = 39775
+	}
+	
+	serfs = {
+		culture = hakka
+		religion = mahayana
+		size = 2000
 	}
 }
 #Taitung (67k - 268k) #now part of Taiwan  
@@ -206,7 +218,7 @@
 	farmers = {
 		culture = nanfaren
 		religion = mahayana
-		size = 110625
+		size = 70625
 	}
 
 	aristocrats = {
@@ -242,25 +254,44 @@
 	farmers = {
 		culture = min
 		religion = mahayana
-		size = 220200
+		size = 200200
+	}
+	
+	aristocrats = {
+		culture = hakka
+		religion = mahayana
+		size = 1625
 	}
 
-	bureaucrats = {
-		culture = manchu
+	clergymen = {
+		culture = hakka
 		religion = mahayana
-		size = 50
+		size = 1325
 	}
 
-	officers = {
-		culture = manchu
+	artisans = {
+		culture = hakka
 		religion = mahayana
-		size = 25
+		size = 6600
 	}
 
 	soldiers = {
-		culture = manchu
+		culture = hakka
 		religion = mahayana
-		size = 50
+		size = 3025
 	}
+
+	farmers = {
+		culture = hakka
+		religion = mahayana
+		size = 49775
+	}
+	
+	serfs = {
+		culture = hakka
+		religion = mahayana
+		size = 10000
+	}
+	
 }
 

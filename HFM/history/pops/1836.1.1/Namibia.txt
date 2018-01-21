@@ -167,6 +167,12 @@
 		religion = animist
 		size = 5475
 	}
+
+	farmers = {
+		culture = herero
+		religion = animist
+		size = 8200
+	}
 }
 #Otjinene (44000/11000 POPS)
 2082 = {
@@ -351,7 +357,7 @@
 	farmers = {
 		culture = khoisan
 		religion = animist
-		size = 6375
+		size = 16375
 	}
 }
 #Nugouses (12000/3000 POPS)

@@ -9,6 +9,9 @@ country_event = {
 	trigger = {
 		war = no
 		has_country_flag = crown_from_the_gutter
+		NOT = { tag = LIE }
+		NOT = { tag = VLG }
+		NOT = { tag = SMR }
 		NOT = { has_country_flag = post_colonial_country }
 		NOT = {
 			cultural_union = { exists = yes }
@@ -78,6 +81,7 @@ country_event = {
 				war = no
 				NOT = { tag = THIS }
 				NOT = { tag = UBD }
+				NOT = { tag = SMR }
 				NOT = { has_country_flag = post_colonial_country }
 				is_culture_group = THIS
 				is_greater_power = no
@@ -199,6 +203,9 @@ country_event = {
 					NOT = { tag = MOL }
 					NOT = { tag = SIE }
 					NOT = { tag = LUX }
+					NOT = { tag = LIE }
+					NOT = { tag = VLG }
+					NOT = { tag = SMR }
 					NOT = { is_culture_group = south_asian }
 					NOT = { is_culture_group = scandinavian }
 					NOT = { is_culture_group = arab }
@@ -208,7 +215,10 @@ country_event = {
 				all_core = { remove_core = THIS }
 			}
 		}
-		
+		any_owned = {
+				secede_province = FROM
+		}
+
 		random_owned = {
 			limit = { owner = { is_culture_group = italian } }
 			owner = {
@@ -227,6 +237,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				is_greater_power = yes
+				NOT = { tag = BAV }
 				NOT = { has_country_flag = wants_to_unify }
 			}
 			modifier = {
@@ -234,6 +245,22 @@ country_event = {
 				OR = {
 					alliance_with = FROM
 					relation = { who = FROM value = 100 }
+				}
+			}
+			modifier = {
+				factor = 2
+				AND = {
+					tag = NGF
+					is_greater_power = no
+				}
+			}
+			modifier = {
+				factor = 5
+				AND = {
+					tag = PRU
+					FROM = {
+						ai = yes
+					}
 				}
 			}
 			modifier = {
@@ -264,6 +291,9 @@ country_event = {
 				value = -200
 			}
 		}
+		FROM = {
+			country_event = 11102
+		}
 		any_pop = {
 			limit = { is_primary_culture = yes }
 			militancy = 3
@@ -274,6 +304,12 @@ country_event = {
 			modifier = {
 				factor = 0
 				has_country_flag = wants_to_unify
+			}
+			modifier = {
+				factor = 0
+				tag = PRU
+				ai = yes
+				FROM = { ai = yes }
 			}
 			modifier = {
 				factor = 0
@@ -326,6 +362,11 @@ country_event = {
 					}
 				}
 			}
+			modifier = {
+				factor = 0.1
+				is_greater_power = no
+				is_secondary_power = no
+			} 
 		}
 	}
 }
@@ -377,6 +418,7 @@ country_event = {
 				NOT = {
 					tag = THIS
 					tag = PAP
+					tag = SMR
 				}
 				NOT = { has_country_flag = post_colonial_country }
 				is_culture_group = THIS
@@ -589,6 +631,9 @@ country_event = {
 				months = 36
 			}
 		}
+		any_owned = {
+				secede_province = FROM
+		}
 		FROM = { inherit = THIS }
 		ai_chance = {
 			factor = 75
@@ -671,6 +716,9 @@ country_event = {
 	trigger = {
 		war = no
 		NOT = { tag = UBD }
+		NOT = { tag = LIE }
+		NOT = { tag = VLG }
+		NOT = { tag = GCF }
 		has_country_flag = crown_from_the_gutter
 		is_culture_group = germanic
 		is_greater_power = yes
@@ -731,6 +779,7 @@ country_event = {
 		}
 		all_core = { remove_core = THIS }
 		change_tag = GER
+		FRA_412 = { add_core = GER }
 		random_country = {
 			limit = {
 				tag = AUS

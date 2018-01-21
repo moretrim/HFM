@@ -8,6 +8,8 @@ political_decisions = {
 				tag = ARC
 				tag = LPL
 				tag = CHL
+				tag = VLP
+				tag = CGC
 				AND = {
 					tag = SBA
 					is_vassal = no
@@ -141,6 +143,8 @@ political_decisions = {
 				tag = LPL
 				tag = PRG
 				tag = CHL
+				tag = CGC
+				tag = VLP
 			}
 			OR = {
 				2362 = { empty = yes }
@@ -339,6 +343,7 @@ political_decisions = {
 			OR = {
 				tag = ARC
 				tag = ARG
+				tag = VLP
 			}
 			owns = 2348
 			2348 = { is_capital = no }
@@ -373,6 +378,10 @@ political_decisions = {
 					NOT = { has_global_flag = falklands_are_the_malvinas }
 				}
 				AND = {
+					primary_culture = spanish
+					NOT = { has_global_flag = falklands_are_the_malvinas }
+				}
+				AND = {
 					primary_culture = british
 					has_global_flag = falklands_are_the_malvinas
 				}
@@ -387,6 +396,13 @@ political_decisions = {
 		effect = {
 			random_owned = { 
 				limit = { owner = { primary_culture = platinean } } 
+				owner = { 
+					set_global_flag = falklands_are_the_malvinas
+					2131 = { change_province_name = "Islas Malvinas" } 
+				} 
+			}
+			random_owned = { 
+				limit = { owner = { primary_culture = spanish } } 
 				owner = { 
 					set_global_flag = falklands_are_the_malvinas
 					2131 = { change_province_name = "Islas Malvinas" } 

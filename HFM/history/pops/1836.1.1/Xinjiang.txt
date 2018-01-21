@@ -179,37 +179,37 @@
 	}
 
 	aristocrats = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 20
 	}
 
 	bureaucrats = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 100
 	}
 
 	clergymen = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 20
 	}
 
 	artisans = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 50
 	}
 
 	soldiers = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 10
 	}
 
 	farmers = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 900
 	}
@@ -307,31 +307,31 @@
 	}
 
 	aristocrats = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 20
 	}
 
 	clergymen = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 20
 	}
 
 	artisans = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 50
 	}
 
 	soldiers = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 10
 	}
 
 	farmers = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 900
 	}
@@ -469,31 +469,31 @@
 	}
 
 	aristocrats = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 50
 	}
 
 	clergymen = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 75
 	}
 
 	artisans = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 150
 	}
 
 	soldiers = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 25
 	}
 
 	slaves = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 2700
 	}
@@ -561,31 +561,31 @@
 	}
 
 	aristocrats = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 125
 	}
 
 	clergymen = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 75
 	}
 
 	artisans = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 400
 	}
 
 	soldiers = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 75
 	}
 
 	farmers = {
-		culture = beifaren
+		culture = hanhui
 		religion = sunni
 		size = 7325
 	}

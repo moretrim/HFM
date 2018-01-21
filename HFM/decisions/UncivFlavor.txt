@@ -63,6 +63,9 @@ political_decisions = {
 		effect = {
 			badboy = 1
 			inherit = CHK
+			SIA = {
+				years_of_research = 5
+			}
 			set_country_flag = champassak_integrated
 		}
 	}
@@ -616,7 +619,7 @@ political_decisions = {
 					ai = no
 				}
 				AND = {
-					battleship_column_doctrine = 1
+					blue_and_brown_water_schools = 1
 					ai = yes
 				}
 				any_owned_province = {
@@ -679,6 +682,7 @@ political_decisions = {
 		picture = request_missionaries
 		potential = {
 			NOT = { has_country_flag = asked_for_protection }
+			NOT = { tag = EIC }
 			NOT = { is_culture_group = east_asian }
 			NOT = { primary_culture = japanese }
 			NOT = { tag = HYD }

@@ -15,6 +15,7 @@ country_event = {
 		name = "EVT44122OPTA"
 		prestige = 10
 		250 = { add_core = THIS secede_province = THIS }
+		158 = { add_core = USA secede_province = USA }
 		250 = { remove_core = CAN }
 		158 = { remove_core = CAN }
 		250 = { remove_core = QUE }
@@ -433,6 +434,12 @@ country_event = {
 			OR = {
 				owned_by = USA
 				owned_by = ENG
+				AND = { 
+					owned_by = RPL
+					RPL = {
+						vassal_of = ENG
+					}
+				}
 			}
 		}
 		21 = {
@@ -440,6 +447,12 @@ country_event = {
 			OR = {
 				owned_by = USA
 				owned_by = ENG
+				AND = { 
+					owned_by = RPL
+					RPL = {
+						vassal_of = ENG
+					}
+				}
 			}
 		}
 		NOT = {
@@ -469,6 +482,11 @@ country_event = {
 		badboy = 5
 		COL = { all_core = { add_core = ENG } }
 		COL = { all_core = { add_core = USA } }
+		CAN_13 = { add_core = USA }
+		CAN_13 = { add_core = ENG }
+		17 = { remove_core = USA remove_core = ENG }
+		18 = { remove_core = USA remove_core = ENG }
+		2629 = { remove_core = USA remove_core = ENG }
 		any_pop = {
 			dominant_issue = {
 				factor = 0.05
@@ -531,7 +549,14 @@ country_event = {
 			}
 			modifier = {
 				factor = 1.5
-				ENG = { owns = 79 }
+				79 = {
+					OR = {
+						owned_by = ENG
+						owner = {
+							vassal_of = ENG
+						}
+					}
+				}
 			}
 			modifier = {
 				factor = 1.2
@@ -554,7 +579,15 @@ country_event = {
 			factor = 15
 			modifier = {
 				factor = 1.5
-				ENG = { owns = 79 }
+				79 = {
+					OR = {
+						owned_by = ENG
+						owner = {
+							vassal_of = ENG
+							war = no
+						}
+					}
+				}
 			}
 			modifier = {
 				factor = 0.8
@@ -577,7 +610,16 @@ country_event = {
 		badboy = -2
 		prestige = -10
 		USA = { country_event = 44152 }
-		CAN_13 = { add_core = ENG }
+		CAN_13 = { 
+			limit = {
+				empty = no
+			}
+			add_core = ENG
+			add_province_modifier = {
+				name = gateway_to_america
+				duration = 365
+			}
+		}
 		#CAN_18 = { add_core = ENG }
 		ENG_22 = { add_core = ENG }
 		USA_78 = {
@@ -598,9 +640,20 @@ country_event = {
 		111 = {
 			remove_core = COL
 		}
-		CAN_13 = {
-			add_core = COL
-			remove_core = RPL
+		RPL = {
+			any_owned = {
+				limit = {
+					empty = no
+					region = CAN_13
+				}
+				add_core = COL
+				add_core = RPL
+			}
+		}
+		RPL = {
+			all_core = {
+				remove_core = ENG
+			}
 		}
 		any_owned = {
 			limit = {
@@ -612,6 +665,12 @@ country_event = {
 				is_core = USA
 			}
 			secede_province = USA
+			remove_core = ENG
+			life_rating = 5
+			add_province_modifier = {
+				name = gateway_to_america
+				duration = 3650
+			}
 		}
 		ai_chance = {
 			factor = 95
@@ -639,6 +698,9 @@ country_event = {
 		badboy = 5
 		prestige = 10
 		COL = { all_core = { add_core = ENG } }
+		17 = { add_core = COL remove_core = RPL }
+		2629 = { remove_core = USA remove_core = ENG }
+		18 = { remove_core = USA remove_core = ENG }
 		leave_alliance = USA
 		USA = { country_event = 44153 }
 		ai_chance = {
@@ -695,7 +757,43 @@ country_event = {
 			remove_core = USA
 			secede_province = ENG
 		}
-		COL = { all_core = { remove_core = ENG } }
+		RPL = {
+			any_pop = { 
+				limit = {
+					location = { 
+						province_id = 78
+					}
+					culture = native_american_minor 
+				}
+				reduce_pop = 0.1 
+			}
+			any_pop = { 
+				limit = {
+					location = { 
+						province_id = 79
+					}
+					culture = native_american_minor 
+				}
+				reduce_pop = 0.4 
+			}
+			any_pop = { 
+				limit = {
+					location = { 
+						province_id = 78
+					}
+					culture = yankee 
+				}
+				reduce_pop = 2.5
+			}	
+			any_owned = {
+				limit = {
+					region = USA_78
+				}
+				remove_core = ENG
+				remove_core = COL
+				secede_province = USA
+			}
+		}
 		any_pop = {
 			scaled_consciousness = {
 				issue = pacifism
@@ -732,7 +830,7 @@ country_event = {
 					is_core = RPL
 				}
 			}
-			secede_province = ENG
+			secede_province = RPL
 		}
 		COL = { all_core = { remove_core = USA } }
 		any_pop = {
@@ -742,7 +840,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 50
+			factor = 30
 			modifier = {
 				factor = 1.5
 				any_greater_power = { war_with = THIS }
@@ -760,11 +858,18 @@ country_event = {
 		relation = { who = ENG value = -100 }
 		COL = { all_core = { add_core = USA } }
 		COL = { all_core = { add_core = ENG } }
+		CAN_13 = { add_core = USA }
+		CAN_13 = { add_core = ENG }
+		2629 = { remove_core = USA remove_core = ENG }
+		18 = { remove_core = USA remove_core = ENG }
 		any_pop = {
 			scaled_consciousness = {
 				issue = jingoism
 				factor = -3
 			}
+		}
+		ENG = {
+			country_event = 44157
 		}
 		war = {
 			target = ENG
@@ -817,13 +922,10 @@ country_event = {
 		USA = { country_event = 44155 }
 		relation = { who = USA value = 50 }
 		COL = { all_core = { remove_core = ENG } }
-		any_owned = {
-			limit = { is_core = COL }
-			secede_province = USA
-		}
 		USA_78 = {
 			remove_core = ENG
 			remove_core = COL
+			add_core = USA
 		}
 		USA_81 = {
 			remove_core = ENG
@@ -839,6 +941,33 @@ country_event = {
 		111 = {
 			remove_core = COL
 		}
+		any_owned = {
+			limit = { 
+				OR = { 
+					is_core = COL 
+					is_core = USA 
+					region = USA_78
+				}
+			}
+			secede_province = USA
+			remove_core = RPL
+			remove_core = ENG
+		}
+		RPL = {
+			any_owned = {
+				limit = { 
+					OR = { 
+						is_core = COL 
+						is_core = USA 
+						region = USA_78
+					}
+				}
+				secede_province = USA
+				remove_core = RPL
+			}
+		}
+		78 = { secede_province = USA }
+		79 = { secede_province = USA }
 		COL = {
 			primary_culture = yankee
 			remove_accepted_culture = anglo_canadian
@@ -863,9 +992,16 @@ country_event = {
 	
 	option = {
 		name = "EVT44154OPTB"
+		set_country_flag = oregon_war
 		prestige = 5
 		leave_alliance = USA
 		relation = { who = USA value = -200 }
+		RPL = {
+			any_owned = {
+				limit = { is_core = COL }
+				secede_province = ENG
+			}
+		}
 		war = {
 			target = USA
 			attacker_goal = {
@@ -914,6 +1050,26 @@ country_event = {
 	option = {
 		name = "EVT44155OPTA"
 		prestige = 25
+		RPL = {
+			any_owned = {
+				limit = { 
+					is_core = COL 
+					NOT = { 
+						province_id = 17
+						province_id = 2629
+						province_id = 18
+					}
+				}
+				add_core = USA
+				remove_core = RPL
+				remove_core = ENG
+				remove_core = COL
+				secede_province = USA
+			}
+		}
+		17 = { remove_core = USA }
+		2629 = { remove_core = USA }
+		18 = { remove_core = USA }
 		any_pop = {
 			scaled_consciousness = {
 				issue = jingoism
@@ -941,6 +1097,7 @@ country_event = {
 		USA_81 = {
 			add_core = USA
 			remove_core = COL
+			remove_core = ENG
 		}
 		USA_91 = {
 			add_core = USA
@@ -1021,6 +1178,25 @@ country_event = {
 			modifier = {
 				factor = 0
 				war_policy = pacifism
+			}
+		}
+	}
+}
+
+country_event = {
+	id = 44157
+	title = "EVTNAME44157" #UK Gets Colombia from HBC
+	desc = "EVTDESC44157"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT6044157OPTA"
+		RPL = {
+			any_owned = {
+				limit = { is_core = COL }
+				secede_province = ENG
 			}
 		}
 	}

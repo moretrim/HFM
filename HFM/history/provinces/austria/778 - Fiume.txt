@@ -5,5 +5,4 @@ add_core = CRO
 add_core = FIU
 add_core = HUN
 trade_goods = fruit
-naval_base = 1
 life_rating = 35

@@ -41,6 +41,12 @@ trade_unions = no_trade_unions
 voting_system = jefferson_method
 political_parties = underground_parties
 
+
+govt_flag = {
+	government = colonial_company
+	flag = theocracy
+}
+
 wage_reform = no_minimum_wage
 work_hours = no_work_hour_limit
 safety_regulations = no_safety
@@ -48,12 +54,16 @@ health_care = no_health_care
 unemployment_subsidies = no_subsidies
 pensions = no_pensions 
 school_reforms = no_schools
+centralization = federalism
+colonial_policy = no_colonies 
+
 
 # New Reforms
 conscription = two_year_draft
 debt_law = serfdom
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = culture_voting_only
+child_labor = child_labor_legal
+citizens_rights = culture_voting_only
 border_policy = open_borders
 
 set_country_flag = hindu_country

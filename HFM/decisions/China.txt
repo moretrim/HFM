@@ -47,6 +47,9 @@ political_decisions = {
 				militancy = -2
 				consciousness = -1
 			}
+			MCK = {
+				add_accepted_culture = beifaren
+			}
 			set_country_flag = manchu_elite_cleared_out
 		}
 	}
@@ -72,6 +75,7 @@ political_decisions = {
 		
 		effect = {
 			prestige = 20
+			remove_country_modifier = the_eight_banners
 			all_core = { remove_core = QNG }
 			change_tag = CHI
 			primary_culture = beifaren
@@ -704,6 +708,7 @@ political_decisions = {
 			add_accepted_culture = zhuang
 			add_accepted_culture = yue
 			add_accepted_culture = yi
+			add_accepted_culture = hanhui
 			CHI = {
 				all_core = { add_core = KMT }
 			}
@@ -916,6 +921,7 @@ political_decisions = {
 			add_accepted_culture = zhuang
 			add_accepted_culture = yue
 			add_accepted_culture = yi
+			add_accepted_culture = hanhui
 			prestige = 20
 			capital = 1616
 			random_owned = {
@@ -1001,6 +1007,154 @@ political_decisions = {
 			}			
 		}
 		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	total_war_in_taiping = {
+		alert = yes
+		picture = support_boxers
+		potential = {
+			exists = CHI
+			has_global_flag = taiping_has_happened
+			NOT = { has_country_modifier = taiping_draft }
+			NOT = { has_global_flag = taiping_draft_happened }
+			tag = TPG
+		}
+		
+		allow = {
+			war_with = CHI
+			NOT = { num_of_cities = 50 }
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = taiping_draft
+				duration = 1825
+			}
+			set_global_flag = taiping_draft_happened 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	total_war_in_kashgaria = {
+		alert = yes
+		picture = support_boxers
+		potential = {
+			exists = QNG
+			has_global_flag = dungan_rebellion
+			NOT = { has_country_modifier = small_country_draft }
+			NOT = { has_country_flag = kashgaria_draft_happened }
+			tag = UYG
+		}
+		
+		allow = {
+			war_with = QNG
+		}
+		
+		effect = {
+			iron = 10
+			wool = 10
+			timber = 25
+			small_arms = 10
+			leadership = 20
+			define_general = {
+				name = "Yaqub Beg"
+				personality = charismatic
+				background = adventurer
+			}
+			add_country_modifier = {
+				name = small_country_draft
+				duration = 365
+			}
+			any_country = {
+				limit = {
+					neighbour = THIS
+					NOT = { war_with = THIS }
+					ai = yes
+					THIS = { ai = yes }
+				}
+				relation = { who = THIS value = 50 }
+			}
+			set_country_flag = kashgaria_draft_happened 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	total_war_in_yunnan = {
+		alert = yes
+		picture = support_boxers
+		potential = {
+			exists = QNG
+			has_global_flag = panthay_rebellion
+			NOT = { has_country_modifier = small_country_draft }
+			NOT = { has_country_flag = yunnan_draft_happened }
+			tag = YNN
+		}
+		
+		allow = {
+			war_with = QNG
+		}
+		
+		effect = {
+			iron = 10
+			wool = 10
+			timber = 25
+			small_arms = 10
+			leadership = 20
+			define_general = {
+				name = "Du Wenxiu"
+				personality = deeply_religious
+				background = natural_born_leader
+			}
+			add_country_modifier = {
+				name = small_country_draft
+				duration = 365
+			}
+			any_country = {
+				limit = {
+					neighbour = THIS
+					NOT = { war_with = THIS }
+					ai = yes
+					THIS = { ai = yes }
+				}
+				relation = { who = THIS value = 50 }
+			}
+			set_country_flag = yunnan_draft_happened 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	total_war_in_peking = {
+		alert = yes
+		picture = support_boxers
+		potential = {
+			exists = TPG
+			has_global_flag = taiping_has_happened
+			NOT = { has_country_modifier = taiping_draft }
+			NOT = { has_global_flag = peking_draft_happened }
+			tag = CHI
+		}
+		
+		allow = {
+			war_with = TPG
+			NOT = { num_of_cities = 50 }
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = taiping_draft
+				duration = 1825
+			}
+			set_global_flag = peking_draft_happened 
+		}
 		ai_will_do = {
 			factor = 1
 		}
@@ -1142,6 +1296,7 @@ political_decisions = {
 			add_accepted_culture = zhuang
 			add_accepted_culture = yue
 			add_accepted_culture = yi
+			add_accepted_culture = hanhui
 			prestige = 20
 			capital = 1616
 			random_owned = {
@@ -1274,6 +1429,7 @@ political_decisions = {
 					NOT = { exists = QNG }
 				}
 			}
+			NOT = { civilization_progress = 0.75 }
 			civilized = no
 			NOT = { has_country_modifier = self_strengthening_movement }
 			has_global_flag = taiping_has_happened
@@ -1281,15 +1437,11 @@ political_decisions = {
 		
 		allow = {
 			war = no
-			civilization_progress = 0.5
-			OR = {
-				NOT = { prestige = 25 }
-				has_recently_lost_war = yes
-				NOT = { money = 10000 }
-			}
+			year = 1860
 		}
 		
 		effect = {
+			set_country_flag = self_strengthening_movement
 			random_owned = {
 				limit = {
 					owner = { ai = no }
@@ -1299,6 +1451,12 @@ political_decisions = {
 			add_country_modifier = {
 				name = self_strengthening_movement
 				duration = 1825
+			}
+			1617 = {
+				add_province_modifier = {
+					name = foreign_trading_post
+					duration = 1825
+				}
 			}
 		}
 		
@@ -1358,6 +1516,7 @@ political_decisions = {
 	picture = tibet_capital
 		potential = {
 			OR = {
+				tag = KMT
 				tag = CHI
 				tag = TPG
 			}
@@ -1435,6 +1594,7 @@ political_decisions = {
 				tag = TPG
 				tag = QNG
 				tag = CHI
+				tag = KMT
 			}
 			1086 = { NOT = { is_core = THIS } }
 			owns = 1502
@@ -1494,10 +1654,10 @@ political_decisions = {
 			tag = TAI
 			exists = yes
 			OR = {
-				2681 = { is_core = CHI }
-				2681 = { is_core = KMT }
-				2681 = { is_core = QNG }
-				2681 = { is_core = TPG }
+				1485 = { is_core = CHI }
+				1485 = { is_core = KMT }
+				1485 = { is_core = QNG }
+				1485 = { is_core = TPG }
 			}
 			has_global_flag = retreated_to_taiwan
 		}
@@ -1527,11 +1687,13 @@ political_decisions = {
 				QNG = { exists = yes owns = 1616 NOT = { TPG = { exists = yes } CHI = { exists = yes } } }
 				TPG = { exists = yes owns = 1616 NOT = { QNG = { exists = yes } CHI = { exists = yes } } }
 				CHI = { exists = yes owns = 1616 NOT = { TPG = { exists = yes } QNG = { exists = yes } } }
+				KMT = { exists = yes owns = 1616 NOT = { QNG = { exists = yes } TPG = { exists = yes } } }
 			}
 			OR = {
 				tag = QNG
 				tag = TPG
 				tag = CHI
+				tag = KMT
 			}
 			has_global_flag = sino_portuguese_treaty_of_peking_signed
 			1498 = { NOT = { is_core = CHI } }
@@ -1552,6 +1714,7 @@ political_decisions = {
 			set_global_flag = sino_portuguese_treaty_of_peking_revoked
 			clr_global_flag = sino_portuguese_treaty_of_peking_signed
 			any_country = { clr_country_flag = sino_portuguese_treaty_of_peking_signataire }
+			1498 = { add_core = THIS }
 			1498 = { add_core = CHI }
 			random_country = { limit = { owns = 1498 NOT = { tag = THIS } } country_event = 90908 }
 			random_owned = {

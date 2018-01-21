@@ -228,8 +228,8 @@ political_decisions = {
 		}
 		
 		effect = {
-			treasury = -15000 #It costed 6.2 million marks but I have no idea how that translates into game money.
-			prestige = 5
+			treasury = -30000 #It costed 6.2 million marks but I have no idea how that translates into game money.
+			prestige = 15
 			set_global_flag = neuschwanstein_built
 		}
 			

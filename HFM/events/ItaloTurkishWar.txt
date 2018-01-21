@@ -9,7 +9,7 @@ country_event = {
 	
 	trigger = {
 		tag = ITA
-		mass_politics = 1
+		bolt_action_rifles = 1
 		is_vassal = no
 		owns = 749
 		OR = {
@@ -374,7 +374,7 @@ country_event = {
 	option = {
 		name = "EVT900008OPTA"
 		prestige = 5
-		ai_chance = { factor = 0.1 }
+		ai_chance = { factor = 0.05 }
 	}
 	
 	option = {
@@ -385,7 +385,7 @@ country_event = {
 			limit = { tag = TUR owns = 846 }
 			846 = { secede_province = THIS }
 		}
-		ai_chance = { factor = 0.9 }
+		ai_chance = { factor = 0.95 }
 	}
 }
 

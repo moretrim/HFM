@@ -111,19 +111,19 @@
 	}
 
 	artisans = {
-		culture = south_german
+		culture = ashkenazi
 		religion = jewish
 		size = 3000
 	}
 
 	soldiers = {
-		culture = south_german
+		culture = ashkenazi
 		religion = jewish
 		size = 75
 	}
 
 	farmers = {
-		culture = south_german
+		culture = ashkenazi
 		religion = jewish
 		size = 1250 
 	}

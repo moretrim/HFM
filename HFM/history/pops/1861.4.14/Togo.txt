@@ -1,231 +1,231 @@
 #Togo Region (368000) #see Ghana.txt for balance of region
 #uncolonized in 1836
-#Lome (216000/54000 POPS)  
+#Lome (216000/54000 POPS)
 1914 = {
 	aristocrats = {
 		culture = ewe
 		religion = animist
-		size = 775
+		size = 798.25
 	}
 
 	clergymen = {
 		culture = ewe
 		religion = animist
-		size = 400
+		size = 412.0
 	}
 
 	artisans = {
 		culture = ewe
 		religion = animist
-		size = 1575
+		size = 1622.25
 	}
 
 	soldiers = {
 		culture = ewe
 		religion = animist
-		size = 400
+		size = 412.0
 	}
 
 	farmers = {
 		culture = ewe
 		religion = animist
-		size = 30850
+		size = 31775.5
 	}
 
 	aristocrats = {
-		culture = east_kwa
+		culture = african_minor
 		religion = animist
-		size = 275
+		size = 283.25
 	}
 
 	clergymen = {
-		culture = east_kwa
+		culture = african_minor
 		religion = animist
-		size = 150
+		size = 154.5
 	}
 
 	artisans = {
-		culture = east_kwa
+		culture = african_minor
 		religion = animist
-		size = 600
+		size = 618.0
 	}
 
 	soldiers = {
-		culture = east_kwa
+		culture = african_minor
 		religion = animist
-		size = 150
+		size = 154.5
 	}
 
 	farmers = {
-		culture = east_kwa
+		culture = african_minor
 		religion = animist
-		size = 11825
+		size = 12179.75
 	}
 
 	slaves = {
-		culture = east_kwa
+		culture = african_minor
 		religion = animist
-		size = 7000
+		size = 7210.0
 	}
 }
-#Atakpane (128000/32000 POPS)  
+#Atakpane (128000/32000 POPS)
 1917 = {
 	aristocrats = {
 		culture = ewe
 		religion = animist
-		size = 250
+		size = 257.5
 	}
 
 	clergymen = {
 		culture = ewe
 		religion = animist
-		size = 150
+		size = 154.5
 	}
 
 	artisans = {
 		culture = ewe
 		religion = animist
-		size = 700
+		size = 721.0
 	}
 
 	soldiers = {
 		culture = ewe
 		religion = animist
-		size = 150
+		size = 154.5
 	}
 
 	farmers = {
 		culture = ewe
 		religion = animist
-		size = 12750
+		size = 13132.5
 	}
 
 	aristocrats = {
-		culture = east_kwa
+		culture = african_minor
 		religion = animist
-		size = 125
+		size = 128.75
 	}
 
 	clergymen = {
-		culture = east_kwa
+		culture = african_minor
 		religion = animist
-		size = 75
+		size = 77.25
 	}
 
 	artisans = {
-		culture = east_kwa
+		culture = african_minor
 		religion = animist
-		size = 350
+		size = 360.5
 	}
 
 	soldiers = {
-		culture = east_kwa
+		culture = african_minor
 		religion = animist
-		size = 75
+		size = 77.25
 	}
 
 	farmers = {
-		culture = east_kwa
+		culture = african_minor
 		religion = animist
-		size = 6375
+		size = 6566.25
 	}
 
 	aristocrats = {
 		culture = fon
 		religion = animist
-		size = 200
+		size = 206.0
 	}
 
 	clergymen = {
 		culture = fon
 		religion = animist
-		size = 100
+		size = 103.0
 	}
 
 	artisans = {
 		culture = fon
 		religion = animist
-		size = 450
+		size = 463.5
 	}
 
 	soldiers = {
 		culture = fon
 		religion = animist
-		size = 125
+		size = 128.75
 	}
 
 	farmers = {
 		culture = fon
 		religion = animist
-		size = 8125
+		size = 8368.75
 	}
 
 	slaves = {
 		culture = fon
 		religion = animist
-		size = 2000
+		size = 2060.0
 	}
 }
-#Sokode (24000/6000 POPS)  
+#Sokode (24000/6000 POPS)
 1918 = {
 	aristocrats = {
-		culture = gur
+		culture = african_minor
 		religion = animist
-		size = 50
+		size = 51.5
 	}
 
 	clergymen = {
-		culture = gur
+		culture = african_minor
 		religion = animist
-		size = 50
+		size = 51.5
 	}
 
 	artisans = {
-		culture = gur
+		culture = african_minor
 		religion = animist
-		size = 200
+		size = 206.0
 	}
 
 	soldiers = {
-		culture = gur
+		culture = african_minor
 		religion = animist
-		size = 50
+		size = 51.5
 	}
 
 	farmers = {
-		culture = gur
+		culture = african_minor
 		religion = animist
-		size = 3650
+		size = 3759.5
 	}
 
 	aristocrats = {
-		culture = gur
+		culture = african_minor
 		religion = sunni
-		size = 25
+		size = 25.75
 	}
 
 	clergymen = {
-		culture = gur
+		culture = african_minor
 		religion = sunni
-		size = 50
+		size = 51.5
 	}
 
 	artisans = {
-		culture = gur
+		culture = african_minor
 		religion = sunni
-		size = 100
+		size = 103.0
 	}
 
 	soldiers = {
-		culture = gur
+		culture = african_minor
 		religion = sunni
-		size = 25
+		size = 25.75
 	}
 
 	farmers = {
-		culture = gur
+		culture = african_minor
 		religion = sunni
-		size = 1800
+		size = 1854.0
 	}
 
 }

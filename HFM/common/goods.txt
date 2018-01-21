@@ -125,7 +125,7 @@ industrial_goods = {
 		available_from_start = no
 	}
 	clipper_convoy = { 
-		cost = 42.00 
+		cost = 40.00 
 		overseas_penalty = yes
 		color = { 21 65 30 }
 	}
@@ -211,7 +211,7 @@ consumer_goods = {
 		color = { 217 17 19 }
 	}
 	luxury_clothes = { 
-		cost = 65.00
+		cost = 55.00
 		color = { 234 227 40 }
 	}
 	furniture = {

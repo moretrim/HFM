@@ -399,6 +399,7 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = claimed_greater_serbia
+			add_accepted_culture = montenegrin
 			prestige = 10
 			AUS_777 = { add_core = SER }
 			TUR_788 = { add_core = SER }
@@ -663,24 +664,14 @@ political_decisions = {
 		picture = banda_oriental
 		potential = {
 			tag = BRZ
-			NOT = { has_country_flag = cisplatina_is_ours }
-			OR = {
-				government = absolute_monarchy
-				government = fascist_dictatorship
-			}
+			NOT = { has_country_flag = cisplatina_is_ours  }
+			is_greater_power = yes
 		}
 		
 		allow = {
 			nationalism_n_imperialism = 1
 			romanticism = 1
 			is_greater_power = yes
-			OR = {
-				government = fascist_dictatorship
-				AND = {
-					government = absolute_monarchy
-					war_policy = jingoism
-				}
-			}
 		}
 		
 		effect = {
@@ -702,16 +693,16 @@ political_decisions = {
 		}
 
 		ai_will_do = {
-			factor = 0
+			factor = 1
 		}
 	}
-
+	
 	rio_da_prata = {
 		picture = rhodesia_charter
 		potential = {
 			tag = BRZ
 			NOT = { has_country_flag = prata_is_ours }
-			government = fascist_dictatorship
+			is_greater_power = yes
 		}
 		
 		allow = {
@@ -745,7 +736,78 @@ political_decisions = {
 		}
 
 		ai_will_do = {
-			factor = 0
+			factor = 1
+		}
+	}
+	
+	rename_uruguay = {
+		picture = banda_oriental
+		potential = {
+			tag = BRZ
+			owns = 2344
+			owns = 2345
+			owns = 2346
+			owns = 2347
+			has_country_flag = cisplatina_is_ours
+			NOT = {
+				has_global_flag = brazil_has_renamed_cisplatina
+			}
+		}
+		
+		allow = {
+			owns = 2344
+		}
+		
+		effect = {
+			2344 = {
+				change_province_name = "Montevideu"
+				state_scope = {
+					change_region_name = "Cisplatina"
+				}
+			}
+			prestige = 5
+			set_global_flag = brazil_has_renamed_cisplatina
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	restore_uruguay = {
+		picture = banda_oriental
+		potential = {
+			OR = {
+				tag = URU
+				tag = ARG
+				tag = PRG
+				tag = LPL
+			}
+			has_global_flag = brazil_has_renamed_cisplatina
+			owns = 2344
+			owns = 2345
+			owns = 2346
+			owns = 2347
+		}
+		
+		allow = {
+			owns = 2344
+		}
+		
+		effect = {
+			2344 = {
+				change_province_name = "Montevideo"
+				state_scope = {
+					change_region_name = "Uruguay"
+				}
+			}
+			prestige = 5
+			BRZ = { prestige = -10 }
+			clr_global_flag = brazil_has_renamed_cisplatina
+		}
+		
+		ai_will_do = {
+			factor = 1
 		}
 	}
 	
@@ -1168,6 +1230,31 @@ political_decisions = {
 			860 = { remove_core = BUL }
 		}
 		ai_will_do = { factor = 1 }
+	}
+
+	claim_ulster = {
+		picture = ulster_scot
+		potential = {
+			tag = SCO
+			is_vassal = no
+			NOT = { has_country_flag = ulster_scot }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			revolution_n_counterrevolution = 1
+			war_policy = jingoism
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = ulster_scot
+			ENG_254 = { add_core = SCO }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	
 }

@@ -47,7 +47,7 @@
 	serfs = {
 		culture = slovak
 		religion = catholic
-		size = 80000
+		size = 70000
 	}
 	
 	serfs = {
@@ -179,7 +179,7 @@
 	artisans = {
 		culture = south_german
 		religion = catholic
-		size = 1100
+		size = 11100
 	}
 
 	soldiers = {
@@ -191,7 +191,7 @@
 	farmers = {
 		culture = south_german
 		religion = catholic
-		size = 13000  
+		size = 33000  
 	}
 }
 #Trencin (342540/85635 POPS)

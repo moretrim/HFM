@@ -409,12 +409,17 @@ political_decisions = {
 					}
 				}
 			}
-			year = 1900
+			OR = {
+				year = 1900
+				AND = {
+					tag = ENG
+					has_global_flag = sykes_picot
+				}
+			}
 		}
 		
 		allow = {
 			revolution_n_counterrevolution = 1
-			NOT = { rank = 1 }
 			war_with = TUR
 		}
 		
@@ -422,6 +427,26 @@ political_decisions = {
 			set_global_flag = arab_nationalism_encouraged
 			set_country_flag = friend_of_the_arabs
 			TUR = { country_event = 96100 }
+			TUR = {
+				release = HDJ
+			}
+			any_country = {
+				limit = {
+					tag = HDJ
+					exists = yes
+					is_vassal = no
+				}
+				create_alliance = THIS
+				military_access = THIS
+				relation = {
+					who = THIS
+					value = 200
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = 400
+				}
+			}
 		}
 	}
 

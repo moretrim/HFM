@@ -185,31 +185,31 @@
 	}
 
 	aristocrats = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 77.25
 	}
 
 	clergymen = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 77.25
 	}
 
 	artisans = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 206.0
 	}
 
 	soldiers = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 51.5
 	}
 
 	farmers = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 3708.0
 	}
@@ -277,31 +277,31 @@
 	}
 
 	aristocrats = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 51.5
 	}
 
 	clergymen = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 51.5
 	}
 
 	artisans = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 154.5
 	}
 
 	soldiers = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 51.5
 	}
 
 	farmers = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 2678.0
 	}

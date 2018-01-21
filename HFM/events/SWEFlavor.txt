@@ -787,6 +787,7 @@ country_event = {
 		relation = { who = SGF value = -50 }
 		relation = { who = RUS value = -50 }
 		relation = { who = GER value = -50 }
+		relation = { who = GCF value = -50 }
 		relation = { who = DEN value = 75 }
 		any_pop = {
 			scaled_consciousness = {
@@ -814,12 +815,14 @@ country_event = {
 			30 = { country_event = 36626 }
 			}
 		ai_chance = { factor = 0.7 }
+		3246 = { add_core = FRA }
 	}
 	
 	option = {
 		name = "EVTOPTB36623" 
 		3246 = { secede_province = FRA }
 		3246 = { remove_core = THIS }
+		3246 = { add_core = FRA }
 		relation = { who = FROM value = 50 }
 		treasury = 50000
 		FROM = { treasury = -50000 }
@@ -836,6 +839,7 @@ country_event = {
 		name = "EVTOPTC36623" 
 		ENG = { country_event = 36624 }
 		3246 = { remove_core = THIS }
+		3246 = { add_core = FRA }
 		relation = { who = FRA value = -100 }
 		ai_chance = {
 			factor = 0.1
@@ -865,6 +869,7 @@ country_event = {
 		name = "EVTOPTD36623" 
 		NET = { country_event = 36624 }
 		3246 = { remove_core = THIS }
+		3246 = { add_core = FRA }
 		relation = { who = FRA value = -100 }
 		ai_chance = {
 			factor = 0.05
@@ -892,6 +897,7 @@ country_event = {
 	option = {
 		name = "EVTOPTE36623" 
 		FRA = { country_event = 36627 }
+		3246 = { add_core = FRA }
 		relation = { who = FROM value = -200 }
 		badboy = 1
 		treasury = -50000

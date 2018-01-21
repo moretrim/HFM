@@ -29,8 +29,11 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = serfdom
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = primary_culture_only
+child_labor = child_labor_legal
+citizens_rights = primary_culture_only
 border_policy = open_borders
+centralization = federalism
+colonial_policy = no_colonies 
 
 set_country_flag = mahayana_country
 
@@ -46,10 +49,12 @@ upper_house = {
 }
 
 govt_flag = {
-	government = absolute_monarchy
-	flag = theocracy
+	government = hms_government
+	flag = democracy
+	
+	government = prussian_constitutionalism
+	flag = democracy
 }
-
 
 foreign_weapons = yes_foreign_weapons
 land_reform = yes_land_reform

@@ -64,7 +64,39 @@
 		size = 1800
 	}
 }
+#Ross River (4000/1000 POPS)
+8 = {
+	aristocrats = {
+		culture = native_american_minor
+		religion = animist
+		size = 10
+	}
 
+	clergymen = {
+		culture = native_american_minor
+		religion = animist
+		size = 25
+	}
+
+	artisans = {
+		culture = native_american_minor
+		religion = animist
+		size = 50
+	}
+
+	soldiers = {
+		culture = native_american_minor
+		religion = animist
+		size = 15
+	}
+
+	farmers = {
+		culture = native_american_minor
+		religion = animist
+		size = 900
+	}
+
+}
 #Northwest Territories & Keewatin Regions - 28000
 #uncolonized in 1836
 #Fort Simpson (2400/600 POPS)
@@ -111,7 +143,38 @@
 		size = 720
 	}
 }
+#Inuvik (4000/1000 POPS)
+10 = {
+	aristocrats = {
+		culture = native_american_minor
+		religion = animist
+		size = 10
+	}
 
+	clergymen = {
+		culture = native_american_minor
+		religion = animist
+		size = 25
+	}
+
+	artisans = {
+		culture = native_american_minor
+		religion = animist
+		size = 50
+	}
+
+	soldiers = {
+		culture = native_american_minor
+		religion = animist
+		size = 15
+	}
+
+	farmers = {
+		culture = native_american_minor
+		religion = animist
+		size = 900
+	}
+}
 #Echo Bay (4000/1000 POPS)
 11 = {
 	aristocrats = {
@@ -150,7 +213,44 @@
 		size = 150
 	}
 }
+#Reliance (2000/500 POPS)
+12 = {
+	aristocrats = {
+		culture = native_american_minor
+		religion = animist
+		size = 5
+	}
 
+	clergymen = {
+		culture = native_american_minor
+		religion = animist
+		size = 15
+	}
+
+	artisans = {
+		culture = native_american_minor
+		religion = animist
+		size = 25
+	}
+
+	soldiers = {
+		culture = native_american_minor
+		religion = animist
+		size = 5
+	}
+
+	farmers = {
+		culture = native_american_minor
+		religion = animist
+		size = 200
+	}
+
+	farmers = {
+		culture = inuit
+		religion = animist
+		size = 300
+	}
+}
 #Fort Resolution (2000/500 POPS)
 2596 = {
 	aristocrats = {
@@ -1483,7 +1583,7 @@
 	farmers = {
 		culture = anglo_canadian
 		religion = protestant
-		size = 10
+		size = 100
 	}
 
 	farmers = {
@@ -1767,7 +1867,7 @@
 	soldiers = {
 		culture = anglo_canadian
 		religion = protestant
-		size = 1100
+		size = 3100
 	}
 
 	farmers = {

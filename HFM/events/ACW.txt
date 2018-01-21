@@ -1,16 +1,17 @@
 #A House Divided - Set Up
 country_event = {
-	id = 160000
-	title = "EVTNAME160000"
-	desc = "EVTDESC160000"
-	picture = "abraham_speech"
-	
+	id = 16000
+	title = "EVTNAME16000"
+	desc = "EVTDESC16000"
+	major = yes
+	is_triggered_only = yes
 	trigger = {
 		tag = USA
 		OR = {
 			slavery = yes_slavery
 			slavery = freedom_of_womb
 		}
+		has_global_flag = csa_released
 		NOT = { has_global_flag = american_civil_war_has_happened }
 		has_country_flag = john_browns_raid
 		has_country_flag = dred_scott_decision
@@ -19,8 +20,13 @@ country_event = {
 			value = 0.4
 		}
 	}
-	
-	fire_only_once = yes
+
+	immediate = {
+		clr_country_flag = the_slavery_debate
+		CSA = { set_country_flag = the_slavery_debate }
+		set_global_flag = american_civil_war_has_happened
+		set_global_flag = acw_war_started
+	}
 	
 	mean_time_to_happen = {
 		months = 6
@@ -44,146 +50,85 @@ country_event = {
 		}
 	}
 	
-	immediate = { 
-		set_country_flag = civil_war_soon
-		release_vassal = CSA
-		CSA = { set_country_flag = unreleasable_country }
-	}
-	
-	option = {
-		name = "EVTOPTA160000"
-		CSA = {
-			political_reform = mandatory_service
-			political_reform = culture_voting_only
-			capital = 60
-			leadership = 80
-			treasury = 40000
-			
-			any_pop = { limit = { has_pop_culture = dixie } militancy = -9 }
-			random_list = {
-				25 = { add_country_modifier = { name = preparing_for_war duration = 210 } }
-				25 = { add_country_modifier = { name = preparing_for_war duration = 180 } }
-				25 = { add_country_modifier = { name = preparing_for_war duration = 150 } }
-				25 = { add_country_modifier = { name = preparing_for_war duration = 130 } }
-			}
-			any_owned = { limit = { port = yes } add_province_modifier = { name = war_economy_ships duration = 210 } }
-			any_owned = {
-				limit = {
-					OR = {
-						province_id = 146
-						province_id = 147
-						province_id = 148
-						province_id = 149
-						province_id = 150
-						province_id = 217
-						province_id = 218
-						province_id = 219
-						province_id = 220
-						province_id = 221
-						province_id = 222
-						province_id = 2146
-					}
-				}
-				secede_province = USA
-			}
-		}
-
-		diplomatic_influence = { who = CSA value = 400 }
-		relation = { who = CSA value = -400 }
-	}
-	
-	option = {
-		name = "EVTOPTB16000"
-		set_country_flag = civil_war_soon
-		CSA = {
-			political_reform = mandatory_service
-			political_reform = culture_voting_only
-			capital = 60
-			leadership = 30
-			treasury = 40000
-			any_pop = { limit = { has_pop_culture = dixie } militancy = -9 }
-			random_list = {
-				25 = { add_country_modifier = { name = preparing_for_war duration = 180 } }
-				25 = { add_country_modifier = { name = preparing_for_war duration = 150 } }
-				25 = { add_country_modifier = { name = preparing_for_war duration = 120 } }
-				25 = { add_country_modifier = { name = preparing_for_war duration = 100 } }
-			}
-			any_owned = { limit = { port = yes } add_province_modifier = { name = war_economy_ships duration = 210 } }
-			any_owned = {
-				limit = {
-					OR = {
-						province_id = 146
-						province_id = 147
-						province_id = 148
-						province_id = 149
-						province_id = 150
-						province_id = 217
-						province_id = 218
-						province_id = 219
-						province_id = 220
-						province_id = 221
-						province_id = 222
-						province_id = 2146
-					}
-				}
-				secede_province = USA
-			}
-		}
-		diplomatic_influence = { who = CSA value = 400 }
-		relation = { who = CSA value = -400 }
-		change_tag_no_core_switch = CSA
-	}
-}
-
-#A House Divided
-country_event = {
-	id = 16000
-	title = "EVTNAME16000"
-	desc = "EVTDESC16000"
-	major = yes
-	
-	trigger = {
-		tag = USA
-		NOT = { war_with = CSA }
-		NOT = { truce_with = CSA }
-		CSA = { exists = yes }
-		has_country_flag = civil_war_soon
-		OR = {
-			CSA = { NOT = { has_country_modifier = preparing_for_war } }
-			NOT = { is_our_vassal = CSA }
-		}
-		NOT = { has_global_flag = american_civil_war_has_happened }
-	}
-	
-	immediate = {
-		clr_country_flag = the_slavery_debate
-		clr_country_flag = civil_war_soon
-		set_global_flag = american_civil_war_has_happened
-		release_vassal = CSA
-		diplomatic_influence = { who = CSA value = -400 }
-		relation = { who = CSA value = -400 }
-		CSA = {
-			set_country_flag = the_slavery_debate
-			clr_country_flag = unreleasable_country
-			neutrality = yes
-		}
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
 	option = {
 		name = "EVTOPTA16000"
 		any_pop = {
 			consciousness = -7
 			militancy = -3
 		}
+		any_owned = {
+			limit = {
+				is_core = CSA
+				NOT = {
+					province_id = 146
+					province_id = 147
+					province_id = 148
+					province_id = 149
+					province_id = 150
+					province_id = 217
+					province_id = 218
+					province_id = 219
+					province_id = 220
+					province_id = 221
+					province_id = 222
+					province_id = 2146
+				}
+			}
+			secede_province = CSA
+		}
+		diplomatic_influence = {
+			who = CSA
+			value = -400
+		}			
+
 		war = {
 			target = CSA
 			attacker_goal = { casus_belli = civil_war }
 			defender_goal = { casus_belli = status_quo }
 		}
+	}
+	
+	option = {
+		name = "EVTOPTB16000"
+		any_pop = {
+			consciousness = -7
+			militancy = -3
+		}
+		any_owned = {
+			limit = {
+				is_core = CSA
+				NOT = {
+					province_id = 146
+					province_id = 147
+					province_id = 148
+					province_id = 149
+					province_id = 150
+					province_id = 217
+					province_id = 218
+					province_id = 219
+					province_id = 220
+					province_id = 221
+					province_id = 222
+					province_id = 2146
+				}
+			}
+			secede_province = CSA
+		}
+		diplomatic_influence = {
+			who = CSA
+			value = -400
+		}			
+		release_vassal = CSA
+		change_tag_no_core_switch = CSA
+		
+		USA = {
+			war = {
+				target = CSA
+				attacker_goal = { casus_belli = civil_war }
+				defender_goal = { casus_belli = status_quo }
+			}
+		}
+		set_global_flag = american_civil_war_has_happened
 	}
 }
 
@@ -227,6 +172,7 @@ country_event = {
 		}
 	}
 	immediate = {
+		set_country_flag = usa
 		set_country_flag = the_slavery_debate
 	}
 	option = {
@@ -307,6 +253,159 @@ country_event = {
 				value = reactionary
 				factor = 0.05
 			}
+		}
+	}
+}
+
+#Seceding CSA cores while in peace
+country_event = {
+	id = 16011
+	title = "EVTNAME16011"
+	desc = "EVTDESC16011"
+	major = yes
+	
+	trigger = {
+		tag = USA
+		OR = {
+			slavery = yes_slavery
+			slavery = freedom_of_womb
+		}
+		NOT = { has_global_flag = american_civil_war_has_happened }
+		has_country_flag = john_browns_raid
+		has_country_flag = dred_scott_decision
+		upper_house = {
+			ideology = liberal
+			value = 0.4
+		}
+	}
+
+	immediate = {
+		clr_country_flag = the_slavery_debate
+		CSA = { set_country_flag = the_slavery_debate }
+		set_global_flag = american_civil_war_has_happened
+		set_global_flag = csa_released
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 20
+			NOT = { year = 1845 }
+		}
+		modifier = {
+			factor = 10
+			year = 1845
+			NOT = { year = 1855 }
+		}
+		modifier = {
+			factor = 5
+			year = 1855
+			NOT = { year = 1860 }
+		}
+		modifier = {
+			factor = 0.25
+			year = 1861
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA16000"
+		set_country_flag = john_browns_raid
+		any_pop = {
+			limit = { has_pop_culture = dixie }
+			militancy = 1
+			consciousness = 2
+			ideology = {
+				value = reactionary
+				factor = 0.05
+			}
+		}
+		
+		remove_country_modifier = the_slavery_debate
+		
+		add_country_modifier = {
+				name = no_more_war
+				duration = 150
+		}
+		
+		any_owned = {
+			limit = {
+				is_core = CSA
+				NOT = {
+					province_id = 146
+					province_id = 147
+					province_id = 148
+					province_id = 149
+					province_id = 150
+					province_id = 217
+					province_id = 218
+					province_id = 219
+					province_id = 220
+					province_id = 221
+					province_id = 222
+					province_id = 2146
+				}
+			}
+			secede_province = CSA
+		}
+		
+		relation = {
+			who = CSA
+			value = 200
+		}
+		diplomatic_influence = {
+			who = CSA
+			value = 400
+		}			
+		military_access = CSA
+		create_alliance = CSA
+		badboy = -1
+		
+		CSA = {
+			ruling_party_ideology = conservative
+			political_reform = mandatory_service
+			political_reform = culture_voting_only
+			capital = 60
+			leadership = 80
+			treasury = 40000
+			small_arms = 300
+			cotton = 100
+			ammunition = 200
+			canned_food = 200
+			artillery = 100
+			wine = 200
+			liquor = 200
+			any_pop = { limit = { has_pop_culture = dixie } militancy = -9 }
+			random_pop = {
+				limit = {
+					pop_type = farmers
+					has_pop_culture = dixie
+				}
+				pop_type = soldiers
+			}
+			any_pop = {
+				limit = {
+					culture = dixie
+					type = soldiers
+				}
+				reduce_pop = 2.5
+			}
+			any_pop = {
+				limit = {
+					culture = texan
+					type = soldiers
+				}
+				reduce_pop = 2.5
+			}
+			add_country_modifier = {
+				name = no_more_war
+				duration = 150
+			}
+		}
+		capital = 2146
+		country_event = {id=16000 days = 150}
+		ai_chance = {
+			factor = 100
 		}
 	}
 }
@@ -3586,10 +3685,10 @@ province_event = {
 		owner = {
 			tag = USA
 			slavery = yes_slavery
+			state_n_government = 1
 			NOT = { has_global_flag = american_civil_war_has_happened }
 		}
 		state_scope = { is_slave = yes }
-		yes_slavery = 10
 		OR = {
 			average_consciousness = 6
 			AND = {
@@ -3628,6 +3727,13 @@ province_event = {
 					factor = 0.2
 				}
 				militancy = 1
+			}
+			any_pop = {
+				limit = {
+					culture = dixie
+					type = soldiers
+				}
+				reduce_pop = 1.5
 			}
 		}
 	}
@@ -4144,7 +4250,7 @@ country_event = {
 		random_owned = { limit = { any_pop = { has_pop_culture = texan } } owner = { add_accepted_culture = texan } }
 		random_owned = { limit = { any_pop = { has_pop_culture = dixie } } owner = { add_accepted_culture = dixie } }
 		remove_accepted_culture = afro_american
-		CSA = { all_core = { remove_core = CSA } }
+		CSA = { all_core = { remove_core = CSA fort = -3} }
 		any_pop = {
 			limit = {
 				has_pop_culture = dixie
@@ -4173,7 +4279,7 @@ country_event = {
 				factor = 0.8
 			}
 		}
-		
+		political_reform = federalism
 		ai_chance = { factor = 0.75 }
 	}
 }

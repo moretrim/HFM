@@ -545,7 +545,7 @@ political_decisions = {
 			any_country = {
 				limit = {
 					OR = {
-						tag = BRU
+						#tag = BRU
 						tag = SWK
 						tag = KTI
 						tag = KLM
@@ -621,9 +621,12 @@ political_decisions = {
 	}
 
 	sarawak_protectorate = {
-		picture = map_east_indies
+		picture = sarawak
 		potential = {
-			tag = ENG
+			OR = {
+				tag = ENG
+				tag = EIC
+			}
 			is_greater_power = yes
 			exists = SWK
 			NOT = { has_global_flag = sarawak_protectorate }
@@ -635,7 +638,7 @@ political_decisions = {
 			year = 1888
 			SWK = {
 				war = no
-				in_sphere = ENG
+				in_sphere = THIS
 				OR = {
 					government = absolute_monarchy
 					government = prussian_constitutionalism
@@ -648,7 +651,7 @@ political_decisions = {
 			prestige = 5
 			set_global_flag = sarawak_protectorate
 			SWK = { civilized = no }
-			SWK = { annex_to = ENG }
+			SWK = { annex_to = THIS }
 			SWK = { tech_school = unciv_tech_school }
 		}
 
@@ -660,7 +663,10 @@ political_decisions = {
 	north_borneo_company = {
 		picture = map_east_indies
 		potential = {
-			tag = ENG
+			OR = {
+				tag = ENG
+				tag = EIC
+			}
 			is_greater_power = yes
 			nationalism_n_imperialism = 1
 			NOT = { has_country_flag = north_borneo_company }
@@ -728,6 +734,10 @@ political_decisions = {
 					secede_province = THIS
 				}
 			}
+		}
+		
+		ai_will_do = {
+			factor = 1
 		}
 	}
 	
@@ -1017,16 +1027,19 @@ political_decisions = {
 			has_global_flag = berlin_conference
 			owns = 1368
 			CHK = { exists = yes ai = yes vassal_of = SIA }
-			SIA = { ai = yes neighbour = FRA has_recently_lost_war = yes }
-			truce_with = SIA
+			OR = {
+				AND = {
+					SIA = { ai = yes neighbour = FRA has_recently_lost_war = yes }
+					truce_with = SIA
+				}
+				ai = yes
+			}
 			NOT = { has_country_flag = champassak_annexed }
 		}
 		
 		allow = {
 			war = no
 			has_recently_lost_war = no
-			truce_with = SIA
-			SIA = { neighbour = FRA has_recently_lost_war = yes }
 		}
 		
 		effect = {
@@ -1043,6 +1056,7 @@ political_decisions = {
 			is_greater_power = yes
 			tag = FRA
 			NOT = { has_country_flag = negotiate_unequal_treaty }
+			NOT = { has_country_flag = tonkin_campaign }
 			DAI = {
 				capital = 1369
 				civilized = no
@@ -1156,6 +1170,11 @@ political_decisions = {
 				owned_by = THIS
 				is_colonial = yes
 			}
+			1369 = {
+				owned_by = THIS
+				is_colonial = yes
+			}
+			DAI = { exists = no }
 			NOT = { has_country_flag = created_french_indochina }
 		}
 		
@@ -1191,8 +1210,11 @@ political_decisions = {
 					civilized = no
 				}
 				relation = { who = THIS value = -100 }
-			}	
+			}
+			DAI = { government = colonial_company }
 		}
+		
+		ai_will_do = { factor = 1 }
 	}
 	
 	form_laos = {
@@ -1323,6 +1345,7 @@ political_decisions = {
 		potential = {
 			owns = 2537
 			owns = 1531
+			NOT = { tag = GER }
 			OR = {
 				AND = {
 					OR = {
@@ -1530,7 +1553,6 @@ political_decisions = {
 		
 		ai_will_do = {
 			factor = 1 
-			modifier = { factor = 0 tag = GER }
 		}
 	}
 }

@@ -77,7 +77,7 @@ country_event = {
 		relation = { who = RUS value = -100 }
 		leave_alliance = RUS
 		ai_chance = {
-			factor = 95
+			factor = 99
 		}
 	}
 	
@@ -86,7 +86,7 @@ country_event = {
 		prestige = -50
 		relation = { who = TUR value = -50 }
 		ai_chance = {
-			factor = 5
+			factor = 1
 		}
 	}
 }
@@ -267,13 +267,13 @@ country_event = {
 		ai_chance = {
 			factor = 10
 			modifier = {
-				factor = 4
+				factor = 2
 				NOT = {
 					relation = { who = TUR value = 0 }
 				}
 			}
 			modifier = {
-				factor = 4
+				factor = 10
 				alliance_with = RUS
 			}
 		}
@@ -289,7 +289,7 @@ country_event = {
 		leave_alliance = RUS
 		create_alliance = TUR
 		ai_chance = {
-			factor = 80
+			factor = 90
 		}
 	}
 }
@@ -453,6 +453,176 @@ country_event = {
 			limit = { region = TUR_885 }
 			secede_province = RUS
 		}
+		
+		# Any Montenegran lands given to Montenegro, it is freed if vassaled
+		any_owned = {
+			limit = { is_core = MON }
+			secede_province = MON
+		}
+		random_country = {
+			limit = {
+				tag = MON
+				vassal_of = TUR
+			}
+			TUR = { release_vassal = MON }
+		}
+		
+		# Give Bulgaria, Eastern Rumelia and Silestre to Bulgaria, free it if vassaled
+		random_country = {
+			limit = {
+				tag = BUL
+				vassal_of = TUR
+			}
+			TUR = { release_vassal = BUL }
+		}
+		random_owned = {
+			limit = {
+				province_id = 806 #Kavala
+				owned_by = TUR
+			}
+			state_scope = {
+				any_owned = {
+					secede_province = BUL
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				province_id = 823 #Kavala
+				owned_by = TUR
+			}
+			state_scope = {
+				any_owned = {
+					secede_province = BUL
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				province_id = 817 #Burgas
+				owned_by = TUR
+			}
+			state_scope = {
+				any_owned = {
+					secede_province = BUL
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				province_id = 812 #Pleven
+				owned_by = TUR
+			}
+			state_scope = {
+				any_owned = {
+					secede_province = BUL
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				province_id = 818 #Silistre
+				owned_by = TUR
+			}
+			secede_province = BUL
+		}
+		
+		# Free Serbia if it is owned, return Nis, Leskovac
+		random_owned = {
+			limit = {
+				province_id = 794 #Belgrade
+				owned_by = TUR
+			}
+			state_scope = {
+				any_owned = {
+					secede_province = SER
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				province_id = 798 #Nis
+				owned_by = TUR
+			}
+			secede_province = SER
+		}
+		random_owned = {
+			limit = {
+				province_id = 799 #Leskovac
+				owned_by = TUR
+			}
+			secede_province = SER
+		}
+		random_country = {
+			limit = {
+				tag = SER
+				vassal_of = TUR
+			}
+			TUR = { release_vassal = SER }
+		}
+		
+		# Thessalia, S. Macedonia returned to Greece
+		random_country = {
+			limit = {
+				tag = GRE
+				vassal_of = TUR
+			}
+			TUR = { release_vassal = GRE }
+		}
+		random_owned = {
+			limit = {
+				province_id = 834 #Athens
+				owned_by = TUR
+				NOT = { exists = GRE }
+			}
+			owner = { release_vassal = GRE }
+		}
+		random_owned = {
+			limit = {
+				province_id = 819 #Florina
+				owned_by = TUR
+				824 = { owned_by = GRE }
+			}
+			state_scope = {
+				any_owned = {
+					secede_province = GRE
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				province_id = 832 #Volos
+				owned_by = TUR
+			}
+			state_scope = {
+				any_owned = {
+					limit = { NOT = { province_id = 824 } } #Janina
+					secede_province = GRE
+				}
+			}
+		}	
+		random_owned = {
+			limit = {
+				province_id = 842 #Patras
+				owned_by = TUR
+			}
+			state_scope = {
+				any_owned = {
+					secede_province = GRE
+				}
+			}
+		}
+		
+		#If Samos does not exist, release as vassal
+		random_owned = {
+			limit = {
+				province_id = 843 #Chios & Samos
+				owned_by = TUR
+				NOT = { exists = SAM }
+			}
+			owner = { release_vassal = SAM }
+		}
+		
 		FRA = {
 			prestige = -20
 			relation = { who = RUS value = -100 }
@@ -491,6 +661,43 @@ country_event = {
 			military_access = TUR
 			diplomatic_influence = { who = TUR value = 100 }
 			relation = { who = TUR value = 200 }
+			
+			relation = { who = SER value = 400 }
+			diplomatic_influence = { who = SER value = 200 }
+			create_alliance = SER
+			
+			relation = { who = BUL value = 400 }
+			diplomatic_influence = { who = BUL value = 200 }
+			create_alliance = BUL
+			
+			relation = { who = MON value = 400 }
+			diplomatic_influence = { who = MON value = 200 }
+			create_alliance = MON
+			
+			relation = { who = ROM value = 400 }
+			diplomatic_influence = { who = ROM value = 200 }
+			create_alliance = ROM
+		}
+		ROM = {
+			add_country_modifier = {
+				name = nationalist_balkans
+				duration = -1
+			}
+			all_core = {
+				remove_core = WAL
+			}
+		}
+		BUL = {
+			add_country_modifier = {
+				name = nationalist_balkans
+				duration = -1
+			}
+		}
+		GRE = {
+			add_country_modifier = {
+				name = nationalist_balkans
+				duration = -1
+			}
 		}
 		soldiers = {
 			limit = { is_primary_culture = yes }
@@ -547,22 +754,31 @@ country_event = {
 					province_id = 678
 				}
 			}
-			secede_province = ROM
+			add_core = ROM
+			add_core = URP
+			secede_province = URP
 		}
-		relation = { who = ROM value = 200 }
-		diplomatic_influence = { who = ROM value = 200 }
-		ROM = {
+		relation = { who = URP value = 200 }
+		diplomatic_influence = { who = URP value = 200 }
+		URP = {
 			any_pop = { militancy = -8 }
 		}
+		TUR = {
+			release_vassal = URP
+		}
+		675 = { remove_core = URP }
+		674 = { remove_core = URP }
+		818 = { remove_core = URP }
+		war_exhaustion = -10
 		ai_chance = {
-			factor = 90
+			factor = 99
 		}
 	}
 	
 	option = {
 		name = "EVT97510OPTB"
 		ROM = { all_core = { remove_core = RUS } }
-		relation = { who = ROM value = -100 }
+		relation = { who = URP value = -100 }
 		badboy = 10
 		any_greater_power = {
 			limit = {
@@ -590,7 +806,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 10
+			factor = 1
 			modifier = {
 				factor = 0
 				badboy = 0.6
@@ -643,12 +859,16 @@ country_event = {
 			TUR = { num_of_revolts = 5 }
 		}
 		modifier = {
-			factor = 0.5
+			factor = 1.5
 			year = 1860
 		}
 		modifier = {
-			factor = 0.5
+			factor = 0.4
 			year = 1870
+		}
+		modifier = {
+			factor = 0.1
+			year = 1877
 		}
 	}
 

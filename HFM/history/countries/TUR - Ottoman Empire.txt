@@ -34,8 +34,12 @@ school_reforms = no_schools
 conscription = mandatory_service
 debt_law = serfdom
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = primary_culture_only
+child_labor = child_labor_legal
+citizens_rights = primary_culture_only
 border_policy = closed_borders
+centralization = regionalism
+colonial_policy = settlement 
+
 
 ruling_party = TUR_conservative
 upper_house = {
@@ -53,6 +57,11 @@ set_country_flag = christian_oppression
 set_country_flag = istanbul_not_renamed
 
 decision = ottoman_1836_setup
+decision = turkish_rename_epirus
+decision = turkish_rename_rumelia
+decision = turkish_rename_s_macedonia
+decision = turkish_rename_e_macedonia
+decision = turkish_rename_n_macedonia
 
 # Technologies
 post_napoleonic_thought = 1
@@ -74,6 +83,8 @@ malthusian_thought = 1
 basic_chemistry = 1
 
 # Inventions
+test_irregular = yes
+dragoon_activation = yes
 
 #Starting Consciousness
 consciousness = 1

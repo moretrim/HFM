@@ -27,6 +27,7 @@ unemployment_subsidies = no_subsidies
 pensions = no_pensions
 school_reforms = no_schools
 
+
 #New Reforms
 conscription = no_draft
 debt_law = peonage
@@ -34,6 +35,8 @@ penal_system = capital_punishment
 child_labor = child_labor_legal
 citizens_rights = culture_voting_only
 border_policy = open_borders
+centralization = confederalism
+colonial_policy = no_colonies 
 
 set_country_flag = catholic_country
 

@@ -13,7 +13,7 @@ cruiser = {
 	#Core Abilities
 	priority = 12
 	max_strength = 100
-	default_organisation = 30
+	default_organisation = 35
 	maximum_speed = 12
 	weighted_value = 8.0
 	floating_flag = yes
@@ -34,7 +34,7 @@ cruiser = {
 	
 	supply_consumption = 1.0
 	supply_cost = {
-		steamer_convoy = 0.16
+		steamer_convoy = 0.3
 		artillery = 0.1
 		canned_food = 0.6
 		fuel = 1.0

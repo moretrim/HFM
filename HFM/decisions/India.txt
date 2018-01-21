@@ -179,6 +179,9 @@ political_decisions = {
 		effect = {
 			set_global_flag = rajputana_formed
 			prestige = 10
+			ENG = { 
+				release = RAJ
+			}
 			change_tag = RAJ
 			ENG_1264 = { add_core = RAJ }
 			random_country = {
@@ -271,7 +274,14 @@ political_decisions = {
 	form_rajputana_outside = {
 		picture = form_rajputana
         potential = {
+			tag = ENG
 			civilized = yes
+			OR = {
+				NOT = { exists = EIC }
+				EIC = {
+					is_vassal = no
+				}
+			}
 			NOT = { has_country_flag = mughal_reborn }
 			NOT = { primary_culture = rajput }
 			NOT = { has_global_flag = rajputana_formed }
@@ -412,43 +422,41 @@ political_decisions = {
 				country_event = 11101
 			}
 			RAJ = { tech_school = unciv_tech_school }
+			RAJ = { 
+				economic_reform = yes_land_reform
+				military_reform = yes_foreign_training
+				military_reform = yes_foreign_weapons
+				military_reform = yes_foreign_officers
+				civilized = yes
+				military_access = ENG
+				government = colonial_company
+			}
+			1268 = { secede_province = RAJ }
+			1269 = { secede_province = RAJ }
+			1264 = { secede_province = RAJ }
+			1266 = { secede_province = RAJ }
+			1265 = { secede_province = RAJ }
+			1267 = { secede_province = RAJ }
+			ENG = {
+				military_access = RAJ
+				diplomatic_influence = {
+					who = RAJ
+					value = 400
+				}
+				create_alliance = RAJ
+				create_vassal = RAJ
+			}
+			any_pop = {
+				limit = { 
+					location = { is_core = HND }
+				}
+				militancy = -3
+				consciousness = -3
+			}
 		}
 		
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				factor = 0
-				tag = ENG
-				OR = {
-					BIK = { exists = no }
-					BIK = { vassal_of = THIS }
-				}
-				OR = {
-					JAI = { exists = no }
-					JAI = { vassal_of = THIS }
-				}
-				OR = {
-					JAS = { exists = no }
-					JAS = { vassal_of = THIS }
-				}
-				OR = {
-					MEW = { exists = no }
-					MEW = { vassal_of = THIS }
-				}
-				OR = {
-					JOD = { exists = no }
-					JOD = { vassal_of = THIS }
-				}
-				NOT = {
-					AND = {
-						BIK = { exists = no }
-						JAI = { exists = no }
-						JAS = { exists = no }
-						MEW = { exists = no }
-						JOD = { exists = no }
-					}
-				}
-			}
 		}
 	}
 	
@@ -782,13 +790,15 @@ political_decisions = {
 			vassal_of = ENG
 			NOT = { has_country_flag = mughal_independence }
 			NOT = { has_country_flag = mughal_reborn }
-			NOT = { has_global_flag = eic_spawned }
 		}
 		
 		allow = {
 			vassal_of = ENG
-			any_neighbor_country = { has_country_flag = sepoy_rebellion }
-			1236 = { any_neighbor_province = { owned_by = ENG average_militancy = 7 } }
+			has_global_flag = sepoy_rebellion
+			OR = { 
+				1236 = { any_neighbor_province = { owned_by = EIC average_militancy = 5 } }
+				1236 = { any_neighbor_province = { owned_by = ENG } }
+			}
 		}
 		
 		effect = {	
@@ -803,6 +813,14 @@ political_decisions = {
 				background = school_of_the_bayonet
 			}
 			leave_alliance = ENG
+			any_country = {
+				limit = {
+					primary_culture = british
+					owns = 1251
+					exists = yes
+				}
+				country_event = 90043
+			}
 			ENG = {
 				release_vassal = MUG 
 				diplomatic_influence = { who = THIS value = -400 }

@@ -12,14 +12,12 @@ country_event = {
 		owns = 1380
 		civilized = no
 		is_vassal = no
-		part_of_sphere = no
 		FRA = {
 			war = no
 			is_disarmed = no
 			nationalism_n_imperialism = 1
 			is_greater_power = yes
 			NOT = {
-				is_sphere_leader_of = THIS
 				alliance_with = THIS
 				truce_with = THIS
 				war_exhaustion = 20
@@ -30,7 +28,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 24
+		months = 20
 		modifier = {
 			factor = 0.5
 			has_global_flag = berlin_conference
@@ -64,7 +62,7 @@ country_event = {
 		name = "EVT95640OPTA"
 		FROM = { country_event = 95641 }
 		ai_chance = {
-			factor = 90
+			factor = 99
 		}
 	}
 	
@@ -81,7 +79,7 @@ country_event = {
 			value = 100
 		}
 		ai_chance = {
-			factor = 10
+			factor = 1
 		}
 	}
 }
@@ -236,7 +234,7 @@ country_event = {
 		name = "EVT95645OPTA"
 		FRA = { country_event = 95646 }
 		ai_chance = {
-			factor = 80
+			factor = 95
 		}
 	}
 	
@@ -264,7 +262,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 20
+			factor = 5
 		}
 	}
 }
@@ -436,11 +434,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 12
-		modifier = {
-			factor = 2
-			ai = no
-		}
+		months = 6
 		
 		modifier = {
 			factor = 0.75
@@ -805,7 +799,17 @@ country_event = {
 		relation = { who = SIA value = 200 }
 		diplomatic_influence = { who = SIA value = 100 }
 		diplomatic_influence = { who = LUA value = 200 }
-		diplomatic_influence = { who = WIA value = 200 }			
+		diplomatic_influence = { who = WIA value = 200 }	
+		any_owned = {
+			limit = {
+				OR = {
+					region = SIA_1358
+					region = SIA_1392
+					region = SIA_1355
+				}
+				secede_province = FROM
+			}
+		}
 	}
 }
 
@@ -989,7 +993,18 @@ country_event = {
 	}
 	
 	fire_only_once = yes
-	mean_time_to_happen = { months = 36 }
+	mean_time_to_happen = { 
+		months = 36 
+		modifier = {
+			factor = 0.9
+			year = 1885
+		}
+		
+		modifier = {
+			factor = 0.2
+			year = 1890
+		}
+	}
 	
 	option = {
 		name = "EVT95660OPTA"

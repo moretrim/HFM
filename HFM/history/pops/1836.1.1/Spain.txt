@@ -25,10 +25,21 @@
 		size = 2000
 	}
 
+	clergymen = {
+		culture = galician
+		religion = catholic
+		size = 1000
+	}
+
 	artisans = {
 		culture = spanish
 		religion = catholic
-		size = 6350
+		size = 2350
+	}
+        artisans = {
+		culture = galician
+		religion = catholic
+		size = 4350
 	}
 
 	soldiers = {
@@ -38,9 +49,14 @@
 	}
 
 	farmers = {
+		culture = galician
+		religion = catholic
+		size = 104350
+	}
+        farmers = {
 		culture = spanish
 		religion = catholic
-		size = 154350
+		size = 40350
 	}
 }
 #Oviedo (448000/112000 POPS)
@@ -111,7 +127,7 @@
 	}
 
 	artisans = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 4000
 	}
@@ -123,9 +139,14 @@
 	}
 
 	farmers = {
+		culture = galician
+		religion = catholic
+		size = 45500
+	}
+        farmers = {
 		culture = spanish
 		religion = catholic
-		size = 75500
+		size = 30500
 	}
 
 }
@@ -2195,3 +2216,5 @@
 	}
 
 }
+
+

@@ -84,6 +84,7 @@ political_decisions = {
 		
 		effect = {
 			badboy = 25
+			set_country_flag = swiss_neutrality_violator
 			SWI = {
 				set_country_flag = neutrality_violated
 				remove_country_modifier = neutrality
@@ -106,6 +107,25 @@ political_decisions = {
 					months = 60
 				}
 			}
+			casus_belli = {
+				target = SWI
+				type = conquest
+				months = 60
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { 
+					tag = FRA
+					owns = 574
+					owns = 392
+					owns = 397
+					owns = 466
+				}
+			}
 		}
 	}
 	
@@ -123,11 +143,11 @@ political_decisions = {
 				sphere_owner = { military_access = THIS }
 				AND = {
 					num_of_allies = 1
-					NOT = { NEH = { alliance_with = THIS } }
+					NOT = { NCT = { alliance_with = THIS } }
 				}
 				AND = {
 					num_of_allies = 2
-					NEH = { exists = yes alliance_with = THIS }
+					NCT = { exists = yes alliance_with = THIS }
 				}
 				war = yes
 			}
@@ -158,11 +178,11 @@ political_decisions = {
 					sphere_owner = { military_access = SWI }
 					AND = {
 						num_of_allies = 1
-						NOT = { NEH = { alliance_with = SWI } }
+						NOT = { NCT = { alliance_with = SWI } }
 					}
 					AND = {
 						num_of_allies = 2
-						NEH = { exists = yes alliance_with = SWI }
+						NCT = { exists = yes alliance_with = SWI }
 					}
 					war = yes
 				}
@@ -182,5 +202,128 @@ political_decisions = {
 			any_country = { limit = { war_with = SWI } end_war = SWI }
 			any_country = { limit = { military_access = SWI NOT = { vassal_of = SWI } } end_military_access = SWI }
 		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	swiss_partition = {
+		picture = declare_neutrality
+		potential = {
+			SWI = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = { vassal_of = THIS }
+					}
+				}
+			}
+			NOT = { tag = SWI }
+			has_country_flag = swiss_neutrality_violator
+			is_greater_power = yes
+			NOT = { has_country_flag = swiss_partition }
+		}
+		
+		allow = {
+			war = no
+			NOT = { badboy = 25 }
+		}
+		
+		effect = {
+			set_country_flag = swiss_partition
+			random_owned = {
+				limit = {
+					owner = { is_culture_group = french }
+				}
+				owner = {
+					add_accepted_culture = swiss_french 
+					any_owned = {
+						limit = { 
+							is_core = SWI
+							region = SWI_607
+						}
+						add_province_modifier = {
+							name = core_integration
+							duration = -1
+						}
+					}
+				}
+			}
+			
+			random_owned = {
+				limit = {
+					owner = { is_culture_group = italian }
+				}
+				owner = { 
+					add_accepted_culture = swiss_italian
+					add_accepted_culture = romansh
+					any_owned = {
+						limit = {
+							is_core = SWI
+							region = SWI_2568
+						}
+						add_province_modifier = {
+							name = core_integration
+							duration = -1
+						}
+					}
+				}
+			}
+			
+			random_owned = {
+				limit = {
+					owner = { is_culture_group = germanic }
+				}
+				owner = { 
+					add_accepted_culture = swiss_german
+					any_owned = {
+						limit = { 
+							is_core = SWI
+							region = SWI_603
+						}
+						add_province_modifier = {
+							name = core_integration
+							duration = -1
+						}
+					}
+				}
+			}
+			#French
+			random_country = {
+				limit = { tag = FRA exists = yes NOT = { has_country_flag = swiss_neutrality_violator } }
+				country_event = 500060
+			}
+			#Italian
+			random_country = {
+				limit = { tag = ITA exists = yes owns = 722 NOT = { has_country_flag = swiss_neutrality_violator } }
+				country_event = 500060
+			}
+			random_country = {
+				limit = { tag = SAR exists = yes owns = 722 NOT = { has_country_flag = swiss_neutrality_violator } }
+				country_event = 500060
+			}
+			random_country = {
+				limit = { tag = SVY exists = yes owns = 722 NOT = { has_country_flag = swiss_neutrality_violator } }
+				country_event = 500060
+			}
+			#German
+			random_country = {
+				limit = { tag = GER exists = yes owns = 587 NOT = { has_country_flag = swiss_neutrality_violator } }
+				country_event = 500060
+			}
+			random_country = {
+				limit = { tag = SGF exists = yes owns = 587 NOT = { has_country_flag = swiss_neutrality_violator } }
+				country_event = 500060
+			}
+			random_country = {
+				limit = { tag = NGF exists = yes owns = 587 NOT = { has_country_flag = swiss_neutrality_violator } }
+				country_event = 500060
+			}
+			random_country = {
+				limit = { tag = GCF exists = yes owns = 587 NOT = { has_country_flag = swiss_neutrality_violator } }
+				country_event = 500060
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
 	}
 }

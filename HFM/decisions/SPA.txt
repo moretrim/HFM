@@ -2,7 +2,11 @@ political_decisions = {
 	establish_la_guardia_civil = {
 		picture = establish_la_guardia_civil
 		potential = {
-			tag = SPA
+			OR = {
+				tag = SPA
+				tag = SPC
+				tag = IBR
+			}
 			OR = {
 				government = prussian_constitutionalism
 				government = hms_government
@@ -26,7 +30,10 @@ political_decisions = {
 	confiscations_of_mendizabal = {
 		picture = confiscations_of_mendizabal
 		potential = {
-			tag = SPA
+			OR = {
+				tag = SPA
+				tag = IBR
+			}
 			NOT = {
 				has_country_flag = mendizabal_confiscated
 			}
@@ -98,8 +105,9 @@ political_decisions = {
 	picture = falangist_doctrine
 		potential = {
 			OR = {
-			tag = SPA
-			tag = SPC
+				tag = SPA
+				tag = SPC
+				tag = IBR
 			}
 			government = fascist_dictatorship
 			NOT = { has_country_flag = falangist_doctrine }
@@ -113,6 +121,7 @@ political_decisions = {
 			set_country_flag = falangist_doctrine
 			remove_accepted_culture = basque
 			remove_accepted_culture = catalan
+			remove_accepted_culture = galician
 			badboy = 25
 			460 = { add_core = THIS }
 			457 = { add_core = THIS } 
@@ -206,6 +215,7 @@ political_decisions = {
 			OR = {
 				tag = SPA
 				tag = SPC
+				tag = IBR
 			}
 			OR = {
 				government = absolute_monarchy
@@ -247,6 +257,7 @@ political_decisions = {
 			OR = {
 				tag = SPA
 				tag = SPC
+				tag = IBR
 			}
 			OR = {
 				government = absolute_monarchy

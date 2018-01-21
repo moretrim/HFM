@@ -1,7 +1,7 @@
-capital = 14
+capital = 13
 primary_culture = anglo_canadian
 religion = protestant
-government = democracy
+government = hms_government
 plurality = 0.5
 nationalvalue = nv_liberty
 literacy = 0.6
@@ -35,6 +35,8 @@ penal_system = capital_punishment
 child_labor = child_labor_legal
 citizens_rights = culture_voting_only
 border_policy = quota_immigration
+centralization = unitary
+colonial_policy = no_colonies 
 
 set_country_flag = protestant_country
 

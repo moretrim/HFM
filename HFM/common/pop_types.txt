@@ -81,19 +81,78 @@ promotion_chance = {
 		}
 	}
 
-
 	modifier = {
 		factor = -0.1
 		is_state_religion = no
 	}
+	
 	modifier = {
 		factor = -0.1
+		is_primary_culture = no
+		is_accepted_culture = no
 		state_scope = { is_colonial = yes }
+		country = {
+			NOT = { colonial_policy = settlement }
+		}
 	}
+	
+	modifier = {
+		factor = 2.0
+		state_scope = { is_colonial = yes }
+		country = {
+			colonial_policy = settlement
+			primary_culture = russian
+		}
+		location = { 
+			is_colonial = yes 
+			is_overseas = no
+			NOT = { is_core = THIS }
+			NOT = { is_core = CRI }
+			total_pops = 55000
+			#culture = russian
+		}
+		year = 1860
+	}
+	
+	modifier = {
+		factor = 2
+		state_scope = { is_colonial = yes }
+		country = {
+			colonial_policy = settlement
+			primary_culture = russian
+		}
+		location = { 
+			is_colonial = yes 
+			NOT = { is_core = THIS }
+			NOT = { is_core = CRI }
+			total_pops = 75000
+			culture = russian
+		}
+		year = 1860
+	}
+	
+	modifier = {
+		factor = 2.5
+		state_scope = { is_colonial = yes }
+		country = {
+			colonial_policy = settlement
+			primary_culture = russian
+		}
+		location = { 
+			is_colonial = yes 
+			NOT = { is_core = THIS }
+			NOT = { is_core = CRI }
+			total_pops = 125000
+			culture = russian
+		}
+		year = 1880
+	}
+	
 	modifier = {
 		factor = -0.1
 		not = { culture = this }
 	}
+	
 	modifier = {
 		factor = -0.1
 		country = { 
@@ -111,6 +170,18 @@ promotion_chance = {
 	modifier = {
 		factor = -100
 		location = { NOT = { controlled_by = owner } }
+	}
+	
+	modifier = {
+		factor = 0.1
+		location = {
+			is_colonial = yes
+			is_core = ALD
+			is_core = FRA
+		}
+		country = {
+			primary_culture = french
+		}
 	}
 }
 
@@ -325,6 +396,77 @@ migration_chance = {
 	}
 	
 	modifier = {
+		factor = 100
+		state_scope = { is_colonial = yes }
+		THIS = { is_culture_group = east_slavic }
+		location = { 
+			is_colonial = yes 
+			NOT = { is_core = THIS }
+			culture = russian
+			total_pops = 100000
+		}
+		country = { 	
+			OR = { 
+				colonial_policy = settlement 
+				border_policy = closed_borders
+			}
+			primary_culture = russian
+		}
+	}
+	
+	modifier = {
+		factor = 0.15
+		country = { colonial_policy = settlement }
+	}
+	
+	modifier = {
+		factor = 0.25
+		THIS = { 
+			is_culture_group = germanic 
+		}
+		location = { 
+			controlled_by = owner
+			NOT = {
+				state_id = 701
+				state_id = 682
+				state_id = 690
+				state_id = 695
+				state_id = 354
+				state_id = 349
+				state_id = 706
+			}
+		}
+		country = { has_country_flag = prussian_settlement_commission }
+	}
+	
+	modifier = {
+		factor = 0.4
+		THIS = { 
+			is_culture_group = polish_culture_group
+		}
+		#NOT = { unemployment = 0.1 }
+		location = { 
+			AND = {
+				controlled_by = owner
+				OR = {
+					state_id = 701
+					state_id = 682
+					state_id = 690
+					state_id = 695
+				}
+			}
+		}
+		country = { 
+			AND = { 
+				is_greater_power = yes
+				is_culture_group = germanic
+				NOT = { war_exhaustion = 1 }
+				has_country_flag = ruhr_polen
+			}
+		}
+	}
+
+	modifier = {
 		factor = -100
 		OR = {
 			not = { location = { total_pops = 500 } }
@@ -356,41 +498,92 @@ migration_chance = {
 	modifier = {
 		factor = -0.8
 		country = { has_country_flag = preparations_to_kill }
+		is_primary_culture = no
+		is_accepted_culture = no
 	}
 
 	modifier = {
 		factor = -0.3
 		state_scope = { has_factories = yes }
 	}
+	
+	modifier = {
+		factor = -0.3
+		THIS = { 
+			has_pop_culture = scottish
+		}
+		location = { 
+			controlled_by = owner
+		}
+		country = { 
+			primary_culture = british
+			NOT = { war_exhaustion = 1 }
+		}
+	}
 
 	group = {
 		modifier = {
 			factor = 0.2
 			unemployment = 0.1
+			NOT = { unemployment = 1 }
 		}
 		
 		modifier = {
 			factor = 0.3
 			location = { controlled_by = owner }
 			unemployment = 0.2
+			NOT = { unemployment = 1 }
 		}
 		
 		modifier = {
 			factor = 0.4
 			location = { controlled_by = owner }
 			unemployment = 0.3
+			NOT = { unemployment = 1 }
 		}
 		
 		modifier = {
 			factor = 0.5
 			location = { controlled_by = owner }
 			unemployment = 0.4
+			NOT = { unemployment = 1 }
 		}
 		
 		modifier = {
 			factor = 0.6
 			location = { controlled_by = owner }
 			unemployment = 0.5
+			NOT = { unemployment = 1 }
+		}
+	}
+	
+	modifier = {
+		factor = 0.5
+		THIS = { has_pop_culture = afro_american }
+		country = { 
+			slavery = no_slavery 
+		}
+	}
+	
+		
+	modifier = {
+		factor = 10
+		THIS = { 
+			OR = {
+				has_pop_culture = north_german
+				has_pop_culture = south_german
+				has_pop_culture = swiss_german
+			}
+		}
+		location = { 
+			OR = {
+				state_id = 607
+				state_id = 2568
+			}
+			NOT = { province_id = 3250 }
+		}
+		country = { 
+			primary_culture = swiss_german
 		}
 	}
 }
@@ -401,9 +594,9 @@ colonialmigration_chance = {
 
 	modifier = {
 		factor = -0.5
-		OR = {
+		AND = { 
 			is_primary_culture = no
-			is_accepted_culture = no
+			is_accepted_culture  = no
 		}
 	}
 	
@@ -452,51 +645,112 @@ colonialmigration_chance = {
 	}
 	
 	modifier = {
-		factor = 0.2
+		factor = 0.1
 		country = { penal_system = colonial_transportation }
 	}
-
-	#modifier = {
-	#	factor = -0.3
-	#	state_scope = { has_factories = yes }
-	#}
-
+	
 	group = {
 		modifier = {
 			factor = 0.3
 			unemployment = 0.1
+			NOT = { unemployment = 1 }
 		}
 		
 		modifier = {
 			factor = 0.3
 			location = { controlled_by = owner }
 			unemployment = 0.2
+			NOT = { unemployment = 1 }
 		}
 		
 		modifier = {
 			factor = 0.3
 			location = { controlled_by = owner }
 			unemployment = 0.3
+			NOT = { unemployment = 1 }
 		}
 		
 		modifier = {
 			factor = 0.4
 			location = { controlled_by = owner }
 			unemployment = 0.4
+			NOT = { unemployment = 1 }
 		}
 		
 		modifier = {
 			factor = 0.5
 			location = { controlled_by = owner }
 			unemployment = 0.5
+			NOT = { unemployment = 1 }
 		}
 	}
+	
+	modifier = {
+		factor = 0.15
+		country = { 
+			colonial_policy = settlement
+			NOT = { primary_culture = russian }
+		}
+	}
+	
+	modifier = {
+		factor = 0.1
+		country = { 
+			colonial_policy = settlement
+			primary_culture = russian
+			NOT = { year = 1880 }
+		}
+	}
+
+	modifier = {
+		factor = 0.35
+		THIS = {
+			has_pop_culture = british
+		}
+		location = {
+			NOT = {
+				state_id = 254
+			}
+		}
+		country = { 
+			primary_culture = british
+		}
+	}
+	
+	modifier = {
+		factor = 0.70
+		THIS = { has_pop_culture = irish }
+		country = { 
+			primary_culture = british
+		}
+	}
+	
+	modifier = {
+		factor = 0.2
+		THIS = { is_culture_group = french }
+		country = { 
+			primary_culture = french
+		}
+	}
+	
+	modifier = {
+		factor = 0.2
+		THIS = { is_culture_group = italian }
+		country = { 
+			is_culture_group = italian
+		}
+	}
+
+	#modifier = {
+	#	factor = -0.3
+	#	state_scope = { has_factories = yes }
+	#}
 }
 
 #general emigration chance
 emigration_chance = {
-	factor = 0.5
-	
+	factor = 0.65
+		
 	modifier = {
 		factor = -2.0
 		OR = {
@@ -505,8 +759,18 @@ emigration_chance = {
 			location = { continent = australia_new_zealand }
 		}
 		country = {
+			NOT = { has_country_flag = preparations_to_kill }
 			has_country_flag = new_world_nation
 			government = democracy
+		}
+	}
+	
+	modifier = {
+		factor = -1
+		unemployment = 1
+		OR = {
+			is_accepted_culture = no
+			is_primary_culture = no
 		}
 	}
 	
@@ -596,6 +860,23 @@ emigration_chance = {
 		}
 	}
 		
+	modifier = {
+		factor = 1.5
+		AND = { 
+			is_primary_culture = no
+			is_accepted_culture  = no
+		}
+		country = { has_country_flag = preparations_to_kill }
+	}
+		
+	modifier = {
+		factor = -0.1
+		country = { 
+			colonial_policy = settlement
+			NOT = { has_country_flag = preparations_to_kill } 
+		}
+	}
+	
 	group = {
 		modifier = {
 			factor = 0.2
@@ -662,9 +943,16 @@ emigration_chance = {
 		factor = -0.3
 		state_scope = { has_factories = yes }
 		country = { NOT = { has_country_flag = preparations_to_kill } }
-		OR = {
+		OR = { 
 			country = { NOT = { has_country_flag = great_irish_famine } }
-			location = { NOT = { is_core = IRE } }
+			location = {
+				NOT = {
+					state_id = 263
+					state_id = 254
+					state_id = 258
+					state_id = 260
+				}
+			}
 		}
 	}
 	
@@ -680,25 +968,32 @@ emigration_chance = {
 		modifier = {
 			factor = 0.2
 			unemployment = 0.1
+			NOT = { unemployment = 1 }
 		}
 		
 		modifier = {
 			factor = 0.2
 			unemployment = 0.2
+			NOT = { unemployment = 1 }
 		}
 		
 		modifier = {
 			factor = 0.3
 			unemployment = 0.3
-		}
-		
-		modifier = {
-			factor = 0.3
-			unemployment = 0.4
+			NOT = { unemployment = 1 }
 		}
 		
 		modifier = {
 			factor = 0.4
+			location = { controlled_by = owner }
+			NOT = { unemployment = 1 }
+			unemployment = 0.4
+		}
+		
+		modifier = {
+			factor = 0.5
+			location = { controlled_by = owner }
+			NOT = { unemployment = 1 }
 			unemployment = 0.5
 		}
 	}
@@ -724,6 +1019,31 @@ emigration_chance = {
 	}
 
 	modifier = {
+		factor = -0.3
+		state_scope = { has_factories = yes }
+		not = { unemployment = 0.2 }
+		country = {
+			NOT = {
+				#has_country_flag = preparations_to_kill
+				has_country_flag = great_irish_famine
+			}
+		}
+	}
+	
+	modifier = {
+		factor = -0.5
+		THIS = { is_culture_group = east_asian  }
+		country = { is_culture_group = east_asian }
+		country = { NOT = { has_country_flag = preparations_to_kill } }
+	}
+	
+	modifier = {
+		factor = -0.25
+		agree_with_ruling_party = 0.25
+		#country = { NOT = { has_country_flag = preparations_to_kill } }
+	}
+
+	modifier = {
 		factor = 0.05
 		country = { religious_policy = moralism }
 		is_state_religion = no
@@ -736,6 +1056,18 @@ emigration_chance = {
 	}
 	
 	modifier = {
+		factor = -0.15
+		THIS = { NOT = { is_culture_group = polish_culture_group } }
+		country = { debt_law = serfdom }
+	}
+	
+	modifier = {
+		factor = -0.1
+		THIS = { NOT = { is_culture_group = polish_culture_group } }
+		country = { debt_law = peonage }
+	}
+	
+	modifier = {
 		factor = -5
 		OR = {
 			state_scope = { is_colonial = yes }
@@ -744,6 +1076,246 @@ emigration_chance = {
 		}
 	}
 	
+	modifier = {
+		factor = 1.2
+		THIS = { 
+			is_culture_group = germanic 
+		}
+		NOT = { unemployment = 0.1 }
+		NOT = { year = 1890 }
+		location = { 
+			controlled_by = owner
+			NOT = {
+				state_id = 701
+				#state_id = 682
+				state_id = 690
+				#state_id = 695
+				state_id = 354
+				state_id = 349
+				state_id = 706
+			}
+		}
+		country = { 
+			AND = { 
+				is_greater_power = yes
+				is_culture_group = germanic
+				NOT = { vassal_of = RUS }
+				NOT = { primary_culture = south_german }
+				NOT = { war_exhaustion = 1 }
+				NOT = { average_consciousness = 7 }
+				#NOT = { has_country_flag = liberal_revolution_fired }
+				#NOT = { has_country_flag = liberal_revolution_in_progress }
+			}
+		}
+	}
+	
+	modifier = {
+		factor = 0.7
+		THIS = { 
+			is_culture_group = germanic 
+		}
+		NOT = { unemployment = 0.1 }
+		NOT = { year = 1890 }
+		location = { 
+			controlled_by = owner
+		}
+		country = {
+			AND = { 
+				is_greater_power = no
+				is_culture_group = germanic
+				NOT = { vassal_of = RUS }
+				NOT = { war_exhaustion = 1 }
+				NOT = { average_consciousness = 7 }
+			}
+		}
+	}
+	
+	modifier = {
+		factor = -0.1
+		THIS = { 
+			is_culture_group = germanic
+		}
+		location = { 
+			AND = {
+				controlled_by = owner
+				OR = {
+					state_id = 701
+					state_id = 682
+					state_id = 690
+					state_id = 695
+				}
+			}
+		}
+		country = { 
+			AND = { 
+				is_greater_power = yes
+				is_culture_group = germanic
+			}
+		}
+	}
+	
+	modifier = {
+		factor = 0.8
+		THIS = { 
+			has_pop_culture = french
+		}
+		NOT = { unemployment = 0.1 }
+		NOT = { year = 1900 }
+		location = { controlled_by = owner }
+		country = {
+			primary_culture = french
+			NOT = { war_exhaustion = 1 }
+		}
+	}
+	
+	modifier = {
+		factor = 0.2
+		THIS = { 
+			is_culture_group = italian
+		}
+		NOT = { unemployment = 0.1 }
+		NOT = { year = 1900 }
+		location = { controlled_by = owner }
+		country = { 
+			NOT = { war_exhaustion = 1 }
+			NOT = { average_consciousness = 5 }
+		}
+	}
+	
+	modifier = {
+		factor = 0.9
+		THIS = { 
+			has_pop_culture = british
+		}
+		NOT = { unemployment = 0.1 }
+		NOT = { year = 1900 }
+		location = { controlled_by = owner }
+		location = {
+			NOT = {
+				state_id = 254
+				state_id = 258
+				state_id = 260
+				state_id = 263
+			}
+		}
+		country = { 
+			primary_culture = british
+			NOT = { war_exhaustion = 1 }
+		}
+	}
+		
+	modifier = {
+		factor = 0.75
+		THIS = { 
+			has_pop_culture = scottish
+		}
+		NOT = { unemployment = 0.1 }
+		NOT = { year = 1900 }
+		location = { 
+			NOT = { has_pop_culture = irish }
+			controlled_by = owner
+		}
+		country = { 
+			primary_culture = british
+			NOT = { war_exhaustion = 1 }
+		}
+	}
+	
+	modifier = {
+		factor = 0.75
+		THIS = { 
+			has_pop_culture = welsh
+		}
+		NOT = { unemployment = 0.1 }
+		NOT = { year = 1900 }
+		location = { controlled_by = owner }
+		country = { 
+			primary_culture = british
+			NOT = { war_exhaustion = 1 }
+		}
+	}
+	
+	modifier = {
+		factor = 0.1
+		THIS = { 
+			has_pop_culture = irish
+		}
+		NOT = { unemployment = 0.1 }
+		NOT = { year = 1900 }
+		location = { controlled_by = owner }
+		country = { 
+			primary_culture = british
+			NOT = { war_exhaustion = 1 }
+		}
+	}
+	
+	modifier = {
+		factor = -0.1
+		THIS = { is_culture_group = east_slavic }
+		country = { 
+			NOT = { debt_law = serfdom }
+			primary_culture = russian
+		}
+		country = { NOT = { has_country_flag = preparations_to_kill } }
+	}
+	
+	modifier = {
+		factor = -0.1
+		country = { 
+			OR = {
+				has_country_flag = sunni_country
+				has_country_flag = shiite_country
+				has_country_flag = ibadi_country
+				has_country_flag = mahayana_country
+				has_country_flag = shinto_country
+				primary_culture = hakka
+				is_culture_group = east_slavic
+			}
+		}
+		country = { NOT = { has_country_flag = preparations_to_kill } }
+	}
+	
+	modifier = {
+		factor = -0.1
+		country = { 
+			primary_culture = turkish
+		}
+		country = { NOT = { has_country_flag = preparations_to_kill } }
+	}
+	
+	modifier = {
+		factor = -0.1
+		country = { 
+			primary_culture = hungarian
+		}
+		country = { NOT = { has_country_flag = preparations_to_kill } }
+	}
+	
+	modifier = {
+		factor = 0.2
+		THIS = { is_culture_group = germanic }
+		location = { controlled_by = owner }
+		NOT = { unemployment = 0.1 }
+		country = { 
+			is_greater_power = yes
+			primary_culture = french
+			NOT = { war_exhaustion = 1 }
+			NOT = { has_country_flag = liberal_revolution_fired }
+			NOT = { has_country_flag = liberal_revolution_in_progress }
+		}
+	}
+		
+	modifier = {
+		factor = 0.35
+		year = 1837
+		NOT = { year = 1900 }
+		country = { 
+			AND = { 
+				NOT = { war_exhaustion = 1 }
+				NOT = { average_consciousness = 5 }
+			}
+		}
+	}
 }
 
 #general assimilation mtth, same for all pops
@@ -969,6 +1541,29 @@ conversion_chance = {
 				has_culture_core = yes
 			}
 		}
+	}
+	
+	modifier = {
+		factor = 0.1
+		country = { colonial_policy = civilizing }
+		state_scope = { is_colonial = yes }
+	}
+	
+	modifier = {
+		factor = -0.75
+		OR = {
+			country = { capital_scope = { pop_majority_religion = sunni } }
+			country = { capital_scope = { pop_majority_religion = shiite } }
+			country = { capital_scope = { pop_majority_religion = ibadi } }
+			country = { primary_culture = turkish }
+		}
+		OR = {
+			has_pop_religion = orthodox
+			has_pop_religion = catholic
+			has_pop_religion = protestant
+			has_pop_religion = coptic
+		}
+		has_culture_core = yes
 	}
 	
 	modifier = {

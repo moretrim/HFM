@@ -450,6 +450,7 @@ country_event = {
 			colonial_nation = yes
 		}
 		NOT = {
+			tag = GCF
 			tag = GER
 			tag = NGF
 			tag = SGF
@@ -552,8 +553,24 @@ country_event = {
 			}
 			add_core = GER
 		}
-
 		
+		#if any Polish cores owned, re-add cores to German Confederation
+		any_owned = {
+			limit = {
+				OR = {
+					region = PRU_690
+					region = PRU_701
+					province_id = 684
+					province_id = 685
+				}
+				NOT = { is_core = GCF }
+				owner = {
+					truce_with = GCF
+				}
+			}
+			add_core = GCF
+		}
+
 		#remove cores on overseas provinces
 		any_owned = {
 			limit = {
@@ -855,7 +872,7 @@ country_event = {
 		badboy = 4
 		FROM = {
 			random_state = {
-				limit = { any_owned_province = { NOT = { is_core = FROM } OR = { is_colonial = yes is_overseas = yes } port = yes } }
+				limit = { any_owned_province = { NOT = { is_core = FROM } OR = { is_colonial = yes is_overseas = yes NOT = { is_core = ALD } } port = yes } }
 				random_list = {
 					50 = { any_owned = { secede_province = THIS } }
 					50 = { }
@@ -1653,6 +1670,7 @@ country_event = {
 			tag = NGF
 			tag = SGF
 			tag = PRU
+			tag = GCF
 			tag = RUS
 			tag = USA
 			tag = ENG
@@ -2221,6 +2239,7 @@ country_event = {
 		}
 		OR = {
 			tag = GER
+			tag = GCF
 			tag = NGF
 			tag = SGF
 			tag = PRU
@@ -2344,7 +2363,10 @@ country_event = {
 		#remove all GER/SGF cores from Austria
 		random_owned = {
 			limit = {
-				owner = { tag = GER }
+				OR = {
+					owner = { tag = GER }
+					owner = { tag = GCF }
+				}
 			}
 			BAD_586 = { remove_core = AUS }
 			WUR_589 = { remove_core = AUS }
@@ -2354,6 +2376,7 @@ country_event = {
 				all_core = {
 					limit = { is_core = AUS }
 					remove_core = GER
+					remove_core = GCF
 				}
 			}
 		}
@@ -2381,6 +2404,7 @@ country_event = {
 			}
 			FRA_412 = {
 				remove_core = GER
+				remove_core = GCF
 				remove_core = ELS
 				remove_core = LOR
 				add_core = FRA
@@ -2608,10 +2632,12 @@ country_event = {
 			370 = {
 				add_core = DEN
 				remove_core = GER
+				remove_core = GCF
 			}
 			371 = {
 				add_core = DEN
 				remove_core = GER
+				remove_core = GCF
 			}
 		}
 
@@ -2691,6 +2717,20 @@ country_event = {
 			}
 			country_event = 96012
 		}
+		
+		#release LUX as ally, if controlled
+		random_owned = {
+			limit = {
+				province_id = 397
+				LUX = { exists = no }
+			}
+			397 = {
+				add_core = LUX
+				remove_core = GER
+				remove_core = GCF
+			}
+			LUX = { country_event = 96060 }
+		}
 
 		#release non-existing countries	that aren't German	
 		any_country = {
@@ -2721,19 +2761,6 @@ country_event = {
 				remove_core = THIS
 			}
 			country_event = 96012
-		}
-
-		#release LUX as ally, if controlled
-		random_owned = {
-			limit = {
-				province_id = 397
-				LUX = { exists = no }
-			}
-			397 = {
-				add_core = LUX
-				remove_core = GER
-			}
-			LUX = { country_event = 96060 }
 		}
 		
 		#give back cores to non-allied countries
@@ -2771,18 +2798,21 @@ country_event = {
 			AUS_619 = {
 				add_core = AUS
 				remove_core = GER
+				remove_core = GCF
 			}
 			AUS_612 = {
 				add_core = AUS
 				remove_core = GER
+				remove_core = GCF
 			}
 			AUS_613 = {
 				add_core = AUS
 				remove_core = GER
+				remove_core = GCF
 			}
 			AUS = { country_event = 96060 }
 		}
-
+		
 		#give colonies without cores to truce GP's
 		random_owned = {
 			limit = {
@@ -3082,6 +3112,23 @@ country_event = {
 			}
 			add_core = GER
 		}
+		
+		#if any Polish cores owned, re-add cores to German Confederation
+		any_owned = {
+			limit = {
+				OR = {
+					region = PRU_690
+					region = PRU_701
+					province_id = 684
+					province_id = 685
+				}
+				NOT = { is_core = GCF }
+				owner = {
+					truce_with = GCF
+				}
+			}
+			add_core = GCF
+		}
 
 		#Remove cores from the Baltic States
 		any_owned = {
@@ -3094,6 +3141,39 @@ country_event = {
 				}
 			}
 			remove_core = RUS
+		}
+		
+		#Secede Baltic to Germany, if truce
+		any_owned = {
+			limit = {
+				is_core = UBD
+				owner = {
+					truce_with = GER
+				}
+			}
+			secede_province = GER
+		}
+		any_owned = {
+			limit = {
+				is_core = UBD
+				owner = {
+					truce_with = GCF
+				}
+			}
+			secede_province = GCF
+		}
+		
+		#If no truce with Germany, remove UBD cores
+		any_owned = {
+			limit = {
+				OR = {
+					is_core = LAT
+					is_core = LIT
+					is_core = EST
+					is_core = UBD
+				}
+			}
+			remove_core = UBD
 		}
 		
 		#add Finnish cores to Viipuri, if owned
@@ -3329,6 +3409,7 @@ country_event = {
 					tag = CHY
 					tag = KRL
 					tag = ABK
+					tag = VLG
 				}
 				any_core = { owned_by = THIS }
 				exists = no
@@ -3995,6 +4076,23 @@ country_event = {
 			add_core = GER
 		}
 		
+		#if any Polish cores owned, re-add cores to German Confederation
+		any_owned = {
+			limit = {
+				OR = {
+					region = PRU_690
+					region = PRU_701
+					province_id = 684
+					province_id = 685
+				}
+				NOT = { is_core = GCF }
+				owner = {
+					truce_with = GCF
+				}
+			}
+			add_core = GCF
+		}
+		
 		#remove cores on overseas provinces
 		any_owned = {
 			limit = {
@@ -4435,6 +4533,23 @@ country_event = {
 			add_core = GER
 		}
 		
+		#if any Polish cores owned, re-add cores to German Confederation
+		any_owned = {
+			limit = {
+				OR = {
+					region = PRU_690
+					region = PRU_701
+					province_id = 684
+					province_id = 685
+				}
+				NOT = { is_core = GCF }
+				owner = {
+					truce_with = GCF
+				}
+			}
+			add_core = GCF
+		}
+		
 		#remove cores on overseas provinces
 		any_owned = {
 			limit = {
@@ -4526,6 +4641,7 @@ country_event = {
 			limit = {
 				OR = {
 					tag = CAN
+					tag = NEW
 					tag = IRE
 					tag = AST
 					tag = NZL
@@ -4835,6 +4951,23 @@ country_event = {
 			add_core = GER
 		}
 		
+		#if any Polish cores owned, re-add cores to German Confederation
+		any_owned = {
+			limit = {
+				OR = {
+					region = PRU_690
+					region = PRU_701
+					province_id = 684
+					province_id = 685
+				}
+				NOT = { is_core = GCF }
+				owner = {
+					truce_with = GCF
+				}
+			}
+			add_core = GCF
+		}
+		
 		#remove cores on overseas provinces
 		any_owned = {
 			limit = {
@@ -5097,6 +5230,7 @@ country_event = {
 		remove_country_modifier = great_war2
 		remove_country_modifier = great_war3
 		war_exhaustion = 40
+		set_global_flag = france_dismantled
 
 		#if over the badboy limit, reduce infamy to 24.99, otherwise reduce infamy by 10
 		random_owned = {
@@ -5136,11 +5270,21 @@ country_event = {
 			limit = {
 				is_culture_group = germanic
 				truce_with = THIS
+				NOT = { exists = GCF }
 			}
 			FRA_412 = {
 				remove_core = FRA
 				add_core = GER
 			}
+		}
+		random_country = {
+			limit = {
+				tag = GCF
+				truce_with = THIS
+				THIS = { owns = 412 }
+				NOT = { exists = GER }
+			}
+			FRA_412 = { secede_province = GCF 	add_core = GCF }
 		}
 		random_country = {
 			limit = {
@@ -5309,13 +5453,21 @@ country_event = {
 			add_core = GER
 		}
 		
-		#remove cores on overseas provinces
+		#if any Polish cores owned, re-add cores to German Confederation
 		any_owned = {
 			limit = {
-				is_overseas = yes
-				is_core = THIS
+				OR = {
+					region = PRU_690
+					region = PRU_701
+					province_id = 684
+					province_id = 685
+				}
+				NOT = { is_core = GCF }
+				owner = {
+					truce_with = GCF
+				}
 			}
-			remove_core = THIS
+			add_core = GCF
 		}
 
 		#normalize relations with treaty members
@@ -5374,10 +5526,14 @@ country_event = {
 					tag = JAP
 					tag = KOR
 					tag = SIA
-					tag = MOR
+					tag = EGY
+				}
+				NOT = {
+					tag = GUY
 					tag = ALD
 					tag = TUN
-					tag = EGY
+					tag = BSQ
+					tag = CAT
 				}
 				any_core = { owned_by = THIS }
 				exists = no
@@ -5426,6 +5582,14 @@ country_event = {
 					is_overseas = yes
 					is_colonial = yes
 				}
+				NOT = {
+					is_core = ALD
+					is_core = MOR
+					is_core = TUN
+				}
+				NOT = {
+					capital_scope = { continent = west_africa }
+				}
 			}
 			any_country = {
 				limit = {
@@ -5439,7 +5603,7 @@ country_event = {
 						}
 					}
 				}
-				country_event = 96011
+				#country_event = 96011
 			}
 			any_country = {
 				limit = {
@@ -5480,7 +5644,7 @@ country_event = {
 						}
 					}
 				}
-				country_event = 96017
+				#country_event = 96017
 			}
 		}
 
@@ -5651,6 +5815,7 @@ country_event = {
 			}
 			FRA_412 = {
 				remove_core = GER
+				remove_core = GCF
 				add_core = FRA
 			}
 		}
@@ -5712,6 +5877,24 @@ country_event = {
 			}
 			add_core = GER
 		}
+		
+		#if any Polish cores owned, re-add cores to German Confederation
+		any_owned = {
+			limit = {
+				OR = {
+					region = PRU_690
+					region = PRU_701
+					province_id = 684
+					province_id = 685
+				}
+				NOT = { is_core = GCF }
+				owner = {
+					truce_with = GCF
+				}
+			}
+			add_core = GCF
+		}
+
 
 		#normalize relations with treaty members
 		any_country = {
@@ -6089,6 +6272,34 @@ country_event = {
 		#prestige hit
 		prestige_factor = -0.5
 		
+		#Return Eastern Rumelia to Bulgaria
+		random_owned = {
+			limit = {
+				province_id = 815
+				owned_by = TUR
+				NOT = { exists = RUM }
+			}
+			state_scope = {
+				any_owned = {
+					secede_province = RUM
+				}
+			}
+		}
+		
+		ANT = {
+			all_core = {
+				remove_core = ANT
+			}
+		}
+		
+		random_country = {
+			limit = {
+				tag = RUM
+				vassal_of = TUR
+			}
+			TUR = { release_vassal = RUM }
+		}
+		
 		#replace Libyan cores, if owned
 		random_owned = {
 			limit = {
@@ -6148,6 +6359,24 @@ country_event = {
 			}
 			add_core = GER
 		}
+		
+		#if any Polish cores owned, re-add cores to German Confederation
+		any_owned = {
+			limit = {
+				OR = {
+					region = PRU_690
+					region = PRU_701
+					province_id = 684
+					province_id = 685
+				}
+				NOT = { is_core = GCF }
+				owner = {
+					truce_with = GCF
+				}
+			}
+			add_core = GCF
+		}
+
 
 		#lose all cores outside of Turkey proper
 		any_owned = {
@@ -7656,7 +7885,11 @@ country_event = {
 			any_pop = {
 				limit = { literacy = 0.2 }
 				ideology = { factor = 0.1 value = liberal }
+				ideology = { factor = -0.5 value = communist }
 			}
+		}
+		any_pop = {
+			ideology = { factor = -0.1 value = communist }
 		}
 		any_pop = {
 			scaled_militancy = {
@@ -7675,6 +7908,13 @@ country_event = {
 				ideology = liberal
 				factor = -4
 			}
+		}
+		
+		any_country = {
+			limit = {
+				war_with = THIS
+			}
+			end_war = THIS	
 		}
 	}
 }
@@ -8003,6 +8243,7 @@ country_event = {
 			remove_core = PRU
 			remove_core = NGF
 			remove_core = GER
+			remove_core = GCF
 			}
 		
 	}

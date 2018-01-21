@@ -1,6 +1,7 @@
 capital = 657
 primary_culture = romanian
 culture = hungarian
+culture = siebenburger
 religion = orthodox
 government = absolute_monarchy
 plurality = 0.0
@@ -15,7 +16,7 @@ upper_house_composition = appointed
 vote_franschise = none_voting
 public_meetings = yes_meeting
 press_rights = censored_press
-trade_unions = no_trade_unions
+trade_unions = non_socialist
 voting_system = first_past_the_post
 political_parties = underground_parties
 
@@ -32,8 +33,11 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = serfdom
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = primary_culture_only
+child_labor = child_labor_legal
+citizens_rights = primary_culture_only
 border_policy = open_borders
+centralization = unitary
+colonial_policy = no_colonies 
 
 set_country_flag = orthodox_country
 

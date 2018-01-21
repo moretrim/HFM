@@ -2,7 +2,7 @@ capital = 958
 primary_culture = ukrainian
 culture = ugrian
 religion = orthodox
-government = absolute_monarchy
+government = democracy
 plurality = 0.02
 nationalvalue = nv_autocracy
 literacy = 0.15
@@ -32,8 +32,11 @@ school_reforms = no_schools
 conscription = four_year_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = culture_voting_only
+child_labor = child_labor_legal
+citizens_rights = culture_voting_only
 border_policy = open_borders
+centralization = unitary
+colonial_policy = no_colonies 
 
 set_country_flag = orthodox_country
 

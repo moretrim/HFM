@@ -122,7 +122,32 @@
 	farmers = {
 		culture = boer
 		religion = protestant
-		size = 16245
+		size = 14145
+	}
+
+	
+	artisans = {
+		culture = griqua
+		religion = protestant
+		size = 1550
+	}
+	
+	soldiers = {
+		culture = griqua
+		religion = protestant
+		size = 550
+	}
+
+	artisans = {
+		culture = malay
+		religion = sunni
+		size = 500
+	}
+	
+	farmers = {
+		culture = malay
+		religion = sunni
+		size = 650
 	}
 }
 #Worcester (117700/29425 POPS)
@@ -140,15 +165,21 @@
 	}
 
 	artisans = {
-		culture = khoisan
+		culture = griqua
 		religion = protestant
 		size = 250
 	}
 
 	farmers = {
+		culture = griqua
+		religion = protestant
+		size = 150
+	}
+
+	farmers = {
 		culture = khoisan
 		religion = protestant
-		size = 7500
+		size = 7600
 	}
 
 	clergymen = {
@@ -161,6 +192,12 @@
 		culture = khoisan
 		religion = animist
 		size = 150
+	}
+
+	artisans = {
+		culture = griqua
+		religion = protestant
+		size = 1150
 	}
 
 	farmers = {
@@ -202,7 +239,13 @@
 	farmers = {
 		culture = boer
 		religion = protestant
-		size = 3725
+		size = 3825
+	}
+
+	aristocrats = {
+		culture = sotho
+		religion = animist
+		size = 100
 	}
 
 	artisans = {
@@ -246,6 +289,12 @@
 	farmers = {
 		culture = khoisan
 		religion = protestant
+		size = 6625
+	}
+	
+	farmers = {
+		culture = griqua
+		religion = protestant
 		size = 6525
 	}
 
@@ -282,7 +331,25 @@
 	farmers = {
 		culture = boer
 		religion = protestant
-		size = 4325
+		size = 4425
+	}
+	
+	bureaucrats = {
+		culture = boer
+		religion = protestant
+		size = 30
+	}
+
+	clergymen = {
+		culture = british
+		religion = protestant
+		size = 65
+	}
+
+	farmers = {
+		culture = british
+		religion = protestant
+		size = 425
 	}
 
 	clergymen = {
@@ -340,6 +407,13 @@
 		religion = protestant
 		size = 500
 	}
+	
+	farmers = {
+		culture = griqua
+		religion = protestant
+		size = 500
+	}
+
 
 	clergymen = {
 		culture = khoisan
@@ -459,6 +533,36 @@
 		religion = protestant
 		size = 2450
 	}
+	
+	farmers = {
+		culture = griqua
+		religion = protestant
+		size = 650
+	}
+
+	aristocrats = {
+		culture = british
+		religion = protestant
+		size = 5
+	}
+
+	bureaucrats = {
+		culture = british
+		religion = protestant
+		size = 20
+	}
+
+	clergymen = {
+		culture = british
+		religion = protestant
+		size = 25
+	}
+
+	farmers = {
+		culture = british
+		religion = protestant
+		size = 150
+	}
 
 	clergymen = {
 		culture = khoisan
@@ -481,7 +585,7 @@
 	farmers = {
 		culture = khoisan
 		religion = animist
-		size = 4800
+		size = 8800
 	}
 }
 #Calvinia (23300/5825 POPS)
@@ -634,7 +738,43 @@
 		religion = protestant
 		size = 50
 	}
-
+	
+	aristocrats = {
+		culture = griqua
+		religion = protestant
+		size = 10
+	}
+	
+	bureaucrats = {
+		culture = griqua
+		religion = protestant
+		size = 10
+	}
+	
+	farmers = {
+		culture = griqua
+		religion = protestant
+		size = 900
+	}
+	
+	clergymen = {
+		culture = griqua
+		religion = protestant
+		size = 50
+	}
+	
+	officers = {
+		culture = griqua
+		religion = protestant
+		size = 10
+	}
+	
+	soldiers = {
+		culture = griqua
+		religion = protestant
+		size = 900
+	}
+	
 	aristocrats = {
 		culture = tswana
 		religion = animist
@@ -769,6 +909,31 @@
 		religion = protestant
 		size = 3000
 	}
+	
+	clergymen = {
+		culture = griqua
+		religion = protestant
+		size = 25
+	}
+
+	artisans = {
+		culture = griqua
+		religion = protestant
+		size = 300
+	}
+
+	soldiers = {
+		culture = griqua
+		religion = protestant
+		size = 200
+	}
+
+	farmers = {
+		culture = griqua
+		religion = protestant
+		size = 4500
+	}
+
 
 	aristocrats = {
 		culture = xhosa
@@ -797,7 +962,7 @@
 	farmers = {
 		culture = xhosa
 		religion = animist
-		size = 3900
+		size = 6900
 	}
 
 	aristocrats = {
@@ -857,7 +1022,7 @@
 	farmers = {
 		culture = khoisan
 		religion = animist
-		size = 2800
+		size = 4900
 	}
 
 	soldiers = {
@@ -891,6 +1056,18 @@
 		culture = british
 		religion = protestant
 		size = 6825
+	}
+
+	farmers = {
+		culture = griqua
+		religion = protestant
+		size = 1550
+	}
+	
+	clergymen = {
+		culture = griqua
+		religion = protestant
+		size = 10
 	}
 
 	aristocrats = {
@@ -1627,6 +1804,11 @@
 #uncolonized in 1836/dominated by the Ndebele
 #Klerksdorp (109000/27250 POPS)
 2107 = {
+	aristocrats = {
+		culture = boer
+		religion = protestant
+		size = 20
+	}
 
 	clergymen = {
 		culture = boer
@@ -1992,6 +2174,49 @@
 		religion = protestant
 		size = 420
 	}
+	
+	clergymen = {
+		culture = british
+		religion = protestant
+		size = 10
+	}
+
+	artisans = {
+		culture = british
+		religion = protestant
+		size = 50
+	}
+
+	farmers = {
+		culture = british
+		religion = protestant
+		size = 250
+	}
+
+	aristocrats = {
+		culture = british
+		religion = protestant
+		size = 20
+	}
+	
+	farmers = {
+		culture = bengali
+		religion = sunni
+		size = 150
+	}
+	
+	farmers = {
+		culture = tamil
+		religion = hindu
+		size = 275
+	}
+	
+	clergymen = {
+		culture = tamil
+		religion = hindu
+		size = 10
+	}
+
 
 	aristocrats = {
 		culture = xhosa
@@ -2331,4 +2556,72 @@
 		size = 2450
 	}
 
+}
+
+3273 = {
+	aristocrats = {
+		culture = southern_bantu
+		religion = animist
+		size = 100
+	}
+
+	clergymen = {
+		culture = southern_bantu
+		religion = animist
+		size = 100
+	}
+
+	artisans = {
+		culture = southern_bantu
+		religion = animist
+		size = 150
+	}
+
+	soldiers = {
+		culture = southern_bantu
+		religion = animist
+		size = 100
+	}
+
+	farmers = {
+		culture = southern_bantu
+		religion = animist
+		size = 2700
+	}
+
+	aristocrats = {
+		culture = nguni
+		religion = animist
+		size = 100
+	}
+
+	clergymen = {
+		culture = nguni
+		religion = animist
+		size = 100
+	}
+	
+	slaves = {
+		culture = southern_bantu
+		religion = animist
+		size = 1350
+	}
+
+	artisans = {
+		culture = nguni
+		religion = animist
+		size = 175
+	}
+
+	soldiers = {
+		culture = nguni
+		religion = animist
+		size = 100
+	}
+
+	farmers = {
+		culture = nguni
+		religion = animist
+		size = 1750
+	}
 }

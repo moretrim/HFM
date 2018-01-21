@@ -3823,31 +3823,31 @@
 	}
 
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 257.5
 	}
 
 	clergymen = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 128.75
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 5665.0
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 128.75
 	}
 
 	farmers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 6180.0
 	}
@@ -4077,31 +4077,31 @@
 	}
 
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 103.0
 	}
 
 	clergymen = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 51.5
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 257.5
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 51.5
 	}
 
 	farmers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 4686.5
 	}
@@ -4133,31 +4133,31 @@
 	}
 
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 25.75
 	}
 
 	clergymen = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 25.75
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 51.5
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 25.75
 	}
 
 	farmers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 901.25
 	}
@@ -4435,31 +4435,31 @@
 #Temen (60000/15000 POPS)
 1049 = {
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 283.25
 	}
 
 	clergymen = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 154.5
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 772.5
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 1030.0
 	}
 
 	farmers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 13209.75
 	}
@@ -4533,37 +4533,37 @@
 	}
 
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 257.5
 	}
 
 	officers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 51.5
 	}
 
 	clergymen = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 128.75
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 669.5
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 154.5
 	}
 
 	farmers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 12128.25
 	}
@@ -4655,31 +4655,31 @@
 	}
 
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 437.75
 	}
 
 	clergymen = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 206.0
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 1030.0
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 206.0
 	}
 
 	farmers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 18720.25
 	}
@@ -4713,37 +4713,37 @@
 	}
 
 	aristocrats = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 669.5
 	}
 
 	clergymen = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 360.5
 	}
 
 	officers = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 77.25
 	}
 
 	artisans = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 1854.0
 	}
 
 	soldiers = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 386.25
 	}
 
 	farmers = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 33758.25
 	}
@@ -4799,31 +4799,31 @@
 #Gunib (164000/41000 POPS)
 1053 = {
 	aristocrats = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 669.5
 	}
 
 	clergymen = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 360.5
 	}
 
 	artisans = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 1802.5
 	}
 
 	soldiers = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 360.5
 	}
 
 	farmers = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 33166.0
 	}
@@ -4905,31 +4905,31 @@
 	}
 
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 360.5
 	}
 
 	clergymen = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 180.25
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 927.0
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 206.0
 	}
 
 	farmers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 16917.75
 	}
@@ -4937,31 +4937,31 @@
 #Grozny (68000/17000 POPS)
 1055 = {
 	aristocrats = {
-		culture = chechen
+		culture = north_caucasian
 		religion = sunni
 		size = 334.75
 	}
 
 	clergymen = {
-		culture = chechen
+		culture = north_caucasian
 		religion = sunni
 		size = 180.25
 	}
 
 	artisans = {
-		culture = chechen
+		culture = north_caucasian
 		religion = sunni
 		size = 875.5
 	}
 
 	soldiers = {
-		culture = chechen
+		culture = north_caucasian
 		religion = sunni
 		size = 180.25
 	}
 
 	farmers = {
-		culture = chechen
+		culture = north_caucasian
 		religion = sunni
 		size = 15939.25
 	}
@@ -4969,37 +4969,37 @@
 #Pyatigorsk (136000/34000 POPS)
 1056 = {
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 695.25
 	}
 
 	clergymen = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 360.5
 	}
 
 	officers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 51.5
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 1751.0
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 360.5
 	}
 
 	farmers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 31801.25
 	}
@@ -5037,31 +5037,31 @@
 	}
 
 	aristocrats = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 128.75
 	}
 
 	clergymen = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 77.25
 	}
 
 	artisans = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 360.5
 	}
 
 	soldiers = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 77.25
 	}
 
 	farmers = {
-		culture = dagestani
+		culture = north_caucasian
 		religion = sunni
 		size = 6566.25
 	}

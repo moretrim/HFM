@@ -1,5 +1,6 @@
 capital = 619
 primary_culture = south_german
+culture = siebenburger
 religion = catholic
 government = absolute_monarchy
 plurality = 10.0
@@ -29,16 +30,40 @@ unemployment_subsidies = no_subsidies
 pensions = no_pensions 
 school_reforms = no_schools
 
+
 #New Reforms
 conscription = one_year_draft
 debt_law = serfdom
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = primary_culture_only
+child_labor = child_labor_legal
+citizens_rights = primary_culture_only
 border_policy = open_borders
+centralization = unitary
+colonial_policy = no_colonies 
 
 set_country_flag = catholic_country
 
 decision = AUS_setup_1836
+decision = slovene_rename_aus
+decision = banat_rename_aus
+decision = vojvodina_rename_aus
+decision = istria_rename_aus
+decision = eastern_transylvania_rename_aus
+decision = western_transylvania_rename_aus
+decision = slovakia_rename_aus
+decision = bohemia_rename_aus
+decision = sudetes_rename_aus
+decision = east_galicia_rename_german
+decision = galicia_rename_german
+decision = silesia_rename_german
+decision = transdanubia_rename_aus
+decision = central_hungary_rename_aus
+decision = german_tyrol
+decision = croatia_rename_aus
+decision = slavonia_rename_aus
+decision = dalmatia_rename_aus
+decision = german_lombardy
+decision = german_veneto
 
 ruling_party = AUS_conservative
 upper_house = {

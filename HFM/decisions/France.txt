@@ -3,6 +3,7 @@ political_decisions = {
 		potential = {
 			NOT = {
 				has_global_flag = statue_of_liberty_has_been_built
+				has_global_flag = treaty_of_new_york
 			}
 			tag = FRA
 			exists = FRA
@@ -62,11 +63,15 @@ political_decisions = {
 				name = the_french_foreign_legion
 				duration = -1
 			}
+			1700 = {
+				fort = 2
+			}
 			set_country_flag = french_foreign_legion_supported
 		}
 	}
 	
 	french_military_mission_to_japan = {
+		picture = french_military_exp_japan
 		potential = {
 			tag = FRA
 			OR = {
@@ -85,7 +90,7 @@ political_decisions = {
 		}
 		
 		allow = {
-			nationalism_n_imperialism = 1
+			state_n_government = 1
 			NOT = { war_with = JAP }
 			NOT = { truce_with = JAP }
 			NOT = { war_with = TKG }
@@ -104,6 +109,7 @@ political_decisions = {
 				}
 				relation = { who = FRA value = 50 }
 				years_of_research = 0.2
+				military_reform = yes_foreign_training
 			}
 			set_country_flag = military_mission_in_japan
 		}
@@ -225,6 +231,7 @@ political_decisions = {
 	}
 	
 	the_rhine_crisis = {
+		picture = adolphe_thiers
 		potential = {
 			tag = FRA
 			exists = PRU
@@ -238,11 +245,16 @@ political_decisions = {
 		}
 		
 		allow = {
+			war = no
 			state_n_government = 1
 		}
 		
 		effect = {
-			badboy = 5
+			badboy = 2
+			add_country_modifier = {
+				name = rhine_crisis
+				duration = -1
+			}
 			any_country = {
 				limit = {
 					OR = {
@@ -255,16 +267,6 @@ political_decisions = {
 					value = -100
 				}
 			}
-			casus_belli = {
-				target = PRU
-				type = acquire_state
-				months = 12
-			}
-			casus_belli = {
-				target = PRU
-				type = free_peoples
-				months = 12
-			}
 			prestige = 10
 			set_country_flag = crisis_on_the_rhine
 		}
@@ -273,6 +275,14 @@ political_decisions = {
 			modifier = {
 				factor = 0
 				badboy = 0.5
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					any_greater_power = {
+						alliance_with = THIS
+					}
+				}
 			}
 		}
 	}
@@ -285,7 +295,10 @@ political_decisions = {
 				has_country_flag = the_eiffel_tower_was_built
 			}
 			
-			has_country_flag = world_fair_planner
+			OR = {
+				has_country_flag = world_fair_planner
+				year = 1887
+			}
 		}
 		
 		allow = {
@@ -313,10 +326,10 @@ political_decisions = {
 				realism = 1
 				early_railroad = 1
 			}
+			year = 1852
 		}
 		
 		allow = {
-			impressionism = 1
 			iron_railroad = 1
 			business_banks = 1
 			OR = {
@@ -356,6 +369,10 @@ political_decisions = {
 		
 		effect = {
 			prestige = 3
+			2124 = { add_core = FRA }
+			2123 = {
+				secede_province = FRA
+			}
 			2124 = {
 				secede_province = FRA
 				change_province_name = "Mayotte"
@@ -403,7 +420,58 @@ political_decisions = {
 			}
 		}
 	}
-	
+
+	claim_aosta = {
+		picture = claim_aosta
+		potential = {
+			tag = FRA
+			is_greater_power = yes
+			#owns = 412 #Metz
+			owns = 472 #Nice
+			NOT = {
+				721 = { is_core = FRA }
+				has_country_flag = claimed_aosta
+			}
+		}
+		
+		allow = {
+			OR = {
+				war_policy = jingoism
+				war_policy = pro_military
+			}
+			ITA = {
+				exists = yes
+				NOT = { in_sphere = FRA }
+			}
+			NOT = {
+				has_country_modifier = punitive_effects
+				has_country_modifier = no_more_war
+			}
+		}
+		
+		effect = {
+			set_country_flag = claimed_aosta
+			badboy = 1
+			721 = { add_core = FRA }
+			random_country = {
+				limit = { owns = 721 }
+				leave_alliance = THIS
+				relation = { who = THIS value = -100 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				466 = { 
+					NOT = { is_core = ITA }
+				}
+			}
+			
+		}
+	}
+
 	annex_new_caledonia = {
 		picture = dreams_of_empire
 		potential = {
@@ -425,6 +493,7 @@ political_decisions = {
 		
 		effect = {
 			prestige = 3
+			1097 = { add_core = FRA }
 			1097 = { secede_province = FRA }
 			add_country_modifier = { name = penal_colonies duration = -1 }
 		}
@@ -449,15 +518,33 @@ political_decisions = {
 		effect = {
 			set_country_flag = enacted_french_schooling
 			remove_accepted_culture = picard
-			remove_accepted_culture = occitan
+			remove_accepted_culture = arpitan
 			remove_accepted_culture = breton
-			remove_accepted_culture = french_canadian
+			remove_accepted_culture = wallonian
+			remove_accepted_culture = occitan
+			remove_accepted_culture = swiss_french
+			remove_accepted_culture = rhinelander
 			any_owned = {
 				limit = {
+					is_core = FRA
 					OR = {
 						is_core = BRT
-						is_core = OCC
+						is_core = WLL
+						is_core = CAT
+						is_core = CRS
+						is_core = ITA
+						is_core = FRA
+						is_core = SWI
+						AND = {
+							is_core = LUX
+							FRA = { has_country_flag = chose_door_one }
+						}
+						AND = {
+							is_core = RHI
+							FRA = { has_country_flag = chose_door_one }
+						}
 						culture = picard
+						culture = occitan
 					}
 				}
 				add_province_modifier = {
@@ -473,10 +560,32 @@ political_decisions = {
 			}
 			random_owned = {
 				limit = {
-					OCC = { exists = no }
+					WLL = { exists = no }
 				}
-				OCC = { all_core = { remove_core = OCC } }
+				WLL = { all_core = { remove_core = WLL } }
 			}
+			random_owned = {
+				limit = {
+					SWI = { exists = no }
+				}
+				SWI = { all_core = { remove_core = SWI } }
+			}
+			any_country = {
+				limit = {
+					tag = LUX
+					exists = yes
+					vassal_of = FRA
+				}
+				primary_culture = french
+			}
+			any_country = {
+				limit = {
+					tag = RHI
+					exists = yes
+					vassal_of = FRA
+				}
+				primary_culture = french
+			}	
 		}
 	}
 	
@@ -721,41 +830,7 @@ political_decisions = {
 			modifier = { factor = 0 badboy = 0.92 }
 		}
 	}
-	
-	take_the_channel_islands = {
-		picture = channel_islands
-		potential = {
-			OR = {
-				419 = { owner = { war_with = THIS } }
-				419 = { owner = { truce_with = THIS } }
-			}
-			NOT = { owns = 419 }
-			tag = FRA
-		}
-		
-		allow = {
-			war = no
-			is_vassal = no
-			is_greater_power = yes 
-			NOT = { is_disarmed = yes }
-			NOT = { has_recently_lost_war = yes }
-			NOT = { is_mobilised = yes }
-			owns = 418
-			war_policy = jingoism
-			419 = { owner = { is_disarmed = yes truce_with = THIS has_recently_lost_war = yes war = no NOT = { military_score = THIS } } }
-		}
-		
-		effect = {
-			badboy = 3
-			419 = { secede_province = THIS }
-		}
-		
-		ai_will_do = {
-			factor = 1
-			modifier = { factor = 0 badboy = 0.8 }
-		}
-	}
-	
+
 	alsace_lorraine_mines = {
 		picture = alsace_lorraine_mines
 		potential = {

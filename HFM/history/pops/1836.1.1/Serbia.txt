@@ -575,7 +575,7 @@
 	farmers = {
 		culture = bulgarian
 		religion = orthodox
-		size = 3700
+		size = 9800
 	}
 
 	aristocrats = {

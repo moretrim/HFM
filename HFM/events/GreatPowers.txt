@@ -1252,6 +1252,7 @@ country_event = {
 	picture = "administration"
 	
 	is_triggered_only = yes
+	major = yes
 	
 	option = {
 		name = "EVT19200OPTA"
@@ -1267,12 +1268,13 @@ country_event = {
 			months = 24
 		}
 		ai_chance = {
-			factor = 20
+			factor = 5
 		}
 	}
 	
 	option = {
 		name = "EVT19200OPTB"
+		set_global_flag = franco_prussian_war_has_begun
 		prestige = -10
 		leave_alliance = FROM
 		casus_belli = {
@@ -1280,14 +1282,27 @@ country_event = {
 			type = cut_down_to_size
 			months = 24
 		}
+		any_country = {
+			limit = {
+				exists = yes
+				alliance_with = FRA
+				is_vassal = no
+			}
+			leave_alliance = FRA
+		}
 		war = {
 			target = FROM
 			attacker_goal = {
 				casus_belli = cut_down_to_size
 			}
+			defender_goal = { 
+				casus_belli = unification_casus_belli
+				state_province_id = 412
+			}
+			call_ally = yes
 		}
 		ai_chance = {
-			factor = 80
+			factor = 95
 			modifier = {
 				factor = 0.5
 				num_of_revolts = 1
@@ -1328,29 +1343,7 @@ country_event = {
 			name = the_statue_of_liberty
 			duration = -1
 		}
-		any_owned = {
-			limit = {
-				OR = {
-					province_id = 78
-					province_id = 139
-					province_id = 231
-					province_id = 230
-					province_id = 229
-					province_id = 223
-					province_id = 243
-					province_id = 173
-					province_id = 163
-				}
-			}
-			life_rating = 5
-		}
-		232 = {
-			add_province_modifier = {
-				name = gateway_to_america
-				duration = 1825
-			}
-			life_rating = 15
-		}
+		232 = { life_rating = 3 }
 	}
 }
 
@@ -1459,7 +1452,7 @@ country_event = {
 		any_greater_power = { war = yes alliance_with = THIS }
 		great_wars_enabled = no
 		NOT = { has_global_flag = great_wars_enabled }
-		year = 1890
+		year = 1900
 	}
 	
 	mean_time_to_happen = {
@@ -2252,6 +2245,7 @@ country_event = {
 		
 	option = {
 		name = "EVTOPTA81002216"
+		set_global_flag = tangier_protocol_succeeded
 		prestige = 10
 		random_owned = {
 			limit = { owner = { has_country_flag = agreed_to_tangier_protocol } province_id = 1686 } 
@@ -2422,6 +2416,7 @@ country_event = {
 	option = {
 		name = "EVTOPTA810003" #We will abolish the sound dues
 		badboy = -2
+		prestige = -25
 		372 = { trade_goods = grain remove_province_modifier = sound_dues_toll }
 		set_global_flag = sound_dues_abolished
 		treasury = 300000

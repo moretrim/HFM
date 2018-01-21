@@ -2907,8 +2907,8 @@
 
 }
 
-#Sado - Old Reliance (2000/500 POPS)
-12 = {
+#Sado (2000/500 POPS)
+3260 = {
 
 	clergymen = {
 		culture = japanese

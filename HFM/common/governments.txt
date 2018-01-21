@@ -22,6 +22,17 @@ presidential_dictatorship = {
 	appoint_ruling_party = yes
 	flagType = republic
 }
+
+colonial_company = {
+	#which ideology of parties.
+	liberal = yes
+	socialist = yes
+	conservative = yes
+	reactionary = yes
+	
+	election = no
+	appoint_ruling_party = yes
+}
  
 bourgeois_dictatorship = {
 	#which ideology of parties.
@@ -106,4 +117,17 @@ theocracy = {
 	appoint_ruling_party = yes
 }
  
-
+french_bourbon = {
+	liberal = yes
+	socialist = yes
+	conservative = yes
+	reactionary = yes
+	communist = yes
+	anarcho_liberal = yes
+	fascist = yes
+	
+	
+	election = yes
+	duration = 48
+	appoint_ruling_party = yes
+}

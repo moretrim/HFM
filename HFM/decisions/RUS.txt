@@ -198,9 +198,19 @@ political_decisions = {
 			}
 			owns = 958
 			phenomenalism = 1
-			exists = GER
-			GER = {
-				owns = 570
+			OR = { 
+				AND = {
+					exists = GER
+					GER = {
+						owns = 570
+					}
+				}
+				AND = {
+					exists = GCF
+					GCF = {
+						owns = 570
+					}
+				}
 			}
 		}
 		
@@ -234,26 +244,36 @@ political_decisions = {
 					}
 				}
 			}
-			NOT = { has_global_flag = convention_of_peking }
 			QNG = {
+				OR = {
+					has_global_flag = taiping_has_been_defeated
+					has_country_flag = arrow_incident
+					has_global_flag = ever_victorious_army 
+				}
 				exists = yes
 				OR = {
-					has_country_flag = arrow_incident
-					AND = {
-						has_global_flag = taiping_has_happened
-						1082 = { owner = { in_sphere = RUS } }
-					}
+					has_global_flag = taiping_has_been_defeated
+					1082 = { owner = { in_sphere = RUS } }
 				}
 			}
+			NOT = { has_global_flag = convention_of_peking }
 		}
 		
 		allow = {
 			war = no
 			NOT = { truce_with = QNG }
 			OR = {
-				QNG = { war_exhaustion = 30 }
-				1082 = { owner = { in_sphere = RUS } }
 				QNG = { war = yes }
+				has_global_flag = taiping_has_been_defeated
+			}
+			1082 = {
+				owner = {
+					OR = {
+						tag = QNG
+						vassal_of = QNG
+						substate_of = QNG
+					}
+				}
 			}
 		}
 		
@@ -575,6 +595,9 @@ political_decisions = {
 		
 		effect = {
 			capital = 1008
+			1008 = {
+				life_rating = 5
+			}
 			prestige = 5
 		}
 		ai_will_do = {
@@ -630,6 +653,7 @@ political_decisions = {
 				719 = { NOT = { is_core = RUS } }
 			}
 			NOT = { has_country_flag = poland_is_russian }
+			NOT = { has_global_flag = create_zapadoslavia }
 			OR = {
 				NOT = {
 					POL = { exists = yes has_country_flag = poland_is_free }
@@ -1119,6 +1143,7 @@ political_decisions = {
 			OR = {
 				revolution_n_counterrevolution = 1
 				great_wars_enabled = yes
+				GCF = { exists = yes }
 				GER = { exists = yes }
 				is_greater_power = no
 			}
@@ -1126,27 +1151,33 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = russification_of_the_baltic_states
+			remove_accepted_culture = volga_german
 			release = UBD
 			UBD = { 
-				remove_accepted_culture = latvian
 				remove_accepted_culture = russian
 				clr_country_flag = ubd_substate
-				all_core = { remove_core = UBD }
+				#all_core = { remove_core = UBD }
+				government = absolute_monarchy
 			}		
+			1037 = { 
+				add_core = VLG
+				add_province_modifier = { name = russoification duration = -1 }
+			}
 			inherit = UBD
+			political_reform = unitary
 			any_pop = {
 				limit = {
 					OR = {
 					has_pop_culture = estonian
 					has_pop_culture = latvian
 					has_pop_culture = north_german
+					has_pop_culture = volga_german
 					has_pop_culture = ashkenazi
 					}
 				}
 			consciousness = 5
 			militancy = 3
 			}
-			UBD = { primary_culture = latvian }
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -1179,6 +1210,7 @@ political_decisions = {
 				is_greater_power = no
 				great_wars_enabled = yes
 				GER = { exists = yes }
+				GCF = { exists = yes }
 				NOT = { neighbour = TUR }
 			}
 			war = no
@@ -1190,6 +1222,7 @@ political_decisions = {
 				any_pop = { militancy = 2 } 
 				remove_accepted_culture = russian
 				all_core = { remove_core = TCA }
+				government = absolute_monarchy
 			}
 			random_country = {
 				limit = {
@@ -1493,6 +1526,20 @@ political_decisions = {
 			}
 			
 			add_country_modifier = { name = total_reform duration = 2920 }
+			any_owned = {
+				limit = { 
+					is_core = RUS
+					NOT = { OR = { is_core = POL is_core = UKR is_core = LAT is_core = FIN is_core = LIT is_core = TUR is_core = BYE } }
+					OR = {
+						NOT = { terrain = boreal }
+						NOT = { terrain = arctic }
+						NOT = { terrain = desert }
+						NOT = { terrain = steppe }
+						NOT = { terrain = montane_tundra }
+					}
+				}
+				add_province_modifier = { name = small_baby_boom duration = 4380 }
+			}
 		}
 
 		ai_will_do = { factor = 1 }
@@ -1626,7 +1673,7 @@ political_decisions = {
 			military_score = 100
 			is_vassal = no
 			OR = {
-				high_sea_battle_fleet = 1
+				steel_steamers = 1
 				revolution_n_counterrevolution = 1
 				steel_railroad = 1
 				AND = {

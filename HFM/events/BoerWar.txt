@@ -351,6 +351,10 @@ country_event = {
 			factor = 0.5
 			year = 1843
 		}
+		modifier = {
+			factor = 0.1
+			year = 1850
+		}
 	}
 	
 	option = {
@@ -457,6 +461,7 @@ country_event = {
 					duration = -1
 				}
 			}
+			2111 = { any_pop = { limit = { is_culture_group = south_asian } reduce_pop = 3.5 } }
 		}
 		ai_chance = {
 			factor = 90
@@ -523,7 +528,10 @@ country_event = {
 		year = 1845
 		NOT = { year = 1890 }
 		NOT = { has_country_flag = boer_accepted }
-		NOT = { tag = SAF }
+		NOT = { 
+			tag = SAF 
+			tag = VLK
+		}
 		NOT = {
 			ORA = { exists = yes }
 			has_global_flag = orange_river_sovereignty
@@ -541,9 +549,9 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 40
+		months = 32
 		modifier = {	
-			factor = 0.5
+			factor = 0.75
 			TRN = { exists = yes }
 		}
 	}
@@ -564,6 +572,7 @@ country_event = {
 					region = ENG_2096
 					region = ZUL_2113
 				}
+				NOT = { province_id = 2087 }
 				any_pop = { has_pop_culture = boer }
 			}
 			add_province_modifier = {
@@ -583,6 +592,7 @@ country_event = {
 						region = ENG_2096
 						region = ZUL_2113
 					}
+					NOT = { province_id = 2087 }
 					any_pop = { has_pop_culture = boer }
 				}
 				add_province_modifier = {
@@ -626,6 +636,7 @@ country_event = {
 		}
 		release_vassal = ORA
 		relation = { who = ORA value = 50 }
+		ORA = { prestige = -30 }
 		2101 = {
 			state_scope = { is_slave = yes }
 		}
@@ -676,6 +687,7 @@ country_event = {
 						region = ENG_2096
 						region = ZUL_2113
 					}
+					NOT = { province_id = 2087 }
 					any_pop = { has_pop_culture = boer }
 				}
 				add_province_modifier = {
@@ -719,6 +731,7 @@ country_event = {
 		}
 		release_vassal = ORA
 		relation = { who = ORA value = 50 }
+		ORA = { prestige = -30 }
 		2101 = {
 			state_scope = { is_slave = yes }
 		}
@@ -775,7 +788,10 @@ country_event = {
 		year = 1845
 		NOT = { year = 1890 }
 		NOT = { has_country_flag = boer_accepted }
-		NOT = { tag = SAF }
+		NOT = { 
+			tag = SAF 
+			tag = VLK
+		}
 		NOT = {
 			TRN = { exists = yes }
 			has_global_flag = transvaal_sovereignty
@@ -815,6 +831,7 @@ country_event = {
 					region = ENG_2096
 					region = ZUL_2113
 				}
+				NOT = { province_id = 2087 }
 				any_pop = { has_pop_culture = boer }
 			}
 			add_province_modifier = {
@@ -834,6 +851,7 @@ country_event = {
 						region = ENG_2096
 						region = ZUL_2113
 					}
+					NOT = { province_id = 2087 }
 					any_pop = { has_pop_culture = boer }
 				}
 				add_province_modifier = {
@@ -892,14 +910,21 @@ country_event = {
 			add_core = SAF
 		}
 		2110 = { 
+			#change_province_name = "Hoedspruit"
+			#secede_province = THIS
+			remove_core = GAZ
+			add_core = TRN
+			add_core = SAF
+		}
+		3273 = {
 			change_province_name = "Hoedspruit"
 			secede_province = THIS
-			remove_core = GAZ
 			add_core = TRN
 			add_core = SAF
 		}
 		release_vassal = TRN
 		relation = { who = TRN value = 50 }
+		TRN = { prestige = -30 }
 		2105 = {
 			state_scope = { is_slave = yes }
 		}
@@ -909,6 +934,7 @@ country_event = {
 			country_event = { id = 95517 days = 5 }
 			relation = { who = ORA value = 100 }
 			relation = { who = NAL value = 200 }
+			relation = { who = ZOU value = 200 }
 			any_pop = {
 				limit = { type = artisans }
 				pop_type = soldiers
@@ -950,6 +976,7 @@ country_event = {
 					region = ENG_2096
 					region = ZUL_2113
 				}
+				NOT = { province_id = 2087 }
 				any_pop = { has_pop_culture = boer }
 			}
 			add_province_modifier = {
@@ -969,6 +996,7 @@ country_event = {
 						region = ENG_2096
 						region = ZUL_2113
 					}
+					NOT = { province_id = 2087 }
 					any_pop = { has_pop_culture = boer }
 				}
 				add_province_modifier = {
@@ -1026,15 +1054,9 @@ country_event = {
 			add_core = TRN
 			add_core = SAF
 		}
-		2110 = { 
-			change_province_name = "Hoedspruit"
-			secede_province = THIS
-			remove_core = GAZ
-			add_core = TRN
-			add_core = SAF
-		}
 		release_vassal = TRN
 		relation = { who = TRN value = 50 }
+		TRN = { prestige = -30 }
 		2105 = {
 			state_scope = { is_slave = yes }
 		}
@@ -1044,6 +1066,7 @@ country_event = {
 			country_event = { id = 95517 days = 5 }
 			relation = { who = ORA value = 100 }
 			relation = { who = NAL value = 200 }
+			relation = { who = ZOU value = 200 }
 			any_pop = {
 				limit = { type = artisans }
 				pop_type = soldiers
@@ -1136,7 +1159,7 @@ province_event = {
 			}
 		}
 		ai_chance = {
-			factor = 75
+			factor = 95
 		}
 	}
 
@@ -1161,7 +1184,7 @@ province_event = {
 			consciousness = -3
 		}
 		ai_chance = {
-			factor = 25
+			factor = 5
 			modifier = {
 				factor = 0
 				owner = { civilized = no }
@@ -1339,7 +1362,7 @@ country_event = {
 
 #################################################################
 #																#
-#      	      			Boer War Events							#
+#      	      	Buildup to Second Boer War Events				#
 #																#
 #################################################################
 
@@ -1353,7 +1376,13 @@ country_event = {
 		is_greater_power = yes
 		NOT = { has_country_flag = boer_accepted }
 		any_neighbor_country = {
-			has_country_modifier = witwatersrand_gold_rush
+			OR = {
+				has_country_modifier = witwatersrand_gold_rush
+				AND = {
+					owns = 2106
+					2106 = { trade_goods = precious_metal }
+				}
+			}
 			part_of_sphere = no
 			is_greater_power = no
 		}
@@ -1367,7 +1396,13 @@ country_event = {
 		name = "EVT98235OPTA"
 		random_country = {
 			limit = {
-				has_country_modifier = witwatersrand_gold_rush
+				OR = {
+					has_country_modifier = witwatersrand_gold_rush
+					AND = {
+						owns = 2106
+						2106 = { trade_goods = precious_metal }
+					}
+				}
 				is_greater_power = no
 				is_vassal = no
 				part_of_sphere = no
@@ -1381,7 +1416,13 @@ country_event = {
 		
 		random_country = {
 			limit = {
-				has_country_modifier = witwatersrand_gold_rush
+				OR = {
+					has_country_modifier = witwatersrand_gold_rush
+					AND = {
+						owns = 2106
+						2106 = { trade_goods = precious_metal }
+					}
+				}
 				is_greater_power = no
 				is_vassal = no
 				part_of_sphere = yes
@@ -1406,7 +1447,41 @@ country_event = {
 	}
 }
 
-
+country_event = {
+	id = 98236
+	title = "EVTNAME98236" #Kimberley Goldrush
+	desc = "EVTDESC98236"
+	picture = "goldrush"
+	
+	trigger = {
+		NOT = { 
+			primary_culture = boer
+			has_country_flag = kimberley_goldrush
+		}
+		2094 = {
+			trade_goods = precious_metal
+			owned_by = THIS
+		}
+		ORA = { exists = yes }
+		TRN = { exists = yes }
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "EVT98235OPTA"
+		set_country_flag = kimberley_goldrush
+		ORA = { prestige = -5 }
+		TRN = { prestige = -5 }
+		prestige = 10
+		relation = { who = ORA value = -100 }
+		diplomatic_influence = { who = ORA value = -50 }
+		relation = { who = TRN value = -100 }
+		diplomatic_influence = { who = TRN value = -50 }
+	}
+}
 
 # Orange Free State or Transvaal join South Africa
 country_event = {
@@ -1468,7 +1543,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Called if Appeal to the British decision is taken.
 
 	id = 98241
 	title = "EVTNAME98241" #Appeal to the British for help
@@ -1542,6 +1617,11 @@ country_event = {
 	}
 }
 
+#################################################################
+#																#
+#      	      		Second Boer War Events						#
+#																#
+#################################################################
 # England attempts to annex Transvaal
 country_event = {
 	id = 98245
@@ -1567,9 +1647,10 @@ country_event = {
 			is_vassal = no
 			war = no
 		}
-		year = 1897
+		year = 1896
 		NOT = {
-			has_global_flag = first_boer_war
+			has_global_flag = second_boer_war
+			has_global_flag = no_boer_war
 			exists = SAF
 			exists = ZUL
 			truce_with = TRN
@@ -1588,7 +1669,7 @@ country_event = {
 
 	option = {
 		name = "EVT98245OPTA"
-		set_global_flag = first_boer_war
+		set_global_flag = second_boer_war
 		badboy = 3
 		random_country = {
 			limit = { tag = TRN exists = yes }
@@ -1667,6 +1748,25 @@ country_event = {
 			}
 			country_event = 98246
 		}
+		random_country = { #Great Powers for the Boer Cause
+			limit = {
+				OR = {
+					tag = GCF
+					tag = GER
+					tag = NET
+					tag = FRA
+				}
+				exists = yes
+				is_greater_power = yes
+				NOT = {
+					alliance_with = ENG	
+					truce_with = ENG
+					war_policy = pacifism
+					relation = { who = ENG value = 1 }
+				}
+			}
+			country_event = 6060
+		}
 		ai_chance = {
 			factor = 0.95
 			modifier = { factor = 0 badboy = 0.87 }
@@ -1691,7 +1791,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Oranje & Natalia can rally to Transvaal's side in Second Boer War
 	id = 98246
 	title = "EVTNAME98246" #The Anglo-Boer War
 	desc = "EVTDESC98246"
@@ -1730,8 +1830,56 @@ country_event = {
 	}
 }
 
+#################################################################
+#																#
+#      	    Friendly Great Powers Come to Boer Aid				#
+#																#
+#################################################################
+country_event = { #Rally to the Boer Cause?
+	id = 6060
+	title = "EVTNAME6060" 
+	desc = "EVTDESC6060"
+	picture = "boer_war"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT6060OPTA" #Defend the Boer Cause
+		relation = {
+			who = TRN
+			value = 400
+		}
+		diplomatic_influence = { 
+			who = TRN 
+			value = 200 
+		}
+		create_alliance = TRN
+		TRN = {
+           war = {               #No target initiates a one-day war that automatically resolves in a WP, but call_ally causes the new ally 
+               attacker_goal = {
+                   casus_belli = humiliate
+               }
+               call_ally = yes
+           }
+           badboy = -6       #Add this in so that you don't have to eat the infamy from declaring a war with no CB fabricated already.
+       }
+		ai_chance = { factor = 10}
+	}
+
+	option = { #None of Our Concern
+		name = "EVT6060OPTB"
+		prestige = -5
+		ai_chance = { factor = 90 }
+	}
+}
+
+#################################################################
+#																#
+#      	   Second Boer War Ends in Boer Victory Events			#
+#																#
+#################################################################
 #South Africa surrender event
-country_event = {
+country_event = { #Event called if Treaty of Vereeniging decision is taken
 	id = 98247
 	title = "EVTNAME98247" #South Africa is Lost
 	desc = "EVTDESC98247"
@@ -1813,7 +1961,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Called from 98247 first option.
 	id = 98248
 	title = "EVTNAME98248" #The Treaty of Vereeniging - Reconciliation
 	desc = "EVTDESC98248"
@@ -1846,7 +1994,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Called from 98247 second option.
 	id = 98249
 	title = "EVTNAME98248" #The Treaty of Vereeniging - Anger
 	desc = "EVTDESC98249"
@@ -2129,11 +2277,11 @@ country_event = {
 		owns = 2087
 		2083 = { empty = yes }
 		year = 1878
-		revolution_n_counterrevolution  = 1
+		has_global_flag = berlin_conference
 		NOT = { has_country_flag = walvis_bay }
 	}
 	
-	mean_time_to_happen = { months = 6 }
+	mean_time_to_happen = { days = 1 }
 	fire_only_once = yes
 	
 	option = {
@@ -2264,64 +2412,39 @@ country_event = {
 		}
 	}
 }
-
-#Diamonds Discovered in Kimberley
+	
 country_event = {
 	id = 98262
-	title = "EVTNAME98262"
+	title = "EVTNAME98262" #Diamonds Discovered in Kimberley
 	desc = "EVTDESC98262"
 	picture = "diamonds_in_kimberley"
 	
 	trigger = {
-		OR = {
-			owns = 2558
-			AND = {
-				owns = 2103
-				owns = 2101
+	OR = {
+		owns = 2558
+		AND = {
+			owns = 2103
+			owns = 2101
 			}
 		}
 		year = 1864
 		civilized = yes
 		2094 = {
 			empty = yes
-			NOT = { trade_goods = precious_goods }
+			NOT = { trade_goods = precious_metal }
+			}
 		}
-	}
-	
 	fire_only_once = yes
-	
-	mean_time_to_happen = { months = 36 }
+	mean_time_to_happen = { months = 48 }
 		
 	option = {
 		name = "EVT98262OPTA"
-		set_country_flag = kimberley_goldrush
-		random_owned = {
-			limit = { owner = { NOT = { primary_culture = boer } } }
-			random_country = {
-				limit = { tag = ORA exists = yes }
-				prestige = -5
-				THIS = {
-					relation = { who = ORA value = -100 }
-					diplomatic_influence = { who = ORA value = -50 }
-				}
-			}
-		}
-		random_owned = {
-			limit = { owner = { NOT = { primary_culture = boer } } }
-			random_country = {
-				limit = { tag = TRN exists = yes }
-				prestige = -5
-				THIS = {
-					relation = { who = TRN value = -100 }
-					diplomatic_influence = { who = TRN value = -50 }
-				}
-			}
-		}
 		2094 = {
 			secede_province = THIS
 			change_province_name = "Kimberley"
-			trade_goods = precious_goods
+			trade_goods = precious_metal
 			add_province_modifier = { name = gold_rush duration = 5475 }
+			add_country_modifier = { name = gold_rush_country duration = 5475 }
 			any_pop = { limit = { NOT = { has_pop_culture = boer } } literacy = -0.99 }
 		}
 	}

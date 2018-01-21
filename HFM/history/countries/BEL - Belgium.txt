@@ -1,6 +1,5 @@
 capital = 387
 primary_culture = wallonian
-culture = flemish
 culture = picard
 religion = catholic
 government = hms_government
@@ -34,10 +33,16 @@ school_reforms = no_schools
 conscription = mandatory_service
 debt_law = debtors_prisons
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = culture_voting_only
+child_labor = child_labor_legal
+citizens_rights = all_voting_pops
 border_policy = open_borders
+centralization = unitary
+colonial_policy = no_colonies 
 
 set_country_flag = catholic_country
+set_global_flag = france_rename_arlon
+set_global_flag = france_rename_liege
+set_global_flag = france_rename_luxemburg
 
 ruling_party = BEL_conservative
 last_election = 1834.1.1
@@ -50,6 +55,8 @@ upper_house = {
 	socialist = 0
 	communist = 0
 }
+
+decision = france_rename_rhine
 
 
 # Technologies
@@ -80,6 +87,8 @@ basic_chemistry = 1
 experimental_railroad = 1
 high_pressure_steam_engine = 1
 interchangeable_parts = 1
+
+set_country_flag = is_belgium
 
 #Inventions
 

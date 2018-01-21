@@ -557,7 +557,7 @@ biologism = {
 			not = { literacy = 0.25 }
 		}
 		modifier = {
-			factor = 10
+			factor = 50
 			capital_scope = { continent = europe }
 			NOT = { tag = TUR }
 			OR = {
@@ -740,6 +740,21 @@ ideological_thought = {
 			factor = 20
 			tag = PRU
 		}
+		modifier = {
+			factor = 5100
+			tag = SAR
+			year = 1845
+		}
+		modifier = {
+			factor = 5100
+			OR = {
+				year = 1845
+				tag = SAR
+				tag = PRU
+				tag = USA
+				tag = FRA
+			}
+		}
 	}
 }
 state_n_government = {
@@ -749,9 +764,9 @@ state_n_government = {
 
 	max_national_focus = 1 
 	ai_chance = {
-		factor = 15
+		factor = 25
 		modifier = {
-			factor = 3.5
+			factor = 4
 			is_greater_power = yes
 		}
 		modifier = {
@@ -784,12 +799,13 @@ state_n_government = {
 			total_pops = 3000000
 		}
 		modifier = {
-			factor = 51
+			factor = 5100
 			OR = {
-				year = 1860
+				year = 1845
 				tag = SAR
 				tag = PRU
 				tag = USA
+				tag = FRA
 			}
 		}
 		modifier = {
@@ -808,9 +824,9 @@ nationalism_n_imperialism = {
 	cb_creation_speed = 0.1
 	
 	ai_chance = {
-		factor = 20
+		factor = 25
 		modifier = {
-			factor = 21
+			factor = 25
 			is_greater_power = yes
 			OR = {
 				any_greater_power = { any_owned_province = { any_neighbor_province = { empty = yes } } }
@@ -825,7 +841,17 @@ nationalism_n_imperialism = {
 			total_pops = 4000000
 		}
 		modifier = {
-			factor = 2
+			factor = 50
+			is_greater_power = yes
+			year = 1855
+		}
+		modifier = {
+			factor = 200
+			tag = FRA
+			year = 1852
+		}
+		modifier = {
+			factor = 500
 			is_greater_power = yes
 			year = 1865
 		}
@@ -835,7 +861,7 @@ nationalism_n_imperialism = {
 			year = 1870
 		}
 		modifier = {
-			factor = 1.5
+			factor = 2.5
 			OR = {
 				total_pops = 4000000
 				AND = {
@@ -871,6 +897,10 @@ nationalism_n_imperialism = {
 				tag = POR
 			}
 		}
+		modifier = {
+			factor = 510
+			tag = SAR
+		}
 	}
 }
 revolution_n_counterrevolution = {
@@ -881,9 +911,9 @@ revolution_n_counterrevolution = {
 	max_national_focus = 1
 	diplomatic_points = 0.25
 	ai_chance = {
-		factor = 20
+		factor = 35
 		modifier = {
-			factor = 21
+			factor = 200
 			is_greater_power = yes
 			OR = {
 				any_greater_power = { any_owned_province = { any_neighbor_province = { empty = yes } } }

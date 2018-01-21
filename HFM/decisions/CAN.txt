@@ -85,15 +85,37 @@ political_decisions = {
 				tag = ENG
 				tag = ENL
 			}
-			year = 1860
-			owns = 13
-			owns = 14
-			owns = 19
-			owns = 2629
-			owns = 18
+			OR = {
+				AND = {
+					owns = 13
+					owns = 14
+					owns = 19
+				}
+				RPL = {
+					vassal_of = THIS
+					owns = 13
+					owns = 14
+					owns = 19
+				}
+			}
+			USA = {
+				has_country_flag = oregon_treaty
+			}
 			NOT = { has_country_flag = british_columbia_organized }
 		}
 		allow = {
+			NOT = { war_with = USA }
+			COL = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+							vassal_of = THIS
+						}
+					}
+				}
+			}
 			nationalism_n_imperialism = 1
 		}
 		effect = {
@@ -101,16 +123,41 @@ political_decisions = {
 			prestige = 5
 			CAN_13 = {
 				add_core = COL
+				add_core = CAN
 				remove_core = RPL
-			}			
+			}	
+			#Remove RPL & USA Cores, if owned
+			RPL = {			
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 13 #Vancouver
+							province_id = 78 #Seattle
+							province_id = 81 #Portland
+							province_id = 91 #Idaho
+							province_id = 114 #Fort Owen
+							province_id = 111 #Wyoming
+						}
+						owned_by = RPL
+						exists = RPL
+						NOT = { exists = COL }
+					}
+					state_scope = {
+						any_owned = {
+							remove_core = RPL
+							remove_core = USA
+							remove_core = THIS
+						}
+					}
+				}
+				all_core = { remove_core = ENG }
+			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
 	}
 
-	
-	
 	join_confederation = {
 		picture = treaty_signing
 		potential = {
@@ -177,6 +224,13 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					tag = NEW
+					is_vassal = yes
+				}
+			}
 		}
 	}
 	
@@ -367,8 +421,17 @@ political_decisions = {
 			}
 			25 = { 
 				change_province_name = "Calgary"
-				life_rating = 12
-				add_province_modifier = { name = gateway_to_harbor duration = 365 }
+				life_rating = 15
+				add_province_modifier = { name = gateway_to_america duration = 720 }
+				any_pop = { limit = { location = { province_id = 26 } is_culture_group = british } reduce_pop = 3 }
+				any_pop = { limit = { location = { province_id = 26 } is_culture_group = neo_european_cultures } reduce_pop = 3 }
+				
+			}
+			27 = {
+				life_rating = 10
+				add_province_modifier = { name = gateway_to_america duration = 720 }
+				any_pop = { limit = { location = { province_id = 27 } is_culture_group = british } reduce_pop = 3 }
+				any_pop = { limit = { location = { province_id = 27 } is_culture_group = neo_european_cultures } reduce_pop = 3 }			
 			}
 			69 = { change_province_name = "Edmundston" }
 			41 = { change_province_name = "Brandon" }
@@ -441,7 +504,10 @@ political_decisions = {
 				}
 				infrastructure = 1 owner = { treasury = -2000 }
 			}
-			13 = { add_province_modifier = { name = gateway_to_harbor duration = 1825 } }
+			13 = { 
+				add_province_modifier = { name = gateway_to_america duration = 365 }
+				life_rating = 3
+			}
 			52 = { change_province_name = "Sudbury" }
 			49 = { change_province_name = "Kenora" }
 			2594 = { change_province_name = "Osnaburgh" }
@@ -493,18 +559,25 @@ political_decisions = {
 		picture = bytown_1853
 		potential = {
 			owns = 57
-			NOT = { has_global_flag = ottawa_founded }
+			57 = { NOT = { life_rating = 36 } }
 			57 = { NOT = { has_province_modifier = genocide } }
 		}
 		
 		allow = {
 			war = no
-			iron_railroad = 1
+			early_railroad = 1
+			year = 1850
 		}
 		
 		effect = {
-			set_global_flag = ottawa_founded
-			57 = { change_province_name = "Ottawa" life_rating = 4 }
+			57 = { 
+				change_province_name = "Ottawa" 
+				life_rating = 5 
+				add_province_modifier = {
+					name = recently_built_city
+					duration = 1450
+				}
+			}
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -512,7 +585,19 @@ political_decisions = {
 	alaskan_frontier = {
 		picture = fort_selkirk
 		potential = {
-			owns = 17
+			OR = {
+				AND = { 
+					owns = 17
+					tag = ENG
+				}
+				AND = {
+					tag = ENG
+					RPL = {
+						vassal_of = ENG
+						owns = 17
+					}
+				}
+			}
 			6 = { empty = yes }
 		}
 		
@@ -527,7 +612,182 @@ political_decisions = {
 				add_core = RPL
 				change_province_name = "Fort Selkirk"
 			}
+			2629 = { secede_province = THIS }
+			18 = { secede_province = THIS }
+			
+			any_owned = {
+				limit = {
+					is_core = RPL
+					owner = { primary_culture = british }
+				}
+				secede_province = RPL
+			}
 		}
 		ai_will_do = { factor = 1 }
 	}
+	
+	rupert_land_act = {
+		picture = canadian_dominion
+		potential = {
+			year = 1875
+			OR = {
+				tag = ENG
+				tag = ENL
+			}
+			NOT = { 
+				government = proletarian_dictatorship
+				government = presidential_dictatorship
+				government = fascist_dictatorship
+			}
+			OR = {
+				any_owned_province = {
+					OR = {
+						#region = ENG_6
+						region = ENG_9
+						region = ENG_22
+						region = ENG_30
+						region = ENG_36
+						region = CAN_50
+						region = CAN_60
+					}
+				}
+				RPL = {
+					exists = yes
+					vassal_of = THIS
+				}
+			}
+			NOT = { has_country_flag = refused_ruperts_land }
+			CAN = {
+				war = no
+				exists = yes
+				OR = {
+					vassal_of = THIS
+					in_sphere = THIS
+					relation = { who = THIS value = 100 }
+				}
+				NOT = { has_country_flag = refused_ruperts_land }
+				NOT = { has_country_flag = agreed_ruperts_land }
+			}
+			NOT = { has_country_flag = rupert_land_act }
+		}
+		
+		allow = {
+			war = no
+			money = 101000
+		}
+		
+		effect = {
+			badboy = -3
+			set_country_flag = rupert_land_act
+			#ENG_6 = { remove_core = THIS }
+			ENG_9 = { remove_core = THIS }
+			ENG_22 = { remove_core = THIS }
+			ENG_30 = { remove_core = THIS }
+			ENG_36 = { remove_core = THIS }
+			CAN_50 = { remove_core = THIS }
+			CAN_60 = { remove_core = THIS }
+			random_owned = {
+				limit = { region = USA_1 }
+				USA_1 = {
+					remove_core = THIS
+					remove_core = RUS
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_flag = british_columbia_organized }
+					}
+				}
+				CAN_13 = { remove_core = THIS }
+				#CAN_18 = { remove_core = THIS }
+				COL = { all_core = { remove_core = THIS } }
+			}
+			CAN = { country_event = 44321 }
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	rupert_land_act_alternate = {
+		picture = canadian_dominion
+		potential = {
+			year = 1875
+			OR = {
+				tag = ENG
+				tag = ENL
+			}
+			NOT = { 
+				government = proletarian_dictatorship
+				government = presidential_dictatorship
+				government = fascist_dictatorship
+			}
+			OR = {
+				any_owned_province = {
+					OR = {
+						#region = ENG_6
+						region = ENG_9
+						region = ENG_22
+						region = ENG_30
+						region = ENG_36
+						region = CAN_50
+						region = CAN_60
+					}
+				}
+				RPL = {
+					exists = yes
+					vassal_of = THIS
+				}
+			}
+			NOT = { has_country_flag = refused_ruperts_land }
+			CAN = {
+				exists = no
+			}
+			has_country_flag = CAN_independence_refused
+			NOT = { has_country_flag = rupert_land_act }
+		}
+		
+		allow = {
+			war = no
+			money = 101000
+		}
+		
+		effect = {
+			treasury = -100000
+			#ENG_6 = { remove_core = THIS }
+			ENG_9 = { remove_core = THIS }
+			ENG_22 = { remove_core = THIS }
+			ENG_30 = { remove_core = THIS }
+			ENG_36 = { remove_core = THIS }
+			CAN_50 = { remove_core = THIS }
+			CAN_60 = { remove_core = THIS }
+			random_owned = {
+				limit = { region = USA_1 }
+				USA_1 = {
+					remove_core = THIS
+					remove_core = RUS
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_flag = british_columbia_organized }
+					}
+				}
+				CAN_13 = { remove_core = THIS }
+				#CAN_18 = { remove_core = THIS }
+				COL = { all_core = { remove_core = THIS } }
+			}
+			inherit = RPL
+			RPL = {
+				all_core = {
+					add_core = CAN
+				}
+			}
+			set_country_flag = rupert_land_act
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
 }

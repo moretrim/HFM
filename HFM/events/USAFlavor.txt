@@ -1241,6 +1241,14 @@ country_event = {
 		78 = { change_province_name = "Seattle" }
 		79 = { change_province_name = "Olympia" }
 		ai_chance = { factor = 100 }
+		78 = {
+			any_pop = {
+				limit = {
+					is_culture_group = native_american
+				}
+				reduce_pop = 0.3
+			}
+		}
 	}
 	
 	option = {

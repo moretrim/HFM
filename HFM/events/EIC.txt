@@ -14,12 +14,7 @@ country_event = {
 					owned_by = ENG
 				}
 			}
-			CHI = {
-				any_core = {
-					owned_by = ENG
-				}
-			}
-			PNJ = {
+			HND = {
 				any_core = {
 					owned_by = ENG
 				}
@@ -32,7 +27,7 @@ country_event = {
 	}
 
 	option = {
-		name = "EVT9990010OPTA"
+		name = "EVT9990001OPTA"
 		ENG = {
 			any_owned = {
 				limit = {
@@ -43,14 +38,7 @@ country_event = {
 			}
 			any_owned = {
 				limit = {
-					is_core = PNJ
-					is_overseas = yes
-				}
-				secede_province = THIS
-			}
-			any_owned = {
-				limit = {
-					is_core = CHI
+					is_core = HND
 					is_overseas = yes
 				}
 				secede_province = THIS
@@ -61,25 +49,59 @@ country_event = {
 
 country_event = {
 	id = 9990002
-	title = "EVTNAME9990008"
+	title = "EVTNAME9990000"
 	desc = "EVTDESC9990002"
 	picture = "deliberation"
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVT9990008OPTA"
+		name = "EVT9990002OPTA"
+		3263 = { add_core = HND }
+		remove_country_modifier = eic_balance
+		research_points = 10000
+		civilized = yes
+		ENG = {
+			any_owned = {
+				limit = {
+					is_core = BUR
+					is_overseas = yes
+				}
+				secede_province = THIS
+			}
+			any_owned = {
+				limit = {
+					is_core = HND
+					is_overseas = yes
+				}
+				secede_province = THIS
+			}
+		}
 		FROM = {
 			country_event = 9990003
+		}
+		EIC = {
+			any_pop = {
+				limit = {
+					is_primary_culture = no
+				}
+				militancy = 4
+			}
+		}
+		ai_chance = {
+			factor = 0
 		}
 	}
 	
 	option = {
-		name = "EVT9990008OPTB"
+		name = "EVT9990002OPTB"
+		3263 = { add_core = HND }
 		FROM = {
 			country_event = 9990004
 		}
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 100
+		}
 	}
 }
 	
@@ -88,12 +110,29 @@ country_event = {
 	title = "EVTNAME9990003"
 	desc = "EVTDESC9990003"
 	picture = "deliberation"
-	
+	major = yes
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVTDESC9990003"
+		name = "EVT9990003OPTA"
+		badboy = -10
 		release_vassal = EIC
+		diplomatic_influence = {
+			who = EIC
+			value = -400
+		}
+		any_country = {
+			limit = {
+				vassal_of = ENG
+				is_culture_group = south_asian
+			}
+			create_alliance = ENG
+		}
+		leave_alliance = EIC
+		FROM = {
+			country_event = 9990012
+			country_event = 9990013
+		}	
 		war = {
 			target = EIC
 			attacker_goal = {
@@ -110,21 +149,21 @@ country_event = {
 
 country_event = {
 	id = 9990004
-	title = "EVTNAME9990004"
+	title = "EVTNAME9990000"
 	desc = "EVTDESC9990004"
 	picture = "deliberation"
 	
+	major = yes
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVT9990010OPTA"
-		EIC = {
-			civilized = no
+		name = "EVT9990004OPTA"
+		treasury = 50000
+		3263 = {
+			naval_base = -2
 		}
-		inherit = EIC
-		treasury = 100000
-		1251 = {
-			remove_core = EIC
+		EIC = {
+			country_event = 9990007
 		}
 	}
 }
@@ -134,11 +173,13 @@ country_event = {
 	title = "EVTNAME9990005"
 	desc = "EVTDESC9990005"
 	picture = sepoy
+	major = yes
 	
 	trigger = {
 		tag = EIC
 		has_global_flag = war_with_EIC
 		war = no
+		is_vassal = no
 	}
 	
 	fire_only_once = yes
@@ -148,29 +189,155 @@ country_event = {
 	}
 	
 	option = {
-		name = "EVT9990010OPTA"
-		any_neighbor_country = {
+		name = "EVT9990005OPTA"
+		prestige = 50
+		civilized = yes
+		government = prussian_constitutionalism
+		any_pop = {
+			limit = { 
+				culture = british
+				location = { is_core = HND }
+			}
+			reduce_pop = 1.5
+			militancy = -10
+			consciousness = -10
+		}
+		ENG = {
+			prestige = -100
+			release_vassal = EIC
+			diplomatic_influence = {
+				who = EIC
+				value = -400
+			}
+			any_owned = {
+				limit = {
+					is_core = HND
+					is_overseas = yes
+				}
+				secede_province = EIC
+			}
+			any_owned = {
+				limit = {
+					is_core = SRI
+					is_overseas = yes
+				}
+				secede_province = EIC
+			}
+			any_owned = {
+				limit = {
+					is_core = JOH
+					is_overseas = yes
+				}
+				secede_province = EIC
+			}
+			any_owned = {
+				limit = {
+					is_core = CHI
+					is_overseas = yes
+				}
+				secede_province = EIC
+			}
+			any_owned = {
+				limit = {
+					is_core = BUR
+					is_overseas = yes
+				}
+				secede_province = EIC
+			}
+			any_owned = {
+				limit = {
+					is_core = AFG
+					is_overseas = yes
+				}
+				secede_province = EIC
+			}
+			any_owned = {
+				limit = {
+					is_core = MLD
+					is_overseas = yes
+				}
+				secede_province = EIC
+			}
+			any_owned = {
+				limit = {
+					is_core = PER
+					is_overseas = yes
+				}
+				secede_province = EIC
+			}
+			any_owned = {
+				limit = {
+					is_core = SIA
+					is_overseas = yes
+				}
+				secede_province = EIC
+			}
+			any_owned = {
+				limit = {
+					is_core = SLG
+					is_overseas = yes
+				}
+				secede_province = EIC
+			}
+			any_owned = {
+				limit = {
+					is_core = PRK
+					is_overseas = yes
+				}
+				secede_province = EIC
+			}
+			2128 = {
+				secede_province = EIC
+			}
+			2125 = {
+				secede_province = EIC
+			}
+		}
+		any_country = {
 			limit = {
-				is_vassal = yes
+				vassal_of = ENG
+				NOT = {
+					continent = europe
+					continent = australia_new_zealand
+					continent = north_america
+					continent = africa
+					continent = west_africa
+					continent = east_africa
+					continent = south_west_africa
+					continent = south_america
+					continent = oceania
+					continent = polynesia
+				}
 			}
 			country_event = 9990006
 		}
-		prestige = 50
+		
+		ENG_1251 = {
+			add_core = EIC
+		}
+		1304 = {
+			add_core = EIC
+		}
+		1297 = {
+			add_core = EIC
+		}
+		remove_country_modifier = sepoy_mutiny
 		set_global_flag = EIC_independence
 	}
 }
 
 country_event = {
 	id = 9990006
-	title = "EVTNAME9990006"
+	title = "EVTNAME9990005"
 	desc = "EVTDESC9990006"
 	picture = sepoy
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVT9990007OPTA"
+		name = "EVT9990006OPTA"
 		leave_alliance = ENG
+		prestige = -50
 		ENG = {
 			release_vassal = THIS
 			diplomatic_influence = {
@@ -178,43 +345,62 @@ country_event = {
 				value = -1000
 			}
 		}
+		EIC = {
+			create_vassal = THIS
+			create_alliance = THIS
+			military_access = THIS
+			relation = {
+				who = THIS
+				value = 200
+			}
+		}
+		government = absolute_monarchy
+		ai_chance = {
+			factor = 60
+		}
+	}
+	
+	option = {
+		name = "EVT9990006OPTB"
+		leave_alliance = ENG
+		prestige = -50
+		ENG = {
+			release_vassal = THIS
+			diplomatic_influence = {
+				who = THIS
+				value = -1000
+			}
+		}
+		EIC = {
+			casus_belli = {
+				target = THIS
+				type = make_puppet
+				months = 60
+			}
+			country_event = 9990011
+		}
+		ai_chance = {
+			factor = 40
+		}
 	}
 }
 
 country_event = {
 	id = 9990007
-	title = "EVTNAME9990008"
-	desc = "EVTDESC9990007"
+	title = "EVTNAME9990000"
+	desc = "EVTDESC9990004"
 	picture = "deliberation"
 	
-	trigger = {
-		tag = ENG
-		OR = {
-			EIC = {
-				vassal_of = THIS
-			}
-			NOT = {
-				is_sphere_leader_of = EIC
-			}
-		}
-		EIC = {
-			exists = yes
-		}
-		NOT = {
-			has_global_flag = EIC_independence
-		}
-	}
-	
+	is_triggered_only = yes
 	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		months = 1
-	}
 	
 	option = {
 		name = "EVT9990007OPTA"
-		EIC = {
-			country_event = 9990008
+		any_owned = {
+			secede_province = ENG
+		}
+		ENG = {
+			inherit = THIS
 		}
 	}
 }
@@ -228,30 +414,19 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVT9990008OPTA"
-		FROM = {
-			country_event = 9990003
-		}
-	}
-	
-	option = {
-		name = "EVT9990008OPTB"
-		FROM = {
-			country_event = 9990004
-		}
-		ai_chance = { factor = 100 }
+		name = "EVT9990002OPTA"
 	}
 }
 
 country_event = {
 	id = 9990009
-	title = "EVTNAME9990010"
+	title = "EVTNAME9990009"
 	desc = "EVTDESC9990009"
 	picture = Artillery
 	
 	trigger = {
 		tag = EIC
-		vassal_of = ENG
+		substate_of = ENG
 		OR = {
 			AND = {
 				ENG = {
@@ -357,11 +532,11 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 3
+		months = 1
 	}
 	
 	option = {
-		name = "EVT9990010OPTA"
+		name = "EVTOPT99910"
 		random_owned = {
 			limit = {
 				owner = {
@@ -517,13 +692,13 @@ country_event = {
 
 country_event = {
 	id = 9990010
-	title = "EVTNAME9990010"
+	title = "EVTNAME9990009"
 	desc = "EVTDESC9990009"
 	picture = Artillery
 	
 	trigger = {
 		tag = EIC
-		vassal_of = ENG
+		substate_of = ENG
 		OR = {
 			AND = {
 				ENG = {
@@ -643,7 +818,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "EVT9990010OPTA"
+		name = "EVTOPT99910"
 		random_owned = {
 			limit = {
 				owner = {
@@ -812,479 +987,170 @@ country_event = {
 	}
 }
 
-
 country_event = {
-
-	id = 9990011 # Sepoy Rebellion
-
-	title = "EVTNAME90040"
-	desc = "EVTDESC90040"
-	news = yes
-	news_desc_long = "EVTDESC90040_NEWS_LONG"
-	news_desc_medium = "EVTDESC90040_NEWS_MEDIUM"
-	news_desc_short = "EVTDESC90040_NEWS_SHORT"
-	picture = "sepoy"
-
-	trigger = {
-		tag = EIC
-		year = 1857
-		has_global_flag = eic_spawned
-		OR = {
-			owns = 1236 #Delhi
-			owns = 1251 #Calcutta
-			owns = 1304 #Madras
-			owns = 1297 #Bombay
-			owns = 1247 #Patna
-			owns = 1227 #Lahore
-		}
-	}
+	id = 9990011
+	title = "EVTNAME9990011"
+	desc = "EVTDESC9990011"
+	picture = "deliberation"
 	
-	fire_only_once = yes
-
-	mean_time_to_happen = {
-		months = 6
-	}
-
-	option = {
-		name = "EVT90040OPTA"
-		set_country_flag = sepoy_rebellion
-		any_owned = {
-			limit = { is_core = HND }
-			random_list = {
-				40 = {
-					poor_strata = {
-						limit = {
-							is_culture_group = south_asian
-						}
-						militancy = 6
-					}
-					add_province_modifier = {
-						name = nationalist_agitation
-						duration = 730
-					}
-				}
-				40 = {
-					poor_strata = {
-						limit = {
-							is_culture_group = south_asian
-						}
-						militancy = 3
-					}
-					add_province_modifier = {
-						name = nationalist_agitation
-						duration = 365
-					}
-				}
-				20 = {
-				}
-			}
-		}									
-	}
-}
-
-#Mughal declare Independence
-country_event = {
-
-	id = 9990012
-	title = "EVTNAME900041" 
-	desc = "EVTDESC900041"
-	picture = "sepoy"
-
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVT900041OPTA"
-		relation = { who = FROM value = -150 }
-		EIC = {
-		any_owned = { limit = { is_core = MUG } any_pop = { limit = { has_pop_religion = sunni }
-			militancy = 9
-			}
-		}
-		
-		any_owned = { limit = { is_core = HND } 
-			any_pop = { limit = {
-			OR = {
-				has_pop_religion = sunni
-				has_pop_religion = shiite
-				}
-			}
-			militancy = 6
-		}
-	}
-		
-		any_owned = { limit = { is_core = MUG } any_pop = { limit = { NOT = { has_pop_religion = sunni } }
-			militancy = 3
-			}
-		}
-		}
-		casus_belli ={
-			target = FROM
-			type = establish_protectorate_casus_belli
-			months = 36
-			}
-		ai_chance = { factor = 90 }
-		}
-		
-	option = {
-		name = "EVT900041OPTB"
-		prestige = -10
-		relation = { who = FROM value = -50 }
-		EIC = {
-		any_owned = { limit = { is_core = MUG } any_pop = { limit = { has_pop_religion = sunni }
-			militancy = 9
-			}
-		}
-		
-		any_owned = { limit = { is_core = HND } any_pop = { limit = { has_pop_religion = sunni }
-			militancy = 6
-			}
-		}
-		
-		any_owned = { limit = { is_core = MUG } any_pop = { limit = { NOT = { has_pop_religion = sunni } }
-			militancy = 3
-			}
-		}
-		}
-		casus_belli ={
-			target = FROM
-			type = establish_protectorate_casus_belli
-			months = 36
-			}
-		ai_chance = { factor = 05 }
-		}
-		
-	option = {
-		name = "EVT900041OPTC"
-		prestige = -30
-		relation = { who = FROM value = 50 }
-		EIC = {
-			any_owned = { limit = { is_core = MUG } secede_province = MUG }
-		}
-		ai_chance = { factor = 05 }
-	}
-}
-
-country_event = {
-
-	id = 9990013
-	news = yes
-	news_desc_long = "EVTDESC36939_NEWS_LONG"
-	news_desc_medium = "EVTDESC36939_NEWS_MEDIUM"
-	news_desc_short = "EVTDESC36939_NEWS_SHORT"
-
-	trigger = {
-		OR = {
-			tag = ENG
-			tag = ENL
-			tag = EIC
-		}
-		has_global_flag = eic_spawned
-		owns = 1251 #Calcutta
-		year = 1853
-		NOT = { year = 1857 }
-		MUG = { 
-			OR = {
-				exists = no
-			AND = {
-				exists = yes
-				vassal_of = THIS
-				}
-			}
-		}
-	}
-	
-	fire_only_once = yes
- 
-	mean_time_to_happen =  {
-		months = 5
-
-		modifier = {
-			factor = 0.75 #increase likelihood to happen
-			year = 1855
-		}
-
-
-		modifier = {
-			factor = 0.95 #increase likelihood to happen
-			year = 1856
-		}
-	}
-
-	title = "EVTNAME36939"
-	desc = "EVTDESC36939"
-	picture = "LordDalhousie"
-
-	option = {
-		name = "EVTOPTA36939"
-		any_pop = {
-			limit = {
-				has_pop_religion = hindu
-			}
-			militancy = 3
-		}
-		any_pop = {
-			limit = {
-				has_pop_religion = sunni
-			}
-			militancy = 2
-		}
-	}
-
-	option = {
-		name = "EVTOPTB36939" 
-		officers = {
-			consciousness = 1
-			}
-		capitalists = {
-			consciousness = 1
-			}
-		any_pop = {
-			limit = {
-				has_pop_religion = hindu
-			}
-			militancy = -1
-		}
-		any_pop = {
-			limit = {
-				has_pop_religion = sunni
-			}
-			militancy = -1
-		}	
-	}
-
-}
-
-
-
-country_event = {
-	id = 9990014
-	title = "EVTNAME36955" #Conflict with Burma
-	desc = "EVTDESC36955"
-	news = yes
-	news_title = "EVTNAME36955_NEWS_TITLE"
-	news_desc_long = "EVTDESC36955_NEWS_LONG"
-	news_desc_medium = "EVTDESC36955_NEWS_MEDIUM"
-	news_desc_short = "EVTDESC36955_NEWS_SHORT"
-	picture = "Opiumwar"
-	
-	trigger = {
-		tag = ENG
-		is_greater_power = yes
-		nationalism_n_imperialism = 1
-		NOT = { has_global_flag = berlin_conference }
-		has_global_flag = eic_spawned
-		BUR = {
-			war = no
-			civilized = no
-			is_vassal = no
-			exists = yes
-			OR = {
-				AND = {
-					neighbour = EIC
-					is_our_vassal = EIC
-				}
-				neighbour = ENG
-			}
-			number_of_states = 2
-			any_owned_province = { port = yes }
-			NOT = { truce_with = ENG }
-		}
-		OR = {
-			war_policy = jingoism
-			war_policy = pro_military
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 12
-	}
-	
-	option = {
-		name = "EVT36955OPTA"
-		prestige = 5
-		badboy = 2
-		relation = { who = BUR value = -200 }
-		diplomatic_influence = { who = BUR value = -200 }
+		name = "EVT9990011OPTA"
 		casus_belli = {
-			target = BUR
-			type = demand_concession_NI_casus_belli
+			target = FROM
+			type = make_puppet
 			months = 60
 		}
-		ai_chance = {
-			factor = 95
-		}
-	}
-	
-	option = {
-		name = "EVT36955OPTB"
-		prestige = -25
-		relation = { who = BUR value = 25 }
-		any_pop = {
-			limit = { is_primary_culture = yes }
-			dominant_issue = {
-				factor = 0.05
-				value = pacifism
-			}
-		}
-		any_pop = {
-			limit = {
-				location = { is_core = HND }
-				is_primary_culture = no
-			}
-			militancy = 2
-		}
-		ai_chance = {
-			factor = 5
-		}
 	}
 }
 
-#Doctrine of Lapse 1/2
 country_event = {
-	id = 9990015
-	title = "EVTNAME13357"
-	desc = "EVTDESC13357"
+	id = 9990012
+	title = "EVTNAME9990012"
+	desc = "EVTDESC9990012"
+	picture = "boer_war"
 	
-	picture = "Rebellion"
-	
-	trigger = {
-		OR = {
-			vassal_of = EIC
-			vassal_of = ENG
-		}
-		ai = yes
-		civilized = no
-		NOT = { tag = PAK }
-		NOT = { has_country_flag = no_british_doctrine }
-		has_global_flag = eic_spawned
-		OR = {
-			EIC = { ideological_thought = 1 exists = yes }
-			ENG = { ideological_thought = 1 exists = yes }
-		}
-		OR = {
-			primary_culture = assamese
-			primary_culture = baluchi
-			primary_culture = bengali
-			primary_culture = bihari
-			primary_culture = manipuri
-			primary_culture = nepali
-			primary_culture = oriya
-			primary_culture = sinhala
-			primary_culture = avadhi
-			primary_culture = kanauji
-			primary_culture = kashmiri
-			primary_culture = panjabi
-			primary_culture = gujarati
-			primary_culture = marathi
-			primary_culture = sindi
-			primary_culture = rajput
-			primary_culture = kannada
-			primary_culture = malayalam
-			primary_culture = tamil
-			primary_culture = telegu
-			tag = CRL
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 75
-		modifier = {
-			factor = 1.5
-			NOT = { average_militancy = 1 }
-		}
-		modifier = {
-			factor = 1.2
-			NOT = { average_militancy = 2 }
-		}
-		modifier = {
-			factor = 1.1
-			NOT = { average_militancy = 3 }
-		}
-		modifier = {
-			factor = 0.9
-			average_militancy = 4
-		}
-		modifier = {
-			factor = 0.8
-			average_militancy = 5
-		}
-		modifier = {
-			factor = 0.5
-			num_of_revolts = 1
-		}
-		modifier = {
-			factor = 0.9
-			NOT = {
-				prestige = 10
-			}
-		}
-		modifier = {
-			factor = 0.9
-			NOT = {
-				prestige = 5
-			}
-		}
-		modifier = {
-			factor = 0.1
-			OR = {
-			tag = BHP
-			tag = CRL
-			NOT = {
-				government = absolute_monarchy
-				government = prussian_constitutionalism
-				government = hms_government
-				}
-			}
-		}
-	}
-	
-	option = {
-		name = "EVTOPTA13357"
-		any_pop = {
-			limit = { is_primary_culture = yes }
-			militancy = 4
-			consciousness = 1
-		}
-		EIC = { country_event = 13358 }
-		political_reform = peonage
-		any_owned = {
-			limit = {
-				has_pop_type = labourers
-				has_pop_type = serfs
-			}
-			any_pop = { limit = { type = serfs } pop_type = labourers }
-		}
-		any_owned = {
-			limit = {
-				has_pop_type = farmers
-				has_pop_type = serfs
-			}
-			any_pop = { limit = { type = serfs } pop_type = farmers }
-		}
-	}
-}
-
-
-#EIC Setup
-country_event = {
-	id = 9990016
-	title = "EVTNAME9990016"
-	desc = "EVTDESC9990016"
-		
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVTOPTA9990016"	
-		any_owned = { limit = { is_core = HND } secede_province = EIC }
-		create_vassal = EIC
-		relation = { who = EIC value = 400 }
-		diplomatic_influence = { who = EIC value = 400 }
-		create_alliance = EIC
-		EIC = { set_country_flag = unreleasable_country capital = 1251 }
-		any_country = {
-			limit = { NOT = { tag = ENG } }
-			relation = { who = EIC value = -400 }
-			diplomatic_influence = { who = EIC value = -400 }
+		name = "EVTDESC9990012OPTA"
+		release = MAH
+		release = BER
+		ENG = {
+			inherit = MAH
+			inherit = BER
+		}
+	}
+}
+
+country_event = {
+	id = 9990013
+	title = "EVTNAME9990013"
+	desc = "EVTDESC9990013"
+	picture = "PDA_Blockade"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTDESC9990013OPTA"
+		release = SRI
+		ENG = {
+			inherit = SRI
+		}
+		1321 = {
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = commerce_raider value = current }
+			sub_unit = { type = steam_transport value = current }
+			sub_unit = { type = steam_transport value = current }
+			sub_unit = { type = steam_transport value = current }
+			sub_unit = { type = steam_transport value = current }
+			sub_unit = { type = steam_transport value = current }
+			sub_unit = { type = steam_transport value = current }
+			sub_unit = { type = steam_transport value = current }
+			sub_unit = { type = steam_transport value = current }
+			
+		}
+	}
+}
+
+country_event = {
+
+	id = 9990014
+	title = "EVTNAME9990001"
+	desc = "EVTDESC9990001"
+	picture = "confederation"
+
+	trigger = {
+		ENG = {  NOT = { has_country_flag = oregon_war } }
+		tag = RPL
+		is_vassal = yes
+		government = colonial_company
+		OR = {
+			AND = {
+				COL = {
+					any_core = {
+						owned_by = ENG
+					}
+				}
+				COL = {
+					exists = no
+				}
+			}
+			RPL = {
+				any_core = {
+					owned_by = ENG
+				}
+			}
+		}
+		ENG = {
+			war = no
+		}
+		war = no
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPT99910"
+		ENG = {
+			any_owned = {
+				limit = {
+					is_core = COL
+					is_overseas = yes
+				}
+				secede_province = THIS
+			}
+			any_owned = {
+				limit = {
+					is_core = RPL
+					is_overseas = yes
+				}
+				secede_province = THIS
+			}
 		}
 	}
 }

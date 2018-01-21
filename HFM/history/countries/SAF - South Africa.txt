@@ -2,7 +2,7 @@ capital = 2087
 primary_culture = boer
 culture = british
 religion = protestant
-government = hms_government
+government = colonial_company
 plurality = 0.6
 nationalvalue = nv_productivity
 literacy = 0.2
@@ -32,8 +32,11 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = debtors_prisons
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = primary_culture_only
+child_labor = child_labor_legal
+citizens_rights = primary_culture_only
 border_policy = open_borders
+centralization = federalism
+colonial_policy = settlement
 
 set_country_flag = protestant_country
 

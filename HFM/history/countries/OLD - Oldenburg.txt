@@ -31,8 +31,11 @@ school_reforms = no_schools
 conscription = two_year_draft
 debt_law = debtors_prisons
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = culture_voting_only
+child_labor = child_labor_legal
+citizens_rights = culture_voting_only
 border_policy = open_borders
+centralization = unitary
+colonial_policy = no_colonies 
 
 set_country_flag = protestant_country
 
@@ -49,7 +52,7 @@ upper_house = {
 
 
 # Technologies
-post_napoleonic_thought = 1
+
 flintlock_rifles = 1
 bronze_muzzle_loaded_artillery = 1
 military_staff_system = 1

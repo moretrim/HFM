@@ -6,6 +6,8 @@ political_decisions = {
 			capital_scope = { continent = europe }
 			NOT = { tag = TUR }
 			NOT = { tag = RUS }
+			NOT = { tag = SAR }
+			NOT = { tag = SIC }
 			NOT = { has_global_flag = called_congo_conference }
 			1984 = { empty = yes }
 			any_owned_province = { has_building = naval_base }
@@ -56,6 +58,15 @@ political_decisions = {
 					NOT = { any_owned_province = { is_colonial = yes } }
 					raider_group_doctrine = 1
 					year = 1886
+				}
+				AND = {
+					tag = BEL
+					NOT = { badboy = 0.5 }
+					NOT = { any_owned_province = { continent = africa } }
+					NOT = { any_owned_province = { is_colonial = yes } }
+					raider_group_doctrine = 1
+					has_global_flag = yes_railroad
+					year = 1880
 				}
 			}
 		}
@@ -467,4 +478,43 @@ political_decisions = {
 
 		ai_will_do = { factor = 1 }
 	}
+	
+	
+	law_of_equality = {
+		picture = law_of_equality
+		potential = {
+			tag = BEL
+			owns = 390
+			NOT = { accepted_culture = flemish }
+			NOT = { has_country_flag = law_of_equality }
+		}
+
+		allow = {
+			war = no
+			OR = {
+				revolution_n_counterrevolution = 1
+				AND = {
+					#citizenship_policy = full_citizenship
+					year = 1848
+					390 = {
+						average_militancy = 7
+					}
+				}
+			}
+		}
+
+		effect = {
+			set_country_flag = law_of_equality
+			prestige = 5
+			add_accepted_culture = flemish
+			387 = { change_province_name = "Brussel" }
+			set_global_flag = dutch_rename_brussels
+			clr_global_flag = france_rename_brussels
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 }

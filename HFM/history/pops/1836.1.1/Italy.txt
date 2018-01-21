@@ -35,21 +35,27 @@
 	artisans = {
 		culture = north_italian
 		religion = catholic
-		size = 10000
+		size = 15000
 	}
 
 	craftsmen = {
 		culture = north_italian
 		religion = catholic
-		size = 3000
+		size = 9000
 	}
 
 	artisans = {
 		culture = north_italian
 		religion = catholic
-		size = 1000
+		size = 10000
 	}
 
+	soldiers = {
+		culture = north_italian
+		religion = catholic
+		size = 5000
+	}
+	
 	soldiers = {
 		culture = north_italian
 		religion = catholic
@@ -65,13 +71,19 @@
 	clergymen = {
 		culture = north_italian
 		religion = jewish
-		size = 10
+		size = 100
 	}
 
 	artisans = {
 		culture = north_italian
 		religion = jewish
-		size = 490
+		size = 1990
+	}
+	
+	farmers = {
+		culture = arpitan
+		religion = catholic
+		size = 11600
 	}
 }
 #Aosta (156000/39000 POPS)
@@ -103,37 +115,43 @@
 	farmers = {
 		culture = north_italian
 		religion = catholic
-		size = 14250
+		size = 10250
 	}
 
 	aristocrats = {
-		culture = french
+		culture = arpitan
 		religion = catholic
 		size = 275
 	}
 
 	clergymen = {
-		culture = french
+		culture = arpitan
 		religion = catholic
 		size = 225
 	}
 
 	artisans = {
-		culture = french
+		culture = arpitan
 		religion = catholic
 		size = 1175
 	}
 
 	soldiers = {
-		culture = french
+		culture = arpitan
 		religion = catholic
 		size = 225
 	}
 
 	farmers = {
+		culture = arpitan
+		religion = catholic
+		size = 25600
+	}
+	
+	farmers = {
 		culture = french
 		religion = catholic
-		size = 21600
+		size = 5600
 	}
 }
 #Novara (212000/53000 POPS)
@@ -2276,8 +2294,8 @@
 
 }
 
-#Pescara - Former Inuvik (4000/1000 POPS)
-10 = {
+#Pescara - (4000/1000 POPS)
+3261 = {
 	clergymen = {
 		culture = south_italian
 		religion = catholic
@@ -2309,8 +2327,8 @@
 	}
 }
 
-#Belluno - Former Ross River (4000/1000 POPS)
-8 = {
+#Belluno - (4000/1000 POPS)
+3262 = {
 	clergymen = {
 		culture = north_italian
 		religion = catholic

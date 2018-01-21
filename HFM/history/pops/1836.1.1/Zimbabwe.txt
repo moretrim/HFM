@@ -31,6 +31,24 @@
 		religion = animist
 		size = 13675
 	}
+	
+	aristocrats = {
+		culture = british
+		religion = protestant
+		size = 50
+	}
+	
+	farmers = {
+		culture = british
+		religion = protestant
+		size = 500
+	}
+	
+	soldiers = {
+		culture = british
+		religion = protestant
+		size = 250
+	}
 
 	aristocrats = {
 		culture = sena
@@ -253,6 +271,18 @@
 #Bulawayo (136000/34000 POPS) 
 2071 = {
 	aristocrats = {
+		culture = british
+		religion = protestant
+		size = 5
+	}
+	
+	farmers = {
+		culture = british
+		religion = protestant
+		size = 50
+	}
+	
+	aristocrats = {
 		culture = nguni
 		religion = animist
 		size = 500
@@ -345,6 +375,18 @@
 #Hwange (96000/24000 POPS)
 2072 = {
 	aristocrats = {
+		culture = british
+		religion = protestant
+		size = 5
+	}
+	
+	farmers = {
+		culture = british
+		religion = protestant
+		size = 50
+	}
+	
+	aristocrats = {
 		culture = shona
 		religion = animist
 		size = 200
@@ -436,6 +478,24 @@
 }
 #Masvingo (72000/18000 POPS) 
 2073 = {
+	aristocrats = {
+		culture = british
+		religion = protestant
+		size = 50
+	}
+
+	farmers = {
+		culture = british
+		religion = protestant
+		size = 500
+	}
+	
+	soldiers = {
+		culture = british
+		religion = protestant
+		size = 250
+	}
+	
 	aristocrats = {
 		culture = shona
 		religion = animist

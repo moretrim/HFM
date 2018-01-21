@@ -46,7 +46,7 @@ country_event = {
 		ENG = {
 			diplomatic_influence = {
 				who = SWK
-				value = 300
+				value = 400
 			}
 			diplomatic_influence = {
 				who = BRU
@@ -880,6 +880,7 @@ country_event = {
 		owns = 2575
 		owns = 1390
 		nationalism_n_imperialism = 1
+		invention = the_dark_continent
 		SIA = {
 			exists = yes
 			owns = 1391
@@ -942,10 +943,32 @@ country_event = {
 			}
 		}
 		
+		random_owned = {
+			limit = {
+				province_id = 1340
+				province_id = 1338
+			}
+			secede_province = FROM
+		}
+		
 		relation = { who = FROM value = 150 }
-		FROM = { diplomatic_influence = { who = THIS value = 75 } }
+		FROM = {
+			diplomatic_influence = { who = THIS value = 75 } 
+			any_owned = {
+				limit = {
+					OR = {
+						region = SIA_1358
+						region = SIA_1392
+						region = SIA_1355
+						province_id = 2572
+						province_id = 1355
+					}
+					secede_province = SIA
+				}
+			}
+		}
 		ai_chance = {
-			factor = 0.9
+			factor = 0.95
 			modifier = {
 				factor = 0.6
 				NOT = { in_sphere = FROM }

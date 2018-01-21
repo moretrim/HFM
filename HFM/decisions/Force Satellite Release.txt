@@ -12,7 +12,7 @@ political_decisions = {
 				nationalism_n_imperialism = 1
 			}
 			NOT = { tag = LBG }
-			NOT = { tag = NEH }
+			NOT = { tag = NCT }
 			NOT = { has_country_modifier = no_freedom }
 			NOT = { has_country_flag = freedom_attempt_made }
 		}

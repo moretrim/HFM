@@ -154,6 +154,41 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
+	kpm_shipping = {
+		picture = kpm_shipping
+		potential = {
+			tag = NET
+			colonial_nation = yes
+			is_canal_enabled = 2
+			year = 1870
+			owns = 1413 #Batavia
+			NOT = { has_country_flag = kpm_shipping_founded }
+		}
+		
+		allow = {
+			war = no
+			relation = { 
+				who = ENG 
+				value = 100 
+			}
+			steel_steamers = 1
+			money = 15000
+		}
+		
+		effect = {
+			set_country_flag = kpm_shipping_founded
+			relation = {
+				who = ENG
+				value = 50
+			}
+			treasury = -15000
+			1413 = { naval_base = 6}	
+			1413 = { add_province_modifier = { name = kpm_shipping  duration = -1 } }			
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
 	embrace_the_boer = {
 		picture = embrace_the_boer
 		potential = {
@@ -253,20 +288,15 @@ political_decisions = {
 	dutch_wallonia = {
 		picture = become_wallonia
 		potential = {
-			owns = 392
-			owns = 393
-			owns = 394
-			owns = 395
-			owns = 398
+			primary_culture = dutch
 			OR = {
-				AND = {
-					NOT = { has_global_flag = dutch_wallonia_renamed }
-					tag = NET
-				}
-				AND = {
-					has_global_flag = dutch_wallonia_renamed
-					NOT = { tag = NET }
-				}
+				AND = { owns = 381 owns = 387 NOT = { has_global_flag = dutch_rename_limburg } }
+				AND = { owns = 387 NOT = { has_global_flag = dutch_rename_brussels } }
+				AND = { owns = 392 NOT = { has_global_flag = dutch_rename_namur } }
+				AND = { owns = 393 NOT = { has_global_flag = dutch_rename_tournai } }
+				AND = { owns = 394 NOT = { has_global_flag = dutch_rename_charleroi } }
+				AND = { owns = 395 NOT = { has_global_flag = dutch_rename_liege } }
+				AND = { owns = 398 NOT = { has_global_flag = dutch_rename_arlon } }
 			}
 		}
 		
@@ -276,28 +306,95 @@ political_decisions = {
 		}
 		
 		effect = {
-			prestige = 5
 			random_owned = {
-				limit = { owner = { tag = NET } }
-				owner = {
-					set_global_flag = dutch_wallonia_renamed
-					395 = { change_province_name = "Luik" }
-					392 = { change_province_name = "Namen" }
-					398 = { change_province_name = "Aarlen" }
-					393 = { change_province_name = "Doornik" }
-					394 = { change_province_name = "Bergen" }
+				limit = {
+					province_id = 387
+				}
+				387 = { 
+					change_province_name = "Brussel"
+				}
+				owner = { 
+					set_global_flag = dutch_rename_brussels
+					clr_global_flag = france_rename_brussels
+					#clr_global_flag = german_rename_arlon
 				}
 			}
-			
 			random_owned = {
-				limit = { owner = { NOT = { tag = NET } } }
-				owner = {
-					clr_global_flag = dutch_wallonia_renamed
-					395 = { change_province_name = "Liège" }
-					392 = { change_province_name = "Namur" }
-					398 = { change_province_name = "Arlon" }
-					393 = { change_province_name = "Tournai" }
-					394 = { change_province_name = "Charleroi" }
+				limit = {
+					province_id = 381
+					owner = { owns = 387 }
+				}
+				398 = { 
+					change_province_name = "Maastricht"
+				}
+				owner = { 
+					set_global_flag = dutch_rename_limburg
+					clr_global_flag = german_rename_limburg
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 398
+				}
+				398 = { 
+					change_province_name = "Aarlen"
+				}
+				owner = { 
+					set_global_flag = dutch_rename_arlon
+					clr_global_flag = france_rename_arlon
+					clr_global_flag = german_rename_arlon
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 395
+				}
+				395 = { 
+					change_province_name = "Luik"
+				}
+				owner = { 
+					set_global_flag = dutch_rename_liege
+					clr_global_flag = france_rename_liege
+					clr_global_flag = german_rename_liege
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 392
+				}
+				392 = { 
+					change_province_name = "Namen"
+				}
+				owner = { 
+					set_global_flag = dutch_rename_namur
+					clr_global_flag = france_rename_namur
+					#clr_global_flag = german_rename_namur
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 393
+				}
+				393 = { 
+					change_province_name = "Doornik"
+				}
+				owner = { 
+					set_global_flag = dutch_rename_tournai
+					clr_global_flag = france_rename_tournai
+					#clr_global_flag = german_rename_tournai
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 394
+				}
+				394 = { 
+					change_province_name = "Bergen"
+				}
+				owner = { 
+					set_global_flag = dutch_rename_charleroi
+					clr_global_flag = france_rename_charleroi
+					#clr_global_flag = german_rename_charleroi
 				}
 			}
 		}

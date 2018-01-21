@@ -35,13 +35,13 @@
 	soldiers = {
 		culture = turkish
 		religion = sunni
-		size = 800
+		size = 2800
 	}
 
 	farmers = {
 		culture = turkish
 		religion = sunni
-		size = 10075
+		size = 15075
 	}
 	
 	aristocrats = {
@@ -303,7 +303,7 @@
 	farmers = {
 		culture = bulgarian
 		religion = orthodox
-		size = 7000
+		size = 15650
 	}
 	
 	aristocrats = {
@@ -430,6 +430,11 @@
 		size = 2325
 	}
 	
+	farmers = {
+		culture = greek
+		religion = sunni
+		size = 7000
+	}
 }
 #Grevena (140000/35000 POPS) #now part of Greece
 820 = {
@@ -868,19 +873,19 @@
 	artisans = {
 		culture = turkish
 		religion = sunni
-		size = 400
+		size = 1400
 	}
 
 	soldiers = {
 		culture = turkish
 		religion = sunni
-		size = 175
+		size = 3175
 	}
 
 	farmers = {
 		culture = turkish
 		religion = sunni
-		size = 5925
+		size = 8925
 	}
 	
 	soldiers = {
@@ -1054,7 +1059,7 @@
 	farmers = {
 		culture = turkish
 		religion = sunni
-		size = 3650
+		size = 10650
 	}
 
 	clergymen = {
@@ -1116,7 +1121,7 @@
 	farmers = {
 		culture = turkish
 		religion = sunni
-		size = 5925
+		size = 15925
 	}
 	
 	aristocrats = {

@@ -2,6 +2,12 @@
 #under the rule of Ottoman Empire in 1836
 #Sarajevo (148000/37000 POPS)
 783 = {
+	artisans = {
+		culture = turkish
+		religion = sunni
+		size = 500
+	}
+
 	aristocrats = {
 		culture = bosniak
 		religion = sunni
@@ -71,13 +77,13 @@
 	artisans = {
 		culture = serb
 		religion = orthodox
-		size = 1550
+		size = 4750
 	}
 
 	farmers = {
 		culture = serb
 		religion = orthodox
-		size = 9000
+		size = 24000
 	}
 	
 	aristocrats = {
@@ -107,19 +113,31 @@
 	artisans = {
 		culture = croat
 		religion = catholic
-		size = 475
+		size = 4750
 	}
 
 	farmers = {
 		culture = croat
 		religion = catholic
-		size = 3050
+		size = 11450
+	}
+	
+	soldiers = {
+		culture = croat
+		religion = catholic
+		size = 1250
+	}
+	
+	clergymen = {
+		culture = sephardic
+		religion = jewish
+		size = 25
 	}
 
 	artisans = {
 		culture = sephardic
 		religion = jewish
-		size = 800
+		size = 2000
 	}
 }
 #Bihac (100000/25000 POPS)
@@ -151,7 +169,7 @@
 	farmers = {
 		culture = bosniak
 		religion = sunni
-		size = 16675
+		size = 8675
 	}
 	
 	soldiers = {
@@ -175,7 +193,7 @@
 	farmers = {
 		culture = serb
 		religion = orthodox
-		size = 3525
+		size = 12625
 	}
 	
 	soldiers = {
@@ -311,7 +329,7 @@
 	farmers = {
 		culture = bosniak
 		religion = sunni
-		size = 19975
+		size = 16975
 	}
 	
 	soldiers = {
@@ -359,7 +377,19 @@
 	farmers = {
 		culture = croat
 		religion = catholic
-		size = 4675
+		size = 5675
+	}
+	
+	clergymen = {
+		culture = sephardic
+		religion = jewish
+		size = 5
+	}
+
+	artisans = {
+		culture = sephardic
+		religion = jewish
+		size = 175
 	}
 }
 #Foca (92000/23000 POPS)
@@ -391,7 +421,7 @@
 	farmers = {
 		culture = bosniak
 		religion = sunni
-		size = 5925
+		size = 18925
 	}
 
 	soldiers = {
@@ -447,7 +477,7 @@
 	farmers = {
 		culture = bosniak
 		religion = sunni
-		size = 3900
+		size = 9900
 	}
 	
 	soldiers = {
@@ -471,7 +501,7 @@
 	farmers = {
 		culture = croat
 		religion = catholic
-		size = 14375
+		size = 11375
 	}
 	
 	soldiers = {
@@ -495,7 +525,7 @@
 	farmers = {
 		culture = serb
 		religion = orthodox
-		size = 5750
+		size = 12750
 	}
 }
 #Livno (136000/34000 POPS)
@@ -527,7 +557,7 @@
 	farmers = {
 		culture = bosniak
 		religion = sunni
-		size = 1200
+		size = 8900
 	}
 
 	soldiers = {
@@ -575,7 +605,7 @@
 	farmers = {
 		culture = serb
 		religion = orthodox
-		size = 16300
+		size = 10300
 	}
 
 }

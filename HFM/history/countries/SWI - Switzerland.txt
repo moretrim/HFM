@@ -1,5 +1,8 @@
 capital = 605
-primary_culture = swiss
+primary_culture = swiss_german
+culture = swiss_french
+culture = swiss_italian
+culture = romansh
 religion = protestant
 government = democracy
 plurality = 40.0
@@ -31,8 +34,11 @@ school_reforms = no_schools
 conscription = mandatory_service
 debt_law = debtors_prisons
 penal_system = incarceration
-child_labor = child_labor_legalcitizens_rights = primary_culture_only
+child_labor = child_labor_legal
+citizens_rights = culture_voting_only
 border_policy = open_borders
+centralization = confederalism
+colonial_policy = no_colonies 
 
 set_country_flag = protestant_country
 
@@ -55,11 +61,6 @@ flintlock_rifles = 1
 bronze_muzzle_loaded_artillery = 1
 military_staff_system = 1
 army_command_principle = 1
-post_nelsonian_thought = 1
-clipper_design = 1
-naval_design_bureaus = 1
-alphabetic_flag_signaling = 1
-the_command_principle = 1
 classicism_n_early_romanticism = 1
 late_enlightenment_philosophy = 1
 malthusian_thought = 1
@@ -91,6 +92,7 @@ nonstate_consciousness = 1
 
 oob = "SWI_oob.txt"
 decision = declare_neutrality
+decision = 1836_switzerland_setup
 
 1861.1.1 = {
 	oob = "/1861/SWI_oob.txt"

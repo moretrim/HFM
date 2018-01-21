@@ -80,7 +80,12 @@ country_event = {
 
 	trigger = {
 		civilized = no
-		capital_scope = { continent = africa }
+		OR = {
+			capital_scope = { continent = africa }
+			capital_scope = { continent = west_africa }
+			capital_scope = { continent = east_africa }
+			capital_scope = { continent = south_west_africa }
+		}
 		has_global_flag = berlin_conference
 		NOT = { has_country_flag = delay_unciv_annexation }
 		NOT = { has_country_flag = reaction_to_berlin_conference }
@@ -129,7 +134,12 @@ country_event = {
 	trigger = {
 		war = no
 		civilized = no
-		capital_scope = { continent = africa }
+		OR = {
+			capital_scope = { continent = africa }
+			capital_scope = { continent = west_africa }
+			capital_scope = { continent = east_africa }
+			capital_scope = { continent = south_west_africa }
+		}
 		NOT = { has_global_flag = berlin_conference }
 		NOT = { has_country_flag = africa_in_the_modern_age }
 		any_owned_province = {
@@ -265,7 +275,12 @@ country_event = {
 	
 	trigger = {
 		has_global_flag = berlin_conference
-		capital_scope = { continent = africa }
+		OR = {
+			capital_scope = { continent = africa }
+			capital_scope = { continent = west_africa }
+			capital_scope = { continent = east_africa }
+			capital_scope = { continent = south_west_africa }
+		}
 		civilized = no
 		is_vassal = no
 		part_of_sphere = yes
@@ -799,7 +814,12 @@ country_event = {
 		random_country = {
 			limit = {
 				ai = yes
-				capital_scope = { continent = africa }
+		OR = {
+			capital_scope = { continent = africa }
+			capital_scope = { continent = west_africa }
+			capital_scope = { continent = east_africa }
+			capital_scope = { continent = south_west_africa }
+		}
 				civilized = no
 				war = no
 				is_vassal = no
@@ -1067,7 +1087,7 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	mean_time_to_happen = { months = 2 }
+	mean_time_to_happen = { months = 1 }
 	
 	option = {
 		name = "EVT955200OPTA"

@@ -5,109 +5,81 @@
 	aristocrats = {
 		culture = baganda
 		religion = animist
-		size = 1000
-	}
-	
-	aristocrats = {
-		culture = baganda
-		religion = sunni
-		size = 350
+		size = 1350
 	}
 
 	bureaucrats = {
 		culture = baganda
-		religion = sunni
+		religion = animist
 		size = 50
 	}
 
 	officers = {
 		culture = baganda
 		religion = animist
-		size = 50
-	}
-	
-	officers = {
-		culture = baganda
-		religion = sunni
-		size = 50
+		size = 100
 	}
 
 	clergymen = {
 		culture = baganda
-		religion = sunni
+		religion = animist
 		size = 725
 	}
 
 	artisans = {
 		culture = baganda
 		religion = animist
-		size = 1800
-	}
-	
-	artisans = {
-		culture = baganda
-		religion = sunni
-		size = 1000
+		size = 2800
 	}
 
 	soldiers = {
 		culture = baganda
 		religion = animist
-		size = 1000
-	}
-	
-	soldiers = {
-		culture = baganda
-		religion = sunni
-		size = 1000
+		size= 1700
+
 	}
 
 	farmers = {
 		culture = baganda
 		religion = animist
-		size = 48025
-	}
-	
-	farmers = {
-		culture = baganda
-		religion = sunni
-		size = 15000
+		size = 53225
 	}
 
 	aristocrats = {
-		culture = lacustrine_bantu
+		culture = african_minor
 		religion = animist
 		size = 575
 	}
 
 	clergymen = {
-		culture = lacustrine_bantu
+		culture = african_minor
 		religion = animist
 		size = 300
 	}
 
 	artisans = {
-		culture = lacustrine_bantu
+		culture = african_minor
 		religion = animist
 		size = 1500
 	}
 
 	soldiers = {
-		culture = lacustrine_bantu
+		culture = african_minor
 		religion = animist
-		size = 300
+		size= 300
+
 	}
 
 	farmers = {
-		culture = lacustrine_bantu
+		culture = african_minor
 		religion = animist
-		size = 10325
+		size = 27325
 	}
 
 	slaves = {
-		culture = lacustrine_bantu
+		culture = african_minor
 		religion = animist
-		size = 7000
+		size = 10000
 	}
 }
 #Mbarara (232000/53000 POPS) 
@@ -115,49 +87,69 @@
 	aristocrats = {
 		culture = baganda
 		religion = animist
-		size = 650
+		size = 175
 	}
 
 	clergymen = {
 		culture = baganda
 		religion = animist
-		size = 350
+		size = 100
 	}
 
 	artisans = {
 		culture = baganda
 		religion = animist
-		size = 1650
+		size = 400
 	}
 
 	soldiers = {
 		culture = baganda
 		religion = animist
-		size = 1350
+		size= 100
+
 	}
 
 	farmers = {
 		culture = baganda
 		religion = animist
-		size = 41920
+		size = 5225
 	}
-	
-	farmers = {
-		culture = ruanda
+
+	aristocrats = {
+		culture = african_minor
 		religion = animist
-		size = 4000
+		size = 475
 	}
-	
+
+	clergymen = {
+		culture = african_minor
+		religion = animist
+		size = 250
+	}
+
+	artisans = {
+		culture = african_minor
+		religion = animist
+		size = 1250
+	}
+
+	soldiers = {
+		culture = african_minor
+		religion = animist
+		size= 1250
+
+	}
+
 	farmers = {
-		culture = baganda
-		religion = sunni
-		size = 2080
+		culture = african_minor
+		religion = animist
+		size = 21775
 	}
 
 	slaves = {
-		culture = lacustrine_bantu
+		culture = african_minor
 		religion = animist
-		size = 4000
+		size = 12000
 	}
 
 	aristocrats = {
@@ -181,7 +173,8 @@
 	soldiers = {
 		culture = luo
 		religion = animist
-		size = 200
+		size= 200
+
 	}
 
 	farmers = {
@@ -193,45 +186,40 @@
 #Masindi (192000/48000 POPS) 
 2021 = {
 	aristocrats = {
-		culture = luo
-		religion = sunni
+		culture = african_minor
+		religion = animist
 		size = 550
 	}
 
 	clergymen = {
-		culture = luo
-		religion = sunni
+		culture = african_minor
+		religion = animist
 		size = 300
 	}
 
-	soldiers = {
-		culture = luo
-		religion = sunni
-		size = 300
-	}
-
-	farmers = {
-		culture = luo
-		religion = sunni
-		size = 700
-	}
-	
 	artisans = {
-		culture = nilotic
+		culture = african_minor
 		religion = animist
 		size = 1450
 	}
-	
-	farmers = {
-		culture = nilotic
+
+	soldiers = {
+		culture = african_minor
 		religion = animist
-		size = 3700
+		size= 300
+
+	}
+
+	farmers = {
+		culture = african_minor
+		religion = animist
+		size = 26400
 	}
 
 	slaves = {
-		culture = nilotic
+		culture = african_minor
 		religion = animist
-		size = 4000
+		size = 9000
 	}
 
 	aristocrats = {
@@ -255,13 +243,14 @@
 	soldiers = {
 		culture = luo
 		religion = animist
-		size = 200
+		size= 200
+
 	}
 
 	farmers = {
 		culture = luo
 		religion = animist
-		size = 20450
+		size = 8450
 	}
 }
 #Kitgum (104000/26000 POPS) 
@@ -287,55 +276,51 @@
 	soldiers = {
 		culture = luo
 		religion = animist
-		size = 200
+		size= 200
+
 	}
 
 	farmers = {
 		culture = luo
 		religion = animist
-		size = 24450
+		size = 14450
 	}
 
 	aristocrats = {
-		culture = luo
-		religion = sunni
+		culture = african_minor
+		religion = animist
 		size = 125
 	}
 
 	clergymen = {
-		culture = luo
-		religion = sunni
+		culture = african_minor
+		religion = animist
 		size = 75
 	}
 
 	artisans = {
-		culture = luo
-		religion = sunni
+		culture = african_minor
+		religion = animist
 		size = 350
 	}
 
 	soldiers = {
-		culture = luo
-		religion = sunni
-		size = 75
+		culture = african_minor
+		religion = animist
+		size= 75
+
 	}
 
 	farmers = {
-		culture = nilotic
+		culture = african_minor
 		religion = animist
-		size = 5075
-	}
-	
-	farmers = {
-		culture = nilotic
-		religion = sunni
-		size = 2700
+		size = 63075
 	}
 
 	slaves = {
-		culture = nilotic
+		culture = african_minor
 		religion = animist
-		size = 3300
+		size = 3000
 	}
 }
 #Jinja (208000/52000 POPS) 
@@ -351,18 +336,6 @@
 		religion = animist
 		size = 150
 	}
-	
-	aristocrats = {
-		culture = baganda
-		religion = sunni
-		size = 750
-	}
-
-	clergymen = {
-		culture = baganda
-		religion = sunni
-		size = 375
-	}
 
 	artisans = {
 		culture = baganda
@@ -373,47 +346,49 @@
 	soldiers = {
 		culture = baganda
 		religion = animist
-		size = 150
-	}
-	
-	soldiers = {
-		culture = baganda
-		religion = sunni
-		size = 375
+		size= 150
+
 	}
 
 	farmers = {
 		culture = baganda
 		religion = animist
-		size = 52850
+		size = 6850
 	}
-	
-	farmers = {
-		culture = baganda
-		religion = sunni
-		size = 9000
+
+	aristocrats = {
+		culture = african_minor
+		religion = animist
+		size = 750
+	}
+
+	clergymen = {
+		culture = african_minor
+		religion = animist
+		size = 375
 	}
 
 	artisans = {
-		culture = luo
+		culture = african_minor
 		religion = animist
 		size = 1900
 	}
 
-	farmers = {
-		culture = luo
+	soldiers = {
+		culture = african_minor
 		religion = animist
-		size = 4400
+		size= 375
+
 	}
 
-	artisans = {
-		culture = lacustrine_bantu
+	farmers = {
+		culture = african_minor
 		religion = animist
-		size = 200
+		size = 38400
 	}
-	
+
 	slaves = {
-		culture = lacustrine_bantu
+		culture = african_minor
 		religion = animist
 		size = 6000
 	}

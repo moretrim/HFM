@@ -6,10 +6,10 @@ plurality = 0.0
 nationalvalue = nv_tradition
 literacy = 0.05
 non_state_culture_literacy = 0.04
-prestige = 1
+prestige = 25
 
 # Political reforms
-slavery = no_slavery
+slavery = yes_slavery
 upper_house_composition = appointed
 vote_franschise = none_voting
 public_meetings = no_meeting
@@ -31,8 +31,11 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = serfdom
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = primary_culture_only
+child_labor = child_labor_legal
+citizens_rights = primary_culture_only
 border_policy = closed_borders
+centralization = regionalism
+colonial_policy = no_colonies 
 
 set_country_flag = mahayana_country
 
@@ -47,18 +50,19 @@ upper_house = {
 	communist = 0
 }
 
+decision = QNG_setup
+decision = unciv_balance_qng
 
-foreign_weapons = yes_foreign_weapons
 land_reform = yes_land_reform
 
 # Technologies
-flintlock_rifles = 1
 
 # Technologies
 
 # Inventions
 #bottling_process = yes
 modern_winemaking = yes
+qing_grain = yes
 
 # Starting Consciousness
 consciousness = 0

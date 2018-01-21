@@ -2,6 +2,7 @@ capital = 2146
 primary_culture = yankee
 culture = dixie
 culture = texan
+culture = cajun
 religion = protestant
 government = democracy
 plurality = 30.0
@@ -39,6 +40,8 @@ penal_system = capital_punishment
 child_labor = child_labor_legal
 citizens_rights = culture_voting_only
 border_policy = open_borders
+centralization = regionalism
+colonial_policy = settlement
 
 set_country_flag = protestant_country
 

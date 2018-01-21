@@ -13,6 +13,13 @@ country_event = {
 	picture = "ottoman"
 
 	trigger = {
+		RUS = {
+			OR = {
+				is_disarmed = yes
+				is_greater_power = no
+			}
+		}
+		NOT = { has_global_flag = great_eastern_crisis }
 		NOT = { has_global_flag = berlin_congress_held }
 		OR = {
 			year = 1870
@@ -93,6 +100,7 @@ country_event = {
 				tag = PRU
 				tag = NGF
 				tag = GER
+				tag = GCF
 			}
 		}
 		modifier = {
@@ -172,6 +180,7 @@ country_event = {
 					tag = PRU
 					tag = NGF
 					tag = GER
+					tag = GCF
 				}
 			}			
 		}
@@ -527,13 +536,13 @@ country_event = {
 		name = "EVT900641OPTA"
 		set_country_flag = giving_up_cyprus
 		FROM = { country_event = 900642 }
-		ai_chance = { factor = 90 }
+		ai_chance = { factor = 95 }
 	}
 	
 	option = {
 		name = "EVT900641OPTB"
 		FROM = { country_event = 900643 }
-		ai_chance = { factor = 10 }
+		ai_chance = { factor = 5 }
 	}
 }
 
@@ -598,6 +607,7 @@ country_event = {
 	picture = "bosnia_issue"
 	
 	trigger = {
+		NOT = { has_global_flag = the_reichstadt_agreement }
 		OR = {
 			TUR = { owns = 783 }
 			BOS = { vassal_of = TUR }
@@ -737,7 +747,10 @@ country_event = {
 	trigger = {
 		TUR = {
 			exists = yes
-			war = no
+			OR = { 
+				war = no
+				has_country_flag = lost_russo_turkish_war
+			}
 			check_variable = {
 				which = berlin_congress_support_OE
 				value = 1
@@ -786,6 +799,12 @@ country_event = {
 				}
 			}
 		}
+		modifier = {
+			factor = 0.05
+			TUR = {
+				has_country_flag = lost_russo_turkish_war
+			}
+		}
 	}
 
 	option = {
@@ -814,7 +833,10 @@ country_event = {
 	trigger = {
 		TUR = {
 			exists = yes
-			war = no
+			OR = { 
+				war = no
+				has_country_flag = lost_russo_turkish_war
+			}
 			check_variable = {
 				which = berlin_congress_support_balkans
 				value = 1
@@ -861,6 +883,12 @@ country_event = {
 					which = berlin_congress_support_balkans
 					value = 5
 				}
+			}
+		}
+		modifier = {
+			factor = 0.05
+			TUR = {
+				has_country_flag = lost_russo_turkish_war
 			}
 		}
 	}
@@ -920,9 +948,28 @@ country_event = {
 		random_owned = {
 			limit = {
 				WAL = { exists = no }
+				MOL = { exists = no }
 				ROM = { exists = no }
+				province_id = 664 
 			}
-			WAL = { set_country_flag = congress_released_country }
+			state_scope = {
+				any_owned = {
+					secede_province = ROM
+				}
+			}
+			ROM = { set_country_flag = congress_released_country }
+		}
+		random_owned = {
+			limit = {
+				ROM = { exists = yes }
+				province_id = 672 
+			}
+			state_scope = {
+				any_owned = {
+					secede_province = ROM
+				}
+			}
+			ROM = { set_country_flag = congress_released_country }
 		}		
 		random_country = {
 			limit = {
@@ -948,24 +995,6 @@ country_event = {
 			}
 			set_country_flag = received_congress_benefit
 			TUR = { release_vassal = WAL }
-		}
-		random_owned = {
-			limit = {
-				province_id = 674 #Constanta
-				owned_by = TUR
-				NOT = { exists = ROM }
-			}
-			secede_province = WAL
-			WAL = { set_country_flag = received_congress_benefit }
-		}
-		random_owned = {
-			limit = {
-				province_id = 675 #Tulcea
-				owned_by = TUR
-				NOT = { exists = ROM }
-			}
-			secede_province = WAL
-			WAL = { set_country_flag = received_congress_benefit }
 		}
 		random_owned = {
 			limit = {
@@ -1024,7 +1053,7 @@ country_event = {
 			TUR = { release_vassal = MON }
 		}
 
-		# Give Bulgaria, Eastern Rumelia and Silestre to Bulgaria, make it a vassal
+		# Give Bulgaria, Eastern Rumelia and Silestre to Bulgaria
 		random_owned = {
 			limit = { BUL = { exists = no } }
 			BUL = { set_country_flag = congress_released_country }
@@ -1035,7 +1064,7 @@ country_event = {
 				owned_by = TUR
 				NOT = { exists = BUL }
 			}
-			owner = { release_vassal = BUL }
+			owner = { release = BUL }
 			BUL = {
 				set_country_flag = received_congress_benefit
 				any_owned = {
@@ -1071,6 +1100,23 @@ country_event = {
 			}
 			secede_province = BUL
 			BUL = { set_country_flag = received_congress_benefit }
+		}
+		
+		random_owned = {
+			limit = {
+				province_id = 815
+				owned_by = TUR
+				NOT = { exists = RUM }
+			}
+			state_scope = {
+				any_owned = {
+					secede_province = RUM
+				}
+			}
+			TUR = { create_vassal = RUM }
+		}
+		RUM = {
+			capital = 815
 		}
 
 		# Release Bosnia
@@ -1281,7 +1327,24 @@ country_event = {
 				}
 			}
 			GRE = { set_country_flag = received_congress_benefit }
-		}		
+		}	
+
+		random_owned = {
+			limit = {
+				province_id = 819 #Florina
+				owned_by = TUR
+				OR = {
+					824 = { owned_by = GRE }
+					has_country_flag = lost_russo_turkish_war
+				}
+			}
+			state_scope = {
+				any_owned = {
+					secede_province = GRE
+				}
+			}
+			GRE = { set_country_flag = received_congress_benefit }
+		}	
 		
 		# If Greece is a GP and attending, give Crete and W. Macedonia
 		random_country = {
@@ -1350,6 +1413,43 @@ country_event = {
 			}
 			militancy = 3
 		}
+		
+		ROM = {
+			add_country_modifier = {
+				name = nationalist_balkans
+				duration = -1
+			}
+		}
+		BUL = {
+			add_country_modifier = {
+				name = nationalist_balkans
+				duration = -1
+			}
+		}
+		RUM = {
+			add_country_modifier = {
+				name = nationalist_balkans
+				duration = -1
+			}
+		}
+		MON = {
+			add_country_modifier = {
+				name = nationalist_balkans
+				duration = -1
+			}
+		}
+		SER = {
+			add_country_modifier = {
+				name = nationalist_balkans
+				duration = -1
+			}
+		}
+		GRE = {
+			add_country_modifier = {
+				name = nationalist_balkans
+				duration = -1
+			}
+		}
 		ai_chance = {
 			factor = 90
 		}
@@ -1406,6 +1506,10 @@ country_event = {
 		}
 		ai_chance = {
 			factor = 10
+			modifier = {
+				factor = 0
+				has_country_flag = lost_russo_turkish_war
+			}
 		}
 	}
 }
@@ -1771,19 +1875,6 @@ country_event = {
 		}
 		random_owned = {
 			limit = {
-				province_id = 819 #Florina
-				owned_by = TUR
-				824 = { owned_by = GRE }
-			}
-			state_scope = {
-				any_owned = {
-					secede_province = GRE
-				}
-			}
-			GRE = { set_country_flag = received_congress_benefit }
-		}
-		random_owned = {
-			limit = {
 				province_id = 824 #Janina
 				owned_by = TUR
 			}
@@ -1806,6 +1897,18 @@ country_event = {
 			}
 			GRE = { set_country_flag = received_congress_benefit }
 		}
+		random_owned = {
+			limit = {
+				province_id = 819 #Florina
+				owned_by = TUR
+			}
+			state_scope = {
+				any_owned = {
+					secede_province = GRE
+				}
+			}
+			GRE = { set_country_flag = received_congress_benefit }
+		}	
 
 		random_owned = {
 			limit = {
@@ -1926,6 +2029,37 @@ country_event = {
 			}
 			militancy = 5
 		}
+		
+		ROM = {
+			add_country_modifier = {
+				name = nationalist_balkans
+				duration = -1
+			}
+		}
+		BUL = {
+			add_country_modifier = {
+				name = nationalist_balkans
+				duration = -1
+			}
+		}
+		GRE = {
+			add_country_modifier = {
+				name = nationalist_balkans
+				duration = -1
+			}
+		}
+		SER = {
+			add_country_modifier = {
+				name = nationalist_balkans
+				duration = -1
+			}
+		}
+		ALB = {
+			add_country_modifier = {
+				name = nationalist_balkans
+				duration = -1
+			}
+		}
 		ai_chance = {
 			factor = 70
 		}
@@ -1982,6 +2116,10 @@ country_event = {
 		}
 		ai_chance = {
 			factor = 30
+			modifier = {
+				factor = 0
+				has_country_flag = lost_russo_turkish_war
+			}
 		}
 	}
 }

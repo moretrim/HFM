@@ -69,11 +69,14 @@ political_decisions = {
 					}
 				}
 				AND = {
-					MEX = { ai = yes }
+					MEX = {
+						ai = yes
+						war_exhaustion = 0.65
+					}
 					ai = yes
-					is_sphere_leader_of = MEX
 					war = no
 					truce_with = MEX
+					has_recently_lost_war = no
 				}
 			}
 			NOT = {

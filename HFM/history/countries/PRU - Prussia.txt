@@ -1,6 +1,7 @@
 capital = 549
 primary_culture = north_german
 culture = south_german
+culture = volga_german
 religion = protestant
 government = absolute_monarchy
 plurality = 25.0
@@ -37,12 +38,18 @@ school_reforms = low_schools
 conscription = mandatory_service
 debt_law = debtors_prisons
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = culture_voting_only
+child_labor = child_labor_legal
+citizens_rights = culture_voting_only
 border_policy = open_borders
+centralization = unitary
+colonial_policy = no_colonies 
 
 set_country_flag = protestant_country
 
 decision = literacy_PRU
+decision = silesia_rename_german
+decision = west_prussia_rename_german
+decision = posen_rename_german
 
 ruling_party = PRU_conservative_2
 upper_house = {
@@ -61,9 +68,7 @@ flintlock_rifles = 1
 bronze_muzzle_loaded_artillery = 1
 military_staff_system = 1
 army_command_principle = 1
-post_nelsonian_thought = 1
 clipper_design = 1
-naval_design_bureaus = 1
 alphabetic_flag_signaling = 1
 the_command_principle = 1
 classicism_n_early_romanticism = 1
@@ -96,12 +101,13 @@ nonstate_consciousness = 1
 schools = army_tech_school
 
 foreign_investment = {
-	NEH = 10000
-	SGM = 10000
-	OLD = 10000
-	MEC = 7500
+	NCT = 20000
+	SGM = 20000
+	OLD = 20000
+	MEC = 17500
 	SAX = 7500
-	HAN = 10000
+	HAN = 15000
+	UBD = 10000
 }
 
 oob = "PRU_oob.txt"

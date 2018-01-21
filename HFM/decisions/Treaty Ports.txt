@@ -22,6 +22,7 @@ political_decisions = {
 		potential = {
 			has_country_modifier = negotiating_treaty
 			1071 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+			NOT = { has_global_flag = qeshm_treaty_port_alternate }
 		}
 		
 		allow = {
@@ -30,6 +31,44 @@ political_decisions = {
 		effect = {
 			remove_country_modifier = negotiating_treaty
 			1071 = { secede_province = THIS change_controller = THIS }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	qeshm_treaty_port_alternate = {
+		picture = qeshm_iran
+		potential = {
+			civilized = yes
+			#ai = yes
+			NOT = { primary_culture = persian }
+			1071 = { owner = { civilized = no } }
+			OR = {
+				owns = 1141
+				owns = 1130
+				owns = 1145
+			}
+			exists = PER
+			NOT = { has_global_flag = qeshm_treaty_port_alternate }
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			set_global_flag = qeshm_treaty_port_alternate
+			badboy = -3
+			any_owned = {
+				limit = {
+					OR = {
+						region = PER_1136
+						region = PER_1127
+						region = PER_1140
+					}
+				}
+				secede_province = PER
+			}
+			1071 = { secede_province = THIS change_controller = THIS }
+			
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -49,6 +88,7 @@ political_decisions = {
 			remove_country_modifier = negotiating_treaty
 			1498 = { secede_province = THIS change_controller = THIS }
 			add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+			1493 = { remove_province_modifier = canton_system }
 		}
 		ai_will_do = {
 			factor = 1
@@ -97,6 +137,7 @@ political_decisions = {
 			remove_country_modifier = negotiating_treaty
 			1496 = { secede_province = THIS change_controller = THIS }
 			add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+			1493 = { remove_province_modifier = canton_system }
 		}
 		ai_will_do = {
 			factor = 1
@@ -119,9 +160,21 @@ political_decisions = {
 	
 	shanghai_treaty_port = {
 		picture = shanghai_china
+		
 		potential = {
-			has_country_modifier = negotiating_treaty
-			1538 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+			tag = ENG
+			has_country_modifier = negotiating_treaty	
+			OR = {
+				1538 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+				AND = {
+						1538 = { owned_by = TPG }
+						has_global_flag = second_opium_war
+						OR = {
+							truce_with = TPG
+							truce_with = QNG
+						}
+					}
+			}
 			NOT = { has_country_modifier = chinese_treaty_port }
 		}
 		
@@ -132,6 +185,7 @@ political_decisions = {
 			remove_country_modifier = negotiating_treaty
 			1538 = { secede_province = THIS change_controller = THIS }
 			add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+			1493 = { remove_province_modifier = canton_system }
 		}
 		ai_will_do = {
 			factor = 1
@@ -163,6 +217,10 @@ political_decisions = {
 	qingdao_treaty_port = {
 		picture = qingdao_china
 		potential = {
+			OR = { 
+				tag = GER
+				tag = GCF
+			}
 			has_country_modifier = negotiating_treaty
 			1566 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
 			NOT = { has_country_modifier = chinese_treaty_port }
@@ -175,6 +233,7 @@ political_decisions = {
 			remove_country_modifier = negotiating_treaty
 			1566 = { secede_province = THIS change_controller = THIS }
 			add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+			1493 = { remove_province_modifier = canton_system }
 		}
 		ai_will_do = {
 			factor = 1
@@ -230,6 +289,7 @@ political_decisions = {
 			remove_country_modifier = negotiating_treaty
 			1481 = { secede_province = THIS change_controller = THIS add_province_modifier = { name = treaty_port duration = -1 } }
 			add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+			1493 = { remove_province_modifier = canton_system }
 		}
 		ai_will_do = {
 			factor = 1
@@ -268,6 +328,7 @@ political_decisions = {
 			has_country_modifier = negotiating_treaty
 			1569 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
 			NOT = { has_country_modifier = chinese_treaty_port }
+			tag = ENG
 		}
 		
 		allow = {
@@ -277,6 +338,7 @@ political_decisions = {
 			remove_country_modifier = negotiating_treaty
 			1569 = { secede_province = THIS change_controller = THIS }
 			add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+			1493 = { remove_province_modifier = canton_system }
 		}
 		ai_will_do = {
 			factor = 1
@@ -327,6 +389,7 @@ political_decisions = {
 			remove_country_modifier = negotiating_treaty
 			1606 = { secede_province = THIS change_controller = THIS add_province_modifier = { name = treaty_port duration = -1 } }
 			add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+			1493 = { remove_province_modifier = canton_system }
 		}
 		ai_will_do = {
 			factor = 1
@@ -392,6 +455,7 @@ political_decisions = {
 			2562 = { secede_province = THIS change_controller = THIS }
 			2681 = { secede_province = THIS change_controller = THIS }
 			add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+			1493 = { remove_province_modifier = canton_system }
 		}
 		
 		ai_will_do = {
@@ -438,6 +502,7 @@ political_decisions = {
 			remove_country_modifier = negotiating_treaty
 			1499 = { secede_province = THIS change_controller = THIS add_province_modifier = { name = treaty_port duration = -1 } }
 			add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+			1493 = { remove_province_modifier = canton_system }
 		}
 		ai_will_do = {
 			factor = 1
@@ -481,6 +546,7 @@ political_decisions = {
 	kwangchowan_treaty_port = {
 		picture = kwangchowan_china
 		potential = {
+			tag = FRA
 			has_country_modifier = negotiating_treaty
 			2632 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
 			NOT = { has_country_modifier = chinese_treaty_port }
@@ -493,6 +559,7 @@ political_decisions = {
 			remove_country_modifier = negotiating_treaty
 			2632 = { secede_province = THIS change_controller = THIS }
 			add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+			1493 = { remove_province_modifier = canton_system }
 		}
 		ai_will_do = {
 			factor = 1
@@ -548,6 +615,7 @@ political_decisions = {
 			remove_country_modifier = negotiating_treaty
 			1608 = { secede_province = THIS change_controller = THIS add_province_modifier = { name = treaty_port duration = -1 } }
 			add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+			1493 = { remove_province_modifier = canton_system }
 		}
 		ai_will_do = {
 			factor = 1
@@ -562,12 +630,6 @@ political_decisions = {
 					tag = ENG
 					NOT = { owns = 1569 }
 					1569 = { owner = { civilized = no truce_with = THIS } }
-				}
-				modifier = {
-					factor = 0
-					tag = ENG
-					NOT = { owns = 1566 }
-					1566 = { owner = { civilized = no truce_with = THIS } }
 				}
 				modifier = {
 					factor = 0
@@ -587,7 +649,63 @@ political_decisions = {
 				}
 			}
 	}
-	
+
+	tianjin_treaty_port = {
+		picture = tianjin_china
+		potential = {
+			year = 1895
+			has_country_modifier = negotiating_treaty
+			3249 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+			NOT = { has_country_modifier = chinese_treaty_port }
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			remove_country_modifier = negotiating_treaty
+			3249 = { secede_province = THIS change_controller = THIS add_province_modifier = { name = treaty_port duration = -1 } }
+			add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+			1493 = { remove_province_modifier = canton_system }
+		}
+		ai_will_do = {
+			factor = 1
+				modifier = {
+					factor = 0
+					tag = ENG
+					NOT = { owns = 1496 }
+					1496 = { owner = { civilized = no } }
+				}
+				modifier = {
+					factor = 0
+					tag = ENG
+					NOT = { owns = 1569 }
+					1569 = { owner = { civilized = no } }
+				}
+				modifier = {
+					factor = 0
+					tag = ENG
+					NOT = { owns = 1566 }
+					1566 = { owner = { civilized = no } }
+				}
+				modifier = {
+					factor = 0
+					tag = RUS
+					NOT = { owns = 1481 }
+					1481 = { owner = { civilized = no } }
+				}
+				modifier = {
+					factor = 0
+					primary_culture = japanese
+					NOT = { owns = 1415 }
+					1481 = { owner = { civilized = no } }
+					NOT = { owns = 1485 }
+					1485 = { owner = { civilized = no } }
+					NOT = { owns = 2562 }
+					2562 = { owner = { civilized = no } }
+				}
+			}
+	}
 	
 	gwadar_treaty_port = {
 		picture = gwadar_pakistan
@@ -682,14 +800,14 @@ political_decisions = {
 		picture = sado_japan
 		potential = {
 			has_country_modifier = negotiating_treaty
-			12 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+			3260 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
 		}
 		
 		allow = { }
 		
 		effect = {
 			remove_country_modifier = negotiating_treaty
-			12 = { secede_province = THIS change_controller = THIS }
+			3260 = { secede_province = THIS change_controller = THIS }
 		}
 		
 		ai_will_do = { factor = 1 }

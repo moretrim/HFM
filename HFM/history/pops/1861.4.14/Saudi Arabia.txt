@@ -77,7 +77,7 @@
 	}
 
 	slaves = {
-		culture = kefficho #african_minor
+		culture = african_minor
 		religion = animist
 		size = 2060.0
 	}
@@ -147,7 +147,7 @@
 	}
 
 	slaves = {
-		culture = kefficho #african_minor
+		culture = african_minor
 		religion = animist
 		size = 3090.0
 	}
@@ -217,7 +217,7 @@
 	}
 
 	slaves = {
-		culture = kefficho #african_minor
+		culture = african_minor
 		religion = animist
 		size = 2060.0
 	}

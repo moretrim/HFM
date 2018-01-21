@@ -227,6 +227,7 @@ political_decisions = {
 		}
 		
 		allow = {
+			139 = { owned_by = USA }
 			war = no
 			government = democracy
 			OR = {
@@ -805,6 +806,9 @@ political_decisions = {
 			is_greater_power = yes
 			has_global_flag = american_civil_war_has_happened
 			exists = CSA
+			CSA = {
+				NOT = { in_sphere = USA }
+			}
 			exists = USA
 			NOT = {
 				has_country_flag = recognize_the_csa

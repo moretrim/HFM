@@ -23,7 +23,8 @@
 	soldiers = {
 		culture = akan
 		religion = animist
-		size = 275
+		size= 275
+
 	}
 
 	farmers = {
@@ -61,7 +62,8 @@
 	soldiers = {
 		culture = akan
 		religion = animist
-		size = 125
+		size= 125
+
 	}
 
 	farmers = {
@@ -97,7 +99,8 @@
 	soldiers = {
 		culture = kru
 		religion = animist
-		size = 375
+		size= 375
+
 	}
 
 	farmers = {
@@ -135,7 +138,8 @@
 	soldiers = {
 		culture = akan
 		religion = animist
-		size = 225
+		size= 225
+
 	}
 
 	farmers = {
@@ -173,7 +177,8 @@
 	soldiers = {
 		culture = akan
 		religion = animist
-		size = 125
+		size= 125
+
 	}
 
 	farmers = {
@@ -209,7 +214,8 @@
 	soldiers = {
 		culture = mande
 		religion = sunni
-		size = 25
+		size= 25
+
 	}
 
 	farmers = {
@@ -241,7 +247,8 @@
 	soldiers = {
 		culture = mande
 		religion = sunni
-		size = 75
+		size= 75
+
 	}
 
 	farmers = {
@@ -271,7 +278,8 @@
 	soldiers = {
 		culture = kru
 		religion = animist
-		size = 225
+		size= 225
+
 	}
 
 	farmers = {
@@ -309,7 +317,8 @@
 	soldiers = {
 		culture = akan
 		religion = animist
-		size = 250
+		size= 250
+
 	}
 
 	farmers = {
@@ -361,7 +370,8 @@
 	soldiers = {
 		culture = dyula
 		religion = sunni
-		size = 1105
+		size= 1105
+
 	}
 
 	farmers = {
@@ -397,19 +407,20 @@
 	soldiers = {
 		culture = senufo
 		religion = animist
-		size = 300
+		size= 300
+
 	}
 
 	farmers = {
 		culture = senufo
 		religion = animist
-		size = 45375
+		size = 27375
 	}
 
 	slaves = {
 		culture = senufo
 		religion = animist
-		size = 4000
+		size = 12000
 	}
 }
 #Bundoukou (216000/54000 POPS)
@@ -435,7 +446,8 @@
 	soldiers = {
 		culture = dyula
 		religion = sunni
-		size = 1450
+		size= 1450
+
 	}
 
 	farmers = {
@@ -465,19 +477,20 @@
 	soldiers = {
 		culture = senufo
 		religion = animist
-		size = 225
+		size= 225
+
 	}
 
 	farmers = {
 		culture = senufo
 		religion = animist
-		size = 25125
+		size = 19125
 	}
 
 	slaves = {
 		culture = senufo
 		religion = animist
-		size = 3000
+		size = 9000
 	}
 }
 #Bure Region (340000) #see Mali.txt and Guinea.txt for balance of Region
@@ -505,7 +518,8 @@
 	soldiers = {
 		culture = mande
 		religion = sunni
-		size = 1200
+		size= 1200
+
 	}
 
 	farmers = {
@@ -535,7 +549,8 @@
 	soldiers = {
 		culture = dyula
 		religion = sunni
-		size = 150
+		size= 150
+
 	}
 
 	farmers = {
@@ -545,37 +560,38 @@
 	}
 
 	aristocrats = {
-		culture = western_nigritic
+		culture = african_minor
 		religion = animist
 		size = 150
 	}
 
 	clergymen = {
-		culture = western_nigritic
+		culture = african_minor
 		religion = animist
 		size = 225
 	}
 
 	artisans = {
-		culture = western_nigritic
+		culture = african_minor
 		religion = animist
 		size = 450
 	}
 
 	soldiers = {
-		culture = western_nigritic
+		culture = african_minor
 		religion = animist
-		size = 75
+		size= 75
+
 	}
 
 	farmers = {
-		culture = western_nigritic
+		culture = african_minor
 		religion = animist
 		size = 8100
 	}
 
 	slaves = {
-		culture = western_nigritic
+		culture = african_minor
 		religion = animist
 		size = 9000
 	}

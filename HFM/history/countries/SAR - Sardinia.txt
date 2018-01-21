@@ -28,14 +28,19 @@ unemployment_subsidies = no_subsidies
 pensions = no_pensions 
 school_reforms = no_schools
 
+
 # New Reforms
 conscription = four_year_draft
 debt_law = debtors_prisons
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = all_voting_pops
+child_labor = child_labor_legal
+citizens_rights = all_voting_pops
 border_policy = open_borders
+centralization = unitary
+colonial_policy = no_colonies 
 
 set_country_flag = catholic_country
+decision = italian_renamed_savoy_aosta
 
 ruling_party = SAR_conservative
 upper_house = {

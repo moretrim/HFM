@@ -3,227 +3,190 @@
 #Bangui (104000/26000 POPS)
 1965 = {
 	aristocrats = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 500
+		size = 515.0
 	}
 
 	clergymen = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 250
+		size = 257.5
 	}
 
 	artisans = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 1300
+		size = 1339.0
 	}
 
 	soldiers = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 275
+		size = 283.25
 	}
 
 	farmers = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 23675
+		size = 24385.25
 	}
 }
 #Nola (40000/10000 POPS)
 1966 = {
 	aristocrats = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 75
+		size = 77.25
 	}
 
 	clergymen = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 100
+		size = 103.0
 	}
 
 	artisans = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 500
+		size = 515.0
 	}
 
 	soldiers = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 100
+		size = 103.0
 	}
 
 	farmers = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 9125
+		size = 9398.75
 	}
-	
-	slaves = {
-		culture = forest_bantu
-		religion = animist
-		size = 500
-	}
-	
 }
 #uncolonized in 1836/under influence of Baguirmi
 #Bouar (28000/7000 POPS)
 1967 = {
 	aristocrats = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 125
+		size = 128.75
 	}
 
 	clergymen = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 75
+		size = 77.25
 	}
 
 	artisans = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 350
+		size = 360.5
 	}
 
 	soldiers = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 75
+		size = 77.25
 	}
 
 	farmers = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 6375
-	}
-	
-	aristocrats = {
-		culture = fulbe
-		religion = sunni
-		size = 100
-	}
-
-	clergymen = {
-		culture = fulbe
-		religion = sunni
-		size = 100
-	}
-
-	artisans = {
-		culture = fulbe
-		religion = sunni
-		size = 100
-	}
-
-	soldiers = {
-		culture = fulbe
-		religion = sunni
-		size = 100
-	}
-
-	farmers = {
-		culture = fulbe
-		religion = sunni
-		size = 900
+		size = 6566.25
 	}
 }
 #Bossangoa (56000/14000 POPS)
 1968 = {
 	aristocrats = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 75
+		size = 77.25
 	}
 
 	clergymen = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 100
+		size = 103.0
 	}
 
 	artisans = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 500
+		size = 515.0
 	}
 
 	soldiers = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 100
+		size = 103.0
 	}
 
 	farmers = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 9125
+		size = 9398.75
 	}
 
 	aristocrats = {
 		culture = baguirmi
 		religion = sunni
-		size = 100
+		size = 10.3
 	}
 
 	clergymen = {
 		culture = baguirmi
 		religion = sunni
-		size = 100
+		size = 25.75
 	}
 
 	artisans = {
 		culture = baguirmi
 		religion = sunni
-		size = 100
+		size = 51.5
 	}
 
 	soldiers = {
 		culture = baguirmi
 		religion = sunni
-		size = 100
+		size = 15.450000000000001
 	}
 
 	farmers = {
 		culture = baguirmi
 		religion = sunni
-		size = 900
+		size = 927.0
 	}
 
 	aristocrats = {
 		culture = sara
 		religion = animist
-		size = 100
+		size = 51.5
 	}
 
 	clergymen = {
 		culture = sara
 		religion = animist
-		size = 100
+		size = 77.25
 	}
 
 	artisans = {
 		culture = sara
 		religion = animist
-		size = 150
+		size = 154.5
 	}
 
 	soldiers = {
 		culture = sara
 		religion = animist
-		size = 100
+		size = 25.75
 	}
 
 	farmers = {
 		culture = sara
 		religion = animist
-		size = 2700
+		size = 2781.0
 	}
 }
 #Dar Banda Region (128000)
@@ -233,61 +196,61 @@
 	aristocrats = {
 		culture = azande
 		religion = animist
-		size = 100
+		size = 103.0
 	}
 
 	clergymen = {
 		culture = azande
 		religion = animist
-		size = 50
+		size = 51.5
 	}
 
 	artisans = {
 		culture = azande
 		religion = animist
-		size = 300
+		size = 309.0
 	}
 
 	soldiers = {
 		culture = azande
 		religion = animist
-		size = 75
+		size = 77.25
 	}
 
 	farmers = {
 		culture = azande
 		religion = animist
-		size = 5475
+		size = 5639.25
 	}
 
 	aristocrats = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 75
+		size = 77.25
 	}
 
 	clergymen = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 50
+		size = 51.5
 	}
 
 	artisans = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 250
+		size = 257.5
 	}
 
 	soldiers = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 50
+		size = 51.5
 	}
 
 	farmers = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 4575
+		size = 4712.25
 	}
 }
 #Bangassou (56000/14000 POPS)
@@ -295,61 +258,61 @@
 	aristocrats = {
 		culture = azande
 		religion = animist
-		size = 100
+		size = 10.3
 	}
 
 	clergymen = {
 		culture = azande
 		religion = animist
-		size = 100
+		size = 25.75
 	}
 
 	artisans = {
 		culture = azande
 		religion = animist
-		size = 100
+		size = 51.5
 	}
 
 	soldiers = {
 		culture = azande
 		religion = animist
-		size = 100
+		size = 15.450000000000001
 	}
 
 	farmers = {
 		culture = azande
 		religion = animist
-		size = 900
+		size = 927.0
 	}
 
 	aristocrats = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 225
+		size = 231.75
 	}
 
 	clergymen = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 150
+		size = 154.5
 	}
 
 	artisans = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 650
+		size = 669.5
 	}
 
 	soldiers = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 150
+		size = 154.5
 	}
 
 	farmers = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 11875
+		size = 12231.25
 	}
 }
 #uncolonized in 1836/under influence of Wadai
@@ -358,61 +321,61 @@
 	aristocrats = {
 		culture = fur
 		religion = sunni
-		size = 100
+		size = 10.3
 	}
 
 	clergymen = {
 		culture = fur
 		religion = sunni
-		size = 100
+		size = 25.75
 	}
 
 	artisans = {
 		culture = fur
 		religion = sunni
-		size = 100
+		size = 51.5
 	}
 
 	soldiers = {
 		culture = fur
 		religion = sunni
-		size = 100
+		size = 15.450000000000001
 	}
 
 	farmers = {
 		culture = fur
 		religion = sunni
-		size = 900
+		size = 927.0
 	}
 
 	aristocrats = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 100
+		size = 103.0
 	}
 
 	clergymen = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 50
+		size = 51.5
 	}
 
 	artisans = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 300
+		size = 309.0
 	}
 
 	soldiers = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 75
+		size = 77.25
 	}
 
 	farmers = {
-		culture = ubangian
+		culture = african_minor
 		religion = animist
-		size = 5475
+		size = 5639.25
 	}
 
 }

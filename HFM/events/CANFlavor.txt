@@ -370,10 +370,28 @@ country_event = {
 				remove_core = ENG
 			}
 		}
-		release_vassal = CAN
+		any_owned = { 
+			limit = { 
+				is_core = CAN
+			}
+			secede_province = CAN
+		}
+		create_vassal = CAN
 		CAN = {
 			prestige = -100
 			relation = { who = USA value = 200 }
+		}
+		13 = {
+			add_province_modifier = {
+				name = vancouver_boom
+				duration = 365
+			}
+		}
+		14 = {
+			add_province_modifier = {
+				name = vancouver_boom
+				duration = 365
+			}
 		}
 		relation = {
 			who = CAN
@@ -387,7 +405,7 @@ country_event = {
 			consciousness = 1
 		}
 		ai_chance = {
-			factor = 80
+			factor = 85
 			modifier = {
 				factor = 0
 				OR = {
@@ -444,7 +462,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 20
+			factor = 15
 			modifier = {
 				factor = 1.75
 				government = absolute_monarchy
@@ -802,7 +820,13 @@ country_event = {
 				remove_core = ENG
 			}
 		}
-		release_vassal = MRU
+		any_owned = { 
+			limit = { 
+				is_core = MRU
+			}
+			secede_province = MRU
+		}
+		create_vassal = MRU
 		MRU = {
 			prestige = -100
 			relation = { who = USA value = 200 }
@@ -978,9 +1002,23 @@ country_event = {
 				CAN = { exists = no }
 			}
 		}
-		any_owned_province = { is_core = COL }
+		OR = {
+			any_owned_province = { is_core = COL }
+			is_possible_vassal = COL
+			COL = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+							vassal_of = THIS
+							war = no
+						}
+					}
+				}
+			}
+		}
 		NOT = { exists = COL }
-		is_possible_vassal = COL
 	}
 
 	mean_time_to_happen = {
@@ -1001,6 +1039,10 @@ country_event = {
 			year = 1910
 			NOT = { has_country_flag = COL_independence_refused }
 		}
+		modifier = {
+			factor = 0.5
+			has_country_flag = CAN_independence_refused
+		}
 	}
 
 	option = {
@@ -1012,13 +1054,27 @@ country_event = {
 			limit = { location = { is_core = COL } }
 			militancy = -10
 		}
+		RPL = {
+			any_owned = {
+				limit = {
+					is_core = COL
+				}
+				secede_province = ENG
+			}
+		}
 		COL = {
 			all_core = {
 				change_controller = ENG
 				remove_core = ENG
 			}
 		}
-		release_vassal = COL
+		any_owned = { 
+			limit = { 
+				is_core = COL
+			}
+			secede_province = COL
+		}
+		create_vassal = COL
 		COL = {
 			prestige = -100
 			relation = { who = USA value = 200 }
@@ -1034,6 +1090,7 @@ country_event = {
 		any_pop = {
 			consciousness = 1
 		}
+		COL = { capital = 13 }
 		ai_chance = {
 			factor = 80
 			modifier = {
@@ -1189,6 +1246,7 @@ country_event = {
 			tag = ENL
 		}
 		war = no
+		money = 101000
 		OR = {
 			government = hms_government
 			government = democracy
@@ -1227,20 +1285,20 @@ country_event = {
 			}
 			NOT = { has_country_flag = refused_ruperts_land }
 			NOT = { has_country_flag = agreed_ruperts_land }
-			money = 51000
 		}
 	}
 	
 	mean_time_to_happen = {
 		months = 36
 		modifier = {
-			factor = 0.5
+			factor = 0.2
 			year = 1870
 		}
 	}
 	
 	option = {
 		name = "EVT44320OPTA"
+		badboy = -3
 		#ENG_6 = { remove_core = THIS }
 		ENG_9 = { remove_core = THIS }
 		ENG_22 = { remove_core = THIS }
@@ -1266,7 +1324,7 @@ country_event = {
 		}
 		CAN = { country_event = 44321 }
 		ai_chance = {
-			factor = 90
+			factor = 100
 			modifier = {
 				factor = 1.5
 				ruling_party_ideology = liberal
@@ -1306,7 +1364,7 @@ country_event = {
 		}
 		CAN = { country_event = 44322 }
 		ai_chance = {
-			factor = 10
+			factor = 0
 			modifier = {
 				factor = 0.5
 				ruling_party_ideology = liberal
@@ -1338,7 +1396,9 @@ country_event = {
 		name = "EVT44321OPTA"
 		set_country_flag = agreed_ruperts_land
 		prestige = 10
-		treasury = -50000
+		FROM = {
+			treasury = -100000
+		}
 		#ENG_6 = {
 		#	remove_core = RPL
 		#	add_core = CAN
@@ -1372,6 +1432,9 @@ country_event = {
 				add_core = CAN
 			}
 		}
+		RPL = {
+			all_core = { remove_core = RPL }
+		}
 		random_country = {
 			limit = {
 				tag = RPL
@@ -1393,7 +1456,6 @@ country_event = {
 			}
 		}
 		FROM = {
-			treasury = 50000
 			random_owned = {
 				limit = { region = USA_1 }
 				USA_1 = { add_core = CAN }
@@ -1416,14 +1478,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 95
-			modifier = {
-				factor = 0
-				OR = {
-					has_country_modifier = in_bankrupcy
-					has_country_modifier = generalised_debt_default
-				}
-			}
+			factor = 100
 		}
 	}
 	
@@ -1459,11 +1514,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 5
-			modifier = {
-				factor = 0
-				money = 50000
-			}
+			factor = 0
 		}
 	}
 }
@@ -1691,6 +1742,110 @@ country_event = {
 		prestige = -10
 		ai_chance = {
 			factor = 5
+		}
+	}
+}
+
+country_event = {
+	id = 44356
+	title = "EVTNAME44356"
+	desc = "EVTDESC44356"
+	picture = "bagdadrailway"
+	
+	trigger = {
+		tag = CAN
+		war = no
+		has_country_flag = build_the_cnr1
+		owns = 36
+		owns = 26
+		NOT = {
+			has_country_flag = build_the_cnr2
+			has_country_modifier = in_bankrupcy
+			has_country_modifier = generalised_debt_default
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+	}
+	
+	option = {
+		name = "EVTOPT44356"
+		set_country_flag = build_the_cnr2
+		treasury = -200000
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 41
+					province_id = 30
+					province_id = 35
+					province_id = 29
+					province_id = 26
+				}
+				can_build_in_province = {
+					building = railroad
+				}
+			}
+			infrastructure = 1
+		}
+		26 = { 
+			change_province_name = "Calgary"
+			add_province_modifier = {
+				name = gateway_to_harbor
+				duration = 365
+			}
+		}
+	}
+}
+
+country_event = {
+	id = 44357
+	title = "EVTNAME44357"
+	desc = "EVTDESC44357"
+	picture = "bagdadrailway"
+	
+	trigger = {
+		tag = CAN
+		war = no
+		has_country_flag = build_the_cnr2
+		owns = 26
+		owns = 13
+		NOT = {
+			has_country_flag = build_the_cnr3
+			has_country_modifier = in_bankrupcy
+			has_country_modifier = generalised_debt_default
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {
+		name = "EVTOPT44356"
+		set_country_flag = build_the_cnr3
+		prestige = 10
+		treasury = -300000
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 28
+					province_id = 21
+					province_id = 20
+					province_id = 13
+				}
+				can_build_in_province = {
+					building = railroad
+				}
+			}
+			infrastructure = 1
+		}
+		13 = { 
+			change_province_name = "Vancouver"
+			add_province_modifier = {
+				name = gateway_to_harbor
+				duration = 720
+			}
 		}
 	}
 }

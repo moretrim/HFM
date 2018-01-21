@@ -1,5 +1,7 @@
 capital = 300
 primary_culture = british
+culture = welsh
+culture = scottish
 culture = anglo_canadian
 culture = australian
 religion = protestant
@@ -32,12 +34,16 @@ unemployment_subsidies = trinket_subsidies
 pensions = no_pensions 
 school_reforms = low_schools
 
+
 #New Reforms
 conscription = one_year_draft
 debt_law = debtors_prisons
 penal_system = colonial_transportation
-child_labor = child_labor_restrictedcitizens_rights = primary_culture_only
+child_labor = child_labor_restricted
+citizens_rights = culture_voting_only
 border_policy = open_borders
+centralization = unitary
+colonial_policy = exploitation
 
 set_country_flag = protestant_country
 
@@ -111,6 +117,7 @@ foreign_investment = {
 	BEL = 20000
 	POR = 40000
 	DEN = 2000
+	EIC = 20000
 }
 
 oob = "ENG_oob.txt"

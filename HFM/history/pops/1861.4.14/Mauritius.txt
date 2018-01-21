@@ -1,11 +1,11 @@
-#Mauritius - 98700
-#ruled by Britain 1836
-#Mauritius (98000/24500 POPS)
+#Mauritius - 310000
+#ruled by Britain 1861
+#Mauritius (310000/77500 POPS)
 2125 = {
 	bureaucrats = {
 		culture = british
 		religion = protestant
-		size = 20
+		size = 360
 	}
 
 	clergymen = {
@@ -17,81 +17,127 @@
 	artisans = {
 		culture = british
 		religion = protestant
-		size = 130
+		size = 25
 	}
 
 	soldiers = {
 		culture = british
 		religion = protestant
-		size = 25
-	}
+		size= 25
 
+	}
+	
 	aristocrats = {
 		culture = french
 		religion = catholic
-		size = 50
-	}
-
-	bureaucrats = {
-		culture = french
-		religion = catholic
-		size = 30
+		size = 185
 	}
 
 	artisans = {
 		culture = french
 		religion = catholic
-		size = 180
-	}
-
-	clergymen = {
-		culture = french
-		religion = catholic
-		size = 20
-	}
-
-	soldiers = {
-		culture = french
-		religion = catholic
-		size = 20
-	}
-
-	farmers = {
-		culture = french
-		religion = catholic
-		size = 200
-	}
-
-	clergymen = {
-		culture = kreol
-		religion = protestant
-		size = 125
-	}
-
-	artisans = {
-		culture = kreol
-		religion = protestant
-		size = 1100
-	}
-
-	soldiers = {
-		culture = kreol
-		religion = protestant
 		size = 250
 	}
 
-	farmers = {
-		culture = kreol
+	clergymen = {
+		culture = french
 		religion = catholic
-		size = 22375
+		size = 100
 	}
+
+	soldiers = {
+		culture = french
+		religion = catholic
+		size= 100
+
+	}
+
+	clergymen = {
+		culture = african_minor
+		religion = protestant
+		size = 135
+	}
+
+	artisans = {
+		culture = african_minor
+		religion = protestant
+		size = 1565
+	}
+
+	soldiers = {
+		culture = african_minor
+		religion = protestant
+		size= 500
+
+	}
+
+	farmers = {
+		culture = african_minor
+		religion = protestant
+		size = 1295
+	}
+
+	artisans = {
+		culture = african_minor
+		religion = catholic
+		size = 200
+	}
+	
+	farmers = {
+		culture = african_minor
+		religion = catholic
+		size = 31190
+	}
+
+	artisans = {
+		culture = tamil
+		religion = hindu
+		size = 950
+	}
+	
+	farmers = {
+		culture = tamil
+		religion = hindu
+		size = 19200
+	}
+
+	clergymen = {
+		culture = avadhi
+		religion = hindu
+		size = 100
+	}
+	
+	artisans = {
+		culture = avadhi
+		religion = hindu
+		size = 950
+	}
+	
+	farmers = {
+		culture = avadhi
+		religion = hindu
+		size = 19100
+	}
+	
+	artisans = {
+		culture = yue
+		religion = mahayana
+		size = 100
+	}
+	
+	farmers = {
+		culture = yue
+		religion = mahayana
+		size = 1150
+	}
+	
 }
-#Diego Garcia (700/175 POPS) #remains under British Rule
+#Diego Garcia (720/180 POPS) #remains under British Rule
 2128 = {
 	farmers = {
-		culture = kreol
+		culture = african_minor
 		religion = catholic
-		size = 175
+		size = 180
 	}
 
 }

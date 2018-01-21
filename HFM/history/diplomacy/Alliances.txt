@@ -18,7 +18,7 @@ alliance = {
 #Circassia and Caucasiam Imamate
 alliance = {
 	first = SWI
-	second = NEH
+	second = NCT
 	start_date = 1815.1.1
 	end_date = 1857.1.1
 }
@@ -44,7 +44,14 @@ alliance = {
 		second = ABU 
 		start_date =  1835.1.1
 		end_date = 1936.1.1
-	}
+}
+
+alliance = {
+		first = ENG 
+		second = RPL 
+		start_date =  1835.1.1
+		end_date = 1936.1.1
+}
 
 alliance = {
 		first = ENG 
@@ -104,19 +111,19 @@ alliance = {
 		end_date = 1867.1.1
 	}
 alliance = {
-		first = PRU 
+		first = AUS 
 		second = FRM 
 		start_date =  1835.1.1
 		end_date = 1867.1.1
 	}
 alliance = {
-		first = PRU 
+		first = AUS 
 		second = HEK 
 		start_date =  1835.1.1
 		end_date = 1867.1.1
 	}
 alliance = {
-		first = PRU 
+		first = AUS 
 		second = HES 
 		start_date =  1835.1.1
 		end_date = 1867.1.1
@@ -134,7 +141,7 @@ alliance = {
 		end_date = 1867.1.1
 	}	
 alliance = {
-		first = PRU 
+		first = AUS 
 		second = NAS 
 		start_date =  1835.1.1
 		end_date = 1867.1.1

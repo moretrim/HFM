@@ -1,5 +1,6 @@
 owner = ENG
 controller = ENG
+add_core = ACA
 add_core = MRU
 add_core = NEN
 trade_goods = grain

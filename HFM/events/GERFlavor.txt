@@ -1,4 +1,4 @@
-
+	
 country_event = {
 
 	id = 33003 #parallel event is BAY 33403
@@ -8,7 +8,10 @@ country_event = {
 	news_desc_short = "EVTDESC33403_NEWS_SHORT"
 
 	trigger = {
-		tag = GER
+		OR = { 
+			tag = GER
+			tag = GCF
+		}
 		year = 1875
 		nationalism_n_imperialism = 1 #has the nationalism tech
 		owns = 598 #Bayreuth
@@ -55,7 +58,10 @@ province_event = {
 
 	trigger = {
 		province_id = 371 #Aabenra/North Schleswig
-		owned_by = GER
+		OR = { 
+			owned_by = GER
+			owned_by = GCF
+		}
 		year = 1896
 		culture = danish
 		NOT = {
@@ -116,7 +122,10 @@ country_event = {
 	news_desc_short = "EVTDESC33000_NEWS_SHORT"
 
 	trigger = {
-		tag = GER
+		OR = { 
+			tag = GER
+			tag = GCF
+		}
 		year = 1916
 		NOT = {
 			year = 1920
@@ -160,7 +169,10 @@ country_event = {
 	news_desc_short = "EVTDESC33001_NEWS_SHORT"
 
 	trigger = {
-		tag = GER
+		OR = { 
+			tag = GER
+			tag = GCF
+		}
 		year = 1874
 		NOT = {
 			year = 1877
@@ -206,7 +218,10 @@ country_event = {
 	news_desc_short = "EVTDESC33002_NEWS_SHORT"
 
 	trigger = {
-		tag = GER
+		OR = { 
+			tag = GER
+			tag = GCF
+		}
 		year = 1880
 		NOT = {
 			year = 1883
@@ -250,7 +265,10 @@ country_event = {
 	news_desc_short = "EVTDESC33005_NEWS_SHORT"
 
 	trigger = {
-		tag = GER
+		OR = { 
+			tag = GER
+			tag = GCF
+		}
 		year = 1903
 		is_greater_power = yes
 		TUR = {
@@ -300,10 +318,12 @@ country_event = {
 	option = {
 		name = "EVTOPTA33005" 
 		prestige = 10
+		treasury = 20000
 		set_global_flag = BerlinBaghdadRail
 		relation = { who = TUR value = 100 }
 		relation = { who = ENG value = -75 }
 		relation = { who = RUS value = -75 }
+		ai_chance = { factor = 100 }
 	}
 
 	option = {
@@ -340,6 +360,7 @@ country_event = {
 						OR = {
 							region = ENG_2024
 							region = ENG_2026
+							province_id = 1870
 						}
 					}
 					secede_province = ENG
@@ -347,38 +368,60 @@ country_event = {
 				set_country_flag = germany_gave_colonies
 			}
 		}
+	
+		2081 = { secede_province = THIS add_core = NMB literacy = -0.99 }
 		
+		#If Zanzibar exists, Germany will release it
+		random_country = {
+			limit = {
+				tag = ZAN
+				vassal_of = THIS
+				exists = yes
+				has_country_flag = german_east_africa_zan
+			}
+			THIS = { 
+				release_vassal = ZAN
+				diplomatic_influence = {
+					who = ZAN
+					value = -400
+				}
+			}
+		}
+		
+		#If Zanzibar was annexed by Germany, release it
 		random_owned = {
 			limit = {
-				owner = { NOT = { owns = 2029 } }
-				NOT = { region = ENG_2083 }
-				NOT = { region = ENG_2078 }
-				is_colonial = yes
-				continent = africa
-				OR = { port = yes any_neighbor_province = { owned_by = ENG } }
+				province_id = 2048 #Zanzibar
+				owned_by = THIS
+				NOT = { exists = ZAN }
 			}
-			owner = {
-				random_state = {
-					limit = {
-						NOT = { any_owned_province = { region = ENG_2083 } }
-						NOT = { any_owned_province = { region = ENG_2078 } }
-						is_colonial = yes
-						any_owned_province = {
-							continent = africa
-							OR = {
-								port = yes
-								any_neighbor_province = { owned_by = ENG }
-							}
-						}
-					}
-					any_owned = { secede_province = ENG }
+			secede_province = ZAN
+		}
+
+		#UK Receives Zanzibar as a vassal
+		random_country = {
+			limit = {
+				tag = ZAN
+				is_vassal = no
+				exists = yes
+				has_country_flag = german_east_africa_zan
+			}
+			ENG = { 
+				create_vassal = ZAN
+				diplomatic_influence = {
+					who = ZAN
+					value = 400
 				}
-				set_country_flag = germany_gave_colonies
 			}
 		}
 		
 		ENG = { country_event = 33007 }
-			
+		2034 = { secede_province = THIS any_pop = { literacy = -0.99 } }
+		2035 = { secede_province = THIS any_pop = { literacy = -0.99 } }
+		2042 = { secede_province = THIS any_pop = { literacy = -0.99 } }
+		2043 = { secede_province = THIS any_pop = { literacy = -0.99 } }
+		2044 = { secede_province = THIS any_pop = { literacy = -0.99 } }
+		2046 = { secede_province = THIS any_pop = { literacy = -0.99 } }
 		ai_chance = { factor = 100 }
 	}
 
@@ -403,6 +446,13 @@ country_event = {
 	option = {
 		name = "EVT33007OPTA"
 		prestige = 5
+		set_country_flag = treaty_of_heligoland_success
+		2019 = { secede_province = THIS any_pop = { literacy = -0.99 } }
+		2020 = { secede_province = THIS any_pop = { literacy = -0.99 } }
+		2021 = { secede_province = THIS any_pop = { literacy = -0.99 } }
+		2022 = { secede_province = THIS any_pop = { literacy = -0.99 } }
+		2023 = { secede_province = THIS any_pop = { literacy = -0.99 } }
+		
 		random_country = {
 			limit = { tag = FROM NOT = { has_country_flag = germany_gave_colonies } }
 			random_owned = {
@@ -411,7 +461,17 @@ country_event = {
 					random_state = {
 						limit = {
 							is_colonial = yes
-							any_owned_province = { continent = africa OR = { port = yes any_neighbor_province = { owned_by = ENG } } }
+							any_owned_province = { 
+								OR = {
+									continent = east_africa 
+									continent = west_africa
+									continent = africa
+								}
+								OR = {
+									port = yes 
+									any_neighbor_province = { owned_by = ENG } 
+								} 
+							}
 						}
 					any_owned = { secede_province = ENG }
 					}
@@ -421,14 +481,16 @@ country_event = {
 		
 		533 = {
 			remove_core = ENG
-			secede_province = GER
-			add_core = GER
+			secede_province = FROM
+			add_core = FROM
 		}
+		TNZ = { government = colonial_company }
 		random_owned = {
-			limit = { province_id = 2081 2082 = { owned_by = GER } } 
-			owner = { 2081 = { secede_province = GER add_core = NMB } }
+			limit = { province_id = 2081 2082 = { owned_by = FROM } } 
+			owner = { 2081 = { secede_province = FROM add_core = NMB } }
 		}
-		relation = { who = GER value = 25 }
+		
+		relation = { who = FROM value = 25 }
 		set_country_flag = has_questioned_heligoland
 		FROM = { clr_country_flag = germany_gave_colonies }
 	}
@@ -447,7 +509,7 @@ country_event = {
 		name = "EVT33008OPTA"
 		prestige = -5
 		relation = {
-			who = GER
+			who = FROM
 			value = -25
 		}
 	}
@@ -480,6 +542,10 @@ country_event = {
 		}
 		410 = {
 			is_core = GER
+		}
+		OR = {
+			steel_breech_loaded_artillery = 1
+			machine_guns = 1
 		}
 	}
 	
@@ -692,6 +758,10 @@ country_event = {
 				alliance_with = THIS
 			}
 			leave_alliance = THIS
+			relation = { 
+				who = THIS 
+				value = -100
+			}
 		}
 		any_country = {
 			limit = {
@@ -860,86 +930,6 @@ country_event = {
 	}
 }
 
-#German East Africa
-country_event = {
-	id = 33030
-	title = "EVTNAME33030" #The German East Africa Company
-	desc = "EVTDESC33030"
-	picture = "german_east_africa_company"
-	
-	trigger = {
-		OR = {
-			tag = NGF
-			tag = GER
-		}
-		OR = {
-			government = absolute_monarchy
-			government = prussian_constitutionalism
-			government = hms_government
-		}
-		is_greater_power = yes
-		invention = prophylaxis_against_malaria
-		invention = mission_to_civilize
-		invention = colonial_negotiations
-		has_global_flag = berlin_conference
-		NOT = { has_country_flag = german_east_africa_company }
-		ZAN = {
-			war = no
-			civilized = no
-			any_owned_province = {
-				OR = {
-					region = ENG_2024
-					region = ENG_2036
-					region = ENG_2039
-				}
-			}
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 12
-		modifier = {
-			factor = 0.5
-			is_sphere_leader_of = ZAN
-		}
-		modifier = {
-			factor = 0.5
-			year = 1885
-		}
-		modifier = {
-			factor = 0.5
-			year = 1888
-		}
-		modifier = {
-			factor = 2
-			NOT = { is_sphere_leader_of = ZAN }
-			ZAN = { part_of_sphere = yes }
-		}
-	}
-	
-	option = {
-		name = "EVT33030OPTA"
-		set_country_flag = german_east_africa_company
-		badboy = 3
-		ZAN = { country_event = 33031 }
-		ai_chance = {
-			factor = 90
-			modifier = {
-				factor = 0
-				badboy = 0.88
-			}
-		}		
-	}
-	
-	option = {
-		name = "EVT33030OPTB"
-		set_country_flag = german_east_africa_company
-		badboy = -1
-		relation = { who = ZAN value = 100 }
-		ai_chance = { factor = 10 }
-	}
-}
-
 country_event = {
 	id = 33031
 	title = "EVTNAME33031" #German Warships
@@ -959,13 +949,13 @@ country_event = {
 			months = 60
 		}
 		ai_chance = {
-			factor = 5
+			factor = 1
 			modifier = {
-				factor = 5
+				factor = 10
 				part_of_sphere = yes
 			}
 			modifier = {
-				factor = 4
+				factor = 10
 				any_greater_power = { alliance_with = THIS }
 				NOT = { alliance_with = FROM }
 			}
@@ -973,12 +963,17 @@ country_event = {
 				factor = 0
 				in_sphere = FROM
 			}
+			modifier = {
+				factor = 0
+				has_global_flag = yes_railroad
+			}
 		}
 	}
 	
 	option = {
 		name = "EVT33031OPTB"
 		clr_country_flag = delay_unciv_annexation
+		set_country_flag = german_east_africa_zan
 		prestige = -5
 		FROM = { prestige = 5 }
 		relation = { who = FROM value = 400 }
@@ -1009,8 +1004,12 @@ country_event = {
 				months = 30
 			}
 		}
+		FROM = {
+			create_vassal = THIS
+		}
+		
 		ai_chance = {
-			factor = 95
+			factor = 99
 		}
 	}
 }
@@ -1070,6 +1069,7 @@ country_event = {
 	title = "EVTNAME33037"
 	desc = "EVTDESC33037"
 	picture = "rhineland"
+	major = yes
 	
 	fire_only_once = yes
 	
@@ -1082,7 +1082,27 @@ country_event = {
 	
 	option = {
 		name = "EVT33037OPTA"
+		badboy = 5
+		set_country_flag = french_claimed_the_rhine
 		PRU = { set_country_flag = french_claimed_the_rhine }
+		any_country = {
+			limit = {
+				is_greater_power = yes
+				alliance_with = THIS
+			}
+			leave_alliance = THIS
+		}
+		PRU = { country_event = 99925 }
+		casus_belli = {
+			target = PRU
+			type = acquire_state
+			months = 6
+		}
+		casus_belli = {
+			target = PRU
+			type = liberate_country
+			months = 6
+		}
 		any_country = {
 			limit = { 
 				is_greater_power = no
@@ -1091,15 +1111,15 @@ country_event = {
 					primary_culture = south_german
 				}
 			}
-		casus_belli = {
+			casus_belli = {
 				target = FRA
 				type = cut_down_to_size
-				months = 20
+				months = 24
 			}
-		end_military_access = FRA
-		leave_alliance = FRA
-		relation = { who = FRA value = -150 }
-		FRA = { diplomatic_influence = { who = THIS value = -200 } }
+			end_military_access = FRA
+			leave_alliance = FRA
+			relation = { who = FRA value = -150 }
+			FRA = { diplomatic_influence = { who = THIS value = -200 } }
 		}
 		any_country = {
 			limit = { 
@@ -1109,22 +1129,41 @@ country_event = {
 					primary_culture = south_german
 				}
 			}
-		casus_belli = {
-				target = FRA
-				type = humiliate
-				months = 20
-			}
-		end_military_access = FRA
-		leave_alliance = FRA
-		relation = { who = FRA value = -150 }
+			end_military_access = FRA
+			leave_alliance = FRA
+			relation = { who = FRA value = -150 }
 		}
-		ai_chance = { factor = 0.95 }
+		ai_chance = {
+			factor = 0.15
+			modifier = {
+				factor = 0
+				has_recently_lost_war = yes
+			}
+			modifier = {
+				factor = 0
+				is_disarmed = yes
+			}
+			modifier = {
+				factor = 0
+				war_exhaustion = 1
+			}
+			modifier = {
+				factor = 0
+				num_of_revolts = 1
+			}
+			modifier = {
+				factor = 0
+				war = yes
+			}
+		}
 	}
 	
 	
 	option = {
 		name = "EVT33037OPTB"
 		prestige = -10
+		badboy = -2
+		remove_country_modifier = rhine_crisis
 		any_country = {
 			limit = { 
 				OR = {
@@ -1134,7 +1173,10 @@ country_event = {
 		}
 		relation = { who = FRA value = 50 }
 		}
-		ai_chance = { factor = 0.05 }
+		
+		ai_chance = {
+			factor = 0.85
+		}
 	}
 }
 
@@ -1242,26 +1284,34 @@ country_event = {
 		ai = yes
 		NOT = { exists = NGF }
 		NOT = { exists = GER }
+		NOT = { exists = GCF }
 		NOT = { year = 1890 }
 		has_country_flag = french_claimed_the_rhine
 		has_global_flag = watching_the_rhine
 		NOT = { has_global_flag = 3hurrahs }
-			OR = {
-					575 = { owner = { NOT = { is_culture_group = germanic } } }
-					576 = { owner = { NOT = { is_culture_group = germanic } } }
-					577 = { owner = { NOT = { is_culture_group = germanic } } }
-					572 = { owner = { NOT = { is_culture_group = germanic } } }
-				PRU_578 = { owner = { NOT = { is_culture_group = germanic } } }
-				PRU_570 = { owner = { NOT = { is_culture_group = germanic } } }
-				BAD_586 = { owner = { NOT = { is_culture_group = germanic } } }
-				WUR_589 = { owner = { NOT = { is_culture_group = germanic } } }
-				HES_2560 = { owner = { NOT = { is_culture_group = germanic } } }
+		OR = {
+			575 = { owner = { NOT = { is_culture_group = germanic } } }
+			576 = { owner = { NOT = { is_culture_group = germanic } } }
+			577 = { owner = { NOT = { is_culture_group = germanic } } }
+			572 = { owner = { NOT = { is_culture_group = germanic } } }
+			PRU_578 = { owner = { NOT = { is_culture_group = germanic } } }
+			PRU_570 = { owner = { NOT = { is_culture_group = germanic } } }
+			BAD_586 = { owner = { NOT = { is_culture_group = germanic } } }
+			WUR_589 = { owner = { NOT = { is_culture_group = germanic } } }
+			HES_2560 = { owner = { NOT = { is_culture_group = germanic } } }
+			AND = {
+				RHI = {
+					exists = yes
+					vassal_of = FRA
+				}
+				has_global_flag = left_bank_french_victory
 			}
 		}
+	}
 	
 	fire_only_once = yes
 	
-	mean_time_to_happen = { days = 5 }
+	mean_time_to_happen = { days = 10 }
 	
 	option = {
 		name = "EVT33038OPTA"
@@ -1415,23 +1465,96 @@ country_event = {
 	trigger = {
 		OR = {
 			tag = GER
+			tag = GCF
 			tag = NGF
 			tag = SGF
 			tag = AUS
 			tag = KUK
 		}
-		owns = 549
-		total_pops = 13000000
-		year = 1895
+		owns = 549 #Berlin
+		OR = {
+			AND = {
+				NOT = { owns = 619 } #Vienna
+				total_pops = 12500000
+				has_global_flag = ruhr_boom_has_happened
+			}
+			AND = {
+				NOT = { owns = 619 }
+				total_pops = 12000000
+				NOT = { has_global_flag = ruhr_boom_has_happened }
+			}
+			AND = {
+				owns = 619
+				year = 1885
+				has_global_flag = ruhr_boom_has_happened
+			}
+			AND = {
+				owns = 619
+				year = 1885
+				NOT = { has_global_flag = ruhr_boom_has_happened }
+			}
+		}
+		year = 1865
 	}
 	
 	fire_only_once = yes
 	
-	mean_time_to_happen = { months = 24 }
+	mean_time_to_happen = { days = 14 }
 	
 	option = {
 		name = "EVT33040OPTA"
-		GER = { all_core = { limit = { life_rating = 40  } life_rating = -5 } }
+		GER = { all_core = { limit = { life_rating = 45  } life_rating = -14 } }	
+		GER = { all_core = { limit = { life_rating = 40  } life_rating = -9 } }
+		GER = { all_core = { limit = { life_rating = 36  } life_rating = -4 } }
+		GER = { all_core = { limit = { life_rating = 35  } life_rating = -4 } }
+		GER = { all_core = { limit = { life_rating = 32  } life_rating = -1 } }
+		
+		GCF = { all_core = { limit = { life_rating = 45  } life_rating = -14 } }	
+		GCF = { all_core = { limit = { life_rating = 40  } life_rating = -9 } }
+		GCF = { all_core = { limit = { life_rating = 36  } life_rating = -4 } }
+		GCF = { all_core = { limit = { life_rating = 35  } life_rating = -4 } }
+		GCF = { all_core = { limit = { life_rating = 32  } life_rating = -1 } }
+	}
+}
+
+#Austria LR Normalization
+country_event = {
+	id = 330401
+	title = "EVTNAME33040"
+	desc = "EVTDESC33040"
+	picture = "Budapest"
+
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = KUK
+			tag = DNB
+			tag = GER
+		}
+		owns = 619 #Vienna
+		total_pops = 12000000
+		year = 1865
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = { days = 14 }
+	
+	option = {
+		name = "EVT33040OPTA"
+		KUK = { all_core = { limit = { life_rating = 45  } life_rating = -14 } }	
+		KUK = { all_core = { limit = { life_rating = 40  } life_rating = -9 } }
+		KUK = { all_core = { limit = { life_rating = 36  } life_rating = -4 } }
+		KUK = { all_core = { limit = { life_rating = 35  } life_rating = -4 } }
+		KUK = { all_core = { limit = { life_rating = 33  } life_rating = -2 } }
+		KUK = { all_core = { limit = { life_rating = 32  } life_rating = -1 } }
+		
+		AUS = { all_core = { limit = { life_rating = 45  } life_rating = -14 } }	
+		AUS = { all_core = { limit = { life_rating = 40  } life_rating = -9 } }
+		AUS = { all_core = { limit = { life_rating = 36  } life_rating = -4 } }
+		AUS = { all_core = { limit = { life_rating = 35  } life_rating = -4 } }
+		AUS = { all_core = { limit = { life_rating = 33  } life_rating = -2 } }
+		AUS = { all_core = { limit = { life_rating = 32  } life_rating = -1 } }
 	}
 }
 
@@ -1443,7 +1566,10 @@ country_event = {
 	picture = "german_rhine"
 
 	trigger = {
-		tag = GER
+		OR = { 
+			tag = GER
+			tag = GCF
+		}
 		NOT = { capital = 549 }
 		NOT = { capital = 599 }
 		owns = 549 #Berlin

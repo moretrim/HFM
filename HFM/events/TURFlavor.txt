@@ -78,6 +78,7 @@ country_event = {
 			alliance_with = FRA
 			alliance_with = RUS
 			alliance_with = GER
+			alliance_with = GCF
 			has_country_flag = BerlinBaghdadRail
 		}
 	}
@@ -108,6 +109,7 @@ country_event = {
 		prestige = 10
 		set_country_flag = BerlinBaghdadRail
 		relation = { who = GER value = 100 }
+		relation = { who = GCF value = 100 }
 		relation = { who = ENG value = -75 }
 		relation = { who = RUS value = -75 }
 	}

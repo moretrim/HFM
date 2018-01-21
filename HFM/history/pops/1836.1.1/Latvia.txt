@@ -27,37 +27,43 @@
 	}
 
 	aristocrats = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 650
 	}
 
 	bureaucrats = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 200
 	}
 
 	officers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 250
 	}
 
 	clergymen = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
-		size = 100
+		size = 75
+	}
+
+	farmers = {
+		culture = volga_german
+		religion = protestant
+		size = 1000
 	}
 
 	artisans = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 6725
 	}
 
 	soldiers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
@@ -149,25 +155,25 @@
 	}
 
 	aristocrats = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 1250
 	}
 
 	clergymen = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 
 	artisans = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 600
 	}
 
 	soldiers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
@@ -284,25 +290,25 @@
 	}
 
 	aristocrats = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 700
 	}
 
 	clergymen = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 
 	artisans = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 2200
 	}
 
 	soldiers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
@@ -399,26 +405,32 @@
 		size = 28275
 	}
 
+	farmers = {
+		culture = volga_german
+		religion = protestant
+		size = 1200
+	}
+	
 	aristocrats = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 1150
 	}
 
 	clergymen = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 
 	artisans = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 750
 	}
 
 	soldiers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
@@ -474,25 +486,25 @@
 	}
 
 	aristocrats = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 1200
 	}
 
 	clergymen = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 
 	artisans = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 700
 	}
 
 	soldiers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
@@ -554,25 +566,25 @@
 	}
 
 	aristocrats = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 550
 	}
 
 	clergymen = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 
 	artisans = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 400
 	}
 
 	soldiers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}

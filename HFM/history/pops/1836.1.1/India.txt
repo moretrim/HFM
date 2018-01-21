@@ -30,13 +30,19 @@
 	farmers = {
 		culture = tamil
 		religion = hindu
-		size = 8000
+		size = 6700
+	}
+	
+	farmers = {
+		culture = tamil
+		religion = protestant
+		size = 1000
 	}
 
 	farmers = {
 		culture = tamil
 		religion = sunni
-		size = 445
+		size = 745
 	}
 	
 	clergymen = {
@@ -1435,7 +1441,7 @@
 	soldiers = {
 		culture = nepali
 		religion = hindu
-		size = 3000
+		size = 12000
 	}
 
 	farmers = {
@@ -1459,19 +1465,19 @@
 	bureaucrats = {
 		culture = british
 		religion = protestant
-		size = 100
+		size = 150
 	}
 
 	officers = {
 		culture = british
 		religion = protestant
-		size = 50
+		size = 500
 	}
 
 	soldiers = {
 		culture = british
 		religion = protestant
-		size = 100
+		size = 1000
 	}
 
 }
@@ -1774,7 +1780,13 @@
 	soldiers = {
 		culture = nepali
 		religion = hindu
-		size = 1100
+		size = 8100
+	}
+	
+	officers = {
+		culture = nepali
+		religion = hindu
+		size = 600
 	}
 	
 	farmers = {
@@ -2882,7 +2894,7 @@
 	farmers = {
 		culture = bengali
 		religion = hindu
-		size = 936500
+		size = 870500
 	}
 
 	aristocrats = {
@@ -2906,7 +2918,7 @@
 	artisans = {
 		culture = bengali
 		religion = sunni
-		size = 10000
+		size = 9000
 	}
 	
 	artisans = {
@@ -2924,7 +2936,19 @@
 	farmers = {
 		culture = bengali
 		religion = sunni
-		size = 63250
+		size = 60000
+	}
+	
+	artisans = {
+		culture = anglo_indian
+		religion = protestant
+		size = 13000
+	}
+	
+	bureaucrats = {
+		culture = anglo_indian
+		religion = protestant
+		size = 500
 	}
 
 	aristocrats = {
@@ -2936,27 +2960,78 @@
 	officers = {
 		culture = british
 		religion = protestant
-		size = 400
+		size = 2450
 	}
 
 	clergymen = {
 		culture = british
 		religion = protestant
-		size = 50
+		size = 500
 	}
 
 	bureaucrats = {
 		culture = british
 		religion = protestant
-		size = 500
+		size = 250
 	}
 
 	soldiers = {
 		culture = british
 		religion = protestant
-		size = 2000
+		size = 18000
+	}
+	
+	artisans = {
+		culture = british
+		religion = protestant
+		size = 1550
 	}
 }
+#Fort William
+3263 = {
+	officers = {
+		culture = british
+		religion = protestant
+		size = 50
+	}
+	
+	artisans = {
+		culture = anglo_indian
+		religion = protestant
+		size = 2050
+	}
+	
+	bureaucrats = {
+		culture = anglo_indian
+		religion = protestant
+		size = 500
+	}
+	
+	farmers = {
+		culture = bengali
+		religion = hindu
+		size = 69500
+	}
+	
+	artisans = {
+		culture = bengali
+		religion = sunni
+		size = 1000
+	}
+	
+	farmers = {
+		culture = bengali
+		religion = sunni
+		size = 3250
+	}
+	
+	artisans = {
+		culture = bengali
+		religion = hindu
+		size = 1000
+	}
+}
+
 #Darjeeling (3248000/812000 POPS)
 1252 = {
 	aristocrats = {
@@ -3508,7 +3583,34 @@
 	farmers = {
 		culture = asian_minor
 		religion = animist
-		size = 3400
+		size = 2500
+	}
+	
+	farmers = {
+		culture = asian_minor
+		religion = protestant
+		size = 300
+	}
+
+}
+#Nicobar Islands
+3264 = {
+	clergymen = {
+		culture = asian_minor
+		religion = animist
+		size = 10
+	}
+
+	farmers = {
+		culture = asian_minor
+		religion = animist
+		size = 500
+	}
+	
+	farmers = {
+		culture = asian_minor
+		religion = protestant
+		size = 100
 	}
 
 }
@@ -3641,7 +3743,19 @@
 	farmers = {
 		culture = manipuri
 		religion = hindu
-		size = 88250
+		size = 79250
+	}
+	
+	farmers = {
+		culture = manipuri
+		religion = protestant
+		size = 9000
+	}
+
+	clergymen = {
+		culture = british
+		religion = protestant
+		size = 375
 	}
 
 	clergymen = {
@@ -3727,7 +3841,13 @@
 	farmers = {
 		culture = assamese
 		religion = hindu
-		size = 79750
+		size = 75750
+	}
+	
+	farmers = {
+		culture = assamese
+		religion = protestant
+		size = 4000
 	}
 
 	clergymen = {
@@ -3777,8 +3897,15 @@
 	farmers = {
 		culture = asian_minor
 		religion = animist
-		size = 89125
+		size = 74125
 	}
+	
+	farmers = {
+		culture = asian_minor
+		religion = protestant
+		size = 15000
+	}
+
 
 	clergymen = {
 		culture = bengali
@@ -4235,7 +4362,7 @@
 	farmers = {
 		culture = rajput
 		religion = hindu
-		size = 206050
+		size = 215050
 	}
 
 	clergymen = {
@@ -6968,26 +7095,51 @@
 	bureaucrats = {
 		culture = british
 		religion = protestant
-		size = 250
+		size = 500
 	}
 
 	officers = {
 		culture = british
 		religion = protestant
-		size = 500
+		size = 650
 	}
 
 	clergymen = {
 		culture = british
 		religion = protestant
-		size = 125
+		size = 400
 	}
 
 	soldiers = {
 		culture = british
 		religion = protestant
-		size = 3000
+		size = 15000
 	}
+	
+	artisans = {
+		culture = british
+		religion = protestant
+		size = 1550
+	}
+	
+	bureaucrats = {
+		culture = anglo_indian
+		religion = protestant
+		size = 900
+	}
+	
+	artisans = {
+		culture = anglo_indian
+		religion = protestant
+		size = 10550
+	}
+	
+	farmers = {
+		culture = anglo_indian
+		religion = protestant
+		size = 2075
+	}
+
 }
 #Nasik (796000/199000 POPS)
 1298 = {
@@ -7862,13 +8014,43 @@
 	bureaucrats = {
 		culture = british
 		religion = protestant
-		size = 250
+		size = 300
 	}
+	
+	officers = {
+		culture = british
+		religion = protestant
+		size = 350
+	}	
 
 	soldiers = {
 		culture = british
 		religion = protestant
-		size = 3000
+		size = 18000
+	}
+	
+	artisans = {
+		culture = british
+		religion = protestant
+		size = 1550
+	}
+	
+	artisans = {
+		culture = anglo_indian
+		religion = protestant
+		size = 3550
+	}
+	
+	bureaucrats = {
+		culture = anglo_indian
+		religion = protestant
+		size = 500
+	}
+	
+	farmers = {
+		culture = anglo_indian
+		religion = protestant
+		size = 8125
 	}
 }
 #Tanjore (1448000/362000 POPS)
@@ -7912,7 +8094,13 @@
 	farmers = {
 		culture = tamil
 		religion = hindu
-		size = 314350
+		size = 300350
+	}
+	
+	farmers = {
+		culture = tamil
+		religion = protestant
+		size = 4000
 	}
 
 	aristocrats = {
@@ -7942,7 +8130,7 @@
 	farmers = {
 		culture = tamil
 		religion = sunni
-		size = 9475
+		size = 19475
 	}
 }
 #Madurai (1720000/430000 POPS)
@@ -7986,7 +8174,13 @@
 	farmers = {
 		culture = tamil
 		religion = hindu
-		size = 375250
+		size = 355250
+	}
+	
+	farmers = {
+		culture = tamil
+		religion = catholic
+		size = 20250
 	}
 
 	aristocrats = {
@@ -8623,7 +8817,7 @@
 
 	artisans = {
 		culture = malayalam
-		religion = hindu
+		religion = catholic
 		size = 7000
 	}
 
@@ -8750,7 +8944,25 @@
 	farmers = {
 		culture = malayalam
 		religion = catholic
-		size = 10675
+		size = 45675
+	}
+	
+	bureaucrats = {
+		culture = anglo_indian
+		religion = catholic
+		size = 500
+	}
+	
+	clergymen = {
+		culture = anglo_indian
+		religion = catholic
+		size = 125
+	}
+	
+	artisans = {
+		culture = anglo_indian
+		religion = catholic
+		size = 6000
 	}
 
 	serfs = {

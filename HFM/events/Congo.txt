@@ -16,9 +16,10 @@ country_event = {
 		set_country_flag = yes_to_congo
 		
 		ai_chance = {
-			factor = 0.7
+			factor = 0.75
 			modifier = { factor = 2 OR = { FROM = { in_sphere = THIS } relation = { who = FROM value = 150 } } }
 			modifier = { factor = 1.1 relation = { who = FROM value = 100 } }
+			modifier = { factor = 5 FROM = { tag = BEL } }
 			modifier = { factor = 0.7 NOT = { relation = { who = FROM value = -50 } } }
 			modifier = { factor = 0.4 NOT = { relation = { who = FROM value = -100 } } }
 		}
@@ -31,7 +32,7 @@ country_event = {
 		FROM = { change_variable = { which = no_to_congo value = 1 } }
 		
 		ai_chance = {
-			factor = 0.25
+			factor = 0.2
 			modifier = { factor = 0.1 OR = { FROM = { in_sphere = THIS } relation = { who = FROM value = 150 } } }
 			modifier = { factor = 1.25 NOT = { relation = { who = FROM value = -50 } } }
 			modifier = { factor = 1.5 NOT = { relation = { who = FROM value = -100 } } }
@@ -88,7 +89,7 @@ country_event = {
 			limit = { NOT = { has_country_flag = yes_to_congo } any_owned_province = { is_core = CNG } } 
 			country_event = { id = 955185 days = 0 }
 		}
-		
+		political_reform = exploitation
 		release = CNG
 		create_vassal = CNG
 		CNG = {

@@ -245,6 +245,7 @@ political_reforms = {
 			middle_vote = 0
 			poor_vote = 0
 			allow = { NOT = { election = yes } }
+			cb_generation_speed_modifier = 0.15
 		}
 		landed_voting = {
 			rich_vote = 1
@@ -252,12 +253,13 @@ political_reforms = {
 			poor_vote = 0
 			global_immigrant_attract = 0.01
 			allow = { NOT = { has_country_flag = theocratic_government } }
+			cb_generation_speed_modifier = 0.1
 		}
 		wealth_weighted_voting = {
 			rich_vote = 2
 			middle_vote = 1
 			poor_vote = 0
-			
+			cb_generation_speed_modifier = 0.05
 			global_immigrant_attract = 0.02
 		}
 		wealth_voting = {
@@ -271,14 +273,14 @@ political_reforms = {
 			rich_vote = 3
 			middle_vote = 2
 			poor_vote = 1
-			
+			cb_generation_speed_modifier = -0.1
 			global_immigrant_attract = 0.30
 		}
 		universal_voting = {
 			rich_vote = 1
 			middle_vote = 1
 			poor_vote = 1
-			
+			cb_generation_speed_modifier = -0.15
 			global_immigrant_attract = 0.55
 		}
 	}
@@ -486,6 +488,7 @@ political_reforms = {
 			suppression_points_modifier = 0.1
 			poor_everyday_needs = 0.1
 			poor_savings_modifier = -0.25
+			#on_execute = { effect = { country_event = 6016804 } }
 			allow = { OR = { NOT = { has_country_flag = serfdom_not_abolished } year = 1870 } }
 		}
 		
@@ -536,6 +539,142 @@ political_reforms = {
 			}
 		}
 		open_borders = {
+		}
+	}
+	
+	colonial_policy = {
+		next_step_only = yes
+		settlement = {
+			global_assimilation_rate = 0.01
+			global_immigrant_attract = 0.01
+			supply_consumption = 0.05
+			tax_efficiency = -0.03
+			non_accepted_pop_consciousness_modifier = 0.05
+			non_accepted_pop_militancy_modifier = 0.05
+			core_pop_militancy_modifier = -0.03
+			core_pop_consciousness_modifier = -0.03
+			administrative_multiplier = 1
+			#on_execute = { effect = { country_event = 6016804 } }
+			allow = { colonial_nation = yes }
+		}
+		exploitation = {
+			prestige = 0.1
+			tax_efficiency = 0.01
+			non_accepted_pop_militancy_modifier = -0.05
+			administrative_multiplier = 1
+			allow = { colonial_nation = yes }
+		}
+				
+		civilizing = {
+			prestige = 0.1
+			global_assimilation_rate = 0.05
+			education_efficiency_modifier = 0.05
+			administrative_multiplier = 1
+			allow = { 
+				colonial_nation = yes 
+				OR = {
+					has_global_flag = berlin_conference
+					has_country_flag = theocratic_government
+				}
+				NOT = { has_country_flag = islamic_law }
+			}
+		}
+		
+		no_colonies = {
+			allow = { colonial_nation = no }
+		}
+	}
+	
+	centralization = {
+		totalitarianism = {
+			global_immigrant_attract = -1
+			global_assimilation_rate = 0.01
+			tax_efficiency = 0.05
+			mobilisation_size = 0.05
+			cb_generation_speed_modifier = 0.2
+			allow = {
+				has_global_flag = revolution_n_counter_researched
+				OR = {
+					has_country_flag = communist_gov
+					has_country_flag = fascist_gov
+					AND = { 
+						ruling_party_ideology = reactionary
+						OR = {
+							has_country_flag = absolute_monarchy_gov
+							has_country_flag = presidential_dictatorship_gov
+							has_country_flag = theocratic_government
+						}
+					}
+				}
+			}
+		}
+		confederalism = {
+			global_assimilation_rate = -0.05
+			global_pop_militancy_modifier = -0.05
+			tax_efficiency = -0.05
+			diplomatic_points_modifier = -0.05
+			suppression_points_modifier = -0.30
+			leadership_modifier = -0.05
+			administrative_efficiency_modifier = -0.05
+			mobilisation_size = -0.05
+			cb_generation_speed_modifier = -0.15
+			supply_consumption = -0.1
+			allow = {
+				OR = {
+					AND = {
+						number_of_states = 2
+						can_create_vassals = yes
+						is_disarmed = yes
+						is_cultural_union = yes
+						is_greater_power = no
+						num_of_revolts = 1
+						average_militancy = 7
+					}
+					has_country_flag = is_swiss
+				}
+			}
+		}
+		regionalism = {
+			tax_efficiency = -0.02
+			global_assimilation_rate = -0.05
+			administrative_efficiency_modifier = -0.03
+			leadership_modifier = -0.1
+			diplomatic_points_modifier = -0.1
+			cb_generation_speed_modifier = -0.05
+			allow = {
+				number_of_states = 2
+				OR = {
+					has_country_flag = absolute_monarchy_gov
+					has_country_flag = theocratic_government				
+				}
+				debt_law = serfdom
+				has_country_flag = serfdom_not_abolished
+			}
+		}
+		federalism = {
+			leadership_modifier = 0.05
+			core_pop_militancy_modifier = -0.05
+			allow = {
+				number_of_states = 2
+				is_cultural_union = yes
+				can_create_vassals = yes
+				is_vassal = no
+				NOT = { has_country_flag = the_slavery_debate }
+			}
+		}
+		unitary = {
+			leadership_modifier = 0.05
+			administrative_efficiency_modifier = 0.05
+			tax_efficiency = 0.01
+			allow = {
+				has_global_flag = revolution_n_counter_researched
+				NOT = { num_of_substates = 1 }
+				OR = {
+					is_cultural_union = no
+					has_country_flag = france
+				}
+				NOT = { has_country_flag = dual_monarchy }
+			}
 		}
 	}
 }
@@ -745,6 +884,7 @@ social_reforms = {
 			global_assimilation_rate = 0.01
 			global_immigrant_attract = 0.04
 			administrative_multiplier = 3
+			allow = { has_country_flag = biologism_invented }
 		}
 	}
 	

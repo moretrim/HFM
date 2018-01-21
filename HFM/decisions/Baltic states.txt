@@ -94,21 +94,12 @@ political_decisions = {
 				LAT = { all_core = { OR = { owned_by = THIS owner = { in_sphere = THIS war = no } } } }
 				EST = { all_core = { OR = { owned_by = THIS owner = { in_sphere = THIS war = no } } } }
 			}
+			NOT = { has_global_flag = annex_baltic_duchy }
 		}
 		allow = {
 			war = no
 			is_greater_power = yes
-			LAT = {
-				all_core = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							in_sphere = THIS
-							war = no
-						}
-					}
-				}
-			}
+			owns = 354
 			EST = {
 				all_core = {
 					OR = {
@@ -139,7 +130,9 @@ political_decisions = {
 				limit = { owner = { is_culture_group = germanic } }
 				owner = { badboy = 2 }
 				UBD = {
-					primary_culture = north_german
+					primary_culture = volga_german
+					add_accepted_culture = north_german
+					add_accepted_culture = south_german
 					add_accepted_culture = estonian
 					add_accepted_culture = latvian
 					remove_accepted_culture = russian

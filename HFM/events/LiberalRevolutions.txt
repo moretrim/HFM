@@ -17,7 +17,7 @@ country_event = {
 		NOT = { tag = UBD }
 		OR = {
 			tag = AUS
-			tag = NEH
+			tag = NCT
 			tag = KUK
 			tag = SIC
 			tag = MOL
@@ -2084,6 +2084,14 @@ province_event = {
 			owner = { nationalvalue = nv_autocracy }
 			}
 		}
+		modifier = {
+			factor = 0.5
+			owner = { is_culture_group = french }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { is_culture_group = germanic }
+		}
 	}
 	option = {
 		name = "EVTOPTA10170"
@@ -3532,44 +3540,9 @@ country_event = {
 			limit = { is_primary_culture = yes }
 			militancy = -6
 		}
-		random_owned = {
-			limit = {
-				owner = {
-					OR = {
-						national_provinces_occupied = .25
-						any_greater_power = { war_with = THIS }
-					}
-				}
-			}
-			owner = {
-				prestige = -10
-				war = {
-					target = HUN
-					attacker_goal = {
-						casus_belli = annex_core_country
-					}
-					call_ally = yes
-				}
-			}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = {
-						national_provinces_occupied = .25
-						any_greater_power = { war_with = THIS }
-					}
-				}
-			}
-			owner = {
-				prestige = 20
-				war = {
-					target = HUN
-					attacker_goal = {
-						casus_belli = annex_core_country
-					}
-				}
-			}
+		add_country_modifier = {
+			name = no_more_war
+			duration = 7
 		}
 		HUN = {
 			capital = 641
@@ -3588,6 +3561,14 @@ country_event = {
 			clr_country_flag = presidential_dictatorship_gov
 			clr_country_flag = fascist_gov
 			clr_country_flag = anarcho_liberal_gov
+			add_country_modifier = {
+				name = no_more_war
+				duration = 7
+			}
+			relation = {
+				who = RUS
+				value = -200
+			}
 		}
 		ai_chance = {
 			factor = 95
@@ -3686,48 +3667,22 @@ country_event = {
 			limit = { is_primary_culture = yes }
 			militancy = -6
 		}
-		random_owned = {
-			limit = {
-				owner = {
-					OR = {
-						national_provinces_occupied = .25
-						any_greater_power = { war_with = THIS }
-					}
-				}
-			}
-			owner = {
-				prestige = -10
-				war = {
-					target = HUN
-					attacker_goal = {
-						casus_belli = annex_core_country
-					}
-					call_ally = yes
-				}
-			}
+		add_country_modifier = {
+				name = no_more_war
+				duration = 14
 		}
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = {
-						national_provinces_occupied = .25
-						any_greater_power = { war_with = THIS }
-					}
-				}
-			}
-			owner = {
-				prestige = 10
-				war = {
-					target = HUN
-					attacker_goal = {
-						casus_belli = annex_core_country
-					}
-				}
-			}
+		casus_belli = {
+			target = HUN
+			type = annex_core_country
+			months = 60
 		}
 		HUN = {
 			political_reform = mandatory_service 
 			capital = 641
+			add_country_modifier = {
+				name = no_more_war
+				duration = 14
+			}
 		}
 		change_tag_no_core_switch = HUN
 		ai_chance = {

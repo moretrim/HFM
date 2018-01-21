@@ -379,10 +379,9 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_modifier = signed_the_geneva_convention  } } owner = { badboy = 3 } }
 			any_owned = { limit = { has_province_modifier = national_assimilation } owner = { country_event = 2611 } }
 			random_list = {
-				25 = { add_country_modifier = { name = preparations_to_kill duration = 548 } country_event = { id = 4433 days = 549 } }
-				25 = { add_country_modifier = { name = preparations_to_kill duration = 730 } country_event = { id = 4433 days = 731 } }
-				25 = { add_country_modifier = { name = preparations_to_kill duration = 910 } country_event = { id = 4433 days = 911 } }
-				25 = { add_country_modifier = { name = preparations_to_kill duration = 1095 } country_event = { id = 4433 days = 1096 }  }
+				33 = { add_country_modifier = { name = preparations_to_kill duration = 365 } }
+				33 = { add_country_modifier = { name = preparations_to_kill duration = 548 } }
+				33 = { add_country_modifier = { name = preparations_to_kill duration = 730 } }
 			}
 			any_owned = {
 				remove_province_modifier = core_integration
@@ -538,6 +537,10 @@ political_decisions = {
 			 modifier = {
 				factor = 0
 				badboy = 0.25
+			}
+			modifier = {
+				factor = 0
+				tag = QNG
 			}
 		}
 	}
@@ -898,6 +901,7 @@ political_decisions = {
 		
 		effect = {
 			plurality = -25
+			political_reform = totalitarianism
 			add_country_modifier = {
 				name = totalitarian_system
 				duration = -1

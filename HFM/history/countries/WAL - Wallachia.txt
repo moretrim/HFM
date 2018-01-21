@@ -1,7 +1,7 @@
 capital = 664
 primary_culture = romanian
 religion = orthodox
-government = absolute_monarchy
+government = prussian_constitutionalism
 plurality = 25.0
 nationalvalue = nv_autocracy
 literacy = 0.04
@@ -12,7 +12,7 @@ prestige = 4
 # Political reforms
 slavery = yes_slavery
 upper_house_composition = appointed
-vote_franschise = none_voting
+vote_franschise = landed_voting
 public_meetings = yes_meeting
 press_rights = state_press
 trade_unions = no_trade_unions
@@ -32,8 +32,11 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = primary_culture_only
+child_labor = child_labor_legal
+citizens_rights = primary_culture_only
 border_policy = open_borders
+centralization = unitary
+colonial_policy = no_colonies 
 
 set_country_flag = orthodox_country
 

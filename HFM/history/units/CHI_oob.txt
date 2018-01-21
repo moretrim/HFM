@@ -659,10 +659,6 @@ navy = {
 		type = manowar
 	}
 	ship = {
-		name = "Zhenwei"
-		type = manowar
-	}
-	ship = {
 		name = "Longxiang"
 		type = frigate
 	}
@@ -730,18 +726,6 @@ navy = {
 	}
 	ship = {
 		name = "Jiansheng"
-		type = frigate
-	}
-	ship = {
-		name = "Fusheng"
-		type = frigate
-	}
-	ship = {
-		name = "Yixin"
-		type = frigate
-	}
-	ship = {
-		name = "Henghai"
 		type = frigate
 	}
 }

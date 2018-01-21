@@ -69,31 +69,31 @@
 	}
 
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 25.75
 	}
 
 	clergymen = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 25.75
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 154.5
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 25.75
 	}
 
 	farmers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 2858.25
 	}
@@ -203,31 +203,31 @@
 	}
 
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 103.0
 	}
 
 	clergymen = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 51.5
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 309.0
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 51.5
 	}
 
 	farmers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 5665.0
 	}
@@ -463,61 +463,61 @@
 	}
 
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 154.5
 	}
 
 	clergymen = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 77.25
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 463.5
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 103.0
 	}
 
 	farmers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = orthodox
 		size = 8471.75
 	}
 
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 103.0
 	}
 
 	clergymen = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 51.5
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 257.5
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 51.5
 	}
 
 	farmers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 4686.5
 	}

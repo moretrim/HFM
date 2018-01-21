@@ -653,6 +653,11 @@ country_event = {
 		remove_accepted_culture = bosniak
 		remove_accepted_culture = misri
 		remove_accepted_culture = azerbaijani
+		ANT = {
+			all_core = {
+				remove_core = ANT
+			}
+		}
 		random_country = {
 			limit = { 
 				exists = yes
@@ -668,6 +673,14 @@ country_event = {
 				vassal_of = TUN
 			}
 		THIS = { release_vassal = TUN }
+		}
+		random_country = {
+			limit = { 
+				exists = yes
+				tag = RUM
+				vassal_of = TUR
+			}
+			THIS = { release_vassal = RUM }
 		}
 		any_country = {
 			limit = {
@@ -726,6 +739,7 @@ country_event = {
 			}
 			remove_core = TUR
 		}
+		843 = { remove_core = TUR }
 		any_owned = {
 			limit = {
 				NOT = { is_core = TUR }
@@ -752,6 +766,20 @@ country_event = {
 			militancy = 5
 			consciousness = 5
 		}
+		# Remove cores
+		TUR_674 = { remove_core = TUR } # Dobrudja
+		TUR_788 = { remove_core = TUR } # Bosnia
+		TUR_810 = { remove_core = TUR } # Bulgaria
+		TUR_809 = { remove_core = TUR }	# E.Rumelia
+		TUR_803 = { remove_core = TUR } # S.Serbia
+		MON_2582 = { remove_core = TUR } # Montenegro
+		TUR_853 = { remove_core = TUR } # Albania
+		TUR_832 = { remove_core = TUR } # Thessalia
+		TUR_806 = { remove_core = TUR } # N.Macedonia
+		TUR_805 = { remove_core = TUR } # W.Macedonia
+		TUR_855 = { remove_core = TUR } # Cyprus
+		847 = { remove_core = TUR } #Chania
+		848 = { remove_core = TUR } #Iraklion
 	}
 }
 
@@ -2389,6 +2417,13 @@ country_event = {
 				}
 			}
 			remove_core = GRE
+			remove_core = ANT
+		}
+		
+		ANT = {
+			all_core = {
+				remove_core = ANT
+			}
 		}
 		
 		ai_chance = {
@@ -2527,6 +2562,7 @@ country_event = {
 				}
 			}
 			remove_core = GRE
+			remove_core = ANT
 		}
 		
 		ai_chance = {
@@ -2727,6 +2763,7 @@ country_event = {
 				}
 			}
 			remove_core = GRE
+			remove_core = ANT
 		}
 		
 		ai_chance = {

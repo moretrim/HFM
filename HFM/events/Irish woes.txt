@@ -25,7 +25,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 12
+		months = 6
 		modifier = {
 			factor = 1.5
 			medicine = 1
@@ -37,12 +37,16 @@ country_event = {
 				has_province_modifier = potato_blight
 			}
 		}
+		modifier = {
+			factor = 0.1
+			year = 1846
+		}
 	}
 	
 	option = {
 		name = "EVT1010011OPTA"
 		prestige = -50
-		treasury = -100000
+		treasury = -150000
 		set_country_flag = help_for_the_irish
 		set_country_flag = great_irish_famine
 		random_state = {
@@ -55,7 +59,7 @@ country_event = {
 			any_owned = {
 				add_province_modifier = {
 					name = irish_potato_blight
-					duration = 730
+					duration = 1460
 				}
 			}
 		}
@@ -89,7 +93,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				NOT = { money = 100000 }
+				NOT = { money = 150000 }
 			}
 		}
 	}
@@ -110,7 +114,7 @@ country_event = {
 			any_owned = {
 				add_province_modifier = {
 					name = irish_potato_blight
-					duration = 1280
+					duration = 1825
 				}
 			}
 			any_pop = {
@@ -141,7 +145,7 @@ country_event = {
 			any_owned = {
 				add_province_modifier = {
 					name = irish_potato_blight
-					duration = 1825
+					duration = 2555
 				}
 			}
 			any_pop = {
@@ -193,14 +197,14 @@ province_event = {
 		owner = { has_country_flag = no_help_for_the_irish }
 		any_neighbor_province = { has_province_modifier = irish_potato_blight }
 		NOT = {
-			year = 1852
+			year = 1849
 			has_province_modifier = irish_potato_blight
 			has_province_modifier = potato_blight
 		}
 	}
 	
 	mean_time_to_happen = {
-		months = 6
+		months = 4
 	}
 	
 	option = {
@@ -209,7 +213,7 @@ province_event = {
 			any_owned = {
 				add_province_modifier = {
 					name = irish_potato_blight
-					duration = 1825
+					duration = 2555
 				}
 			}
 			any_pop = {
@@ -232,14 +236,15 @@ province_event = {
 		owner = { has_country_flag = little_help_for_the_irish }
 		any_neighbor_province = { has_province_modifier = irish_potato_blight }
 		NOT = {
-			year = 1852
+			year = 1849
 			has_province_modifier = irish_potato_blight
 			has_province_modifier = potato_blight
+			
 		}
 	}
 	
 	mean_time_to_happen = {
-		months = 12
+		months = 10
 	}
 	
 	option = {
@@ -248,7 +253,7 @@ province_event = {
 			any_owned = {
 				add_province_modifier = {
 					name = irish_potato_blight
-					duration = 1280
+					duration = 1825
 				}
 			}
 			any_pop = {
@@ -273,6 +278,7 @@ province_event = {
 			year = 1850
 			has_province_modifier = irish_potato_blight
 			has_province_modifier = potato_blight
+			
 		}
 	}
 	
@@ -286,8 +292,9 @@ province_event = {
 			any_owned = {
 				add_province_modifier = {
 					name = irish_potato_blight
-					duration = 730
+					duration = 1460
 				}
+				
 			}
 		}
 	}
@@ -1460,6 +1467,8 @@ country_event = {
 			}
 			NOT = { has_province_modifier = enclosures }
 		}
+		NOT = { tag = IRE }
+		NOT = { accepted_culture = irish }
 	}
 	
 	mean_time_to_happen = { days = 1 }

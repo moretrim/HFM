@@ -11,6 +11,7 @@ country_event = {
 				slavery = freedom_of_womb
 			}
 			capital_scope = { NOT = { continent = europe } }
+			NOT = { tag = QNG }
 		}
 	}
 	is_triggered_only = yes
@@ -31,6 +32,13 @@ country_event = {
 					is_slave = yes
 				}
 				any_pop = { consciousness = -0.5 }
+			}
+			any_owned = {
+				limit = {
+					has_pop_type = slaves
+					produces = cotton
+				}
+				add_province_modifier = { name = king_cotton duration = -1 }
 			}
 		}
 		ai_chance = {

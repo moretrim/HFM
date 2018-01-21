@@ -1,10 +1,13 @@
 capital = 425
 primary_culture = french
-culture = french_canadian
+culture = occitan
 culture = picard
 culture = breton
+culture = arpitan
+culture = cajun
+culture = french_canadian
 religion = catholic
-government = hms_government
+government = french_bourbon
 plurality = 25
 nationalvalue = nv_liberty
 literacy = 0.50
@@ -37,8 +40,11 @@ school_reforms = no_schools
 conscription = one_year_draft
 debt_law = debtors_prisons
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = culture_voting_only
+child_labor = child_labor_legal
+citizens_rights = culture_voting_only
 border_policy = open_borders
+centralization = unitary
+colonial_policy = exploitation
 
 set_country_flag = catholic_country
 
@@ -102,12 +108,16 @@ govt_flag = {
 
 schools = culture_tech_school
 decision = france_1836_setup
+decision = lorraine_rename
+
+set_country_flag = france
 
 oob = "FRA_oob.txt"
 
 foreign_investment = {
-	PAP = 6000
-	SAR = 4000
+	PAP = 15000
+	SAR = 10000
+	BEL = 20000
 }
 
 1861.1.1 = {

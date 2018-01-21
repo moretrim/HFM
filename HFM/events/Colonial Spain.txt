@@ -15,6 +15,7 @@ country_event = {
 		OR = {
 			tag = SPA
 			tag = SPC
+			tag = IBR
 		}
 		year = 1843
 		OR = {
@@ -112,6 +113,7 @@ country_event = {
 		OR = {
 			tag = SPA
 			tag = SPC
+			tag = IBR
 		}
 		year = 1866
 		OR = {
@@ -316,6 +318,7 @@ country_event = {
 		OR = {
 			exists = SPA
 			exists = SPC
+			exists = IBR
 		}
 		war = no
 		press_rights = free_press
@@ -327,6 +330,8 @@ country_event = {
 			truce_with = SPA
 			alliance_with = SPC
 			truce_with = SPC
+			alliance_with = IBR
+			truce_with = IBR
 			year = 1905
 		}
 		OR = {
@@ -339,6 +344,11 @@ country_event = {
 			AND = {
 				exists = CUB
 				CUB = { vassal_of = SPC }
+			}
+			2209 = { owned_by = IBR }
+			AND = {
+				exists = CUB
+				CUB = { vassal_of = IBR }
 			}
 		}
 		OR = {
@@ -353,6 +363,16 @@ country_event = {
 				}
 			}
 			SPC = {
+				any_owned_province = {
+					is_core = CUB
+					OR = {
+						average_militancy = 6
+						has_province_modifier = nationalist_agitation
+						controlled_by = REB
+					}
+				}
+			}
+			IBR = {
 				any_owned_province = {
 					is_core = CUB
 					OR = {
@@ -429,6 +449,7 @@ country_event = {
 				OR = {
 					tag = SPA
 					tag = SPC
+					tag = IBR
 				}
 				exists = yes
 			}
@@ -470,6 +491,19 @@ country_event = {
 		}
 		random_country = {
 			limit = {
+				tag = IBR
+				exists = yes
+				is_greater_power = no
+			}
+			THIS = {
+				diplomatic_influence = {
+					who = IBR
+					value = -200
+				}
+			}
+		}
+		random_country = {
+			limit = {
 				tag = SPA
 				owns = 2209
 			}
@@ -536,7 +570,40 @@ country_event = {
 				}
 			}
 		}
-		
+		random_country = {
+			limit = {
+				tag = IBR
+				owns = 2209
+			}
+			THIS = {
+				war = {
+					target = IBR
+					attacker_goal = {
+						casus_belli = free_peoples
+						country = CUB
+						state_province_id = 2209
+					}
+					call_ally = no
+				}
+			}
+		}
+		random_country = {
+			limit = {
+				tag = IBR
+				NOT = { owns = 2209 }
+				is_our_vassal = CUB
+			}
+			THIS = {
+				war = {
+					target = IBR
+					attacker_goal = {
+						casus_belli = release_puppet
+						country = CUB
+					}
+					call_ally = no
+				}
+			}
+		}
 		ai_chance = {
 			factor = 75
 			modifier = {
@@ -577,6 +644,7 @@ country_event = {
 				OR = {
 					tag = SPA
 					tag = SPC
+					tag = IBR
 				}
 				exists = yes
 			}
@@ -614,6 +682,7 @@ country_event = {
 		OR = {
 			tag = SPA
 			tag = SPC
+			tag = IBR
 		}
 		any_owned_province = { is_core = PHL }
 		nationalism_n_imperialism = 1
@@ -1362,7 +1431,10 @@ country_event = {
 		badboy = -1
 		relation = { who = FROM value = 75 }
 		any_owned = { limit = { province_id = 1973 } secede_province = FROM }
-		ai_chance = { factor = 70 }
+		ai_chance = { 
+			factor = 70 
+			modifier = { factor = 100 has_global_flag = yes_railroad }
+		}
 	}
 	
 	option = {

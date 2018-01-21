@@ -66,7 +66,7 @@ good_health_care_fully_funded = {
 			}
 		}
 	}
-	global_population_growth = 0.004
+	global_population_growth = 0.003
 	icon = 19
 }
 
@@ -85,7 +85,7 @@ health_care_fully_funded = {
 			}
 		}
 	}
-	global_population_growth = 0.001
+	global_population_growth = 0.003
 	icon = 19
 }
 
@@ -194,6 +194,8 @@ the_british_raj = {
 			government = absolute_monarchy
 			government = prussian_constitutionalism
 			government = hms_government
+			government = fascist_dictatorship
+			government = democracy
 		}
 		NOT = { is_culture_group = indo_iranian }
 		NOT = { is_culture_group = south_asian }
@@ -216,7 +218,64 @@ the_british_raj = {
 	}
 	research_points = 0.5
 	core_pop_militancy_modifier = -0.05
+	supply_consumption = 0.5
+	tax_efficiency = -0.15
+	administrative_efficiency_modifier = -0.25
 	prestige = 0.03
+	icon = 19
+}
+
+greater_germany = {
+	trigger = {
+		exists = yes
+		549 = {
+			owned_by = THIS
+		}
+		619 = {
+			owned_by = THIS
+		}
+		369 = {
+			owned_by = THIS
+		}
+		599 = {
+			owned_by = THIS
+		}
+	}
+	core_pop_militancy_modifier = -0.05
+	supply_consumption = 0.4
+	tax_efficiency = -0.15
+	administrative_efficiency_modifier = -0.25
+	prestige = 0.03
+	icon = 19
+}
+
+colonial_nation = {
+	trigger = {
+		exists = yes
+		civilized = yes
+		any_owned_province = {
+			is_colonial = yes
+			OR = {
+				continent = east_africa
+				continent = west_africa
+				continent = africa
+				continent = indochina
+				continent = east_indies
+				continent = south_west_africa
+				continent = polynesia
+				continent = australia_new_zealand
+			}
+		}
+		NOT = {
+			capital_scope = {
+				OR = { 
+					continent = australia_new_zealand
+					continent = africa
+				}
+			}
+		}
+	}
+	supply_consumption = 0.1
 	icon = 19
 }
 
@@ -244,7 +303,7 @@ vassal_nation = {
 		is_substate = no
 	}
 	icon = 10
-	prestige = -0.1
+	prestige = -1
 }
 
 substate_nation = {
@@ -371,11 +430,37 @@ landlocked_nation = {
 	trigger = {
 		exists = yes
 		NOT = { total_num_of_ports = 1 }
-		NOT = { has_country_modifier = trek_boers }
+		NOT = { 
+			has_country_modifier = trek_boers 
+			primary_culture = north_german
+			primary_culture = south_german
+			primary_culture = swiss_german
+			primary_culture = siebenburger
+			primary_culture = dutch
+			is_culture_group = polish_culture_group
+		}
 	}
 
 	import_cost = 0.5
 	global_immigrant_attract = -1.5
+	icon = 8
+}
+
+landlocked_nation_import = {
+	trigger = {
+		exists = yes
+		NOT = { total_num_of_ports = 1 }
+		OR = { 
+			has_country_modifier = trek_boers 
+			primary_culture = north_german
+			primary_culture = south_german
+			primary_culture = swiss_german
+			primary_culture = siebenburger
+			primary_culture = dutch
+			is_culture_group = polish_culture_group
+		}
+	}
+	import_cost = 0.5
 	icon = 8
 }
 
@@ -431,6 +516,21 @@ hormuz_strait = {
 	icon = 16
 }
 
+malacca_strait = {
+		trigger = {
+			exists = yes
+			owns = 1384
+			owns = 1385
+			owns = 1386
+			owns = 1387
+			owns = 1388
+			owns = 2575
+		}
+	prestige = 0.01
+	tax_efficiency = 0.01
+	tariff_efficiency_modifier = 0.1
+	icon = 16
+}
 
 new_world_war = {
 	trigger = {
@@ -443,6 +543,281 @@ new_world_war = {
 		}
 	}
 
-	global_immigrant_attract = -1.3
+	global_immigrant_attract = -0.8
 	icon = 16
+}
+
+help_ai_arc = {
+	trigger = {
+		owns = 2348
+		ai = yes
+	}
+	icon = 10
+	tax_efficiency = 0.05
+}
+
+help_ai_spain = {
+	trigger = {
+		owns = 487
+		centralization = regionalism
+		ai = yes
+	}
+	icon = 10
+	tax_efficiency = 0.03
+	administrative_efficiency_modifier = 0.03
+}
+
+help_ai_russia = {
+	trigger = {
+		owns = 1008
+		centralization = regionalism
+		ai = yes
+	}
+	icon = 10
+	tax_efficiency = 0.08
+	supply_consumption = -0.05
+}
+
+help_ai_usa = {
+	trigger = {
+		owns = 2146
+		centralization = regionalism
+		ai = yes
+	}
+	icon = 10
+	tax_efficiency = 0.05
+	supply_consumption = -0.15
+}
+
+help_ai_turk = {
+	trigger = {
+		owns = 876
+		centralization = regionalism
+		ai = yes
+	}
+	icon = 10
+	tax_efficiency = 0.06
+	administrative_efficiency_modifier = 0.03
+	supply_consumption = -0.05
+}
+
+yellow_river = {
+	trigger = {
+		owns = 1508 #Kaifeng
+		owns = 1510 #Luoyang
+		owns = 1515 #Weihui
+		owns = 1570 #Wuding
+		owns = 1562 #Hanzhong
+	}
+	icon = 10
+	tax_efficiency = 0.035
+	war_exhaustion = -0.5
+	supply_consumption = -0.01
+}
+
+poland_not_yet_lost = {
+	trigger = {
+		primary_culture = polish
+		is_vassal = no
+		is_substate = no
+	}
+	icon = 10
+	global_immigrant_attract = 0.75
+	core_pop_militancy_modifier = -0.01
+}
+
+bread_basket = {
+	trigger = {
+		958 = { #Kyiv
+			OR = {
+				owned_by = THIS
+				owner = { in_sphere = THIS vassal_of = THIS is_greater_power = no }
+			}
+		}
+		961 = { #Cherkassy
+			OR = {
+				owned_by = THIS
+				owner = { in_sphere = THIS vassal_of = THIS is_greater_power = no }
+			}
+		}
+		977 = { #Kursk
+			OR = {
+				owned_by = THIS
+				owner = { in_sphere = THIS vassal_of = THIS is_greater_power = no }
+			}
+		}
+		968 = { #Odessa
+			OR = {
+				owned_by = THIS
+				owner = { in_sphere = THIS vassal_of = THIS is_greater_power = no }
+			}
+		}
+	}
+	icon = 10
+	war_exhaustion = -0.5
+	supply_consumption = -0.1
+}
+
+stop_it_mec = {
+	trigger = {
+		OR = {
+			AND = { 
+				OR = { 
+					capital = 3257
+					capital = 3256
+					capital = 3254
+				}
+				total_pops = 15000
+			}
+			AND = { 
+				OR = { 
+					capital = 585
+					capital = 3255
+					capital = 555
+					capital = 397
+				}
+				total_pops = 30000
+			}
+			AND = {
+				OR = {
+					capital = 562
+					capital = 561
+					capital = 563
+					capital = 544
+					capital = 536
+					capital = 540
+				}
+				total_pops = 65000
+			}
+			AND = {
+				OR = {
+					capital = 381
+					capital = 566
+					capital = 2560
+					capital = 565
+				}
+				total_pops = 150000
+			}
+			AND = {
+				OR = {
+					capital = 558 #Saxony
+					capital = 534 #Hannover
+					capital = 589 #Stuttgart
+					capital = 586 #Baden
+				}
+				total_pops = 450000
+			}
+			AND = {
+				OR = {
+					capital = 605 #Swiss
+				}	
+				total_pops = 700000
+			}	
+		}
+	}
+	icon = 10
+	global_immigrant_attract = -1.3
+}
+
+free_city = {
+	trigger = {
+		NOT = { num_of_cities = 2 }
+		OR = {
+			government = democracy
+			government = colonial_company
+		}
+		OR = {
+			564 = { owned_by = THIS }
+			528 = { owned_by = THIS }
+			539 = { owned_by = THIS }
+			530 = { owned_by = THIS }
+			736 = { owned_by = THIS }
+			778 = { owned_by = THIS }
+			633 = { owned_by = THIS }
+			573 = { owned_by = THIS }
+			690 = { owned_by = THIS }
+			633 = { owned_by = THIS }
+		}
+		NOT = { total_pops = 75000 }
+	}
+	icon = 10
+	global_immigrant_attract = 0.8
+	supply_consumption = -0.05
+	
+}
+
+free_state = {
+	trigger = {
+		government = colonial_company
+		is_culture_group = germanic
+		OR = {
+			vassal_of = GER
+			vassal_of = GCF
+			substate_of = RUS
+		}
+		OR = {
+			AND = {
+				NOT = { number_of_states = 3 }
+				NOT = { total_pops = 550000 }
+			}
+			AND = {
+				number_of_states = 3
+				NOT = { total_pops = 1500000 }
+			}
+		}	
+	}
+	icon = 10
+	global_immigrant_attract = 0.8
+}
+
+colonial_administration = {
+	trigger = {
+		ai = no
+		civilized = yes
+		OR = {
+			capital_scope = { continent = europe }
+			capital_scope = { continent = asia }
+			capital_scope = { continent = north_america }
+			capital_scope = { continent = south_america }
+		}
+		NOT = { 
+			primary_culture = british
+			primary_culture = french
+			total_amount_of_ships = 50
+		}
+		OR = {
+			#Warri
+			1931= { is_colonial = yes owned_by = THIS }
+			#Calabar
+			1934 = { is_colonial = yes owned_by = THIS }
+			#Aro
+			1935 = { is_colonial = yes owned_by = THIS }
+			#Benin
+			1928 = { is_colonial = yes owned_by = THIS }
+			#Oyo
+			1926 = { is_colonial = yes owned_by = THIS }
+			#Sokoto
+			1948 = { is_colonial = yes owned_by = THIS }
+			#Loango
+			2624 = { is_colonial = yes owned_by = THIS }
+			#Ashanti
+			1910 = { is_colonial = yes owned_by = THIS }
+			#Dahomey
+			1919 = { is_colonial = yes owned_by = THIS }
+			#Bambara
+			1800 = { is_colonial = yes owned_by = THIS }
+			#Mali
+			1804 = { is_colonial = yes owned_by = THIS }
+			#Mossi
+			1901 = { is_colonial = yes owned_by = THIS }
+			#Ethopia
+			1857 = { is_colonial = yes owned_by = THIS }
+			1852 = { is_colonial = yes owned_by = THIS }
+			1859 = { is_colonial = yes owned_by = THIS }
+		}
+	}
+	icon = 10
+	supply_consumption = 0.15
+	tax_efficiency = -0.05
+	administrative_efficiency_modifier = -0.2
 }

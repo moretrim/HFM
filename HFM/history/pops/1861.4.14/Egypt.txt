@@ -3,19 +3,19 @@
 #Cairo (1004600/251150 POPS)
 1745 = {
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 1772.5
 	}
 
 	officers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 463.5
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 1287.5
 	}
@@ -117,7 +117,7 @@
 	}
 
 	slaves = {
-		culture = forest_bantu
+		culture = african_minor
 		religion = animist
 		size = 15270.0
 	}
@@ -125,19 +125,19 @@
 #Dumyat (402600/100650 POPS)
 1746 = {
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 515.0
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 592.25
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 77.25
 	}
@@ -205,19 +205,19 @@
 #Tanta (341600/85400 POPS)
 1747 = {
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 772.5
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 592.25
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 77.25
 	}
@@ -273,19 +273,19 @@
 #Mansura (256200/64050 POPS)
 1748 = {
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 618.0
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 412.0
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 51.5
 	}
@@ -353,19 +353,19 @@
 #Ziqaziq (272600/68150 POPS)
 1749 = {
 	aristocrats = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 669.5
 	}
 
 	artisans = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 437.75
 	}
 
 	soldiers = {
-		culture = circassian
+		culture = north_caucasian
 		religion = sunni
 		size = 77.25
 	}
@@ -563,7 +563,7 @@
 	}
 
 	slaves = {
-		culture = forest_bantu
+		culture = african_minor
 		religion = animist
 		size = 11180.0
 	}

@@ -646,6 +646,7 @@ country_event = {
 		OR = {
 			is_greater_power = yes
 			in_sphere = GER
+			in_sphere = GCF
 			in_sphere = NGF
 			in_sphere = PRU
 		}
@@ -754,6 +755,10 @@ country_event = {
 				factor = 0.5
 				in_sphere = GER
 			}
+			modifier = {
+				factor = 0.5
+				in_sphere = GCF
+			}
 		}
 	}
 }
@@ -786,6 +791,7 @@ country_event = {
 					tag = PRU
 					tag = NGF
 					tag = GER
+					tag = GCF
 				}
 				owns = 549
 			}
@@ -1129,6 +1135,7 @@ country_event = {
 		
 	option = {
 		name = "EVT60055557OPTC"
+		set_country_flag = serfdom_abolished_generic
 		clr_global_flag = krakow_uprising
 		political_reform = peonage
 		any_pop = {
@@ -1215,6 +1222,8 @@ country_event = {
 		name = "EVT60055559OPTA"
 		623 = { #Sopron
 			remove_core = AUS
+			remove_core = GER
+			remove_core = GCF
 			add_core = HUN
 			secede_province = HUN
 			remove_province_modifier = integration_refusal
@@ -1228,7 +1237,7 @@ country_event = {
 		624 = { #Eisenstadt
 			remove_core = HUN
 			add_core = AUS
-			secede_province = AUS
+			secede_province = FROM
 			remove_province_modifier = integration_refusal
 			remove_province_modifier = core_integration
 			remove_province_modifier = national_assimilation

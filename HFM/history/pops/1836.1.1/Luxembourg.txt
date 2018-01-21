@@ -37,6 +37,12 @@
 		religion = catholic
 		size = 14900
 	}
+	
+	craftsmen = {
+		culture = north_german
+		religion = catholic
+		size = 10
+	}
 
 	aristocrats = {
 		culture = french
@@ -78,6 +84,12 @@
 		culture = french
 		religion = catholic
 		size = 23375
+	}
+	
+	craftsmen = {
+		culture = french
+		religion = catholic
+		size = 10
 	}
 
 }

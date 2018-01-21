@@ -31,6 +31,12 @@ border_policy = open_borders
 
 set_country_flag = protestant_country
 
+centralization = unitary
+colonial_policy = no_colonies 
+
+
+
+
 ruling_party = dominion_conservative
 upper_house = { # inherit
 	fascist = 0

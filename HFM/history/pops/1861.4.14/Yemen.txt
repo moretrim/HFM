@@ -146,7 +146,7 @@
 	}
 
 	slaves = {
-		culture = kefficho
+		culture = african_minor
 		religion = animist
 		size = 2030.0
 	}

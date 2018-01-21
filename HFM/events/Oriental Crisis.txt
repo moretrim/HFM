@@ -478,7 +478,7 @@ country_event = {
 			country_event = 90089
 		}		
 		ai_chance = {
-			factor = 50
+			factor = 80
 		}
 	}
 	
@@ -534,11 +534,7 @@ country_event = {
 			leave_alliance = TUR
 		}
 		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				badboy = 0.6
-			}
+			factor = 20
 		}
 	}
 }
@@ -1479,7 +1475,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 70
+			factor = 90
 			modifier = {
 				factor = 0.5
 				war_policy = jingoism
@@ -1525,7 +1521,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 30
+			factor = 10
 			modifier = {
 				factor = 0.5
 				NOT = {

@@ -107,6 +107,7 @@ country_event = {
 	
 	trigger = {
 		tag = QNG
+		war_with = TPG
 		YNN = {
 			substate_of = THIS
 			NOT = { num_of_revolts = 1 }
@@ -128,10 +129,10 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 3
+		months = 1
 		modifier = {
-			factor = 4
-			war = no
+			factor = 0.1
+			war = yes
 		}
 	}
 	
@@ -145,6 +146,7 @@ country_event = {
 				consciousness = -5
 				militancy = -5
 			}
+		add_country_modifier = { name = taiping_losing_boost duration = 150 }			
 		}
 		any_country = {
 			limit = { war_with = YNN }
@@ -174,7 +176,10 @@ country_event = {
 	
 	trigger = {
 		tag = QNG
-		has_global_flag = panthay_rebellion
+		OR = { 
+			has_global_flag = panthay_rebellion
+			truce_with = PGG
+		}
 		is_our_vassal = PGG
 	}
 	
@@ -271,6 +276,10 @@ country_event = {
 		modifier = {
 			factor = 4
 			war = no
+		}
+		modifier = {
+			factor = 0.1
+			has_global_flag = ever_victorious_army
 		}
 	}
 	
@@ -370,7 +379,10 @@ country_event = {
 		name = "EVT80126OPTA"
 		clr_global_flag = dungan_rebellion
 		prestige = 10
-		UYG = { change_tag = XIN }
+		UYG = { 
+			change_tag = XIN
+			end_war = QNG
+		}
 		XIN = {
 			any_owned = {
 				remove_province_modifier = anti_manchu_sentiment
@@ -444,14 +456,23 @@ country_event = {
 			XBI = { civilization_progress = 0.4	 }
 		}
 		has_global_flag = dungan_rebellion
+		NOT = { has_country_flag = qinghai_revolt_dungan }
 	}
 	
-	mean_time_to_happen = { months = 20 }
+	mean_time_to_happen = { 
+		months = 5
+		
+		modifier = {
+			factor = 0.1
+			has_global_flag = ever_victorious_army
+		}
+	}
 	
 	fire_only_once = yes
 	
 	option = {
 		name = "EVT80128OPTA"
+		set_country_flag = qinghai_revolt_dungan
 		any_country = {
 			limit = { war_with = XBI }
 			end_war = XBI

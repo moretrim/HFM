@@ -135,7 +135,7 @@ unit_names = {
 		Fyen Geiser Heimdal Hekla "St. Thomas" Valkyrien "Herluf Trolle" Søeormen Susåen Gudenåen
 	}
 	frigate = {
-		Najaden Hummer Stralsund Søridder Leopard Raae "Esbern Snare" Ørnen Sjælland Gefion Thetis "Niels Juel" Rota
+		Nymphen Freya Havfruen Bellona Rota Fylla Najaden Hummer Stralsund Søridder Leopard Raae "Esbern Snare" Ørnen Sjælland Gefion Thetis "Niels Juel" Rota
 	}
 	monitor = {
 		Freia Diana Lindormen Støren Stubberkøbing Gejser Kiel Falster Narhvalen Tumleren

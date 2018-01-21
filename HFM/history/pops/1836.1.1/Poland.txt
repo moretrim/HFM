@@ -213,7 +213,7 @@
 	farmers = {
 		culture = western_slavic
 		religion = protestant
-		size = 1825   
+		size = 3825   
 	}
 }
 #Brandenburg Region (208000) #see Poland.txt for balance of region
@@ -248,6 +248,12 @@
 		culture = north_german
 		religion = protestant
 		size = 46425
+	}
+
+	farmers = {
+		culture = western_slavic
+		religion = protestant
+		size = 5000
 	}
 
 	artisans = {
@@ -1022,25 +1028,25 @@
 	}
 
 	clergymen = {
-		culture = polish
+		culture = western_slavic
 		religion = catholic
 		size = 50
 	}
 
 	artisans = {
-		culture = polish
+		culture = western_slavic
 		religion = catholic
 		size = 350
 	}
 
 	soldiers = {
-		culture = polish
+		culture = western_slavic
 		religion = catholic
 		size = 75  
 	}
 
 	farmers = {
-		culture = polish
+		culture = western_slavic
 		religion = catholic
 		size = 2625
 	}
@@ -1655,25 +1661,25 @@
 	}
 
 	clergymen = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 	
 	soldiers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 
 	artisans = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 225
 	}
 
 	farmers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 3700
 	}
@@ -1765,25 +1771,25 @@
 	}
 
 	clergymen = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 	
 	soldiers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 
 	artisans = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 200
 	}
 
 	farmers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 3750  
 	}
@@ -2690,37 +2696,37 @@
 	}
 	
 	aristocrats = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 
 	clergymen = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 	
 	officers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 
 	artisans = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 2500
 	}
 
 	soldiers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 
 	farmers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 3400
 	}
@@ -2874,25 +2880,25 @@
 	}
 
 	clergymen = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 	
 	soldiers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 
 	artisans = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 275
 	}
 
 	farmers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 2690
 	}
@@ -3022,25 +3028,25 @@
 	}
 
 	clergymen = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 	
 	soldiers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 100
 	}
 
 	artisans = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 250
 	}
 
 	farmers = {
-		culture = north_german
+		culture = volga_german
 		religion = protestant
 		size = 1725
 	}

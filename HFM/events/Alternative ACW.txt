@@ -51,6 +51,10 @@ country_event = {
 			factor = 0.5
 			year = 1870
 		}
+		modifier = {
+			factor = 0.1
+			year = 1875
+		}
 	}
 	
 	immediate = {
