@@ -5,7 +5,7 @@
 #
 ###########################################################################
 
-# Bitter Rain
+# Bitter Rain/Dry Spell
 country_event = {
 	id = 14500
 	title = "EVTNAME14500"
@@ -29,9 +29,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 0.9
-			NOT = {
-				plurality = 4
-			}
+			NOT = { plurality = 40 }
 		}
 		modifier = {
 			factor = 2
@@ -69,7 +67,10 @@ country_event = {
 		random_state = {
 			limit = { is_colonial = yes }
 			any_owned = {
-				any_pop = { consciousness = 6 militancy = 4 }
+				any_pop = {
+					consciousness = 6
+					militancy = 4 
+				}
 				add_province_modifier = {
 					name = colonial_exploitation
 					duration = 365
@@ -325,15 +326,34 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA14540"
-		random_owned = { limit = { owner = { ai = yes } } owner = { treasury = 50000 } }
+		random_owned = {
+			limit = {
+				owner = {
+					ai = yes
+					NOT = { money = 50000 }
+					NOT = { check_variable = { which = owed_cash_money value = 1 } }
+				} 
+			}
+			owner = { set_variable = { which = owed_cash_money value = 50 } }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					ai = yes
+					NOT = { money = 50000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 50 } }
+		}
+		random_owned = {
+			limit = { owner = { money = 50000 ai = yes } }
+			owner = { treasury = -50000 }
+		}
 		random_owned = { limit = { owner = { ai = no } } owner = { add_tax_relative_income = -0.30 } }
 		add_country_modifier = { name = colonial_museum_of_natural_history duration = -1 }
 		ai_chance = {
 			factor = 80
-			modifier = {
-				factor = 0
-				NOT = { money = 51000}
-			}
 		}
 	}
 	
@@ -347,13 +367,7 @@ country_event = {
 				militancy = -2
 			}
 		}
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 100
-				NOT = { money = 51000}
-			}
-		}
+		ai_chance = { factor = 20 }
 	}
 }
 

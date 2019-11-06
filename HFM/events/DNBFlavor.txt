@@ -2436,7 +2436,7 @@ country_event = {
 		}
 		OR = {
 			average_militancy = 4
-			revolt_percentage = .25
+			revolt_percentage = 0.25
 		}	
 		NOT = { has_global_flag = danubian_federation_ended }
 	}
@@ -2487,7 +2487,7 @@ country_event = {
 					tag = BOH
 					tag = SLO
 					tag = SLV
-					tag = SIE
+					#tag = SIE
 					tag = GLM
 					tag = CRO
 				}
@@ -2502,7 +2502,7 @@ country_event = {
 					tag = SLO
 					tag = SLV
 					tag = HUN
-					tag = SIE
+					#tag = SIE
 					tag = ROM
 					tag = POL
 					tag = GLM
@@ -2548,7 +2548,7 @@ country_event = {
 					tag = BOH
 					tag = SLO
 					tag = SLV
-					tag = SIE
+					#tag = SIE
 					tag = ROM
 					tag = POL
 					tag = GLM
@@ -2571,7 +2571,7 @@ country_event = {
 					tag = BOH
 					tag = SLO
 					tag = SLV
-					tag = SIE
+					#tag = SIE
 					tag = GLM
 					tag = CRO
 				}
@@ -2586,7 +2586,7 @@ country_event = {
 					tag = BOH
 					tag = SLO
 					tag = SLV
-					tag = SIE
+					#tag = SIE
 					tag = ROM
 					tag = POL
 					tag = GLM
@@ -2609,22 +2609,30 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = {
-		name = "EVT98722OPTA"
+	immediate = {
 		FROM = {
 			any_owned = {
 				limit = { is_core = THIS }
 				secede_province = THIS
 			}
 		}
-		FROM = {
-			war = {
-				target = THIS
-				attacker_goal = {
-					casus_belli = civil_war
-				}
-				defender_goal = {
-					casus_belli = status_quo
+	}
+	
+	option = {
+		name = "EVT98722OPTA"
+		random_owned = {
+			limit = { owner = { exists = yes } }
+			owner = {
+				FROM = {
+					war = {
+						target = THIS
+						attacker_goal = {
+							casus_belli = civil_war
+						}
+						defender_goal = {
+							casus_belli = status_quo
+						}
+					}
 				}
 			}
 		}

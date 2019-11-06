@@ -532,6 +532,10 @@ country_event = {
 	option = {
 		name = "EVTOPTA11101"
 		set_country_flag = wants_to_unify
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			militancy = -1
+		}
 		random_country = {
 			limit = {
 				primary_culture = north_german

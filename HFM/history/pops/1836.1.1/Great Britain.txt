@@ -456,13 +456,13 @@
 	artisans = {
 		culture = british
 		religion = protestant
-		size = 2000
+		size = 1000
 	}
 
 	farmers = {
 		culture = british
 		religion = protestant
-		size = 38625
+		size = 41625
 	}
 }
 #Llandrindod (182000/45500 POPS)

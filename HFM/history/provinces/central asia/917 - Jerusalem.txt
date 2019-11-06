@@ -5,7 +5,7 @@ add_core = TUR
 add_core = PLS
 trade_goods = grain
 life_rating = 35
-terrain = plains
+terrain = dryhills
 
 1861.1.1 = {
 	controller = TUR 

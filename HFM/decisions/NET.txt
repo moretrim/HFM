@@ -49,7 +49,7 @@ political_decisions = {
 	}
 	
 	end_the_javanese_sultanates = {
-		picture = java_map
+		picture = map_java
 		potential = {
 			tag = NET
 			JAV = { 
@@ -67,7 +67,7 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = javanese_integrated
-			JAV = { tech_school = unciv_tech_school country_event = 952500 }
+			JAV = { tech_school = developing_tech_school country_event = 952500 }
 			badboy = 1
 		}
 		
@@ -103,13 +103,13 @@ political_decisions = {
 			random_country = {
 				limit = { exists = yes tag = MAL vassal_of = THIS civilized = no }
 				any_pop = { consciousness = 3 militancy = 1 }
-				tech_school = unciv_tech_school
+				tech_school = developing_tech_school
 				annex_to = THIS
 			}
 			random_country = {
 				limit = { exists = yes tag = SAK vassal_of = THIS civilized = no }
 				any_pop = { consciousness = 3 militancy = 1 }
-				tech_school = unciv_tech_school
+				tech_school = developing_tech_school
 				annex_to = THIS
 			}
 			random_owned = {
@@ -190,66 +190,6 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
-	annex_limburg_NET = {
-		picture = treaty_signing
-		potential = {
-			tag = NET
-			is_our_vassal = LBG
-			LBG = { exists = yes }
-			OR = {
-				revolution_n_counterrevolution = 1
-				PRU = { exists = yes is_greater_power = no }
-				has_country_flag = limburg_crisis_NET
-				AND = {
-					is_greater_power = yes
-					year = 1850
-					OR = {
-						is_sphere_leader_of = LBG
-						LBG = { part_of_sphere = no }
-					}
-				}
-			}
-		}
-		
-		allow = {
-			war = no
-			OR = {
-				any_neighbor_country = {
-					has_country_flag = limburg_crisis
-					NOT = { has_country_modifier = preparations_for_war }
-				}
-				AND = {
-					is_greater_power = yes
-					OR = {
-						is_sphere_leader_of = LBG
-						LBG = { part_of_sphere = no }
-					}
-				}
-				AND = {
-					is_greater_power = yes
-					any_neighbor_country = {
-						has_country_flag = limburg_crisis
-						is_greater_power = no
-					}
-				}
-				AND = {
-					year = 1880
-					LBG = { part_of_sphere = no }
-				}
-			}
-		}
-		
-		effect = {
-			any_country = { release = LBG leave_alliance = LBG }
-			381 = { remove_core = LBG change_province_name = "Maastricht" }
-			any_country = { limit = { has_country_flag = limburg_crisis } clr_country_flag = limburg_crisis }
-			clr_country_flag = limburg_crisis
-			inherit = LBG
-		}
-		
-		ai_will_do = { factor = 1 }
-	}
-	
 	dutch_wallonia = {
 		picture = become_wallonia
 		potential = {
@@ -300,6 +240,85 @@ political_decisions = {
 					394 = { change_province_name = "Charleroi" }
 				}
 			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	first_annexiation_limburg = {
+		picture = neuschwanstein
+		potential = {
+			tag = NET
+			LBG = { exists = yes }
+			OR = {
+				is_our_vassal = LBG
+				LBG = { is_vassal = no }
+			}
+			OR = {
+				exists = NGF
+				exists = GER
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			random_country = {
+				limit = {
+					exists = yes
+					tag = LBG
+				}
+				all_core = { remove_core = LBG }
+				381 = { change_province_name = "Maastricht" }
+				annex_to = THIS
+			}
+			random_country = {
+				limit = {
+					neighbour = THIS
+					is_greater_power = yes
+					OR = {
+						tag = NGF
+						tag = GER
+					}
+				}
+				country_event = 952514
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	accept_the_flemish = {
+		picture = become_belgium
+		potential = {
+			tag = NET
+			NOT = { accepted_culture = flemish }
+			any_owned_province = { any_pop = { has_pop_culture = flemish } }
+		}
+		
+		allow = {
+			phenomenalism = 1
+			prestige = 100
+			has_country_modifier = freedom_of_religion
+			upper_house_composition = population_equal_weight
+			public_meetings = yes_meeting
+			press_rights = free_press
+			plurality = 50
+			NOT = {
+				citizens_rights = primary_culture_only
+				citizenship_policy = residency
+			}
+			OR = {
+				government = democracy
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			prestige_factor = -0.2
+			add_accepted_culture = flemish
 		}
 		
 		ai_will_do = { factor = 1 }

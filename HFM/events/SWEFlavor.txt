@@ -812,7 +812,7 @@ country_event = {
 		random_list = {
 			70 = { country_event = 36625 }
 			30 = { country_event = 36626 }
-			}
+		}
 		ai_chance = { factor = 0.7 }
 	}
 	
@@ -822,7 +822,30 @@ country_event = {
 		3246 = { remove_core = THIS }
 		relation = { who = FROM value = 50 }
 		treasury = 50000
-		FROM = { treasury = -50000 }
+		FROM = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { money = 50000 }
+						NOT = { check_variable = { which = owed_cash_money value = 1 } }
+					} 
+				}
+				owner = { set_variable = { which = owed_cash_money value = 50 } }
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { money = 50000 }
+						check_variable = { which = owed_cash_money value = 9 }
+					} 
+				}
+				owner = { change_variable = { which = owed_cash_money value = 50 } }
+			}
+			random_owned = {
+				limit = { owner = { money = 50000 } }
+				owner = { treasury = -50000 }
+			}
+		}
 		ai_chance = {
 			factor = 0.1
 			modifier = {
@@ -894,7 +917,6 @@ country_event = {
 		FRA = { country_event = 36627 }
 		relation = { who = FROM value = -200 }
 		badboy = 1
-		treasury = -50000
 		ai_chance = {
 			factor = 0.05
 			modifier = {
@@ -905,11 +927,6 @@ country_event = {
 			modifier = {
 				factor = 0
 				is_greater_power = no
-			}
-			
-			modifier = {
-				factor = 0
-				NOT = { money = 50000 }
 			}
 		}
 	}
@@ -930,7 +947,30 @@ country_event = {
 		FRA = { country_event = 36627 }
 		relation = { who = FRA value = -200 }
 		relation = { who = FROM value = 100 }
-		treasury = -50000
+		FROM = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { money = 50000 }
+						NOT = { check_variable = { which = owed_cash_money value = 1 } }
+					} 
+				}
+				owner = { set_variable = { which = owed_cash_money value = 50 } }
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { money = 50000 }
+						check_variable = { which = owed_cash_money value = 9 }
+					} 
+				}
+				owner = { change_variable = { which = owed_cash_money value = 50 } }
+			}
+			random_owned = {
+				limit = { owner = { money = 50000 } }
+				owner = { treasury = -50000 }
+			}
+		}
 		FROM = { treasury = 50000 }
 		ai_chance = {
 			factor = 0.9
@@ -944,9 +984,9 @@ country_event = {
 	option = {
 		name = "EVTOPTB36624" 
 		FROM = {
-		random_list = {
-			70 = { country_event = 36625 }
-			30 = { country_event = 36626 }
+			random_list = {
+				70 = { country_event = 36625 }
+				30 = { country_event = 36626 }
 			}
 		}
 		ai_chance = {
@@ -973,8 +1013,30 @@ country_event = {
 		3246 = { secede_province = FRA }
 		3246 = { remove_core = THIS }
 		relation = { who = FRA value = 50 }
-		treasury = 50000
-		FRA = { treasury = -50000 }
+		FRA = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { money = 50000 }
+						NOT = { check_variable = { which = owed_cash_money value = 1 } }
+					} 
+				}
+				owner = { set_variable = { which = owed_cash_money value = 50 } }
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { money = 50000 }
+						check_variable = { which = owed_cash_money value = 9 }
+					} 
+				}
+				owner = { change_variable = { which = owed_cash_money value = 50 } }
+			}
+			random_owned = {
+				limit = { owner = { money = 50000 } }
+				owner = { treasury = -50000 }
+			}
+		}
 		ai_chance = { factor = 100 }
 	}
 	
@@ -999,9 +1061,32 @@ country_event = {
 		name = "EVTOPTB36626"
 		3246 = { secede_province = FRA any_pop = { militancy = 4 } }
 		3246 = { remove_core = THIS }
+		prestige = -10
 		relation = { who = FRA value = 150 }
-		treasury = 50000
-		FRA = { treasury = -50000 }
+		FRA = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { money = 50000 }
+						NOT = { check_variable = { which = owed_cash_money value = 1 } }
+					} 
+				}
+				owner = { set_variable = { which = owed_cash_money value = 50 } }
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { money = 50000 }
+						check_variable = { which = owed_cash_money value = 9 }
+					} 
+				}
+				owner = { change_variable = { which = owed_cash_money value = 50 } }
+			}
+			random_owned = {
+				limit = { owner = { money = 50000 } }
+				owner = { treasury = -50000 }
+			}
+		}
 		ai_chance = { factor = 0.2 }
 	}
 	

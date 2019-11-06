@@ -48,7 +48,7 @@ upper_house = {
 	communist = 0
 }
 
-schools = unciv_tech_school
+schools = developing_tech_school
 
 # Technologies
 post_napoleonic_thought = 1

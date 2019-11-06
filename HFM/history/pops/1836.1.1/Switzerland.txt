@@ -22,7 +22,7 @@
 	clerks = {
 		culture = swiss
 		religion = protestant
-		size = 60
+		size = 100
 	}
 
 	craftsmen = {
@@ -64,7 +64,7 @@
 	clerks = {
 		culture = swiss
 		religion = catholic
-		size = 30
+		size = 100
 	}
 
 	craftsmen = {
@@ -90,6 +90,50 @@
 		religion = catholic
 		size = 45720
 	}
+	
+	######Jews
+	aristocrats = {
+		culture = ashkenazi
+		religion = jewish
+		size = 100
+	}
+
+	craftsmen = {
+		culture = ashkenazi
+		religion = jewish
+		size = 100
+	}
+	
+	clerks = {
+		culture = ashkenazi
+		religion = jewish
+		size = 100
+	}
+
+	soldiers = {
+		culture = ashkenazi
+		religion = jewish
+		size = 100
+	}
+
+	clergymen = {
+		culture = ashkenazi
+		religion = jewish
+		size = 100
+	}
+
+	artisans = {
+		culture = ashkenazi
+		religion = jewish
+		size = 100
+	}
+	
+	farmers = {
+		culture = ashkenazi
+		religion = jewish
+		size = 100
+	}
+	########
 }
 #Basel (272000/68000 POPS)
 604 = {
@@ -108,7 +152,7 @@
 	clerks = {
 		culture = swiss
 		religion = protestant
-		size = 35
+		size = 100
 	}
 
 	craftsmen = {
@@ -150,7 +194,7 @@
 	clerks = {
 		culture = swiss
 		religion = catholic
-		size = 30
+		size = 100
 	}
 
 	craftsmen = {
@@ -212,7 +256,7 @@
 	clerks = {
 		culture = swiss
 		religion = protestant
-		size = 75
+		size = 100
 	}
 
 	craftsmen = {
@@ -504,13 +548,13 @@
 	aristocrats = {
 		culture = swiss
 		religion = protestant
-		size = 50
+		size = 100
 	}
 
 	clergymen = {
 		culture = swiss
 		religion = protestant
-		size = 50
+		size = 100
 	}
 
 	artisans = {
@@ -522,7 +566,7 @@
 	soldiers = {
 		culture = swiss
 		religion = protestant
-		size = 75
+		size = 100
 	}
 
 	farmers = {

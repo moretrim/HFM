@@ -291,14 +291,14 @@ political_decisions = {
 	hawaiian_purchase = {
 		picture = annex_hawaii
 		potential = {
+			civilized = yes
 			658 = {
-				owned_by = THIS
-				is_core = THIS
-			}
-			2524 = {
-				empty = no
-				is_core = THIS
 				NOT = { owned_by = THIS }
+				is_core = THIS
+				owner = {
+					civilized = yes
+					NOT = { tag = HAW }
+				}
 			}
 			NOT = { has_country_flag = hawaiian_purchase }
 		}
@@ -306,7 +306,7 @@ political_decisions = {
 		allow = {
 			war = no
 			money = 50000
-			2524 = {
+			658 = {
 				owner = {
 					war = no
 					relation = { who = THIS value = 50 }
@@ -316,7 +316,7 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = hawaiian_purchase
-			2524 = { owner = { country_event = 44145 } }
+			658 = { owner = { country_event = 44145 } }
 		}
 		
 		ai_will_do = {

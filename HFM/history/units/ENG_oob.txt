@@ -1,7 +1,7 @@
 #Sphere of Influence
 #GPs
 FRA = { value = 25 }
-RUS = { value = -75 }
+RUS = { value = -100 }
 AUS = { value = -75 }
 USA = { value = 50 }
 PRU = { value = 25 }
@@ -17,6 +17,10 @@ SUA = {
 }
 
 #Asia
+#Malay
+JOH = {
+	value = 50
+}
 
 SLG = {
 	value = 150
@@ -55,15 +59,30 @@ NEP = {
 	value = -25
 }
 
-JOH = {
-	value = -200
-}
-
 QNG ={
 	value = -10
 	level = 0
 	influence_value = 0
 }
+
+SIN ={
+	value = -100
+	level = 0
+	influence_value = 0
+}
+
+MAK ={
+	value = -100
+	level = 0
+	influence_value = 0
+}
+
+KAL ={
+	value = -100
+	level = 0
+	influence_value = 0
+}
+
 NYE ={
 	value = -10
 	level = 0
@@ -192,6 +211,12 @@ VNZ = {
 	level = 3		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
+URU = {
+	value = 125		#relation
+	level = 4		#3=cordial, 4 = friendly, 5 sphere
+	influence_value = 0
+}
+
 
 #Other
 COL = {				#Columbia if released
@@ -713,7 +738,7 @@ army = {
 
 army = {
 	name = "The South Africa Garrison"
-	location = 2087
+	location = 2096
 	
 	regiment = {
 		name= "1st Artillery Division"
@@ -722,25 +747,25 @@ army = {
 	}
 	
 	regiment = {
-		name= "1st Infantry Division"
-		type = infantry
+		name= "1st Cavalry Division"
+		type = hussar
 		home = 278
 	}
 	
 	regiment = {
-		name= "2nd Infantry Division"
-		type = infantry
+		name= "2nd Cavalry Division"
+		type = hussar
 		home = 278
 	}
 
 	regiment = {
-		name= "3rd Infantry Division"
+		name= "1st Infantry Division"
 		type = infantry
 		home = 274
 	}
 
 	regiment = {
-		name= "4th Infantry Division"
+		name= "2nd Infantry Division"
 		type = infantry
 		home = 2087
 	}
@@ -1695,6 +1720,21 @@ navy = {
 		name= "HMS Wellesley"
 		type = manowar
 	}
+	
+	ship = {
+		name= "HMS Saint Lucia"
+		type = manowar
+	}
+	
+	ship = {
+		name= "HMS Tortolla"
+		type = manowar
+	}
+	
+	ship = {
+		name= "HMS Saint Kitts"
+		type = manowar
+	}
 
 	ship = {
 		name= "HMS Aeolus"
@@ -1723,17 +1763,17 @@ navy = {
 
 	ship = {
 		name= "HMS Hebe"
-		type = frigate
+		type = commerce_raider
 	}
 
 	ship = {
 		name= "HMS Mercury"
-		type = frigate
+		type = commerce_raider
 	}
 
 	ship = {
 		name= "HMS Mermaid"
-		type = frigate
+		type = commerce_raider
 	}
 
 	ship = {

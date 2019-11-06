@@ -2,21 +2,6 @@ color = { 153  141  117 }
 graphical_culture = EuropeanGC
 
 party = {
-	name = "ION_conservative"
-	start_date = 1830.1.1
-	end_date = 2000.1.1
-
-	ideology = conservative
-
-	social_policy = no_position_set
-	economic_policy = laissez_faire
-	trade_policy = free_trade
-	religious_policy = pluralism
-	citizenship_policy = residency
-	war_policy = pro_military
-}
-
-party = {
 	name = "ION_liberal"
 	start_date = 1830.1.1
 	end_date = 2000.1.1
@@ -24,15 +9,15 @@ party = {
 	ideology = liberal
 
 	social_policy = no_position_set
-	economic_policy = interventionism
-	trade_policy = protectionism
+	economic_policy = laissez_faire
+	trade_policy = free_trade
 	religious_policy = pluralism
-	citizenship_policy = residency
+	citizenship_policy = limited_citizenship
 	war_policy = pro_military
 }
 
 party = {
-	name = "ION_conservative_2"
+	name = "ION_conservative"
 	start_date = 1830.1.1
 	end_date = 2000.1.1
 
@@ -42,7 +27,7 @@ party = {
 	economic_policy = interventionism
 	trade_policy = protectionism
 	religious_policy = pluralism
-	citizenship_policy = residency
+	citizenship_policy = limited_citizenship
 	war_policy = jingoism
 }
 

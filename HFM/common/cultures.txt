@@ -120,7 +120,7 @@ beneluxian = {
 		}
 	}
 	flemish = { 
-		color = { 250 180 80}
+		color = { 250 180 80 }
 		first_names = { Adolf Adolphe Alexander Alexandre Alfons Alphonse Adriaan Albert Andries Antoine Auguste Boudewijn Bonifaas 
 		Camille Charles Constant David Désiré Diederik Edmond Emmanuel Etienne Eugène Félix Filip Frans Ferdinand François Frederik 
 		Guillaume Gustave Hendrik Henri Herman Ignaas Ignace Jan Jean Jean-Baptiste Jean-François Jean-Louis Jean-Jacques 
@@ -143,7 +143,7 @@ beneluxian = {
 		Vandive Verbeke Vercruysse Verduyn Vergauwen "Verseyden de Varick" Verwilghen "Vilain XIIII" Wallaert Wannaar Werbrouck Wyvekens }
 	}
 	wallonian = { 
-		color = { 190 90 20}
+		color = { 190 90 20 }
 		first_names = { Albert Alexandre Alexis Alphonse André Antoine Auguste Barthélémy Baudouin Blaise Camille Clément Charles Constant 
 		Damien David Désiré Didier Edmond Édouard Emmanuel Émile Etienne Eugène Félix Fernand Feullien Florent François Frédéric Georges 
 		Gérard Gilles Guillaume Gustave Henri Hercule Hubert Ignace Isidore Jacques Jean Jean-Baptiste Jean-François Jean-Louis 
@@ -265,6 +265,7 @@ british = {
 	irish = { 
 		color = { 35 140 50}
 		radicalism = 15
+		primary = IRE
 		first_names = { Alexander Arthur Brian Cathal Christopher Con Daniel Denis Desmond Éamon
 		Edward Ernes Fionán Frank George Harry Jack James John Joseph
 		Kevin Liam Michael Patrick Peter Richard Robert Séan Thomas William }
@@ -273,9 +274,10 @@ british = {
 		FitzGerald Griffith Kelly Larkin Lynch Mallin McCartan McCullough McGarry McGuinness
 		Mulcahy O'Brien O'Connor O'Doherty O'Higgins O'Leary O'Mara Pearse Plunket White }
 	}
-	scottish = { 
+	scottish = {
 		color = { 0 71 182 }
 		radicalism = 5
+		primary = SCO
 		first_names = { Alan Alastair Alban Alpin Andrew Angus Aulay Blane Boyd Calum Clyde Coll Derek Donald Donnan Dougal Douglas Duff Duncan Ewan Farquar Fingal Finlay Gavin Gillian Gillis Gordon Greer Hamish Ian Ivar Kenneth Kentigern Kirk Kyle Lachlan Lorne Malcolm Mirren Mungo Neil Nevin Ranald Rory Ross Sholto Somerled Tavish Torquil Wallace}
 		
 		last_names = { Smith Brown Wilson Robertson Thomson Campbell Stewart Anderson Scott Murray MacDonald Reid Taylor Clark Ross Young Mitchell Watson Paterson Morrison Sanders	}
@@ -311,14 +313,14 @@ italian = {
 		Lunardi Molinelli Orsini Ottaviani Pironti Scammacca Torlonia Turrisi Vernazza Zunica }
 		radicalism = 10
 	}
-	maltese = { 
+	maltese = {
 		color = {100 150 120}
+		primary = MLT
 		first_names = { Alessandru Beru Duminku Enrico Fernardu Frangisku Gabriel Ferlad Gorg Joseph
 		Karmenu Lawrenz Marju Mikiel Ninu Pawlu Rokku Saber Ugo Valent }
 		
 		last_names = { Abela Adami Azzopardi Boffa Borg Buhagiar Cassar Farrugia Frendo Gonzi
 		Howard Mifsud Mintoff Mizzi Muscat Olivier Puli Pullicino Strickland Vella }
-		primary = MLT
 	}
 	
 	union = ITA
@@ -409,7 +411,8 @@ french = {
 		Foch Forey "Franchet d'Espèrey" Gallieni Gouraud Guillaumat Hamelin Harispe Hoche Humbert
 		Jaurès Joffre Lebouef Lyautey Murat "Ney d'Elchingen" Nivelle Péllissier Petain Vaillant }
 	}
-	breton = { 
+	breton = {
+		primary = BRT
 		color = {100 110 100}
 		first_names = { Yann Yannic Pierre Jakez Elouan Frañsez Jaoua Paol Segal Alain Henri Hoël Michel Théodore }
 		
@@ -884,20 +887,9 @@ turko_semitic = {
 }
 
 caucasian = {
-	leader = russian
+	leader = arab
 	is_overseas = no
-	unit = RussianGC
-		#north_caucasian = {
-		#color = {252 255 161}
-		#first_names = {
-		#	Aslan Hamza "Jamal al-Din" Mansur Mohammad Murad Shamil Abatiy Bate Belatse Blaneshu Dzeghaschte Discheshu Foqwe Ghwaze Hebale Hezeishe Hetezchiqwe #Jatawe Lawirsen Lhostenasch Mamish Nartschawe Nart Pschibiy Pagwe Psebide Qideghaze Qwbatiy Qwsh Zhanqeit Yapenes Wezrej Tsatsu Teimbolet 
-		#}
-		#
-		#last_names = { 
-		#	Mollah Bek Aghwrbiyç Alijiqwe Dzuneç Gushina Gushipsaç Dzadzooç Hatsiquaç Jirandiqua Mashiquaç Naly Nartby Shoomaquaç Tsikira Zhambora
-		#}
-		#radicalism = 10
-		#}
+	unit = MoroccoGC
 		
 		dagestani = {
 		color = {134 100 49}
@@ -935,7 +927,6 @@ caucasian = {
 		radicalism = 20
 		}
 	}
-
 
 arab = {
 	leader = arab
@@ -1713,16 +1704,6 @@ oceanic = {
 native_american = {
 	leader = nativeamerican
 	is_overseas = no
-	#zapotec = {
-	#	color = {87 199 81}
-	#	first_names = { Agustín Alberto Alfonso Alfredo Andrés Benito Carlos César Eduardo Eugenio
-	#	Felipe Fernando Gabriel Gilberto Gregorio Jacinto Jesús José Juan Julio
-	#	Macario Manuel Miguel Nazario Nicolás Oliverio Pablo Porfirio Rodolfo Rufino }
-	#
-	#	last_names = { Alonso Antúnez Cabrera Cajigas Chacón Chiñas Cortés Fernández Gamboa García
-	#	González Gutiérrez Guzmán Henestrosa Isael Jiménez Juárez López Matus Mérida
-	#	Morales Nayeli Orozco Ortíz Pineda Rojas Ruíz Suárez Tamayo Vichido }
-	#}
 	mayan = {
 		color = {98 88 142}
 		first_names = { Agustín Akbal Alejandro Andrés Aníbal Antonio Armando Bernardo Carlos Crescencio
@@ -1743,16 +1724,6 @@ native_american = {
 		Huanitzin Itzel Ixtlilxochitl Jiménez Matlacuahuac Mayahuel Moxo Muñoz Nahui Ocelotl
 		Panecatl Tlaxca Tletla Tzehe Valeriano Xaxalpa Zicoténcatl Xochitl Zapata Zapotitla }
 	}
-	#tarascan = {
-	#	color = {148 204 4}
-	#	first_names = { Agustín Alberto Alfredo Antonio Armando Arturo Carlos Cenobio Daniel Diego
-	#	Everardo Gerardo Gumersindo Héctor Jesús Juan Leobardo Luis Manuel Marcial
-	#	"Marco Antonio" Melchor Pedro Ricardo Salvador Samuel Sergio Silvano Silvestre Víctor }
-	#
-	#	last_names = { Almonte Arredondo Arriaga Aureoles Bernal Brito Calderón Cano Carrillo Cristóbal
-	#	Cuevas Dimas Esquivel Estrada Galeana Gallardo García Gómez López Maciel
-	#	Magaña Medrano Mena Ocampo Ochoa Paniagua Tinoco Toryo Vargas Zendejas }
-	#}
 	quechua = {
 		color = {178 141 85}
 		first_names = { Agustín Alejandro Antauro Antonio Basilio Daniel Diego Eugenio Facundo Felipe
@@ -1802,16 +1773,6 @@ native_american = {
 		Huichaman Ilwen Kayupi Kumlafken Kvlapi Leviñanco Lincoman Marifil Melifilu Millakoyam
 		Millapani Nahuel Ñanku Paillacar Pillancar Quelin Remultray Unquen Waikimill Yankvleufu }
 	}
-	#Wayuu
-	#guajiro = {
-	#	color = {221 248 75}
-	#	first_names = { Baltasar Bernardo Carlos Celestino Diego Emilio Felipe Fernando Fidel Francisco
-	#	Gaspar Gregorio Hugo Ignacio José Juan Manuel Marcos Mario Mateo
-	#	Melchor Narciso Pablo Pedro Ramón Roberto Santiago Sebastián Simón Tomás }
-	#
-	#	last_names = { Atapashuna Epieyu Iguana Jayaliyuu Jusayuu Pausayuu Sapuana Tijuana Uliana Uliyuu
-	#	Uraliyyu Ulewana Walapuana Walepushana }
-	#}
 	tupinamba = {
 		color = {43 212 67}
 		first_names = { Álvaro André Carlos Diogo Emilio Eusébio Fábio Fernando Filipe Francisco
@@ -1915,6 +1876,7 @@ american_cultures = {
 	}
 	texan = {
 		color = {153 0 0}
+		primary = TEX
 		first_names = {Hamilton Matthew Richard Hiram Thomas Elkanah John William James Albert Wilburn Walter Hinchie Samuel Benjamin 
 		Henry Allison Horace Felix Jerome Lawrence Alexander Louis
 		}
@@ -2494,14 +2456,6 @@ central_african = {
 		last_names = { Kasang Nambing Kalong Mukaz Ditend Yaava Namwan Naweej Kamong Isot Kat Muteba
 		}
 	}
-	#african_minor = {
-	#	color = { 63 32 10 }
-	#	first_names = { Andikan Amadi Aren Bahari Averey Bakari Bash Bayode Bitalo Chane Chata Dakarai Davu Dume Fabunni Gamba Genet Guban Hajari Haruni Ife #Ilo Issay Jabari Jabilo Jaguan Kabili Kamwimbile Kasim Kenyi Khairi Makalo Mansa Morathi Musawenkosi Raimi Razi Reth
-	#	}
-	#
-	#	last_names = { Mussa Mutato Bowelle Makeda Nzinga Sundiata 
-	#	}
-	#}
 }
 
 east_african = {
@@ -2630,15 +2584,6 @@ east_african = {
 
 		last_names = { Musinga Gahindiro Rwogera Rutarindwa Mutara Ndahindurwa Rushatsi Ndagushimiye Senyamwisa Mutamo Serushambo Butama Rugamba Gisabo Mbikije }
 	}
-	
-	#sidama = {
-	#	color = {84 97 38}
-	#	first_names = { Aba Tekle Sacho Gawa Gaha Shagi Jilcha Jawe Sana Gunji Galli Gaki Beshi Hoti Kaye 
-	#	}
-
-	#	last_names = { Ginocho Gaocho Sherocho Nechocho Sachi Bulgu Gomol
-	#	}
-	#}
 	
 	somali = {
 		color = {226 22 48}

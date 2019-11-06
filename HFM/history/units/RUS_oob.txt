@@ -110,12 +110,12 @@ CIR = {
 
 #Other GP's
 #GPs
-ENG = { value = -75 }
-FRA = { value = 25 }
+ENG = { value = -100 }
+FRA = { value = -100 }
 AUS = { value = 50 }
 USA = { value = 25 }
 PRU = { value = 80 }
-TUR = { value = 75 }
+TUR = { value = 125 }
 SPA = { value = 0 }
 
 army = {
@@ -445,7 +445,7 @@ army = {
 
 army = {
 	name = "6-i Armeiskii Korpus" #Crimean Army
-	location = 964
+	location = 1057
 	regiment = {
 		name= "6.1-ya Pekhotnaya Diviziya"
 		type = infantry

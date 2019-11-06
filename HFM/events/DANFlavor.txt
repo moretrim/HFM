@@ -745,7 +745,7 @@ country_event = {
 
 	option = {
 		name = "EVTOPTA36213" 
-		prestige = 10
+		prestige = 5
 	}
 }
 
@@ -850,7 +850,7 @@ country_event = {
 
 	option = {
 		name = "EVTOPTA36217" 
-		prestige = 5
+		prestige = 3
 	}
 }
 
@@ -896,7 +896,7 @@ country_event = {
 		
 	option = {
 		name = "EVTOPTA36218" 
-		prestige = 5
+		prestige = 3
 		372 = {
 			any_pop = {
 				militancy = -1
@@ -1080,16 +1080,33 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA36224"
-		treasury = -20000
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { money = 20000 }
+					NOT = { check_variable = { which = owed_cash_money value = 1 } }
+				} 
+			}
+			owner = { set_variable = { which = owed_cash_money value = 20 } }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { money = 20000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 20 } }
+		}
+		random_owned = {
+			limit = { owner = { money = 20000 } }
+			owner = { treasury = -20000 }
+		}
 		DEN = { treasury = 20000 }
 		relation = { who = DEN value = 50 }
 		2591 = { secede_province = THIS }
 		ai_chance = {
 			factor = 100
-			modifier = {	
-				factor = 0
-				NOT = { money = 20000 }
-			}
 		}
 	}
 	
@@ -1112,10 +1129,6 @@ country_event = {
 		}
 		ai_chance = {
 			factor = 0
-			modifier = {	
-				factor = 100
-				NOT = { money = 20000 }
-			}
 		}
 	}
 }

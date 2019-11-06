@@ -74,12 +74,15 @@ political_decisions = {
 			NOT = { truce_with = TUR }
 			NOT = { is_sphere_leader_of = TUR }
 			has_recently_lost_war = no
+			OR = {
+				war_policy = jingoism
+				ai = yes
+			}
 		}
 		
 		effect = {
 			set_country_flag = crimean_war
 			set_global_flag = crimea_has_happened
-			ruling_party_ideology = reactionary
 			add_country_modifier = {
 				name = protector_of_eastern_christendom
 				duration = -1
@@ -182,11 +185,39 @@ political_decisions = {
 					MOL = {
 						ai = yes
 						exists = yes
+						war = no
+						is_mobilised = no
 					}
 					ROM = { exists = no }
 				}
 				inherit = MOL
 				change_tag = ROM
+				795 = { remove_core = SIE }
+			}
+			random_country = {
+				limit = {
+					tag = WAL
+					exists = yes
+					MOL = {
+						ai = yes
+						exists = yes
+						OR = {
+							war = yes
+							is_mobilised = yes
+						}
+					}
+					ROM = { exists = no }
+				}
+				change_tag = ROM
+				MOL = {
+					neutrality = yes
+					set_country_flag = annex_to_master
+					any_country = {
+						release_vassal = MOL
+						end_war = MOL
+					}
+				}
+				ROM = { create_vassal = MOL }
 				795 = { remove_core = SIE }
 			}
 			random_country = {
@@ -235,7 +266,13 @@ political_decisions = {
 				}
 				country_event = 97510
 			}
-			ROM = { any_owned = { limit = { is_core = ROM } remove_core = WAL remove_core = MOL } }
+			ROM = {
+				any_owned = {
+					limit = { is_core = ROM }
+					remove_core = WAL
+					remove_core = MOL
+				}
+			}
 		}
 		
 		ai_will_do = {
@@ -264,6 +301,14 @@ political_decisions = {
 		effect = {
 			prestige = 20
 			set_global_flag = treaty_of_paris_russia
+			any_owned = {
+				limit = { region = MOL_676 }
+				remove_core = ROM
+				remove_core = MOL
+				remove_core = MDV
+				remove_core = WAL
+			}
+			
 			random_country = {
 				limit = {
 					tag = WAL
@@ -271,11 +316,39 @@ political_decisions = {
 					MOL = {
 						ai = yes
 						exists = yes
+						war = no
+						is_mobilised = no
 					}
 					ROM = { exists = no }
 				}
 				inherit = MOL
 				change_tag = ROM
+				795 = { remove_core = SIE }
+			}
+			random_country = {
+				limit = {
+					tag = WAL
+					exists = yes
+					MOL = {
+						ai = yes
+						exists = yes
+						OR = {
+							war = yes
+							is_mobilised = yes
+						}
+					}
+					ROM = { exists = no }
+				}
+				change_tag = ROM
+				MOL = {
+					neutrality = yes
+					set_country_flag = annex_to_master
+					any_country = {
+						release_vassal = MOL
+						end_war = MOL
+					}
+				}
+				ROM = { create_vassal = MOL }
 				795 = { remove_core = SIE }
 			}
 			random_country = {
@@ -316,9 +389,9 @@ political_decisions = {
 				country_event = 97512
 				RUS = { treasury = 250000 }
 			}
-			relation = { who = ROM value = 400 }
+			relation = { who = ROM value = 200 }
 			diplomatic_influence = { who = ROM value = 200 }
-			diplomatic_influence = { who = TUR value = 50 }
+			diplomatic_influence = { who = TUR value = 100 }
 			FRA = {
 				diplomatic_influence = { who = TUR value = -200 }
 				leave_alliance = TUR

@@ -4,6 +4,8 @@
 REB 	= 	"countries/rebels.txt"
 
 ##HPM
+PNK		="countries/Pontianak.txt"
+GHN		="countries/Ghana.txt"
 PPG		="countries/Papua New Guinea.txt"
 VTU		="countries/Vanuatu.txt" 
 SMO		="countries/Samoa.txt"
@@ -297,6 +299,7 @@ AOT     = "countries/Aotearoa.txt"
 FIJ		= "countries/Fiji.txt"
 SNZ     = "countries/South Island.txt"
 TGA		= "countries/Tonga.txt"
+TMT		= "countries/Tuamotu.txt"
 
 ### END OF NEW NATIONS MOD ###
 

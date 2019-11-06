@@ -193,7 +193,7 @@ political_decisions = {
 			owns = 36
 		}
 		effect = {
-			22 = { life_rating = 11 }
+			22 = { life_rating = 2 }
 			add_country_modifier = { name = rcmp duration = -1 }
 		}
 		ai_will_do = {
@@ -367,7 +367,7 @@ political_decisions = {
 			}
 			25 = { 
 				change_province_name = "Calgary"
-				life_rating = 12
+				life_rating = 3
 				add_province_modifier = { name = gateway_to_harbor duration = 365 }
 			}
 			69 = { change_province_name = "Edmundston" }
@@ -494,7 +494,7 @@ political_decisions = {
 		potential = {
 			owns = 57
 			NOT = { has_global_flag = ottawa_founded }
-			57 = { NOT = { has_province_modifier = genocide } }
+			57 = { NOT = { has_province_modifier = mass_graves } }
 		}
 		
 		allow = {
@@ -505,6 +505,63 @@ political_decisions = {
 		effect = {
 			set_global_flag = ottawa_founded
 			57 = { change_province_name = "Ottawa" life_rating = 4 }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	integrate_the_metis = {
+		picture = bytown_1853
+		potential = {
+			NOT = { accepted_culture = metis }
+			tag = CAN
+			any_owned_province = {
+				any_pop = { has_pop_culture = metis }
+			}
+		}
+		
+		allow = {
+			psychoanalysis = 1
+			plurality = 50
+			NOT = {
+				citizens_rights = primary_culture_only
+				citizenship_policy = residency
+			}
+			OR = {
+				government = democracy
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			add_accepted_culture = metis
+			random_country = {
+				limit = {
+					tag = MTC
+					exists = no
+				}
+				all_core = { remove_core = MTC }
+			}
+			random_country = {
+				limit = {
+					tag = RPL
+					exists = no
+				}
+				all_core = { remove_core = RPL }
+			}
+			random_country = {
+				limit = {
+					tag = MRU
+					exists = no
+				}
+				all_core = { remove_core = MRU }
+			}
+			random_country = {
+				limit = {
+					tag = COL
+					exists = no
+				}
+				all_core = { remove_core = COL }
+			}
 		}
 		ai_will_do = { factor = 1 }
 	}

@@ -317,20 +317,24 @@ country_event = {
 			}
 			end_war = THIS
 		}
-		add_country_modifier = { name = small_country_draft duration = 365 }
+		add_country_modifier = { name = small_country_draft duration = 30 }
 		add_country_modifier = { name = unrecognized_country duration = 3650 }
 		relation = { who = ARC value = -400 }
 		relation = { who = ENT value = -400 }
+		set_country_flag = annex_to_master
 		ARC = {
 			release_vassal = CRT 
 			war = {
 				target = CRT
-				attacker_goal = { casus_belli = annex_core_country }
+				attacker_goal = { casus_belli = make_puppet }
 				defender_goal = { casus_belli = status_quo }
 				call_ally = no
 			}
 		}
-		URU = { set_country_flag = corrientes_is_ready_for_war clr_country_flag = incite_rebellion }
+		URU = {
+			set_country_flag = corrientes_is_ready_for_war
+			clr_country_flag = incite_rebellion
+		}
 	}
 }
 
@@ -361,14 +365,14 @@ country_event = {
 	option = {
 		name = "EVTOPT600063A"      #TO WAR
 		random_country = { 
-		limit = {
-			exists = yes
-			tag = CRT
-		}
-		create_alliance = URU
-		relation = {
-			who = URU
-			value = 400
+			limit = {
+				exists = yes
+				tag = CRT
+			}
+			create_alliance = URU
+			relation = {
+				who = URU
+				value = 400
 			}
 		}
 		ARC = { country_event = 600065 	}
@@ -379,8 +383,9 @@ country_event = {
 		
 		add_country_modifier = {
 			name = small_country_draft
-			duration = 365
-				}
+			duration = 30
+		}
+		
 		war = {
 			target = ARC
 			attacker_goal = { casus_belli = humiliate }
@@ -393,15 +398,15 @@ country_event = {
 				target = ARC
 				type = humiliate
 				months = 6
-					}
-				}
+			}
+		}
 		FRA = {
 			 casus_belli = {
 				target = ARC
 				type = humiliate
 				months = 6
-					}
-				}
+			}
+		}
 		ai_chance = {
 			factor = 0.5
 		}
@@ -417,19 +422,19 @@ country_event = {
 				scaled_militancy = {
 					ideology = conservative
 					factor = 9
-			}
+				}
 				scaled_militancy = {
 					ideology = reactionary
 					factor = 9
-			}
+				}
 				scaled_militancy = {
 					ideology = liberal
 					factor = 2
+				}
 			}
 			CRT = { set_country_flag = rivera_backed_down }
-			}
-				ai_chance = {
-					factor = 0.01
+			ai_chance = {
+				factor = 0.01
 			}
 		}
 		
@@ -441,10 +446,7 @@ country_event = {
 					tag = CRT
 				}
 				create_alliance = URU
-			relation = {
-				who = URU
-				value = 400
-				}
+				relation = { who = URU value = 400 }
 			}
 			clr_country_flag = corrientes_is_ready_for_war
 			clr_country_flag = rivera_is_true_president
@@ -454,19 +456,19 @@ country_event = {
 				scaled_militancy = {
 					ideology = conservative
 					factor = 2
-			}
+				}
 				scaled_militancy = {
 					ideology = reactionary
 					factor = 3
-			}
+				}
 				scaled_militancy = {
 					ideology = liberal
 					factor = 1
 				}
 			}
-			 casus_belli = { target = ARC type = humiliate months = 36 }
-		ai_chance = {
-			factor = 0.4
+			casus_belli = { target = ARC type = humiliate months = 36 }
+			ai_chance = {
+				factor = 0.4
 			}
 		}
 	}
@@ -490,28 +492,33 @@ country_event = {
 			}
 			end_war = THIS
 		}
-		ARC = { release_vassal = CRT }
+		ARC = {
+			release_vassal = CRT
+		}
+		CRT = { set_country_flag = annex_to_master }
 		war = {
 			target = ARC
-				attacker_goal = { casus_belli = cut_down_to_size }
-				defender_goal = { casus_belli = annex_core_country }
+			attacker_goal = { casus_belli = cut_down_to_size }
+			defender_goal = { casus_belli = make_puppet }
 		}
 		ai_chance = { factor = 0.6 }
 	}
-		option = {
-			name = "EVTOPT600064B"
-			any_country = {
+	
+	option = {
+		name = "EVTOPT600064B"
+		any_country = {
 			limit = {
 				war_with = THIS
 			}
 			end_war = THIS
 		}
-			ARC = { inherit = THIS }
+		ARC = { inherit = THIS }
+		
 		ai_chance = {
 			factor = 0.4
-				}
-			}
+		}
 	}
+}
 	
 country_event = {
 	id = 600065
@@ -520,18 +527,19 @@ country_event = {
 	picture = "guerra_grande"
 	
 	is_triggered_only = yes
-		
+
 	fire_only_once = yes
+	
 	mean_time_to_happen = { days = 5 }
 
 	option = {
 		name = "EVTOPT600065A"
 		add_country_modifier = {
 			name = small_country_draft
-			duration = 365
-			}
+			duration = 30
 		}
 	}
+}
 	
 country_event = {
 	id = 600066
@@ -542,13 +550,13 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-	NOT = { year = 1860 }
-	tag = URU
-	ruling_party_ideology = liberal
-	has_country_flag = war_on_rosas
-	war_with = ARC
-	ARC = { government = presidential_dictatorship }
-		}
+		NOT = { year = 1860 }
+		tag = URU
+		ruling_party_ideology = liberal
+		has_country_flag = war_on_rosas
+		war_with = ARC
+		ARC = { government = presidential_dictatorship }
+	}
 	
 	mean_time_to_happen = { days = 10 }
 	
@@ -558,17 +566,17 @@ country_event = {
 		set_country_flag = garibaldi_italian_legion
 		ai_chance = {
 			factor = 0.99
-				}
 		}
+	}
 		
 	option = {
 		name = "EVTOPT600066B"
 		set_country_flag = refused_garibaldi
 		ai_chance = {
 			factor = 0
-				}
 		}
 	}
+}
 	
 country_event = {
 	id = 600067
@@ -579,16 +587,16 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-	NOT = { year = 1860 }
-	tag = URU
-	ruling_party_ideology = liberal
-	has_country_flag = colorado_rule
-	has_country_flag = war_on_rosas
-	has_country_flag = garibaldi_italian_legion
-	NOT = { has_country_flag = fort_built_garibaldi }
-	NOT = { has_country_flag = refused_garibaldi }
-	war_with = ARC
-		}
+		NOT = { year = 1860 }
+		tag = URU
+		ruling_party_ideology = liberal
+		has_country_flag = colorado_rule
+		has_country_flag = war_on_rosas
+		has_country_flag = garibaldi_italian_legion
+		NOT = { has_country_flag = fort_built_garibaldi }
+		NOT = { has_country_flag = refused_garibaldi }
+		war_with = ARC
+	}
 	
 	mean_time_to_happen = { months = 3 }
 
@@ -596,8 +604,8 @@ country_event = {
 		name = "EVTOPT600067A"
 		2344 = { fort = 2 }
 		set_country_flag = fort_built_garibaldi
-		}
 	}
+}
 	
 country_event = {
 	id = 600068
@@ -606,16 +614,16 @@ country_event = {
 	picture = "garibaldi_raid"
 	
 	trigger = {
-	NOT = { year = 1860 }
-	tag = URU
-	ruling_party_ideology = liberal
-	has_country_flag = colorado_rule
-	has_country_flag = war_on_rosas
-	has_country_flag = garibaldi_italian_legion
-	war_with = ARC
-	any_owned_province = { NOT = { controlled_by = URU } }
-	NOT = { has_country_flag = refused_garibaldi }
-		}
+		NOT = { year = 1860 }
+		tag = URU
+		ruling_party_ideology = liberal
+		has_country_flag = colorado_rule
+		has_country_flag = war_on_rosas
+		has_country_flag = garibaldi_italian_legion
+		war_with = ARC
+		any_owned_province = { NOT = { controlled_by = URU } }
+		NOT = { has_country_flag = refused_garibaldi }
+	}
 	
 	mean_time_to_happen = { months = 6 }
 
@@ -1090,7 +1098,7 @@ country_event = {
 
 	option = {
 		name = "EVTOPT600075A"
-		prestige = 20
+		prestige = 10
 		treasury = 10000
 		clr_country_flag = garibaldi_italian_legion
 		clr_country_flag = oribe_is_true_president
@@ -1099,7 +1107,7 @@ country_event = {
 		relation = {
 			who = ARC
 			value = 400
-				}
+		}
 		any_pop = {	
 			scaled_consciousness = {
 				factor = -4

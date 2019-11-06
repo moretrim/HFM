@@ -1,8 +1,9 @@
 owner = FRA
 controller = FRA
 add_core = FRA
-trade_goods = fruit
+trade_goods = wool
 life_rating = 31
+terrain = forest
 #state_building = {
 #	level = 1
 #	building = winery

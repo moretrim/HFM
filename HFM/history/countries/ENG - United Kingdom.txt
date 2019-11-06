@@ -10,7 +10,7 @@ literacy = 0.6
 civilized = yes
 
 #GreaterPowers = prestige
-prestige = 100
+prestige = 130
 
 
 # Political reforms
@@ -109,7 +109,7 @@ govt_flag = {
 
 foreign_investment = {
 	BEL = 20000
-	POR = 40000
+	POR = 60000
 	DEN = 2000
 }
 

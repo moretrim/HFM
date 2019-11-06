@@ -187,7 +187,7 @@ country_event = {
 			diplomatic_influence = { who = TUR value = -100 }
 			relation = { who = FRA value = -25 }
 		}
-		diplomatic_influence = { who = TUR value = 300 }
+		diplomatic_influence = { who = TUR value = 100 }
 		relation = { who = TUR value = 300 }
 		create_alliance = TUR
 	}
@@ -438,13 +438,35 @@ country_event = {
 	
 	option = {
 		name = "EVT97512OPTA"
-		prestige = -20
-		treasury = -250000
+		prestige_factor = -0.1
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { money = 250000 }
+					NOT = { check_variable = { which = owed_cash_money value = 1 } }
+				} 
+			}
+			owner = { set_variable = { which = owed_cash_money value = 250 } }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { money = 250000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 250 } }
+		}
+		random_owned = {
+			limit = { owner = { money = 250000 } }
+			owner = { treasury = -250000 }
+		}
 		any_owned = {
 			limit = {
 				OR = {
 					province_id = 674
 					province_id = 675
+					province_id = 818
 				}
 			}
 			secede_province = ROM
@@ -550,7 +572,7 @@ country_event = {
 			secede_province = ROM
 		}
 		relation = { who = ROM value = 200 }
-		diplomatic_influence = { who = ROM value = 200 }
+		diplomatic_influence = { who = ROM value = 100 }
 		ROM = {
 			any_pop = { militancy = -8 }
 		}

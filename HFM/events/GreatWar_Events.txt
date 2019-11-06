@@ -123,9 +123,13 @@ country_event = {
 
 	option = {
 		name = "EVT96001OPTA"
-		set_country_flag = calling_all_allies
+		random_owned = {
+			limit = { owner = { ai = yes } }
+			owner = { set_country_flag = calling_all_allies }
+		}
 		random_country = {
 			limit = {
+				NOT = { has_country_modifier = neutrality_modifier }
 				alliance_with = THIS
 				war = no
 			}
@@ -140,28 +144,7 @@ country_event = {
 		}
 	}
 }
-
-country_event = {
-	id = 96002
-	title = "EVTNAME96002"
-	desc = "EVTDESC96002"
-
-	trigger = {
-		ai = yes
-		war = no
-		has_country_flag = calling_all_allies
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	option = {
-		name = "EVT96002OPTA"
-		clr_country_flag = calling_all_allies
-	}
-}
-
+#Candidate for "on_action"
 country_event = {
 	id = 96003
 	title = "EVTNAME96003"
@@ -531,7 +514,7 @@ country_event = {
 			}
 			add_core = RUS
 		}
-				
+
 		#if any Polish cores owned, re-add cores to Germany
 		any_owned = {
 			limit = {
@@ -640,44 +623,19 @@ country_event = {
 			country_event = 96012
 		}
 
-		#release Indonesia, if possible
-		any_country = {
-			limit = {
-				tag = INO
-				exists = no
-				THIS = {
-					owns = 1413
-					owns = 1403
-				}
-				NOT = { exists = BOH }
-				NOT = { exists = SLV }
-			}
-			all_core = {
-				limit = {
-					is_core = THIS
-					state_scope = { NOT = { any_owned_province = { is_capital = yes } } }
-				}
-				remove_core = THIS
-			}
-			country_event = 96012
-		}
-
 		#release non-existing countries			
 		any_country = {
 			limit = {
 				OR = {
 					civilized = yes
 					tag = JAP
-					tag = KOR
-					tag = SIA
-					tag = MOR
-					tag = ALD
-					tag = TUN
-					tag = EGY
 				}
 				any_core = { owned_by = THIS }
 				exists = no
-				is_cultural_union = no
+				OR = {
+					is_cultural_union = no
+					tag = ROM
+				}
 				NOT = {
 					AND = {
 						is_primary_culture = THIS
@@ -697,6 +655,7 @@ country_event = {
 			}
 			country_event = 96012
 		}
+		
 		any_country = {
 			limit = {
 				any_core = { owned_by = THIS }
@@ -722,71 +681,370 @@ country_event = {
 			country_event = 96013
 		}
 
-		#give colonies without cores to truce GP's
-		random_owned = {
+		#################Colonial Dismantlement#################
+		#Give up partial colonies to proper colonial masters
+		
+		random_country = {
 			limit = {
-				OR = {
-					is_overseas = yes
-					is_colonial = yes
-					NOT = { is_core = THIS }
-				}
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NGR } }
+				has_country_flag = nigeria_master
 			}
-			any_country = {
-				limit = {
-					ai = no
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96011
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					ai = yes
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96016
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					is_greater_power = no
-					is_secondary_power = yes
-					is_vassal = no
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96017
-			}
+			country_event = 961000
 		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GNE } }
+				has_country_flag = guinea_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = IVC } }
+				has_country_flag = ivc_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SNG } }
+				has_country_flag = senegal_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NIG } }
+				has_country_flag = niger_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CHD } }
+				has_country_flag = chad_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CMR } }
+				has_country_flag = cameroon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GAB } }
+				has_country_flag = gabon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CGO } }
+				has_country_flag = congo_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CNG } }
+				has_country_flag = zaire_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZAM } }
+				has_country_flag = zambia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = KNY } }
+				has_country_flag = kenya_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = TNZ } }
+				has_country_flag = tanzania_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MLI } }
+				has_country_flag = mali_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ANG } }
+				has_country_flag = angola_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SUD } }
+				has_country_flag = sudan_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GHN } }
+				has_country_flag = ghana_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = BKF } }
+				has_country_flag = burkina_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = INO } }
+				has_country_flag = indonesia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SOM } }
+				owns = 1868
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NMB } }
+				has_country_flag = namibia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GBU } }
+				has_country_flag = guine_bissau_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZBW } }
+				has_country_flag = zimbabwe_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MOZ } }
+				has_country_flag = mozambique_master
+			}
+			country_event = 961000
+		}
+		
+		#Set up modifiers for dismantlement
+		add_country_modifier = { name = being_dismantled duration = 385 }
+		any_country = {
+			limit = {
+				exists = yes
+				truce_with = THIS
+				has_recently_lost_war = no
+				is_vassal = no
+				any_owned_province = { has_building = naval_base }
+				OR = {
+					is_secondary_power = yes
+					is_greater_power = yes
+				}
+			}
+			add_country_modifier = { name = dismantling_country duration = 385 }
+		}
+		
+		#Release India as a vassal so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				OR = {
+					tag = HND
+					tag = NGR
+					tag = INO
+					tag = BUR
+					tag = SIA
+					tag = LXA
+					tag = NYE
+				}
+				OR = {
+					has_country_flag = post_colonial_country
+					tech_school = developing_tech_school
+					capital_scope = {
+						is_colonial = yes
+						owned_by = THIS
+					}
+				}
+			}
+			country_event = 96095
+		}
+		
+		#Release organized colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				capital_scope = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				has_country_flag = post_colonial_country
+			}
+			country_event = 96095
+		}
+		
+		#Release colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				capital_scope = {
+					owned_by = THIS
+					owner = { tech_school = developing_tech_school }
+				}
+			}
+			country_event = 96095
+		}
+		
+		# #give colonies without cores to truce GP's
+		# random_owned = {
+			# limit = {
+				# OR = {
+					# is_overseas = yes
+					# is_colonial = yes
+					# NOT = { is_core = THIS }
+				# }
+			# }
+			# any_country = {
+				# limit = {
+					# ai = no
+					# is_greater_power = yes
+					# exists = yes
+					# has_recently_lost_war = no
+					# is_vassal = no
+					# any_owned_province = { has_building = naval_base }
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = 96011
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# ai = yes
+					# is_greater_power = yes
+					# exists = yes
+					# has_recently_lost_war = no
+					# is_vassal = no
+					# any_owned_province = { has_building = naval_base }
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96016 days = 2 }
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# is_greater_power = no
+					# is_secondary_power = yes
+					# exists = yes
+					# has_recently_lost_war = no
+					# is_vassal = no
+					# any_owned_province = { has_building = naval_base }
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96017 days = 2 }
+			# }
+		# }
+		###################################################
 
 		#add fascism and punitive effects
 		random_owned = {
@@ -852,12 +1110,19 @@ country_event = {
 	option = {
 		name = "EVTOPTA96016" #We will take what we can
 		clr_country_flag = not_want_colonies
-		badboy = 4
+		badboy = 2
 		FROM = {
-			random_state = {
-				limit = { any_owned_province = { NOT = { is_core = FROM } OR = { is_colonial = yes is_overseas = yes } port = yes } }
+			any_owned = {
+				limit = {
+					NOT = { is_core = FROM }
+					OR = {
+						is_colonial = yes
+						is_overseas = yes
+					}
+					port = yes
+				}
 				random_list = {
-					50 = { any_owned = { secede_province = THIS } }
+					50 = { secede_province = THIS }
 					50 = { }
 				}
 			}
@@ -868,12 +1133,19 @@ country_event = {
 	option = {
 		name = "EVTOPTB96016" #Our only interest is limiting $FROMCOUNTRY_ADJ$ power
 		clr_country_flag = not_want_colonies
-		badboy = 2
+		badboy = 1
 		FROM = {
-			random_state = {
-				limit = { any_owned_province = { NOT = { is_core = FROM } OR = { is_colonial = yes is_overseas = yes } port = yes } }
+			any_owned = {
+				limit = {
+					NOT = { is_core = FROM }
+					OR = {
+						is_colonial = yes
+						is_overseas = yes
+					}
+					port = yes
+				}
 				random_list = {
-					25 = { any_owned = { secede_province = THIS } }
+					25 = { secede_province = THIS }
 					75 = { }
 				}
 			}
@@ -1139,6 +1411,17 @@ country_event = {
 	option = {
 		name = "EVTOPTA96015" #$COUNTRY$ shall be free
 		FROM = { release_vassal = THIS }
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						is_culture_group = south_asian
+						is_culture_group = indo_iranian
+					}
+				}
+			}
+			owner = { add_country_modifier = { name = negotiating_treaty duration = 1825 } }
+		}
 		random_country = {
 			limit = {
 				OR = {
@@ -1221,6 +1504,17 @@ country_event = {
 
 	option = {
 		name = "EVTOPTB96015" #$FROMCOUNTRY$ is our ally
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						is_culture_group = south_asian
+						is_culture_group = indo_iranian
+					}
+				}
+			}
+			owner = { add_country_modifier = { name = negotiating_treaty duration = 1825 } }
+		}
 		FROM = { 
 			release_vassal = THIS
 			create_alliance = THIS
@@ -1281,7 +1575,7 @@ country_event = {
 	option = {
 		name = "EVTOPTA96016" #We will take what we can
 		clr_country_flag = not_want_colonies
-		badboy = 4
+		badboy = 2
 		FROM = {
 			random_state = {
 				limit = { any_owned_province = { NOT = { is_core = FROM } OR = { is_colonial = yes is_overseas = yes } port = yes } }
@@ -1317,7 +1611,7 @@ country_event = {
 	option = {
 		name = "EVTOPTB96016" #Our only interest is limiting $FROMCOUNTRY_ADJ$ power
 		clr_country_flag = not_want_colonies
-		badboy = 2
+		badboy = 1
 		FROM = {
 			random_state = {
 				limit = { any_owned_province = { NOT = { is_core = FROM } OR = { is_colonial = yes is_overseas = yes } port = yes } }
@@ -1802,6 +2096,8 @@ country_event = {
 					alliance_with = THIS
 					in_sphere = FROM
 					has_country_flag = great_war_temp_alliance
+					has_country_modifier = neutrality_modifier
+					is_disarmed = yes
 				}
 				OR = {
 					in_sphere = THIS
@@ -1856,7 +2152,7 @@ country_event = {
 							OR = {
 								government = fascist_dictatorship
 								government = proletarian_dictatorship
-								badboy = 1
+								badboy = 0.7
 							}
 						}
 					}
@@ -2398,7 +2694,7 @@ country_event = {
 							OR = {
 								region = PRU_575
 								region = PRU_570
-								region = PRU_578
+								#region = PRU_578
 							}
 						}
 					}
@@ -2429,11 +2725,12 @@ country_event = {
 		random_country = {
 			limit = {
 				tag = FRA
+				truce_with = THIS
 				any_owned_province = {
 					OR = {
 						region = PRU_575
 						region = PRU_570
-						region = PRU_578
+						#region = PRU_578
 					}
 				}
 				THIS = {
@@ -2441,14 +2738,14 @@ country_event = {
 						OR = {
 							region = PRU_575
 							region = PRU_570
-							region = PRU_578
+							#region = PRU_578
 						}
 					}
 				}
 			}
 			PRU_575 = { add_core = RHI }
 			PRU_570 = { add_core = RHI }
-			PRU_578 = { add_core = RHI }
+			#PRU_578 = { add_core = RHI }
 			THIS = {
 				any_owned = {
 					limit = {
@@ -2484,11 +2781,12 @@ country_event = {
 		#Give Eupen-Malmedy to Belgium
 		random_country = {
 			limit = { 
-				owns = 395 
+				owns = 395
+				truce_with = THIS				
 				NOT = { tag = THIS }
-				}
-			country_event = 96091
 			}
+			country_event = 96091
+		}
 		
 		#if France has no truce, add Rhineland cores
 		random_country = {
@@ -2698,16 +2996,13 @@ country_event = {
 				OR = {
 					civilized = yes
 					tag = JAP
-					tag = KOR
-					tag = SIA
-					tag = MOR
-					tag = ALD
-					tag = TUN
-					tag = EGY
 				}
 				any_core = { owned_by = THIS }
 				exists = no
-				is_cultural_union = no
+				OR = {
+					is_cultural_union = no
+					tag = ROM
+				}
 				NOT = { is_culture_group = germanic }
 				NOT = { has_country_flag = post_colonial_country }
 			}
@@ -2783,70 +3078,358 @@ country_event = {
 			AUS = { country_event = 96060 }
 		}
 
-		#give colonies without cores to truce GP's
-		random_owned = {
+		#################Colonial Dismantlement#################
+		#Give up partial colonies to proper colonial masters
+		
+		random_country = {
 			limit = {
-				OR = {
-					is_overseas = yes
-					is_colonial = yes
-				}
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NGR } }
+				has_country_flag = nigeria_master
 			}
-			any_country = {
-				limit = {
-					ai = no
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96011
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					ai = yes
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96016
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					is_greater_power = no
-					is_secondary_power = yes
-					is_vassal = no
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96017
-			}
+			country_event = 961000
 		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GNE } }
+				has_country_flag = guinea_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = IVC } }
+				has_country_flag = ivc_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SNG } }
+				has_country_flag = senegal_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NIG } }
+				has_country_flag = niger_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CHD } }
+				has_country_flag = chad_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CMR } }
+				has_country_flag = cameroon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GAB } }
+				has_country_flag = gabon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CGO } }
+				has_country_flag = congo_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CNG } }
+				has_country_flag = zaire_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZAM } }
+				has_country_flag = zambia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = KNY } }
+				has_country_flag = kenya_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = TNZ } }
+				has_country_flag = tanzania_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MLI } }
+				has_country_flag = mali_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ANG } }
+				has_country_flag = angola_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SUD } }
+				has_country_flag = sudan_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GHN } }
+				has_country_flag = ghana_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = BKF } }
+				has_country_flag = burkina_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = INO } }
+				has_country_flag = indonesia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SOM } }
+				owns = 1868
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NMB } }
+				has_country_flag = namibia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GBU } }
+				has_country_flag = guine_bissau_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZBW } }
+				has_country_flag = zimbabwe_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MOZ } }
+				has_country_flag = mozambique_master
+			}
+			country_event = 961000
+		}
+		#Set up modifiers for dismantlement
+		add_country_modifier = { name = being_dismantled duration = 385 }
+		any_country = {
+			limit = {
+				exists = yes
+				truce_with = THIS
+				has_recently_lost_war = no
+				is_vassal = no
+				any_owned_province = { has_building = naval_base }
+				OR = {
+					is_secondary_power = yes
+					is_greater_power = yes
+				}
+			}
+			add_country_modifier = { name = dismantling_country duration = 385 }
+		}
+		
+		#Release India as a vassal so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				OR = {
+					tag = HND
+					tag = NGR
+					tag = INO
+					tag = BUR
+					tag = SIA
+					tag = LXA
+					tag = NYE
+				}
+				OR = {
+					has_country_flag = post_colonial_country
+					tech_school = developing_tech_school
+					capital_scope = {
+						is_colonial = yes
+						owned_by = THIS
+					}
+				}
+			}
+			country_event = 96095
+		}
+		
+		#Release organized colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				capital_scope = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				has_country_flag = post_colonial_country
+			}
+			country_event = 96095
+		}
+		
+		#Release colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				capital_scope = {
+					owned_by = THIS
+					owner = { tech_school = developing_tech_school }
+				}
+			}
+			country_event = 96095
+		}
+		
+		#give colonies without cores to truce GP's
+		# random_owned = {
+			# limit = {
+				# OR = {
+					# is_overseas = yes
+					# is_colonial = yes
+					# NOT = { is_core = THIS }
+				# }
+			# }
+			# any_country = {
+				# limit = {
+					# ai = no
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = 96011
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# ai = yes
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96016 days = 2 }
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# is_greater_power = no
+					# is_secondary_power = yes
+					# is_vassal = no
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96017 days = 2 }
+			# }
+		# }
+		###################################################
 
 		#add fascism and punitive effects
 		random_owned = {
@@ -3024,25 +3607,43 @@ country_event = {
 			}
 		}
 		
-		any_owned = {
+		#If Japan doesn't have a truce, add cores only to Sakhalin but don't remove Russian cores
+		random_country = {
 			limit = {
-				OR = {
-					province_id = 1086
-					province_id = 1087
-					province_id = 1088
-					province_id = 1089
+				tag = JAP
+				exists = yes
+				NOT = { truce_with = THIS }
+			}
+			RUS = {
+				any_owned = {
+					limit = { region = JAP_1086 }
+					add_core = JAP
 				}
 			}
-			add_core = KAM
+		}
+		
+		random_country = {
+			limit = {
+				tag = TKG
+				exists = yes
+				NOT = { truce_with = THIS }
+			}
+			RUS = {
+				any_owned = {
+					limit = { region = JAP_1086 }
+					add_core = TKG
+				}
+			}
 		}
 
-		#remove cores from Congress Poland provinces if any owned
+		#remove cores from Congress Poland provinces if any owned and Poland doesn't exist
 		random_owned = {
 			limit = {
 				OR = {
 					is_core = POL
 					is_core = PLC
 				}
+				POL = { exists = no }
 			}
 			RUS_706 = {
 				remove_core = RUS
@@ -3059,6 +3660,29 @@ country_event = {
 			719 = {
 				remove_core = RUS
 				add_core = CPL
+			}
+		}
+		
+		#remove cores from Poland provinces if any owned and Poland exists
+		random_owned = {
+			limit = {
+				OR = {
+					is_core = POL
+					is_core = PLC
+				}
+				POL = { exists = yes }
+			}
+			RUS_706 = {
+				remove_core = RUS
+			}
+			RUS_715 = {
+				remove_core = RUS
+			}
+			707 = {
+				remove_core = RUS
+			}
+			719 = {
+				remove_core = RUS
 			}
 		}
 		
@@ -3135,8 +3759,8 @@ country_event = {
 					}
 				}
 			}
-		add_core = FIN
-		add_core = SCA
+			add_core = FIN
+			add_core = SCA
         }
 		random_owned = {
 			limit = {
@@ -3229,10 +3853,20 @@ country_event = {
 			political_reform = first_past_the_post
 			political_reform = culture_voting_only
 			ruling_party_ideology = conservative
+			
+			clr_country_flag = election_started
+			clr_country_flag = conservative_party_in_power
+			clr_country_flag = liberal_party_in_power
+			clr_country_flag = reactionary_party_in_power
+			clr_country_flag = socialist_party_in_power
+			clr_country_flag = communist_party_in_power
+			clr_country_flag = fascist_party_in_power
+			clr_country_flag = anarcho_liberal_party_in_power
+			
 			country_event = 96012
 		}
 		
-		#If Estonia, Latvia, Crimea, Ukraine and Lithuania does not exist, release it 
+		#If Estonia, Latvia, Crimea, Ukraine, Romania and Lithuania do not exist, release it 
 		any_country = {
 			limit = {
 				OR = {
@@ -3254,10 +3888,20 @@ country_event = {
 			political_reform = first_past_the_post
 			political_reform = culture_voting_only
 			ruling_party_ideology = conservative
+			
+			clr_country_flag = election_started
+			clr_country_flag = conservative_party_in_power
+			clr_country_flag = liberal_party_in_power
+			clr_country_flag = reactionary_party_in_power
+			clr_country_flag = socialist_party_in_power
+			clr_country_flag = communist_party_in_power
+			clr_country_flag = fascist_party_in_power
+			clr_country_flag = anarcho_liberal_party_in_power
+			
 			country_event = 96012
 		}
 		
-		#release Bukkhara as a vassal to a European GP
+		#release Bukhara as a vassal to a European GP
 		any_country = {
 			limit = {
 				tag = BUK
@@ -3305,12 +3949,6 @@ country_event = {
 				OR = {
 					civilized = yes
 					tag = JAP
-					tag = KOR
-					tag = SIA
-					tag = MOR
-					tag = ALD
-					tag = TUN
-					tag = EGY
 				}
 				NOT = {
 					tag = AKH
@@ -3332,7 +3970,10 @@ country_event = {
 				}
 				any_core = { owned_by = THIS }
 				exists = no
-				is_cultural_union = no
+				OR = {
+					is_cultural_union = no
+					tag = ROM
+				}
 				NOT = { is_culture_group = east_slavic }
 				NOT = { has_country_flag = post_colonial_country }
 			}
@@ -3365,10 +4006,20 @@ country_event = {
 			political_reform = first_past_the_post
 			political_reform = culture_voting_only
 			ruling_party_ideology = conservative
+			
+			clr_country_flag = election_started
+			clr_country_flag = conservative_party_in_power
+			clr_country_flag = liberal_party_in_power
+			clr_country_flag = reactionary_party_in_power
+			clr_country_flag = socialist_party_in_power
+			clr_country_flag = communist_party_in_power
+			clr_country_flag = fascist_party_in_power
+			clr_country_flag = anarcho_liberal_party_in_power
+			
 			country_event = 96060
 		}
 		
-		#If Ural Republic does not exist, 30% chance to release it as an ally
+		#If Ural Republic does not exist, 25% chance to release it as an ally
 		any_country = {
 			limit = {
 				tag = URA
@@ -3376,7 +4027,7 @@ country_event = {
 				any_core = { owned_by = THIS }
 			}
 			random = {
-				chance = 30
+				chance = 25
 				country_event = 96060
 			}
 		}
@@ -3394,24 +4045,37 @@ country_event = {
 			country_event = 96013
 		}
 		
-		#If Tannu Tuva does not exist, release it as an ally
+		#If Tannu Tuva does not exist, 25% chance to release it as an ally
 		any_country = {
 			limit = {
 				tag = TNT
 				exists = no
 				any_core = { owned_by = THIS }
 			}
-			government = democracy
-			political_reform = population_equal_weight
-			political_reform = wealth_weighted_voting
-			political_reform = yes_meeting
-			political_reform = state_press
-			political_reform = no_trade_unions
-			political_reform = gerrymandering
-			political_reform = first_past_the_post
-			political_reform = culture_voting_only
-			ruling_party_ideology = conservative
-			country_event = 96060
+			random = {
+				chance = 25
+				government = democracy
+				political_reform = population_equal_weight
+				political_reform = wealth_weighted_voting
+				political_reform = yes_meeting
+				political_reform = state_press
+				political_reform = no_trade_unions
+				political_reform = gerrymandering
+				political_reform = first_past_the_post
+				political_reform = culture_voting_only
+				ruling_party_ideology = conservative
+				
+				clr_country_flag = election_started
+				clr_country_flag = conservative_party_in_power
+				clr_country_flag = liberal_party_in_power
+				clr_country_flag = reactionary_party_in_power
+				clr_country_flag = socialist_party_in_power
+				clr_country_flag = communist_party_in_power
+				clr_country_flag = fascist_party_in_power
+				clr_country_flag = anarcho_liberal_party_in_power
+				
+				country_event = 96060
+			}
 		}
 		
 		#If MGL does not exist, release it 
@@ -3441,6 +4105,16 @@ country_event = {
 			political_reform = first_past_the_post
 			political_reform = culture_voting_only
 			ruling_party_ideology = conservative
+			
+			clr_country_flag = election_started
+			clr_country_flag = conservative_party_in_power
+			clr_country_flag = liberal_party_in_power
+			clr_country_flag = reactionary_party_in_power
+			clr_country_flag = socialist_party_in_power
+			clr_country_flag = communist_party_in_power
+			clr_country_flag = fascist_party_in_power
+			clr_country_flag = anarcho_liberal_party_in_power
+			
 			country_event = 96060
 		}
 		
@@ -3461,6 +4135,16 @@ country_event = {
 			political_reform = first_past_the_post
 			political_reform = culture_voting_only
 			ruling_party_ideology = conservative
+			
+			clr_country_flag = election_started
+			clr_country_flag = conservative_party_in_power
+			clr_country_flag = liberal_party_in_power
+			clr_country_flag = reactionary_party_in_power
+			clr_country_flag = socialist_party_in_power
+			clr_country_flag = communist_party_in_power
+			clr_country_flag = fascist_party_in_power
+			clr_country_flag = anarcho_liberal_party_in_power
+			
 			country_event = 96060
 		}
 		
@@ -3481,6 +4165,16 @@ country_event = {
 			political_reform = first_past_the_post
 			political_reform = culture_voting_only
 			ruling_party_ideology = conservative
+			
+			clr_country_flag = election_started
+			clr_country_flag = conservative_party_in_power
+			clr_country_flag = liberal_party_in_power
+			clr_country_flag = reactionary_party_in_power
+			clr_country_flag = socialist_party_in_power
+			clr_country_flag = communist_party_in_power
+			clr_country_flag = fascist_party_in_power
+			clr_country_flag = anarcho_liberal_party_in_power
+			
 			country_event = 96060
 		}
 		
@@ -3501,6 +4195,16 @@ country_event = {
 			political_reform = first_past_the_post
 			political_reform = culture_voting_only
 			ruling_party_ideology = conservative
+			
+			clr_country_flag = election_started
+			clr_country_flag = conservative_party_in_power
+			clr_country_flag = liberal_party_in_power
+			clr_country_flag = reactionary_party_in_power
+			clr_country_flag = socialist_party_in_power
+			clr_country_flag = communist_party_in_power
+			clr_country_flag = fascist_party_in_power
+			clr_country_flag = anarcho_liberal_party_in_power
+			
 			country_event = 96060
 		}
 		
@@ -3521,85 +4225,29 @@ country_event = {
 			political_reform = first_past_the_post
 			political_reform = culture_voting_only
 			ruling_party_ideology = conservative
+			
+			clr_country_flag = election_started
+			clr_country_flag = conservative_party_in_power
+			clr_country_flag = liberal_party_in_power
+			clr_country_flag = reactionary_party_in_power
+			clr_country_flag = socialist_party_in_power
+			clr_country_flag = communist_party_in_power
+			clr_country_flag = fascist_party_in_power
+			clr_country_flag = anarcho_liberal_party_in_power
+			
 			country_event = 96060
 		}
 		
-		#If Dagestan does not exist, release it 
+		#If Dagestan does not exist, 25% chance to release it 
 		any_country = {
 			limit = {
 				tag = DAG
 				exists = no
 				any_core = { owned_by = THIS }
 			}
-			civilized = yes
-			government = democracy
-			political_reform = population_equal_weight
-			political_reform = wealth_weighted_voting
-			political_reform = yes_meeting
-			political_reform = state_press
-			political_reform = no_trade_unions
-			political_reform = gerrymandering
-			political_reform = first_past_the_post
-			political_reform = culture_voting_only
-			ruling_party_ideology = conservative
-			country_event = 96060
-		}
-		
-		#If Chechnya does not exist, release it 
-		any_country = {
-			limit = {
-				tag = CHY
-				exists = no
-				any_core = { owned_by = THIS }
-			}
-			civilized = yes
-			government = democracy
-			political_reform = population_equal_weight
-			political_reform = wealth_weighted_voting
-			political_reform = yes_meeting
-			political_reform = state_press
-			political_reform = no_trade_unions
-			political_reform = gerrymandering
-			political_reform = first_past_the_post
-			political_reform = culture_voting_only
-			ruling_party_ideology = conservative
-			country_event = 96060
-		}
-		
-		#If Circassia does not exist, release it 
-		any_country = {
-			limit = {
-				tag = CIR
-				exists = no
-				any_core = { owned_by = THIS }
-			}
-			civilized = yes
-			government = democracy
-			political_reform = population_equal_weight
-			political_reform = wealth_weighted_voting
-			political_reform = yes_meeting
-			political_reform = state_press
-			political_reform = no_trade_unions
-			political_reform = gerrymandering
-			political_reform = first_past_the_post
-			political_reform = culture_voting_only
-			ruling_party_ideology = conservative
-			country_event = 96060
-		}
-		
-		#If Kamchatka does not exist, release it (50% chance)
-		any_country = {
-			limit = {
-				tag = KAM
-				exists = no
-				any_core = {
-					owned_by = THIS
-					is_colonial = no
-				}
-			}
 			random = {
-				chance = 50
-				country_event = 96012
+				chance = 25
+				civilized = yes
 				government = democracy
 				political_reform = population_equal_weight
 				political_reform = wealth_weighted_voting
@@ -3610,10 +4258,137 @@ country_event = {
 				political_reform = first_past_the_post
 				political_reform = culture_voting_only
 				ruling_party_ideology = conservative
+				
+				clr_country_flag = election_started
+				clr_country_flag = conservative_party_in_power
+				clr_country_flag = liberal_party_in_power
+				clr_country_flag = reactionary_party_in_power
+				clr_country_flag = socialist_party_in_power
+				clr_country_flag = communist_party_in_power
+				clr_country_flag = fascist_party_in_power
+				clr_country_flag = anarcho_liberal_party_in_power
+				
+				country_event = 96060
 			}
 		}
 		
-		#If Buryatia does not exist, 50% chance of release it if Kamchatka is free
+		#If Chechnya does not exist, 25% chance to release it 
+		any_country = {
+			limit = {
+				tag = CHY
+				exists = no
+				any_core = { owned_by = THIS }
+			}
+			random = {
+				chance = 25
+				civilized = yes
+				government = democracy
+				political_reform = population_equal_weight
+				political_reform = wealth_weighted_voting
+				political_reform = yes_meeting
+				political_reform = state_press
+				political_reform = no_trade_unions
+				political_reform = gerrymandering
+				political_reform = first_past_the_post
+				political_reform = culture_voting_only
+				ruling_party_ideology = conservative
+				
+				clr_country_flag = election_started
+				clr_country_flag = conservative_party_in_power
+				clr_country_flag = liberal_party_in_power
+				clr_country_flag = reactionary_party_in_power
+				clr_country_flag = socialist_party_in_power
+				clr_country_flag = communist_party_in_power
+				clr_country_flag = fascist_party_in_power
+				clr_country_flag = anarcho_liberal_party_in_power
+				
+				country_event = 96060
+			}
+		}
+		
+		#If Circassia does not exist, 25% chance to release it 
+		any_country = {
+			limit = {
+				tag = CIR
+				exists = no
+				any_core = { owned_by = THIS }
+			}
+			random = {
+				chance = 25
+				civilized = yes
+				government = democracy
+				political_reform = population_equal_weight
+				political_reform = wealth_weighted_voting
+				political_reform = yes_meeting
+				political_reform = state_press
+				political_reform = no_trade_unions
+				political_reform = gerrymandering
+				political_reform = first_past_the_post
+				political_reform = culture_voting_only
+				ruling_party_ideology = conservative
+				
+				clr_country_flag = election_started
+				clr_country_flag = conservative_party_in_power
+				clr_country_flag = liberal_party_in_power
+				clr_country_flag = reactionary_party_in_power
+				clr_country_flag = socialist_party_in_power
+				clr_country_flag = communist_party_in_power
+				clr_country_flag = fascist_party_in_power
+				clr_country_flag = anarcho_liberal_party_in_power
+				
+				country_event = 96060
+			}
+		}
+		
+		#If Kamchatka does not exist, release it (34% chance)
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 1086
+					province_id = 1087
+					province_id = 1088
+					province_id = 1089
+				}
+			}
+			add_core = KAM
+		}
+		
+		any_country = {
+			limit = {
+				tag = KAM
+				exists = no
+				any_core = {
+					owned_by = THIS
+					is_colonial = no
+				}
+			}
+			random = {
+				chance = 34
+				country_event = 96012
+				government = democracy
+				political_reform = population_equal_weight
+				political_reform = wealth_weighted_voting
+				political_reform = yes_meeting
+				political_reform = state_press
+				political_reform = no_trade_unions
+				political_reform = gerrymandering
+				political_reform = first_past_the_post
+				political_reform = culture_voting_only
+				
+				clr_country_flag = election_started
+				clr_country_flag = conservative_party_in_power
+				clr_country_flag = liberal_party_in_power
+				clr_country_flag = reactionary_party_in_power
+				clr_country_flag = socialist_party_in_power
+				clr_country_flag = communist_party_in_power
+				clr_country_flag = fascist_party_in_power
+				clr_country_flag = anarcho_liberal_party_in_power
+				
+				ruling_party_ideology = conservative
+			}
+		}
+		
+		#If Buryatia does not exist, 25% chance of release it if Kamchatka is free
 		any_country = {
 			limit = {
 				tag = BRY
@@ -3626,7 +4401,7 @@ country_event = {
 			}
 			
 			random = {
-				chance = 50
+				chance = 25
 				civilized = yes
 				government = democracy
 				political_reform = population_equal_weight
@@ -3638,11 +4413,21 @@ country_event = {
 				political_reform = first_past_the_post
 				political_reform = culture_voting_only
 				ruling_party_ideology = conservative
+				
+				clr_country_flag = election_started
+				clr_country_flag = conservative_party_in_power
+				clr_country_flag = liberal_party_in_power
+				clr_country_flag = reactionary_party_in_power
+				clr_country_flag = socialist_party_in_power
+				clr_country_flag = communist_party_in_power
+				clr_country_flag = fascist_party_in_power
+				clr_country_flag = anarcho_liberal_party_in_power
+				
 				country_event = 96060
 			}
 		}
 		
-		#If Cossack Union does not exist, 50% chance to release if Ukraine is free
+		#If Cossack Union does not exist, 25% chance to release if Ukraine is free
 		any_country = {
 			limit = {
 				tag = DON
@@ -3654,7 +4439,7 @@ country_event = {
 				}
 			}
 			random = {
-				chance = 50
+				chance = 25
 				government = democracy
 				political_reform = population_equal_weight
 				political_reform = wealth_weighted_voting
@@ -3665,6 +4450,16 @@ country_event = {
 				political_reform = first_past_the_post
 				political_reform = culture_voting_only
 				ruling_party_ideology = conservative
+				
+				clr_country_flag = election_started
+				clr_country_flag = conservative_party_in_power
+				clr_country_flag = liberal_party_in_power
+				clr_country_flag = reactionary_party_in_power
+				clr_country_flag = socialist_party_in_power
+				clr_country_flag = communist_party_in_power
+				clr_country_flag = fascist_party_in_power
+				clr_country_flag = anarcho_liberal_party_in_power
+				
 				country_event = 96060
 			}
 		}
@@ -3689,15 +4484,25 @@ country_event = {
 						any_core = { owned_by = THIS }
 					}
 					government = democracy
-				political_reform = population_equal_weight
-				political_reform = wealth_weighted_voting
-				political_reform = yes_meeting
-				political_reform = state_press
-				political_reform = no_trade_unions
-				political_reform = gerrymandering
-				political_reform = first_past_the_post
-				political_reform = culture_voting_only
-				ruling_party_ideology = conservative
+					political_reform = population_equal_weight
+					political_reform = wealth_weighted_voting
+					political_reform = yes_meeting
+					political_reform = state_press
+					political_reform = no_trade_unions
+					political_reform = gerrymandering
+					political_reform = first_past_the_post
+					political_reform = culture_voting_only
+					ruling_party_ideology = conservative
+					
+					clr_country_flag = election_started
+					clr_country_flag = conservative_party_in_power
+					clr_country_flag = liberal_party_in_power
+					clr_country_flag = reactionary_party_in_power
+					clr_country_flag = socialist_party_in_power
+					clr_country_flag = communist_party_in_power
+					clr_country_flag = fascist_party_in_power
+					clr_country_flag = anarcho_liberal_party_in_power
+					
 					country_event = 96060
 				}
 				any_country = {
@@ -3707,15 +4512,25 @@ country_event = {
 						any_core = { owned_by = THIS }
 					}
 					government = democracy
-				political_reform = population_equal_weight
-				political_reform = wealth_weighted_voting
-				political_reform = yes_meeting
-				political_reform = state_press
-				political_reform = no_trade_unions
-				political_reform = gerrymandering
-				political_reform = first_past_the_post
-				political_reform = culture_voting_only
-				ruling_party_ideology = conservative
+					political_reform = population_equal_weight
+					political_reform = wealth_weighted_voting
+					political_reform = yes_meeting
+					political_reform = state_press
+					political_reform = no_trade_unions
+					political_reform = gerrymandering
+					political_reform = first_past_the_post
+					political_reform = culture_voting_only
+					ruling_party_ideology = conservative
+					
+					clr_country_flag = election_started
+					clr_country_flag = conservative_party_in_power
+					clr_country_flag = liberal_party_in_power
+					clr_country_flag = reactionary_party_in_power
+					clr_country_flag = socialist_party_in_power
+					clr_country_flag = communist_party_in_power
+					clr_country_flag = fascist_party_in_power
+					clr_country_flag = anarcho_liberal_party_in_power
+					
 					country_event = 96012
 				}
 			}
@@ -3741,69 +4556,358 @@ country_event = {
 				}
 			}
 		}
+		#################Colonial Dismantlement#################
+		#Give up partial colonies to proper colonial masters
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NGR } }
+				has_country_flag = nigeria_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GNE } }
+				has_country_flag = guinea_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = IVC } }
+				has_country_flag = ivc_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SNG } }
+				has_country_flag = senegal_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NIG } }
+				has_country_flag = niger_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CHD } }
+				has_country_flag = chad_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CMR } }
+				has_country_flag = cameroon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GAB } }
+				has_country_flag = gabon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CGO } }
+				has_country_flag = congo_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CNG } }
+				has_country_flag = zaire_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZAM } }
+				has_country_flag = zambia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = KNY } }
+				has_country_flag = kenya_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = TNZ } }
+				has_country_flag = tanzania_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MLI } }
+				has_country_flag = mali_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ANG } }
+				has_country_flag = angola_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SUD } }
+				has_country_flag = sudan_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GHN } }
+				has_country_flag = ghana_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = BKF } }
+				has_country_flag = burkina_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = INO } }
+				has_country_flag = indonesia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SOM } }
+				owns = 1868
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NMB } }
+				has_country_flag = namibia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GBU } }
+				has_country_flag = guine_bissau_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZBW } }
+				has_country_flag = zimbabwe_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MOZ } }
+				has_country_flag = mozambique_master
+			}
+			country_event = 961000
+		}
+		#Set up modifiers for dismantlement
+		add_country_modifier = { name = being_dismantled duration = 385 }
+		any_country = {
+			limit = {
+				exists = yes
+				truce_with = THIS
+				has_recently_lost_war = no
+				is_vassal = no
+				any_owned_province = { has_building = naval_base }
+				OR = {
+					is_secondary_power = yes
+					is_greater_power = yes
+				}
+			}
+			add_country_modifier = { name = dismantling_country duration = 385 }
+		}
+		
+		#Release India as a vassal so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				OR = {
+					tag = HND
+					tag = NGR
+					tag = INO
+					tag = BUR
+					tag = SIA
+					tag = LXA
+					tag = NYE
+				}
+				OR = {
+					has_country_flag = post_colonial_country
+					tech_school = developing_tech_school
+					capital_scope = {
+						is_colonial = yes
+						owned_by = THIS
+					}
+				}
+			}
+			country_event = 96095
+		}
+		
+		#Release organized colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				capital_scope = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				has_country_flag = post_colonial_country
+			}
+			country_event = 96095
+		}
+		
+		#Release colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				capital_scope = {
+					owned_by = THIS
+					owner = { tech_school = developing_tech_school }
+				}
+			}
+			country_event = 96095
+		}
 		
 		#give colonies without cores to truce GP's
-		random_owned = {
-			limit = {
-				is_overseas = yes
-			}
-			any_country = {
-				limit = {
-					ai = no
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96011
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					ai = yes
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96016
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					is_greater_power = no
-					is_secondary_power = yes
-					is_vassal = no
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96017
-			}
-		}
-
+		# random_owned = {
+			# limit = {
+				# OR = {
+					# is_overseas = yes
+					# is_colonial = yes
+					# NOT = { is_core = THIS }
+				# }
+			# }
+			# any_country = {
+				# limit = {
+					# ai = no
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = 96011
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# ai = yes
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96016 days = 2 }
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# is_greater_power = no
+					# is_secondary_power = yes
+					# is_vassal = no
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96017 days = 2 }
+			# }
+		# }
+		###################################################
 		#add fascism and punitive effects
 		random_owned = {
 			limit = {
@@ -4089,16 +5193,13 @@ country_event = {
 				OR = {
 					civilized = yes
 					tag = JAP
-					tag = KOR
-					tag = SIA
-					tag = MOR
-					tag = ALD
-					tag = TUN
-					tag = EGY
 				}
 				any_core = { owned_by = THIS }
 				exists = no
-				is_cultural_union = no
+				OR = {
+					is_cultural_union = no
+					tag = ROM
+				}
 				NOT = { is_culture_group = american_cultures }
 				NOT = { has_country_flag = post_colonial_country }
 			}
@@ -4176,67 +5277,358 @@ country_event = {
 			country_event = 96013
 		}
 
-		#give colonies without cores to truce GP's
-		random_owned = {
+		#################Colonial Dismantlement#################
+		#Give up partial colonies to proper colonial masters
+		
+		random_country = {
 			limit = {
-				is_overseas = yes
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NGR } }
+				has_country_flag = nigeria_master
 			}
-			any_country = {
-				limit = {
-					ai = no
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96011
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					ai = yes
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96016
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					is_greater_power = no
-					is_secondary_power = yes
-					is_vassal = no
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96017
-			}
+			country_event = 961000
 		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GNE } }
+				has_country_flag = guinea_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = IVC } }
+				has_country_flag = ivc_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SNG } }
+				has_country_flag = senegal_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NIG } }
+				has_country_flag = niger_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CHD } }
+				has_country_flag = chad_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CMR } }
+				has_country_flag = cameroon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GAB } }
+				has_country_flag = gabon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CGO } }
+				has_country_flag = congo_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CNG } }
+				has_country_flag = zaire_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZAM } }
+				has_country_flag = zambia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = KNY } }
+				has_country_flag = kenya_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = TNZ } }
+				has_country_flag = tanzania_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MLI } }
+				has_country_flag = mali_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ANG } }
+				has_country_flag = angola_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SUD } }
+				has_country_flag = sudan_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GHN } }
+				has_country_flag = ghana_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = BKF } }
+				has_country_flag = burkina_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = INO } }
+				has_country_flag = indonesia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SOM } }
+				owns = 1868
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NMB } }
+				has_country_flag = namibia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GBU } }
+				has_country_flag = guine_bissau_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZBW } }
+				has_country_flag = zimbabwe_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MOZ } }
+				has_country_flag = mozambique_master
+			}
+			country_event = 961000
+		}
+		#Set up modifiers for dismantlement
+		add_country_modifier = { name = being_dismantled duration = 385 }
+		any_country = {
+			limit = {
+				exists = yes
+				truce_with = THIS
+				has_recently_lost_war = no
+				is_vassal = no
+				any_owned_province = { has_building = naval_base }
+				OR = {
+					is_secondary_power = yes
+					is_greater_power = yes
+				}
+			}
+			add_country_modifier = { name = dismantling_country duration = 385 }
+		}
+		
+		#Release India as a vassal so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				OR = {
+					tag = HND
+					tag = NGR
+					tag = INO
+					tag = BUR
+					tag = SIA
+					tag = LXA
+					tag = NYE
+				}
+				OR = {
+					has_country_flag = post_colonial_country
+					tech_school = developing_tech_school
+					capital_scope = {
+						is_colonial = yes
+						owned_by = THIS
+					}
+				}
+			}
+			country_event = 96095
+		}
+		
+		#Release organized colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				capital_scope = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				has_country_flag = post_colonial_country
+			}
+			country_event = 96095
+		}
+		
+		#Release colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				capital_scope = {
+					owned_by = THIS
+					owner = { tech_school = developing_tech_school }
+				}
+			}
+			country_event = 96095
+		}
+		
+		#give colonies without cores to truce GP's
+		# random_owned = {
+			# limit = {
+				# OR = {
+					# is_overseas = yes
+					# is_colonial = yes
+					# NOT = { is_core = THIS }
+				# }
+			# }
+			# any_country = {
+				# limit = {
+					# ai = no
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = 96011
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# ai = yes
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96016 days = 2 }
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# is_greater_power = no
+					# is_secondary_power = yes
+					# is_vassal = no
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96017 days = 2 }
+			# }
+		# }
+		###################################################
 
 		#add fascism and punitive effects
 		random_owned = {
@@ -4484,42 +5876,31 @@ country_event = {
 			country_event = 96014
 		}
 
-		#release all vassals
-		any_country = {
-			limit = { vassal_of = THIS }
-			all_core = {
-				limit = { is_core = THIS }
-				remove_core = THIS
-			}
-			leave_alliance = THIS
-			country_event = 96015
-		}
-
 		#release 50% of non-existing Indian minors as allies
-		any_country = {
-			limit = {
-				OR = {
-					tag = MAH
-					tag = MUG
-					tag = BNG
-				}
-				any_core = { owned_by = THIS }
-				exists = no
-				civilized = no
-			}
-		}
-		any_country = {
-			limit = {
-				any_core = { owned_by = THIS }
-				exists = no
-				is_cultural_union = no
-				is_culture_group = south_asian
-			}
-			random = {
-				chance = 50
-				country_event = 96060
-			}
-		}
+		#any_country = {
+		#	limit = {
+		#		OR = {
+		#			tag = MAH
+		#			tag = MUG
+		#			tag = BNG
+		#		}
+		#		any_core = { owned_by = THIS }
+		#		exists = no
+		#		civilized = no
+		#	}
+		#}
+		#any_country = {
+		#	limit = {
+		#		any_core = { owned_by = THIS }
+		#		exists = no
+		#		is_cultural_union = no
+		#		is_culture_group = south_asian
+		#	}
+		#	random = {
+		#		chance = 50
+		#		country_event = 96060
+		#	}
+		#}
 
 		#free Ireland, Canada, South Africa, Australia and New Zealand
 		any_country = {
@@ -4539,7 +5920,20 @@ country_event = {
 				remove_core = THIS
 			}
 			country_event = 96060
-		}				
+		}
+		#Free Rhodesia
+		any_owned = {
+			limit = {
+				is_core = RHO
+				OR = {
+					region = ENG_2014
+					region = ENG_2016
+					region = ENG_2068
+					region = ENG_2071
+				}
+			}
+			secede_province = RHO
+		}
 
 		#release non-existing countries		
 		any_country = {
@@ -4547,18 +5941,16 @@ country_event = {
 				OR = {
 					civilized = yes
 					tag = JAP
-					tag = KOR
-					tag = SIA
-					tag = MOR
-					tag = ALD
-					tag = TUN
-					tag = EGY
 				}
 				any_core = { owned_by = THIS }
 				exists = no
-				is_cultural_union = no
+				OR = {
+					is_cultural_union = no
+					tag = ROM
+				}
 				NOT = { is_culture_group = british }
 				NOT = { has_country_flag = post_colonial_country }
+				NOT = { tag = TTB }
 			}
 			all_core = {
 				limit = {
@@ -4582,72 +5974,372 @@ country_event = {
 			}
 			country_event = 96013
 		}
-
-		#give colonies to truce GP's
-		random_owned = {
-			limit = {
-				OR = {
-					is_overseas = yes
-					is_colonial = yes
-				}
+		
+		#release all vassals
+		any_country = {
+			limit = { vassal_of = THIS }
+			all_core = {
+				limit = { is_core = THIS }
+				remove_core = THIS
 			}
-			any_country = {
-				limit = {
-					ai = no
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96011
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					ai = yes
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96016
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					is_greater_power = no
-					is_secondary_power = yes
-					is_vassal = no
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96017
-			}
+			leave_alliance = THIS
+			country_event = 96015
 		}
 
+		#################Colonial Dismantlement#################
+		#Give up partial colonies to proper colonial masters
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NGR } }
+				has_country_flag = nigeria_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GNE } }
+				has_country_flag = guinea_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = IVC } }
+				has_country_flag = ivc_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SNG } }
+				has_country_flag = senegal_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NIG } }
+				has_country_flag = niger_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CHD } }
+				has_country_flag = chad_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CMR } }
+				has_country_flag = cameroon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GAB } }
+				has_country_flag = gabon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CGO } }
+				has_country_flag = congo_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CNG } }
+				has_country_flag = zaire_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZAM } }
+				has_country_flag = zambia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = KNY } }
+				has_country_flag = kenya_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = TNZ } }
+				has_country_flag = tanzania_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MLI } }
+				has_country_flag = mali_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ANG } }
+				has_country_flag = angola_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SUD } }
+				has_country_flag = sudan_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GHN } }
+				has_country_flag = ghana_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = BKF } }
+				has_country_flag = burkina_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = INO } }
+				has_country_flag = indonesia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SOM } }
+				owns = 1868
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NMB } }
+				has_country_flag = namibia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GBU } }
+				has_country_flag = guine_bissau_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZBW } }
+				has_country_flag = zimbabwe_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MOZ } }
+				has_country_flag = mozambique_master
+			}
+			country_event = 961000
+		}
+		
+		#Set up modifiers for dismantlement
+		add_country_modifier = { name = being_dismantled duration = 385 }
+		any_country = {
+			limit = {
+				exists = yes
+				truce_with = THIS
+				has_recently_lost_war = no
+				is_vassal = no
+				any_owned_province = { has_building = naval_base }
+				OR = {
+					is_secondary_power = yes
+					is_greater_power = yes
+				}
+			}
+			add_country_modifier = { name = dismantling_country duration = 385 }
+		}
+		
+		#Release India as a vassal so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				OR = {
+					tag = HND
+					tag = NGR
+					tag = INO
+					tag = BUR
+					tag = SIA
+					tag = LXA
+					tag = NYE
+				}
+				OR = {
+					has_country_flag = post_colonial_country
+					tech_school = developing_tech_school
+					capital_scope = {
+						is_colonial = yes
+						owned_by = THIS
+					}
+				}
+			}
+			country_event = 96095
+		}
+		
+		#Release organized colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				capital_scope = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				has_country_flag = post_colonial_country
+			}
+			country_event = 96095
+		}
+		
+		#Release colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				capital_scope = {
+					owned_by = THIS
+					owner = { tech_school = developing_tech_school }
+				}
+			}
+			country_event = 96095
+		}
+		
+		#give colonies without cores to truce GP's
+		# random_owned = {
+			# limit = {
+				# OR = {
+					# is_overseas = yes
+					# is_colonial = yes
+					# NOT = { is_core = THIS }
+				# }
+			# }
+			# any_country = {
+				# limit = {
+					# ai = no
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = 96011
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# ai = yes
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96016 days = 2 }
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# is_greater_power = no
+					# is_secondary_power = yes
+					# is_vassal = no
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96017 days = 2 }
+			# }
+		# }
+		###################################################
+		
 		#add fascism and punitive effects
 		random_owned = {
 			limit = {
@@ -4900,16 +6592,14 @@ country_event = {
 			limit = {
 				OR = {
 					civilized = yes
-					tag = KOR
-					tag = SIA
-					tag = MOR
-					tag = ALD
-					tag = TUN
-					tag = EGY
+					tag = JAP
 				}
 				any_core = { owned_by = THIS }
 				exists = no
-				is_cultural_union = no
+				OR = {
+					is_cultural_union = no
+					tag = ROM
+				}
 				NOT = { has_country_flag = post_colonial_country }
 			}
 			all_core = {
@@ -4935,70 +6625,358 @@ country_event = {
 			country_event = 96013
 		}
 
-		#give colonies to truce GP's
-		random_owned = {
+		#################Colonial Dismantlement#################
+		#Give up partial colonies to proper colonial masters
+		
+		random_country = {
 			limit = {
-				OR = {
-					is_overseas = yes
-					is_colonial = yes
-				}
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NGR } }
+				has_country_flag = nigeria_master
 			}
-			any_country = {
-				limit = {
-					ai = no
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96011
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					ai = yes
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96016
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					is_greater_power = no
-					is_secondary_power = yes
-					is_vassal = no
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96017
-			}
+			country_event = 961000
 		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GNE } }
+				has_country_flag = guinea_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = IVC } }
+				has_country_flag = ivc_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SNG } }
+				has_country_flag = senegal_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NIG } }
+				has_country_flag = niger_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CHD } }
+				has_country_flag = chad_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CMR } }
+				has_country_flag = cameroon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GAB } }
+				has_country_flag = gabon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CGO } }
+				has_country_flag = congo_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CNG } }
+				has_country_flag = zaire_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZAM } }
+				has_country_flag = zambia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = KNY } }
+				has_country_flag = kenya_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = TNZ } }
+				has_country_flag = tanzania_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MLI } }
+				has_country_flag = mali_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ANG } }
+				has_country_flag = angola_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SUD } }
+				has_country_flag = sudan_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GHN } }
+				has_country_flag = ghana_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = BKF } }
+				has_country_flag = burkina_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = INO } }
+				has_country_flag = indonesia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SOM } }
+				owns = 1868
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NMB } }
+				has_country_flag = namibia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GBU } }
+				has_country_flag = guine_bissau_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZBW } }
+				has_country_flag = zimbabwe_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MOZ } }
+				has_country_flag = mozambique_master
+			}
+			country_event = 961000
+		}
+		#Set up modifiers for dismantlement
+		add_country_modifier = { name = being_dismantled duration = 385 }
+		any_country = {
+			limit = {
+				exists = yes
+				truce_with = THIS
+				has_recently_lost_war = no
+				is_vassal = no
+				any_owned_province = { has_building = naval_base }
+				OR = {
+					is_secondary_power = yes
+					is_greater_power = yes
+				}
+			}
+			add_country_modifier = { name = dismantling_country duration = 385 }
+		}
+		
+		#Release India as a vassal so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				OR = {
+					tag = HND
+					tag = NGR
+					tag = INO
+					tag = BUR
+					tag = SIA
+					tag = LXA
+					tag = NYE
+				}
+				OR = {
+					has_country_flag = post_colonial_country
+					tech_school = developing_tech_school
+					capital_scope = {
+						is_colonial = yes
+						owned_by = THIS
+					}
+				}
+			}
+			country_event = 96095
+		}
+		
+		#Release organized colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				capital_scope = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				has_country_flag = post_colonial_country
+			}
+			country_event = 96095
+		}
+		
+		#Release colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				capital_scope = {
+					owned_by = THIS
+					owner = { tech_school = developing_tech_school }
+				}
+			}
+			country_event = 96095
+		}
+		
+		#give colonies without cores to truce GP's
+		# random_owned = {
+			# limit = {
+				# OR = {
+					# is_overseas = yes
+					# is_colonial = yes
+					# NOT = { is_core = THIS }
+				# }
+			# }
+			# any_country = {
+				# limit = {
+					# ai = no
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = 96011
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# ai = yes
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96016 days = 2 }
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# is_greater_power = no
+					# is_secondary_power = yes
+					# is_vassal = no
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96017 days = 2 }
+			# }
+		# }
+		###################################################
 
 		#add fascism and punitive effects
 		random_owned = {
@@ -5372,16 +7350,14 @@ country_event = {
 				OR = {
 					civilized = yes
 					tag = JAP
-					tag = KOR
-					tag = SIA
-					tag = MOR
-					tag = ALD
-					tag = TUN
-					tag = EGY
+					
 				}
 				any_core = { owned_by = THIS }
 				exists = no
-				is_cultural_union = no
+				OR = {
+					is_cultural_union = no
+					tag = ROM
+				}
 				NOT = { is_culture_group = french }
 				NOT = { has_country_flag = post_colonial_country }
 			}
@@ -5419,70 +7395,358 @@ country_event = {
 			country_event = 96092
 		}
 		
-		#give colonies without cores to truce GP's
-		random_owned = {
+		#################Colonial Dismantlement#################
+		#Give up partial colonies to proper colonial masters
+		
+		random_country = {
 			limit = {
-				OR = {
-					is_overseas = yes
-					is_colonial = yes
-				}
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NGR } }
+				has_country_flag = nigeria_master
 			}
-			any_country = {
-				limit = {
-					ai = no
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96011
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					ai = yes
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96016
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					is_greater_power = no
-					is_secondary_power = yes
-					is_vassal = no
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96017
-			}
+			country_event = 961000
 		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GNE } }
+				has_country_flag = guinea_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = IVC } }
+				has_country_flag = ivc_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SNG } }
+				has_country_flag = senegal_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NIG } }
+				has_country_flag = niger_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CHD } }
+				has_country_flag = chad_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CMR } }
+				has_country_flag = cameroon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GAB } }
+				has_country_flag = gabon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CGO } }
+				has_country_flag = congo_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CNG } }
+				has_country_flag = zaire_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZAM } }
+				has_country_flag = zambia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = KNY } }
+				has_country_flag = kenya_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = TNZ } }
+				has_country_flag = tanzania_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MLI } }
+				has_country_flag = mali_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ANG } }
+				has_country_flag = angola_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SUD } }
+				has_country_flag = sudan_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GHN } }
+				has_country_flag = ghana_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = BKF } }
+				has_country_flag = burkina_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = INO } }
+				has_country_flag = indonesia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SOM } }
+				owns = 1868
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NMB } }
+				has_country_flag = namibia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GBU } }
+				has_country_flag = guine_bissau_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZBW } }
+				has_country_flag = zimbabwe_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MOZ } }
+				has_country_flag = mozambique_master
+			}
+			country_event = 961000
+		}
+		#Set up modifiers for dismantlement
+		add_country_modifier = { name = being_dismantled duration = 385 }
+		any_country = {
+			limit = {
+				exists = yes
+				truce_with = THIS
+				has_recently_lost_war = no
+				is_vassal = no
+				any_owned_province = { has_building = naval_base }
+				OR = {
+					is_secondary_power = yes
+					is_greater_power = yes
+				}
+			}
+			add_country_modifier = { name = dismantling_country duration = 385 }
+		}
+		
+		#Release India as a vassal so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				OR = {
+					tag = HND
+					tag = NGR
+					tag = INO
+					tag = BUR
+					tag = SIA
+					tag = LXA
+					tag = NYE
+				}
+				OR = {
+					has_country_flag = post_colonial_country
+					tech_school = developing_tech_school
+					capital_scope = {
+						is_colonial = yes
+						owned_by = THIS
+					}
+				}
+			}
+			country_event = 96095
+		}
+		
+		#Release organized colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				capital_scope = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				has_country_flag = post_colonial_country
+			}
+			country_event = 96095
+		}
+		
+		#Release colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				capital_scope = {
+					owned_by = THIS
+					owner = { tech_school = developing_tech_school }
+				}
+			}
+			country_event = 96095
+		}
+		
+		#give colonies without cores to truce GP's
+		# random_owned = {
+			# limit = {
+				# OR = {
+					# is_overseas = yes
+					# is_colonial = yes
+					# NOT = { is_core = THIS }
+				# }
+			# }
+			# any_country = {
+				# limit = {
+					# ai = no
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = 96011
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# ai = yes
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96016 days = 2 }
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# is_greater_power = no
+					# is_secondary_power = yes
+					# is_vassal = no
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96017 days = 2 }
+			# }
+		# }
+		###################################################
 
 		#add fascism and punitive effects
 		random_owned = {
@@ -5843,18 +8107,16 @@ country_event = {
 				OR = {
 					civilized = yes
 					tag = JAP
-					tag = KOR
-					tag = SIA
-					tag = MOR
-					tag = ALD
-					tag = TUN
-					tag = EGY
+					
 				}
 				any_core = { owned_by = THIS }
 				exists = no
 				NOT = { tag = RUT }
 				NOT = { tag = UKR }
-				is_cultural_union = no
+				OR = {
+					is_cultural_union = no
+					tag = ROM
+				}
 				NOT = { is_culture_group = germanic }
 				NOT = { has_country_flag = post_colonial_country }
 			}
@@ -5894,70 +8156,358 @@ country_event = {
 			country_event = 96013
 		}
 
-		#give colonies without cores to truce GP's
-		random_owned = {
+		#################Colonial Dismantlement#################
+		#Give up partial colonies to proper colonial masters
+		
+		random_country = {
 			limit = {
-				OR = {
-					is_overseas = yes
-					is_colonial = yes
-				}
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NGR } }
+				has_country_flag = nigeria_master
 			}
-			any_country = {
-				limit = {
-					ai = no
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96011
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					ai = yes
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96016
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					is_greater_power = no
-					is_secondary_power = yes
-					is_vassal = no
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96017
-			}
+			country_event = 961000
 		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GNE } }
+				has_country_flag = guinea_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = IVC } }
+				has_country_flag = ivc_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SNG } }
+				has_country_flag = senegal_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NIG } }
+				has_country_flag = niger_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CHD } }
+				has_country_flag = chad_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CMR } }
+				has_country_flag = cameroon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GAB } }
+				has_country_flag = gabon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CGO } }
+				has_country_flag = congo_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CNG } }
+				has_country_flag = zaire_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZAM } }
+				has_country_flag = zambia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = KNY } }
+				has_country_flag = kenya_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = TNZ } }
+				has_country_flag = tanzania_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MLI } }
+				has_country_flag = mali_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ANG } }
+				has_country_flag = angola_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SUD } }
+				has_country_flag = sudan_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GHN } }
+				has_country_flag = ghana_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = BKF } }
+				has_country_flag = burkina_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = INO } }
+				has_country_flag = indonesia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SOM } }
+				owns = 1868
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NMB } }
+				has_country_flag = namibia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GBU } }
+				has_country_flag = guine_bissau_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZBW } }
+				has_country_flag = zimbabwe_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MOZ } }
+				has_country_flag = mozambique_master
+			}
+			country_event = 961000
+		}
+		#Set up modifiers for dismantlement
+		add_country_modifier = { name = being_dismantled duration = 385 }
+		any_country = {
+			limit = {
+				exists = yes
+				truce_with = THIS
+				has_recently_lost_war = no
+				is_vassal = no
+				any_owned_province = { has_building = naval_base }
+				OR = {
+					is_secondary_power = yes
+					is_greater_power = yes
+				}
+			}
+			add_country_modifier = { name = dismantling_country duration = 385 }
+		}
+		
+		#Release India as a vassal so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				OR = {
+					tag = HND
+					tag = NGR
+					tag = INO
+					tag = BUR
+					tag = SIA
+					tag = LXA
+					tag = NYE
+				}
+				OR = {
+					has_country_flag = post_colonial_country
+					tech_school = developing_tech_school
+					capital_scope = {
+						is_colonial = yes
+						owned_by = THIS
+					}
+				}
+			}
+			country_event = 96095
+		}
+		
+		#Release organized colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				capital_scope = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				has_country_flag = post_colonial_country
+			}
+			country_event = 96095
+		}
+		
+		#Release colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				capital_scope = {
+					owned_by = THIS
+					owner = { tech_school = developing_tech_school }
+				}
+			}
+			country_event = 96095
+		}
+		
+		#give colonies without cores to truce GP's
+		# random_owned = {
+			# limit = {
+				# OR = {
+					# is_overseas = yes
+					# is_colonial = yes
+					# NOT = { is_core = THIS }
+				# }
+			# }
+			# any_country = {
+				# limit = {
+					# ai = no
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = 96011
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# ai = yes
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96016 days = 2 }
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# is_greater_power = no
+					# is_secondary_power = yes
+					# is_vassal = no
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96017 days = 2 }
+			# }
+		# }
+		###################################################
 
 		#add fascism and punitive effects
 		random_owned = {
@@ -6348,7 +8898,10 @@ country_event = {
 			limit = {
 				any_core = { owned_by = THIS }
 				exists = no
-				is_cultural_union = no
+				OR = {
+					is_cultural_union = no
+					tag = ROM
+				}
 				NOT = { has_country_flag = post_colonial_country }
 				NOT = {
 					tag = CLC
@@ -6536,70 +9089,358 @@ country_event = {
 			}
 		}
 
-		#give colonies without cores to truce GP's
-		random_owned = {
+		#################Colonial Dismantlement#################
+		#Give up partial colonies to proper colonial masters
+		
+		random_country = {
 			limit = {
-				OR = {
-					is_overseas = yes
-					is_colonial = yes
-				}
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NGR } }
+				has_country_flag = nigeria_master
 			}
-			any_country = {
-				limit = {
-					ai = no
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96011
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					ai = yes
-					is_greater_power = yes
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96016
-			}
-			any_country = {
-				limit = {
-					NOT = {
-						any_greater_power = {
-							ai = no
-							truce_with = THIS
-						}
-					}
-					is_greater_power = no
-					is_secondary_power = yes
-					is_vassal = no
-					OR = {
-						truce_with = THIS
-						AND = {
-							THIS = { has_country_modifier = international_pariah }
-							has_country_flag = coalition_member
-						}
-					}
-				}
-				country_event = 96017
-			}
+			country_event = 961000
 		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GNE } }
+				has_country_flag = guinea_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = IVC } }
+				has_country_flag = ivc_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SNG } }
+				has_country_flag = senegal_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NIG } }
+				has_country_flag = niger_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CHD } }
+				has_country_flag = chad_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CMR } }
+				has_country_flag = cameroon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GAB } }
+				has_country_flag = gabon_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CGO } }
+				has_country_flag = congo_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = CNG } }
+				has_country_flag = zaire_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZAM } }
+				has_country_flag = zambia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = KNY } }
+				has_country_flag = kenya_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = TNZ } }
+				has_country_flag = tanzania_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MLI } }
+				has_country_flag = mali_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ANG } }
+				has_country_flag = angola_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SUD } }
+				has_country_flag = sudan_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GHN } }
+				has_country_flag = ghana_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = BKF } }
+				has_country_flag = burkina_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = INO } }
+				has_country_flag = indonesia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = SOM } }
+				owns = 1868
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = NMB } }
+				has_country_flag = namibia_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = GBU } }
+				has_country_flag = guine_bissau_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = ZBW } }
+				has_country_flag = zimbabwe_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = MOZ } }
+				has_country_flag = mozambique_master
+			}
+			country_event = 961000
+		}
+		#Set up modifiers for dismantlement
+		add_country_modifier = { name = being_dismantled duration = 385 }
+		any_country = {
+			limit = {
+				exists = yes
+				truce_with = THIS
+				has_recently_lost_war = no
+				is_vassal = no
+				any_owned_province = { has_building = naval_base }
+				OR = {
+					is_secondary_power = yes
+					is_greater_power = yes
+				}
+			}
+			add_country_modifier = { name = dismantling_country duration = 385 }
+		}
+		
+		#Release India as a vassal so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				OR = {
+					tag = HND
+					tag = NGR
+					tag = INO
+					tag = BUR
+					tag = SIA
+					tag = LXA
+					tag = NYE
+				}
+				OR = {
+					has_country_flag = post_colonial_country
+					tech_school = developing_tech_school
+					capital_scope = {
+						is_colonial = yes
+						owned_by = THIS
+					}
+				}
+			}
+			country_event = 96095
+		}
+		
+		#Release organized colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				capital_scope = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				has_country_flag = post_colonial_country
+			}
+			country_event = 96095
+		}
+		
+		#Release colonies as vassals so other countries annex them later
+		any_country = {
+			limit = {
+				any_core = { owned_by = THIS }
+				exists = no
+				is_cultural_union = no
+				capital_scope = {
+					owned_by = THIS
+					owner = { tech_school = developing_tech_school }
+				}
+			}
+			country_event = 96095
+		}
+		
+		#give colonies without cores to truce GP's
+		# random_owned = {
+			# limit = {
+				# OR = {
+					# is_overseas = yes
+					# is_colonial = yes
+					# NOT = { is_core = THIS }
+				# }
+			# }
+			# any_country = {
+				# limit = {
+					# ai = no
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = 96011
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# ai = yes
+					# is_greater_power = yes
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96016 days = 2 }
+			# }
+			# any_country = {
+				# limit = {
+					# NOT = {
+						# any_greater_power = {
+							# ai = no
+							# truce_with = THIS
+						# }
+					# }
+					# is_greater_power = no
+					# is_secondary_power = yes
+					# is_vassal = no
+					# OR = {
+						# truce_with = THIS
+						# AND = {
+							# THIS = { has_country_modifier = international_pariah }
+							# has_country_flag = coalition_member
+						# }
+					# }
+				# }
+				# country_event = { id = 96017 days = 2 }
+			# }
+		# }
+		###################################################
 		
 		#add fascism and punitive effects
 		random_owned = {
@@ -6877,12 +9718,12 @@ country_event = {
 		any_greater_power = {
 			is_disarmed = no
 			NOT = { relation = { who = THIS value = -100 } }
-			NOT = { has_country_modifier = neutrality }
+			NOT = { has_country_modifier = neutrality_modifier }
 			NOT = { tag = THIS }
 		}		
 		NOT = {
 			has_country_modifier = no_more_war
-			has_country_modifier = neutrality
+			has_country_modifier = neutrality_modifier
 			war_policy = pacifism
 			any_greater_power = { has_country_flag = in_great_war }
 		}
@@ -6926,7 +9767,7 @@ country_event = {
 				is_greater_power = yes
 				is_disarmed = no
 				NOT = { relation = { who = THIS value = -100 } }
-				NOT = { has_country_modifier = neutrality }
+				NOT = { has_country_modifier = neutrality_modifier }
 			}
 			add_casus_belli = {
 				target = THIS
@@ -7007,12 +9848,12 @@ country_event = {
 		any_greater_power = {
 			is_disarmed = no
 			NOT = { relation = { who = THIS value = -100 } }
-			NOT = { has_country_modifier = neutrality }
+			NOT = { has_country_modifier = neutrality_modifier }
 			NOT = { tag = THIS }
 		}		
 		NOT = {
 			has_country_modifier = no_more_war
-			has_country_modifier = neutrality
+			has_country_modifier = neutrality_modifier
 			war_policy = pacifism
 			any_greater_power = { has_country_flag = in_great_war }
 		}
@@ -7056,7 +9897,7 @@ country_event = {
 				is_greater_power = yes
 				is_disarmed = no
 				NOT = { relation = { who = THIS value = -100 } }
-				NOT = { has_country_modifier = neutrality }
+				NOT = { has_country_modifier = neutrality_modifier }
 			}
 			add_casus_belli = {
 				target = THIS
@@ -7634,6 +10475,14 @@ country_event = {
 		clr_country_flag = presidential_dictatorship_gov
 		clr_country_flag = fascist_gov
 		clr_country_flag = anarcho_liberal_gov
+		clr_country_flag = election_started
+		clr_country_flag = conservative_party_in_power
+		clr_country_flag = liberal_party_in_power
+		clr_country_flag = reactionary_party_in_power
+		clr_country_flag = socialist_party_in_power
+		clr_country_flag = communist_party_in_power
+		clr_country_flag = fascist_party_in_power
+		clr_country_flag = anarcho_liberal_party_in_power
 		
 		random_country = {
 			limit = {
@@ -7712,6 +10561,14 @@ country_event = {
 		clr_country_flag = presidential_dictatorship_gov
 		set_country_flag = fascist_gov
 		clr_country_flag = anarcho_liberal_gov
+		clr_country_flag = election_started
+		clr_country_flag = conservative_party_in_power
+		clr_country_flag = liberal_party_in_power
+		clr_country_flag = reactionary_party_in_power
+		clr_country_flag = socialist_party_in_power
+		clr_country_flag = communist_party_in_power
+		clr_country_flag = fascist_party_in_power
+		clr_country_flag = anarcho_liberal_party_in_power
 		
 		random_country = {
 			limit = {
@@ -7817,6 +10674,14 @@ country_event = {
 		clr_country_flag = presidential_dictatorship_gov
 		clr_country_flag = fascist_gov
 		clr_country_flag = anarcho_liberal_gov
+		clr_country_flag = election_started
+		clr_country_flag = conservative_party_in_power
+		clr_country_flag = liberal_party_in_power
+		clr_country_flag = reactionary_party_in_power
+		clr_country_flag = socialist_party_in_power
+		clr_country_flag = communist_party_in_power
+		clr_country_flag = fascist_party_in_power
+		clr_country_flag = anarcho_liberal_party_in_power
 		
 		random_country = {
 			limit = {
@@ -7961,6 +10826,14 @@ country_event = {
 			}
 			owner = {
 				ruling_party_ideology = reactionary
+				clr_country_flag = election_started
+				clr_country_flag = conservative_party_in_power
+				clr_country_flag = liberal_party_in_power
+				clr_country_flag = reactionary_party_in_power
+				clr_country_flag = socialist_party_in_power
+				clr_country_flag = communist_party_in_power
+				clr_country_flag = fascist_party_in_power
+				clr_country_flag = anarcho_liberal_party_in_power
 			}
 		}
 		any_pop = {
@@ -8022,7 +10895,6 @@ country_event = {
 	}
 }
 
-
 #Dutch/Belgium gets a piece of France
 country_event = {
 	id = 96093
@@ -8057,5 +10929,846 @@ country_event = {
 				add_core = THIS
 				secede_province = THIS
 			}
+	}
+}
+
+#The Fate of $COUNTRY$ Colony
+country_event = {
+	id = 96095
+	title = "EVTNAME96095" 
+	desc = "EVTDESC96095"
+	picture = "greatpowers"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			any_owned = {
+				limit = { is_core = THIS }
+				secede_province = THIS
+			}
 		}
 	}
+	
+	option = {
+		name = "EVT96095OPTA"
+		random_owned = {
+			limit = { owner = { NOT = { has_country_flag = colony_to_be_annexed_flag } } }
+			owner = { set_country_flag = colony_to_be_annexed_flag }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { has_country_modifier = colony_to_be_annexed } } }
+			owner = { add_country_modifier = { name = colony_to_be_annexed duration = 385 } }
+		}
+		
+		# random_owned = {
+			# limit = { is_core = FROM }
+			# owner = { all_core = { remove_core = FROM } }
+		# }
+		
+		random_owned = {
+			limit = { owner = { is_vassal = no } }
+			owner = { FROM = { create_vassal = THIS } }
+		}
+		
+		random_list = {
+			10 = { add_country_modifier = { name = considering_colonial_offer duration = 30 } }
+			10 = { add_country_modifier = { name = considering_colonial_offer duration = 40 } }
+			10 = { add_country_modifier = { name = considering_colonial_offer duration = 50 } }
+			10 = { add_country_modifier = { name = considering_colonial_offer duration = 60 } }
+			10 = { add_country_modifier = { name = considering_colonial_offer duration = 70 } }
+			10 = { add_country_modifier = { name = considering_colonial_offer duration = 80 } }
+			10 = { add_country_modifier = { name = considering_colonial_offer duration = 90 } }
+			10 = { add_country_modifier = { name = considering_colonial_offer duration = 100 } }
+			10 = { add_country_modifier = { name = considering_colonial_offer duration = 110 } }
+			10 = { add_country_modifier = { name = considering_colonial_offer duration = 120 } }
+		}
+		
+		random_country = {
+			limit = {
+				is_vassal = no
+				NOT = { has_country_modifier = considering_colonial_offer }
+				THIS = { overlord = { has_country_modifier = being_dismantled } }
+				OR = {
+					neighbour = THIS
+					AND = {
+						THIS = { num_of_ports = 1 }
+						num_of_ports = 1
+					}
+				}
+				OR = {
+					is_greater_power = yes
+					is_secondary_power = yes
+				}
+				OR = {
+					AND = {
+						truce_with = FROM
+						has_country_modifier = dismantling_country
+					}
+					AND = {
+						THIS = { overlord = { has_country_modifier = international_pariah } }
+						has_country_flag = coalition_member
+					}
+				}
+			}
+			add_country_modifier = { name = considering_colonial_offer duration = 2 }
+			random_list = {
+				25 = { country_event = 96096 }
+				25 = { country_event = { id = 96096 days = 1 } }
+				25 = { country_event = { id = 96096 days = 2 } }
+				25 = { country_event = { id = 96096 days = 3 } }
+			}
+		}
+	}
+}
+
+#GP's get colonies
+country_event = {
+	
+	id = 96096
+	title = "EVTNAME96096" #The $FROMCOUNTRY_ADJ$ Colony
+	desc = "EVTDESC96096"
+	picture = "treaty"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA96096" #We will take what we can
+		random_country = {
+			limit = {
+				tag = FROM
+				OR = {
+					neighbour = THIS
+					AND = {
+						THIS = { any_owned_province = { has_building = naval_base } }
+						num_of_ports = 1
+					}
+				}
+			}
+			
+			random_owned = {
+				limit = { owner = { total_pops = 10000000 } }
+				THIS = { badboy = 10 }
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 9500000
+						NOT = { total_pops = 10000000 }
+					}
+				}
+				THIS = { badboy = 9.5 }
+			}
+			
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 9000000
+						NOT = { total_pops = 9500000 }
+					}
+				}
+				THIS = { badboy = 9 }
+			}
+			
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 8500000
+						NOT = { total_pops = 9000000 }
+					}
+				}
+				THIS = { badboy = 8.5 }
+			}
+			
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 8000000
+						NOT = { total_pops = 8500000 }
+					}
+				}
+				THIS = { badboy = 8 }
+			}
+			
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 7500000
+						NOT = { total_pops = 8000000 }
+					}
+				}
+				THIS = { badboy = 7.5 }
+			}
+			
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 7000000
+						NOT = { total_pops = 7500000 }
+					}
+				}
+				THIS = { badboy = 7 }
+			}
+			
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 6500000
+						NOT = { total_pops = 7000000 }
+					}
+				}
+				THIS = { badboy = 6.5 }
+			}
+			
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 6000000
+						NOT = { total_pops = 6500000 }
+					}
+				}
+				THIS = { badboy = 6 }
+			}
+			
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 5500000
+						NOT = { total_pops = 6000000 }
+					}
+				}
+				THIS = { badboy = 5.5 }
+			}
+			
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 5000000
+						NOT = { total_pops = 5500000 }
+					}
+				}
+				THIS = { badboy = 5 }
+			}
+			
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 4500000
+						NOT = { total_pops = 5000000 }
+					}
+				}
+				THIS = { badboy = 4.5 }
+			}
+			
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 4000000
+						NOT = { total_pops = 4500000 }
+					}
+				}
+				THIS = { badboy = 4 }
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 3500000
+						NOT = { total_pops = 4000000 }
+					}
+				}
+				THIS = { badboy = 3.5 }
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 3000000
+						NOT = { total_pops = 3500000 }
+					}
+				}
+				THIS = { badboy = 3 }
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 2500000
+						NOT = { total_pops = 3000000 }
+					}
+				}
+				THIS = { badboy = 2.5 }
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 2000000
+						NOT = { total_pops = 2500000 }
+					}
+				}
+				THIS = { badboy = 2 }
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 1500000
+						NOT = { total_pops = 2000000 }
+					}
+				}
+				THIS = { badboy = 1.5 }
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 1000000
+						NOT = { total_pops = 1500000 }
+					}
+				}
+				THIS = { badboy = 1 }
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						total_pops = 500000
+						NOT = { total_pops = 1000000 }
+					}
+				}
+				THIS = { badboy = 0.5 }
+			}
+			random_owned = {
+				limit = {
+					total_pops = 250000
+					NOT = { total_pops = 500000 }
+				}
+				THIS = { badboy = 0.25 }
+			}
+			random_owned = {
+				limit = {
+					NOT = { total_pops = 250000 }
+				}
+				THIS = { badboy = 0.05 }
+			}
+			
+			country_event = 96097
+		}
+		
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
+			modifier = {
+				factor = 0.25
+				capital_scope = { NOT = { continent = europe } }
+			}
+			modifier = {
+				factor = 1.5
+				war_policy = jingoism
+			}
+			modifier = {
+				factor = 2
+				colonial_nation = yes
+			}
+			modifier = {
+				factor = 0
+				badboy = 0.65
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB96096" #Our only interest is limiting $FROMCOUNTRY_ADJ$ power
+		
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
+			modifier = {
+				factor = 0.5
+				capital_scope = { NOT = { continent = europe } }
+			}
+			modifier = {
+				factor = 0
+				badboy = 0.65
+			}			
+		}
+	}
+
+	option = {
+		name = "EVTOPTC96096" #We have no interest in their colonies
+		remove_country_modifier = dismantling_country
+		badboy = -4
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				capital_scope = { NOT = { continent = europe } }
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					capital_scope = { continent = north_america }
+					capital_scope = { continent = south_america }
+					capital_scope = { continent = australia_new_zealand }
+					capital_scope = { continent = polynesia }
+				}
+			}
+		}
+	}
+}
+
+
+#Colonies get informed they are about to be annexed
+country_event = {
+	
+	id = 96097
+	title = "EVTNAME96097"
+	desc = "EVTDESC96097"
+	picture = "treaty"
+
+	is_triggered_only = yes
+
+	immediate = {
+		remove_country_modifier = colony_to_be_annexed
+		clr_country_flag = colony_to_be_annexed_flag
+		neutrality = yes
+		overlord = {
+			release_vassal = THIS
+			leave_alliance = THIS
+			relation = { who = THIS value = -300 }
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA96097" #We submit
+		civilized = no
+		annex_to = FROM
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		name = "EVTOPTB96097" #We will never give up
+		FROM = { country_event = 96099 }
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				NOT = { total_pops = 2500000 }
+			}
+			modifier = {
+				factor = 1.25
+				total_pops = 3000000
+			}
+			modifier = {
+				factor = 1.25
+				total_pops = 3500000
+			}
+			modifier = {
+				factor = 1.25
+				total_pops = 4000000
+			}
+			modifier = {
+				factor = 1.25
+				total_pops = 4500000
+			}
+			modifier = {
+				factor = 1.25
+				total_pops = 5000000
+			}
+			modifier = {
+				factor = 1.5
+				tag = HND
+			}
+			modifier = {
+				factor = 0.1
+				capital_scope = { continent = africa }
+			}
+		}
+	}
+}
+
+#Nation gets informed that colony refuses to submit
+country_event = {
+	
+	id = 96099
+	title = "EVTNAME96099"
+	desc = "EVTDESC96099"
+	picture = "treaty"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA96099" #War it is!
+		badboy = 1
+		casus_belli = {
+			target = FROM
+			type = conquest_any
+			months = 12
+		}
+		war = {
+			target = FROM
+			attacker_goal = { casus_belli = conquest_any }
+		}
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0
+				badboy = 0.97
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB96099" #Let it go
+		badboy = -1
+		ai_chance = {
+			factor = 20
+			modifier = { factor = 2 NOT = { military_score = FROM } }
+			modifier = { factor = 1.5 NOT = { FROM = { brigades_compare = 1.5 } } }
+		}
+	}
+}
+
+#Nation gets informed that colony refuses to submit
+country_event = {
+	id = 961000
+	title = "EVTNAME961000"
+	desc = "EVTDESC961000"
+	picture = "treaty"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA961000"
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = nigeria_master }
+				tag = FROM
+				any_owned_province = { is_core = NGR }
+			}
+			any_owned = {
+				limit = { is_core = NGR }
+				remove_core = NIG
+				remove_core = SOK
+				remove_core = DND
+				remove_core = TOU
+				remove_core = OYO
+				remove_core = BEN
+				remove_core = ARO
+				remove_core = CLA
+				remove_core = WRI
+				remove_core = KBO
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = ivc_master }
+				tag = FROM
+				any_owned_province = { is_core = IVC }
+			}
+			any_owned = {
+				limit = { is_core = IVC }
+				remove_core = KNG
+				remove_core = ASH
+				remove_core = MOS
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = guinea_master }
+				tag = FROM
+				any_owned_province = { is_core = GNE }
+			}
+			any_owned = {
+				limit = { is_core = GNE }
+				remove_core = JAL
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = senegal_master }
+				tag = FROM
+				any_owned_province = { is_core = SNG }
+			}
+			any_owned = {
+				limit = { is_core = SNG }
+				remove_core = TOO
+				remove_core = WOL
+				remove_core = SEG
+				remove_core = TOU
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = niger_master }
+				tag = FROM
+				any_owned_province = { is_core = NIG }
+			}
+			any_owned = {
+				limit = { is_core = NIG }
+				remove_core = DND
+				remove_core = TOU
+				remove_core = MAS
+				remove_core = DAM
+				remove_core = KBO
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = chad_master }
+				tag = FROM
+				any_owned_province = { is_core = CHD }
+			}
+			any_owned = {
+				limit = { is_core = CHD }
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = cameroon_master }
+				tag = FROM
+				any_owned_province = { is_core = CMR }
+			}
+			any_owned = {
+				limit = { is_core = CMR }
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = gabon_master }
+				tag = FROM
+				any_owned_province = { is_core = GAB }
+			}
+			any_owned = {
+				limit = { is_core = GAB }
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = congo_master }
+				tag = FROM
+				any_owned_province = { is_core = CGO }
+			}
+			any_owned = {
+				limit = { is_core = CGO }
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = zaire_master }
+				tag = FROM
+				any_owned_province = { is_core = CNG }
+			}
+			any_owned = {
+				limit = { is_core = CNG }
+				remove_core = CGO
+				remove_core = LUA
+				remove_core = LOA
+				remove_core = AZA
+				remove_core = KZB
+				remove_core = KON
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = zambia_master }
+				tag = FROM
+				any_owned_province = { is_core = ZAM }
+			}
+			any_owned = {
+				limit = { is_core = ZAM }
+				remove_core = KZB
+				remove_core = LUA
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = kenya_master }
+				tag = FROM
+				any_owned_province = { is_core = KNY }
+			}
+			any_owned = {
+				limit = { is_core = KNY }
+				remove_core = ZAN
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = tanzania_master }
+				tag = FROM
+				any_owned_province = { is_core = TNZ }
+			}
+			any_owned = {
+				limit = { is_core = TNZ }
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = mali_master }
+				tag = FROM
+				any_owned_province = { is_core = MLI }
+			}
+			any_owned = {
+				limit = { is_core = MLI }
+				remove_core = TOU
+				remove_core = SEG
+				remove_core = MAS
+				remove_core = MOS
+				remove_core = DND
+				remove_core = BKF
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = angola_master }
+				tag = FROM
+				any_owned_province = { is_core = ANG }
+			}
+			any_owned = {
+				limit = { is_core = ANG }
+				remove_core = KON
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = sudan_master }
+				tag = FROM
+				any_owned_province = { is_core = SUD }
+			}
+			any_owned = {
+				limit = { is_core = SUD }
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = ghana_organized }
+				tag = FROM
+				any_owned_province = { is_core = GHN }
+			}
+			any_owned = {
+				limit = { is_core = GHN }
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = burkina_master }
+				tag = FROM
+				any_owned_province = { is_core = BKF }
+			}
+			any_owned = {
+				limit = { is_core = BKF }
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = indonesia_master }
+				tag = FROM
+				any_owned_province = { is_core = INO }
+			}
+			any_owned = {
+				limit = { is_core = INO }
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { owns = 1868 }
+				tag = FROM
+				any_owned_province = { is_core = SOM }
+			}
+			any_owned = {
+				limit = { is_core = SOM }
+				secede_province = THIS
+			}
+		}
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = namibia_master }
+				tag = FROM
+				any_owned_province = { is_core = NMB }
+			}
+			any_owned = {
+				limit = { is_core = NMB }
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = guine_bissau_master }
+				tag = FROM
+				any_owned_province = { is_core = GBU }
+			}
+			any_owned = {
+				limit = { is_core = GBU }
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = zimbabwe_master }
+				tag = FROM
+				any_owned_province = { is_core = ZBW }
+			}
+			any_owned = {
+				limit = { is_core = ZBW }
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = mozambique_master }
+				tag = FROM
+				any_owned_province = { is_core = MOZ }
+			}
+			any_owned = {
+				limit = { is_core = MOZ }
+				secede_province = THIS
+			}
+		}
+		
+	}
+}
+

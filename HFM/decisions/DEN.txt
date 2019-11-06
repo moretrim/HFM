@@ -18,7 +18,7 @@ political_decisions = {
 		
 		effect = {
 			political_reform = landed_voting
-			government = hms_government
+			government = prussian_constitutionalism
 			prestige = 5
 			set_country_flag = danish_constitutionalism
 		}
@@ -50,6 +50,7 @@ political_decisions = {
 			war = no
 			SWH = {
 				war = no
+				is_mobilised = no
 				OR = {
 					part_of_sphere = no
 					sphere_owner = { NOT = { is_sphere_leader_of = THIS } }

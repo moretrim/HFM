@@ -147,7 +147,7 @@ establish_the_dar_al_funun = {
 	}
 	
 revoke_kurdish_autonomy = {
-		picture = old_kurdistan_map
+		picture = map_kurdistan
 		potential = {
 			tag = PER
 			NOT = { has_country_flag = kurdish_states_integrated }

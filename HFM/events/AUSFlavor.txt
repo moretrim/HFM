@@ -81,6 +81,25 @@ country_event = {
 	option = {
 		name = "EVTOPTA31502"
 		ruling_party_ideology = conservative
+		clr_country_flag = election_started
+		clr_country_flag = conservative_party_in_power
+		clr_country_flag = liberal_party_in_power
+		clr_country_flag = reactionary_party_in_power
+		clr_country_flag = socialist_party_in_power
+		clr_country_flag = communist_party_in_power
+		clr_country_flag = fascist_party_in_power
+		clr_country_flag = anarcho_liberal_party_in_power
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						government = prussian_constitutionalism
+						government = hms_government
+					}
+				}
+			}
+			owner = { set_country_flag = conservative_party_in_power }
+		}
 		upper_house = {
 			ideology = reactionary
 			value = 0.3
@@ -769,11 +788,7 @@ country_event = {
 	desc = "EVTDESC600050"
 	picture = "krakow_uprising"
 
-	trigger = {
-		tag = AUS
-		has_global_flag = krakow_uprising 
-	}
-	mean_time_to_happen = { days = 1 } 
+	is_triggered_only = yes
 	
 	fire_only_once = yes
 	
@@ -791,6 +806,7 @@ country_event = {
 			}
 		country_event = 600052
 		}
+		
 		RUS = { country_event = 600052 }
 		
 		ai_chance = {
@@ -802,6 +818,11 @@ country_event = {
 	option = {
 		name = "EVT600050OPTB" #Suppress the Poles! Occupy Krakow!
 		703 = { add_core = GLM }
+		casus_belli = {
+			target = KRA
+			type = restore_austrian_empire
+			months = 24
+		}
 		badboy = 10
 		prestige = -5
 		any_pop = { limit = { has_pop_culture = polish } militancy = 3 consciousness = 5 }
@@ -819,7 +840,7 @@ country_event = {
 				NOT = { tag = THIS }
 				OR = { tag = AUS tag = RUS tag = NGF tag = PRU }
 			}
-		relation = { who = THIS value = -150 }
+			relation = { who = THIS value = -150 }
 		}
 		ai_chance = {
 			factor = 0.04
@@ -830,7 +851,7 @@ country_event = {
 	
 	option = {
 		name = "EVT600050OPTC" #Ignore the Poles. They are harmless.
-		prestige = -40
+		prestige_factor = -0.25
 		any_pop = { limit = { has_pop_culture = polish } militancy = 4 consciousness = 6 }
 		set_global_flag = krakow_succeeded
 		ai_chance = {
@@ -898,7 +919,6 @@ country_event = {
 	mean_time_to_happen = { days = 4 } 
 	
 	fire_only_once = yes
-
 	
 	option = {
 		name = "EVT600054OPTA" #to krakow!
@@ -907,6 +927,11 @@ country_event = {
 		prestige = 10
 		badboy = 3
 		703 = { add_core = GLM }
+		casus_belli = {
+			target = KRA
+			type = restore_austrian_empire
+			months = 24
+		}
 		any_pop = { limit = { has_pop_culture = polish } militancy = 1 consciousness = 5 }
 		ai_chance = { factor = 100 }
 	}
@@ -965,6 +990,11 @@ country_event = {
 		clr_country_flag = prussia_disagrees
 		clr_country_flag = russia_disagrees
 		703 = { add_core = GLM }
+		casus_belli = {
+			target = KRA
+			type = restore_austrian_empire
+			months = 24
+		}
 		badboy = 7
 		any_pop = { limit = { has_pop_culture = polish } militancy = 6 consciousness = 7 }
 		any_country = {
@@ -1177,6 +1207,7 @@ country_event = {
 		}
 	}
 
+#Candidate for decision
 country_event = {
 
 	id = 60055558

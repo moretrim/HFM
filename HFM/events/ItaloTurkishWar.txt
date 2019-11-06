@@ -9,15 +9,26 @@ country_event = {
 	
 	trigger = {
 		tag = ITA
-		mass_politics = 1
 		is_vassal = no
+		war = no
+		is_disarmed = no
+		OR = {
+			military_directionism = 1
+			mass_politics = 1
+			year = 1910
+		}
 		owns = 749
 		OR = {
 			war_policy = jingoism
 			war_policy = pro_military
 		}
-		NOT = { government = proletarian_dictatorship }
-		NOT = { government = democracy }
+		NOT = {
+			government = democracy
+			government = proletarian_dictatorship
+			truce_with = TUR
+			exists = LBY
+			has_country_modifier = no_more_war
+		}
 		OR = {
 			AND = {
 				is_greater_power = yes
@@ -28,11 +39,12 @@ country_event = {
 			has_global_flag = balkans_supported
 		}
 		
-		LBY = { exists = no }
-		
 		TUR = {
-			NOT = { truce_with = THIS }
 			is_greater_power = no
+			NOT = {
+				alliance_with = ITA
+				in_sphere = ITA
+			}
 			any_owned_province = {
 				port = yes
 				OR = {
@@ -50,7 +62,19 @@ country_event = {
 	option = {
 	name = "EVT900000OPTA"
 		set_global_flag = italian_ultimatum_sent
-		TUR = {country_event = 900001}			
+		set_country_flag = guerra_di_libia
+		TUR = { country_event = 900001 }
+		any_pop = {
+			limit = { is_culture_group = italian }
+			dominant_issue = {
+				factor = 0.05
+				value = jingoism
+			}
+			scaled_militancy = {
+				issue = jingoism
+				factor = -4
+			}
+		}		
 		ai_chance = { 
 			factor = 0.95
 			modifier = {
@@ -220,19 +244,19 @@ country_event = {
 		random_country = { limit = { exists = no tag = CYR } all_core = { remove_core = CYR } }
 		random_country = { limit = { exists = no tag = TRI } all_core = { remove_core = TRI } }
 		ITA = { diplomatic_influence = { who = LBY value = 300 } relation = { who = LBY value = 200 } }
-		LBY = { tech_school = unciv_tech_school }
+		LBY = { tech_school = developing_tech_school }
 	}
 }
 
 country_event = {
 
-id = 900006
+	id = 900006
 
-is_triggered_only = yes
+	is_triggered_only = yes
 
-title = "EVTNAME900006"
-desc = "EVTDESC900006"
-picture = "italoturk2"
+	title = "EVTNAME900006"
+	desc = "EVTDESC900006"
+	picture = "italoturk2"
 
 	option = {
 	name = "EVT900006OPTA"
@@ -308,7 +332,10 @@ country_event = {
 		TRI = { all_core = { add_core = LBY remove_core = TRI } }
 		war = {
 			target = TUR
-			attacker_goal = { casus_belli = liberate_country country = LBY }
+			attacker_goal = {
+				casus_belli = liberate_country
+				country = LBY
+			}
 		}
 		
 		ai_chance = {
@@ -374,18 +401,21 @@ country_event = {
 	option = {
 		name = "EVT900008OPTA"
 		prestige = 5
-		ai_chance = { factor = 0.1 }
+		ai_chance = { factor = 0 }
 	}
 	
 	option = {
 		name = "EVT900008OPTB"
 		prestige = 5
-		badboy = 1
 		random_country = {
-			limit = { tag = TUR owns = 846 }
+			limit = {
+				tag = TUR
+				owns = 846
+			}
 			846 = { secede_province = THIS }
+			THIS = { badboy = 1 }
 		}
-		ai_chance = { factor = 0.9 }
+		ai_chance = { factor = 100 }
 	}
 }
 

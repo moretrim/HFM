@@ -125,15 +125,23 @@ political_decisions = {
 		effect = {
 			prestige = 5
 			badboy = 2
-
-			ruling_party_ideology = reactionary
 			political_reform = none_voting
 			political_reform = state_press
 			political_reform = appointed
 			political_reform = state_controlled
 			political_reform = underground_parties
 			government = absolute_monarchy	
-
+			ruling_party_ideology = reactionary
+			
+			clr_country_flag = election_started
+			clr_country_flag = conservative_party_in_power
+			clr_country_flag = liberal_party_in_power
+			clr_country_flag = reactionary_party_in_power
+			clr_country_flag = socialist_party_in_power
+			clr_country_flag = communist_party_in_power
+			clr_country_flag = fascist_party_in_power
+			clr_country_flag = anarcho_liberal_party_in_power
+			
 			any_pop = {
 				militancy = -1
 			
@@ -1116,6 +1124,7 @@ political_decisions = {
 		
 		allow = {
 			war = no
+			UBD = { is_mobilised = no }
 			OR = {
 				revolution_n_counterrevolution = 1
 				great_wars_enabled = yes
@@ -1181,6 +1190,10 @@ political_decisions = {
 				GER = { exists = yes }
 				NOT = { neighbour = TUR }
 			}
+			TCA = {
+				war = no
+				NOT = { is_mobilised = yes }
+			}
 			war = no
 		}
 		
@@ -1228,6 +1241,10 @@ political_decisions = {
 		
 		allow = {
 			war = no
+			ABK = {
+				war = no
+				is_mobilised = no
+			}
 			OR = {
 				revolution_n_counterrevolution = 1
 				great_wars_enabled = yes
@@ -1538,7 +1555,7 @@ political_decisions = {
 			}
 		}
 		
-	integrate_kazakhstan = {
+	integrate_kazakhstan = { #needs a revision
 		picture = unite_turkestan
 		potential = {
 			tag = RUS

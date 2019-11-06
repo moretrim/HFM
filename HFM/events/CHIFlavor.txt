@@ -118,6 +118,7 @@ country_event = {
 	option = {
 		name = "EVT164599OPTA"
 		prestige = -25
+		clr_country_flag = totalitarian_government
 		remove_country_modifier = the_terror
 		remove_country_modifier = totalitarian_system
 		remove_country_modifier = political_education
@@ -736,40 +737,6 @@ province_event = {
 }
 
 country_event = {
-	id = 1645091
-	title = "EVTNAME1645091"
-	desc = "EVTDESC1645091"
-	picture = "qing_emperor"
-
-	trigger = {
- 		tag = QNG
-		NOT = {
-			has_country_flag = mandate
-			has_country_flag = has_lost_mandate
-			year = 1860
-		}
-	}
-	
-	mean_time_to_happen = { months = 1 }
-	
-	fire_only_once = yes
-	
-	option = {
-		name = "EVT1645091OPTA"
-		add_country_modifier = {
-			name = global_baby_boom
-			duration = 1065
-		}
-		remove_country_modifier = western_influences
-		add_country_modifier = {
-			name = uncivilized_isolationism
-			duration = -1
-		}
-		set_country_flag = mandate
-	}
-}
-
-country_event = {
 	id = 1645092
 	title = "EVTNAME1645092"
 	desc = "EVTDESC1645092"
@@ -1279,20 +1246,43 @@ country_event = {
 			}
 			call_ally = no
 		}
-		ai_chance = { factor = 99 }
+		ai_chance = { factor = 95 }
 	}
 
 	option = {
 		name = "EVT131709OPTB"
-		prestige = -10
+		prestige_factor = -0.25
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { money = 50000 }
+					NOT = { check_variable = { which = owed_cash_money value = 1 } }
+				} 
+			}
+			owner = { set_variable = { which = owed_cash_money value = 50 } }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { money = 50000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 50 } }
+		}
+		random_owned = {
+			limit = { owner = { money = 50000 } }
+			owner = { treasury = -50000 }
+		}
+		
 		relation = {
 			who = FROM
 			value = -50
 		}
 		ai_chance = {
-			factor = 1
+			factor = 5
 			modifier = {
-				factor = 30
+				factor = 2
 				any_greater_power = { war_with = THIS }
 			}
 		}
@@ -1591,7 +1581,7 @@ country_event = {
 			relation = { who = THIS value = -50 }
 			casus_belli = {
 				target = THIS
-				type = place_in_the_sun
+				type = treaty_port_casus_belli
 				months = 60
 			}
 		}
@@ -1749,7 +1739,7 @@ country_event = {
 			relation = { who = THIS value = -50 }
 			casus_belli = {
 				target = THIS
-				type = place_in_the_sun
+				type = treaty_port_casus_belli
 				months = 60
 			}
 		}
@@ -1768,7 +1758,7 @@ country_event = {
 	option = {
 		name = "EVT1316092OPTA"
 		prestige_factor = -0.2
-		random_country = { limit = { exists = yes tag = CHI } inherit = CHI }
+		#random_country = { limit = { exists = yes tag = CHI } inherit = CHI }
 		treasury = -200000
 		any_owned = {
 			limit = { is_core = FROM }
@@ -1777,16 +1767,16 @@ country_event = {
 		capital_scope = {
 			add_province_modifier = { name = legation_quarter duration = -1 }
 		}
-		random_owned = {
-			limit = { owner = { has_country_modifier = uncivilized_isolationism } }
-			owner = {
-				remove_country_modifier = uncivilized_isolationism
-				add_country_modifier = {
-					name = "western_influences"
-					duration = -1
-				}
-			}
-		}
+		# random_owned = {
+			# limit = { owner = { has_country_modifier = uncivilized_isolationism } }
+			# owner = {
+				# remove_country_modifier = uncivilized_isolationism
+				# add_country_modifier = {
+					# name = "western_influences"
+					# duration = -1
+				# }
+			# }
+		# }
 	}
 }
 
@@ -1916,15 +1906,38 @@ country_event = {
 			call_ally = yes
 		}
 		set_global_flag = second_opium_war
-		ai_chance = { factor = 90 }
+		ai_chance = { factor = 95 }
 	}
 
 	option = {
 		name = "EVT1316182OPTB"
-		prestige = -25
+		prestige_factor = -0.25
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { money = 50000 }
+					NOT = { check_variable = { which = owed_cash_money value = 1 } }
+				} 
+			}
+			owner = { set_variable = { which = owed_cash_money value = 50 } }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { money = 50000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 50 } }
+		}
+		random_owned = {
+			limit = { owner = { money = 50000 } }
+			owner = { treasury = -50000 }
+		}
+		
 		relation = { who = FROM value = -50 }
 		ai_chance = {
-			factor = 10
+			factor = 5
 			modifier = {
 				factor = 2
 				any_greater_power = { war_with = THIS }
@@ -3573,7 +3586,7 @@ country_event = {
 			owner = {
 				add_country_modifier = {
 					name = taiping_draft
-					duration = 365
+					duration = 90
 				}
 			}
 		}
@@ -3663,7 +3676,7 @@ country_event = {
 			owner = {
 				add_country_modifier = {
 					name = taiping_draft
-					duration = 365
+					duration = 90
 				}
 			}
 		}
@@ -3745,7 +3758,7 @@ country_event = {
 			owner = {
 				add_country_modifier = {
 					name = taiping_draft
-					duration = 365
+					duration = 90
 				}
 			}
 		}
@@ -3887,7 +3900,7 @@ country_event = {
 			owner = {
 				add_country_modifier = {
 					name = taiping_draft
-					duration = 365
+					duration = 90
 				}
 			}
 		}
@@ -3982,7 +3995,7 @@ country_event = {
 			owner = {
 				add_country_modifier = {
 					name = taiping_draft
-					duration = 365
+					duration = 90
 				}
 			}
 		}
@@ -4069,7 +4082,7 @@ country_event = {
 			owner = {
 				add_country_modifier = {
 					name = taiping_draft
-					duration = 365
+					duration = 90
 				}
 			}
 		}
@@ -4285,7 +4298,7 @@ country_event = {
 			owner = {
 				add_country_modifier = {
 					name = taiping_draft
-					duration = 365
+					duration = 90
 				}
 			}
 		}
@@ -4380,7 +4393,7 @@ country_event = {
 			owner = {
 				add_country_modifier = {
 					name = taiping_draft
-					duration = 365
+					duration = 90
 				}
 			}
 		}
@@ -4467,7 +4480,7 @@ country_event = {
 			owner = {
 				add_country_modifier = {
 					name = taiping_draft
-					duration = 365
+					duration = 90
 				}
 			}
 		}
@@ -4574,7 +4587,7 @@ country_event = {
 			owner = {
 				add_country_modifier = {
 					name = taiping_draft
-					duration = 365
+					duration = 90
 				}
 			}
 		}
@@ -4679,7 +4692,7 @@ country_event = {
 			owner = {
 				add_country_modifier = {
 					name = taiping_draft
-					duration = 365
+					duration = 90
 				}
 			}
 		}
@@ -5404,6 +5417,107 @@ country_event = {
 		clr_country_flag = neutral_faction
 		clr_country_flag = communist_faction
 		clr_country_flag = beiyang_faction
+		
+		random_owned = {
+			limit = { owner = { civilized = no land_reform = yes_land_reform } }
+			TAI = { economic_reform = yes_land_reform }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no admin_reform = yes_admin_reform } }
+			TAI = { economic_reform = yes_admin_reform }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no finance_reform = yes_finance_reform } }
+			TAI = { economic_reform = yes_finance_reform }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no finance_reform = finance_reform_two } }
+			TAI = { economic_reform = finance_reform_two }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no monetary_reform = yes_monetary_reform } }
+			TAI = { economic_reform = yes_monetary_reform }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no monetary_reform = monetary_reform_two } }
+			TAI = { economic_reform = monetary_reform_two activate_technology = no_standard }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no education_reform = yes_education_reform } }
+			TAI = { economic_reform = yes_education_reform }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no research_reform = yes_research_reform } }
+			TAI = { economic_reform = yes_research_reform activate_technology = late_enlightenment_philosophy }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no foreign_training = yes_foreign_training } }
+			TAI = { military_reform = yes_foreign_training }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no foreign_weapons = yes_foreign_weapons } }
+			TAI = { military_reform = yes_foreign_weapons activate_technology = flintlock_rifles }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no foreign_officers = yes_foreign_officers } }
+			TAI = { military_reform = yes_foreign_officers activate_technology = military_staff_system }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no army_schools = yes_army_schools } }
+			TAI = { military_reform = yes_army_schools }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no foreign_naval_officers = yes_foreign_naval_officers } }
+			TAI = { military_reform = yes_foreign_naval_officers }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no naval_schools = yes_naval_schools } }
+			TAI = { military_reform = yes_naval_schools }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no foreign_navies = yes_foreign_navies } }
+			TAI = { military_reform = yes_foreign_navies activate_technology = clipper_design activate_technology = steamers }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no western_shipyards = yes_western_shipyards } }
+			TAI = { military_reform = yes_western_shipyards activate_technology = post_nelsonian_thought }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no foreign_artillery = yes_foreign_artillery } }
+			TAI = { military_reform = yes_foreign_artillery activate_technology = bronze_muzzle_loaded_artillery }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no slavery = yes_slavery } }
+			TAI = { political_reform = yes_slavery }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no slavery = freedom_of_womb } }
+			TAI = { political_reform = freedom_of_womb }
+		}
+		
+		random_owned = {
+			limit = { owner = { civilized = no slavery = no_slavery } }
+			TAI = { political_reform = no_slavery }
+		}
+		
 		1485 = {
 			add_core = KMT
 			fort = 3

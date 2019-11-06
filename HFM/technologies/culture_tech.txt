@@ -593,10 +593,10 @@ social_science = {
 	cost = 18000
 
 	colonial_migration = 0.05
-	education_efficiency = 0.1
+	education_efficiency = 0.2
 	
 	ai_chance = {
-		factor = 1.05
+		factor = 1.5
 		modifier = {
 			factor = 2 #2
 			not = { literacy = 0.75 }
@@ -637,9 +637,9 @@ social_alienation = {
 	cost = 21600
 	
 	colonial_migration = 0.05
-	education_efficiency = 0.1
+	education_efficiency = 0.2
 	ai_chance = {
-		factor = 1.05
+		factor = 1.5
 		modifier = {
 			factor = 2
 			is_greater_power = yes
@@ -683,6 +683,10 @@ enlightenment_thought = {
 			factor = 6
 			is_greater_power = yes
 			year = 1850
+		}
+		modifier = {
+			factor = 20
+			culture_has_union_tag = yes
 		}
 	}
 }
@@ -738,7 +742,7 @@ ideological_thought = {
 		}
 		modifier = {
 			factor = 20
-			tag = PRU
+			culture_has_union_tag = yes
 		}
 	}
 }
@@ -768,28 +772,26 @@ state_n_government = {
 				}
 			}
 		}
-		
 		modifier = {
-			factor = 0.25
-			is_greater_power = no
-			is_secondary_power = no
-			NOT = { total_pops = 3000000 }
+			factor = 20
+			culture_has_union_tag = yes
 		}
 		
 		modifier = {
-			factor = 51
+			factor = 30
 			rank = 16
 			year = 1850
 			any_owned_province = { port = yes }
 			total_pops = 3000000
 		}
 		modifier = {
-			factor = 51
+			factor = 30
 			OR = {
 				year = 1860
 				tag = SAR
 				tag = PRU
 				tag = USA
+				colonial_nation = yes
 			}
 		}
 		modifier = {
@@ -955,7 +957,7 @@ introspectionism = {
 	reinforce_rate = 0.05
 	
 	ai_chance = {
-		factor = 1.01
+		factor = 1.25
 		modifier = {
 			factor = 1.05 #1.25
 			is_greater_power = yes
@@ -1009,7 +1011,7 @@ associationism = {
 	reinforce_rate = 0.05
 	
 	ai_chance = {
-		factor = 1.01
+		factor = 1.25
 		modifier = {
 			factor = 1.05
 			is_greater_power = yes
@@ -1034,14 +1036,14 @@ associationism = {
 }
 phenomenalism = {
 	area = psychology
-	year = 1836
+	year = 1850
 	cost = 10800
 
 	regular_experience_level = 5
 	reinforce_rate = 0.05
 	
 	ai_chance = {
-		factor = 1.01
+		factor = 1.25
 		modifier = {
 			factor = 1.05 #1.25
 			is_greater_power = yes
@@ -1066,14 +1068,14 @@ phenomenalism = {
 }
 experimental_psychology = {
 	area = psychology
-	year = 1850
+	year = 1870
 	cost = 14400
 
 	regular_experience_level = 5
 	reinforce_rate = 0.05
 	
 	ai_chance = {
-		factor = 1.01
+		factor = 1.5
 		modifier = {
 			factor = 1.05 #1.25
 			is_greater_power = yes
@@ -1098,16 +1100,16 @@ experimental_psychology = {
 }
 psychoanalysis = {
 	area = psychology
-	year = 1870
+	year = 1890
 	cost = 18000
 
 	regular_experience_level = 5
 	reinforce_rate = 0.05
 	
 	ai_chance = {
-		factor = 1.01
+		factor = 4
 		modifier = {
-			factor = 1.05 #1.25
+			factor = 3 #1.25
 			is_greater_power = yes
 		}
 		modifier = {
@@ -1131,14 +1133,14 @@ psychoanalysis = {
 }
 behaviorism = {
 	area = psychology
-	year = 1900
+	year = 1910
 	cost = 21600
 
 	regular_experience_level = 5
 	reinforce_rate = 0.05
 	
 	ai_chance = {
-		factor = 1.01
+		factor = 1.2
 		modifier = {
 			factor = 1.25
 			is_greater_power = yes

@@ -47,7 +47,7 @@ upper_house = {
 	communist = 0
 }
 
-schools = unciv_tech_school
+schools = developing_tech_school
 
 foreign_weapons = yes_foreign_weapons
 
@@ -57,6 +57,11 @@ flintlock_rifles = 1
 # Inventions
 #bottling_process = yes
 modern_winemaking = yes
+small_arms_production = yes
+ammunition_production = yes
+big_sail_ships = yes
+sail_ships_transport = yes
+big_sail_support = yes
 
 # Starting Consciousness
 consciousness = 4

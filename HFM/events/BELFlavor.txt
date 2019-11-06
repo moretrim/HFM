@@ -709,7 +709,7 @@ country_event = {
 		NOT = { capital = 387 }
 	}
 
-	mean_time_to_happen = { days = 1 }
+	mean_time_to_happen = { months = 1 }
 
 	option = {
 		name = "EVT36717OPTA"

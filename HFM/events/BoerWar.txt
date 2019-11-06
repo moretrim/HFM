@@ -10,17 +10,7 @@ country_event = {
 	desc = "EVTDESC98200"
 	picture = "pioneer_wagons"
 	
-	trigger = {
-		tag = ENG
-		NOT = { has_global_flag = great_boer_trek }
-		NOT = { has_country_flag = boer_accepted }
-	}
-	
-	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		days = 5
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = "EVT98200OPTA"
@@ -228,10 +218,10 @@ country_event = {
 		name = "EVT98206OPTA"
 		release = NAL
 		casus_belli ={
-				target = NAL
-				type = conquest_any
-				months = 60
-			}
+			target = NAL
+			type = conquest_any
+			months = 60
+		}
 		relation = { who = NAL value = -100 }
 		NAL = { prestige = -30 }
 		any_pop = {
@@ -292,10 +282,10 @@ country_event = {
 		name = "EVT98207OPTC"
 		release = NAL
 		casus_belli ={
-				target = NAL
-				type = conquest_any
-				months = 60
-			}
+			target = NAL
+			type = conquest_any
+			months = 60
+		}
 		change_tag_no_core_switch = NAL
 		relation = { who = NAL value = -100 }
 		NAL = { prestige = -30 }
@@ -799,15 +789,24 @@ country_event = {
 			ORA = { exists = yes }
 		}
 	}
+	
+	immediate = {
+		2071 = { secede_province = THIS }
+	}
 
 	option = {
 		name = "EVT98215OPTA"
+		2071 = { secede_province = MAT }
+		MAT = {
+			capital = 2071
+			country_event = { id = 95518 days = 5 }
+		}
 		set_global_flag = transvaal_sovereignty
 		SAF = {
 			primary_culture = british
 			add_accepted_culture = boer
 		}
-		any_owned = { 
+		any_owned = {
 			limit = {
 				OR = {
 					region = ENG_2087
@@ -842,22 +841,6 @@ country_event = {
 				}
 			}
 		}
-		any_country = {
-			limit = {
-				civilized = no
-				any_owned_province = {
-					OR = {
-						province_id = 2105
-						province_id = 2106
-						province_id = 2107
-						province_id = 2108
-						province_id = 2109
-						province_id = 2110
-					}
-				}
-			}
-			country_event = 98221
-		}
 	
 		2105 = {
 			secede_province = THIS
@@ -882,6 +865,7 @@ country_event = {
 		}
 		2108 = {
 			change_province_name = "Nylstroom"
+			secede_province = THIS
 			add_core = TRN
 			add_core = SAF
 		}
@@ -906,7 +890,7 @@ country_event = {
 		TRN = {
 			prestige = -30
 			add_country_modifier = { name = unrecognized_country duration = 1825 }
-			country_event = { id = 95517 days = 5 }
+			#country_event = { id = 95517 days = 5 }
 			relation = { who = ORA value = 100 }
 			relation = { who = NAL value = 200 }
 			any_pop = {
@@ -932,12 +916,34 @@ country_event = {
 				move_pop = 2071
 			}
 		}
+		
+		any_country = {
+			limit = {
+				civilized = no
+				any_owned_province = {
+					OR = {
+						province_id = 2105
+						province_id = 2106
+						province_id = 2107
+						province_id = 2108
+						province_id = 2109
+						province_id = 2110
+					}
+				}
+			}
+			country_event = 98221
+		}
 		ai_chance = { factor = 100 }
 	}
 	
 	option = {
 		name = "EVT98220OPTB"
 		set_global_flag = transvaal_sovereignty
+		2071 = { secede_province = MAT }
+		MAT = {
+			capital = 2071
+			country_event = { id = 95518 days = 5 }
+		}
 		SAF = {
 			primary_culture = british
 			add_accepted_culture = boer
@@ -1017,6 +1023,7 @@ country_event = {
 		}
 		2108 = {
 			change_province_name = "Nylstroom"
+			secede_province = THIS
 			add_core = TRN
 			add_core = SAF
 		}
@@ -1041,7 +1048,7 @@ country_event = {
 		TRN = {
 			prestige = -30
 			add_country_modifier = { name = unrecognized_country duration = 1825 }
-			country_event = { id = 95517 days = 5 }
+			#country_event = { id = 95517 days = 5 }
 			relation = { who = ORA value = 100 }
 			relation = { who = NAL value = 200 }
 			any_pop = {
@@ -1083,12 +1090,7 @@ country_event = {
 	option = {
 		name = "EVT98216OPTA"
 		prestige = -10
-		2069 = {
-			add_core = MAT
-			secede_province = MAT
-			life_rating = 25
-			any_pop = { limit = { NOT = { has_pop_culture = boer } } literacy = -0.99 }
-		}
+		
 		any_pop = {
 			limit = { is_primary_culture = yes }
 			dominant_issue = {
@@ -1613,6 +1615,7 @@ country_event = {
 		}
 		TRN = {
 			set_country_flag = uncivilize_on_conquest
+			set_country_flag = annex_to_master
 			add_country_modifier = { name = small_country_draft duration = 1095 }
 		}
 		diplomatic_influence = {
@@ -1648,7 +1651,7 @@ country_event = {
 		}
 		war = {
 			target = TRN
-			attacker_goal = { casus_belli = conquest_any }
+			attacker_goal = { casus_belli = make_puppet }
 			defender_goal = { casus_belli = humiliate }
 		}
 		random_country = {
@@ -1711,10 +1714,11 @@ country_event = {
 			name = small_country_draft
 			duration = 1095
 		}
+		set_country_flag = annex_to_master
 		ENG = {
 			war = {
 				target = THIS
-				attacker_goal = { casus_belli = conquest_any }
+				attacker_goal = { casus_belli = make_puppet }
 				defender_goal = { casus_belli = humiliate }
 			}
 		}

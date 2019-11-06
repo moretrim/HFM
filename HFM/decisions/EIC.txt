@@ -7,6 +7,7 @@ political_decisions = {
 				tag = ENG
 				tag = ENL
 			}
+			exists = yes
 			is_our_vassal = EIC
 			has_global_flag = sepoy_rebellion
 			has_global_flag = eic_spawned

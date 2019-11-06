@@ -337,7 +337,7 @@ country_event = {
 
 	option = {
 		name = "EVT90054OPTA"
-		prestige = 5
+		prestige = -5
 		badboy = 2
 		leave_alliance = SWH
 		relation = {
@@ -400,7 +400,7 @@ country_event = {
 		OR = {
 			nationalism_n_imperialism = 1
 			tag = PRU
-			}
+		}
 		war = no
 		OR = {
 			AND = {
@@ -444,6 +444,7 @@ country_event = {
 				primary_culture = north_german
 				is_greater_power = no
 				exists = yes
+				is_vassal = no
 			}
 			country_event = 90057
 		}
@@ -616,4 +617,58 @@ country_event = {
 			}
 		}
 	}		
+}
+
+# Sweden Replies to Schleswig-Holstein War
+country_event = {
+
+	id = 90058
+
+	title = "EVTNAME90058"
+	desc = "EVTDESC90058"
+	picture = "danishgovernment"
+
+	trigger = {
+		tag = SWE
+		DEN = {
+			war_with = SWH
+			war_countries = {
+				alliance_with = SWH
+				is_culture_group = germanic
+				NOT = { tag = SWH }
+			}
+		}
+	}
+	
+	mean_time_to_happen = { months = 1 }
+	
+	fire_only_once = yes
+
+	option = {
+		name = "EVT90058OPTA"
+		create_alliance = DEN
+		prestige = 5
+		relation = { who = DEN value = 50 }
+		DEN = { country_event = 96001 }
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				NOT = { relation = { who = DEN value = 0 } }
+			}
+		}
+	}
+	
+	option = {
+		name = "EVT90058OPTB"
+		prestige = -10
+		relation = { who = DEN value = -100 }
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0.2
+				relation = { who = DEN value = 180 }
+			}
+		}
+	}
 }

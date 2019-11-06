@@ -247,7 +247,7 @@ political_decisions = {
 			set_country_flag = homestead_act
 			add_country_modifier = {
 				name = the_homestead_act
-				duration = -1
+				duration = 3650
 			}
 		}
 	}
@@ -396,8 +396,8 @@ political_decisions = {
 			OR = {
 				TEX = { in_sphere = THIS }
 				TEX = { exists = no }
-				invention = manifest_destiny
 				any_owned_province = { is_core = MEX }
+				invention = manifest_destiny
 			}
 		}
 		effect = {
@@ -424,7 +424,18 @@ political_decisions = {
 			104 = { add_core = USA }
 			103 = { add_core = USA }
 			101 = { add_core = USA }
-			100 = { add_core = USA }
+			100 = { add_core = USA life_rating = 5 } #Phoenix
+			89 = { life_rating = 5 } #Los Angeles
+			90 = { life_rating = 2 } #San Diego
+			104 = { life_rating = 5 } #San Francisco
+			84 = { life_rating = 4 } #Sacramento
+			87 = { life_rating = 3 } #Monterey
+			106 = { life_rating = 3 } #Denver
+			43 = { life_rating = 4 } #Dallas
+			132 = { life_rating = 2 } #Houston
+			133 = { life_rating = 1 } #Austin
+			137 = { life_rating = 4 } #San Antonio
+			136 = { life_rating = 2 } #El Paso
 			relation = { who = MEX value = -200 }
 			diplomatic_influence = { who = MEX value = -200 }
 			leave_alliance = MEX
@@ -462,6 +473,8 @@ political_decisions = {
 			any_country = {
 				limit = {
 					exists = yes
+					war = no
+					is_mobilised = no
 					OR = {
 						tag = CAL
 						tag = TEX
@@ -568,10 +581,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			any_state = {
-				limit = { is_slave = yes }
-				any_pop = { consciousness = -2 }
-			}
+			any_pop = { limit = { location = { state_scope = { is_slave = yes } } } consciousness = -2 }
 			set_country_flag = fugitive_slave_act_enacted
 		}
 	}
@@ -595,14 +605,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			any_state = {
-				limit = {
-					is_slave = yes
-				}
-				any_pop = {
-					consciousness = -3
-				}
-			}
+			any_pop = { limit = { location = { state_scope = { is_slave = yes } } } consciousness = -3 }
 			set_country_flag = nashville_convention_held
 		}
 	}
@@ -610,7 +613,6 @@ political_decisions = {
 	ostend_manifesto = {
 		potential = {
 			tag = USA
-			SPA_2209 = { is_slave = yes }
 			OR = {
 				slavery = yes_slavery
 				slavery = freedom_of_womb
@@ -620,89 +622,57 @@ political_decisions = {
 				has_global_flag = american_civil_war_has_happened
 				has_country_flag = trying_to_buy_cuba
 				owns = 2209
+				exists = CUB
 			}
 		}
 		
 		allow = {
+			money = 1000000
 			OR = {
 				ruling_party_ideology = reactionary
 				upper_house = { ideology = reactionary value = 0.25 }
 			}
-			SPA_2209 = { is_slave = yes }
-			OR = {
-				slavery = yes_slavery
-				slavery = freedom_of_womb
-			}
+			NOT = { slavery = no_slavery }
+			2209 = { owner = { NOT = { truce_with = THIS } }  }
 		}
 		
 		effect = {
 			random_list = {
-				14 = { badboy = 6 }
-				14 = { badboy = 5 }
-				14 = { badboy = 4 }
-				14 = { badboy = 3 }
-				14 = { badboy = 2 }
-				14 = { badboy = 1 }
-				14 = { }
+				25 = { badboy = 3 }
+				25 = { badboy = 2 }
+				25 = { badboy = 1 }
+				25 = { }
 			}
-			any_greater_power = {
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					capital_scope = { continent = europe }
+					NOT = { tag = TUR }
+				}
 				relation = {
 					who = USA
 					value = -150
 				}
+				leave_alliance = USA
 			}
-			SPA = {
-				random_owned = { limit = { province_id = 2209 is_colonial = yes }
-				owner = {
-					add_casus_belli = {
-						target = USA
-						type = place_in_the_sun
-						months = 30
-						}
-					}
+			
+			random_country = {
+				limit = {
+					exists = yes
+					owns = 2209
 				}
-				random_owned = { limit = { province_id = 2209 is_colonial = no }
-				owner = {
-					add_casus_belli = {
-						target = USA
-						type = acquire_state
-						months = 30
-						}
-					}
-				}
+				country_event = 90131
 			}
-			SPC = {
-				random_owned = { limit = { province_id = 2209 is_colonial = yes }
-					owner = {
-					add_casus_belli = {
-						target = USA
-						type = place_in_the_sun
-						months = 30
-						}
-					}
-				}
-				random_owned = { limit = { province_id = 2209 is_colonial = no }
-					owner = {
-					add_casus_belli = {
-						target = USA
-						type = acquire_state
-						months = 30
-						}
-					}
-				}
-			}
-			any_state = {
-				limit = { is_slave = yes }
+			
+			any_owned = {
+				limit = { state_scope = { is_slave = yes } }
 				any_pop = { consciousness = -1 }
 			}
+			
 			set_country_flag = ostend_manifesto_published
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				factor = 0
-				prestige = 25
-			}
 			modifier = {
 				factor = 0
 				badboy = 0.7
@@ -716,8 +686,8 @@ political_decisions = {
 			tag = USA
 			average_consciousness = 1
 			OR = {
-			slavery = yes_slavery
-			slavery = freedom_of_womb
+				slavery = yes_slavery
+				slavery = freedom_of_womb
 			}
 			NOT = {
 				has_country_flag = kansas_nebraska_act_acting
@@ -730,18 +700,8 @@ political_decisions = {
 		}
 		
 		effect = {
-			any_state = {
-				limit = {
-					is_slave = yes
-				}
-				any_pop = { consciousness = -2 }
-			}
-			any_state = {
-				limit = {
-					is_slave = no
-				}
-				any_pop = { consciousness = 1 }
-			}
+			any_pop = { limit = { location = { state_scope = { is_slave = yes } } } consciousness = -2 }
+			any_pop = { limit = { location = { state_scope = { NOT = { is_slave = yes } } } } consciousness = 1 }
 			set_country_flag = kansas_nebraska_act_acting
 		}
 	}
@@ -763,6 +723,7 @@ political_decisions = {
 		}
 		
 		allow = {
+			war = no
 			NOT = { has_country_flag = clay_and_douglas_draft_enacted }
 			average_consciousness = 3
 			ruling_party_ideology = liberal
@@ -778,26 +739,190 @@ political_decisions = {
 		}
 		
 		effect = {
-			any_pop = { limit = { location = { state_scope = { is_slave = yes } } } consciousness = 7 }
-			any_pop = { limit = { location = { state_scope = { NOT = { is_slave = yes } } } } consciousness = -4 }
-			
-			USA_106 = { is_slave = no remove_core = CSA }
-			MEX_103 = { is_slave = no remove_core = CSA }
-			MEX_100 = { is_slave = no remove_core = CSA }
-			MEX_97 = { is_slave = no remove_core = CSA }
-			MEX_94 = { is_slave = no remove_core = CSA }
-			MEX_85 = { is_slave = no remove_core = CSA }
-			USA_111 = { is_slave = no remove_core = CSA }
-			USA_176 = { is_slave = no remove_core = CSA }
-			USA_162 = { is_slave = no remove_core = CSA }
-			USA_151 = { is_slave = no remove_core = CSA }
-			USA_158 = { is_slave = no remove_core = CSA }
-			USA_118 = { is_slave = no remove_core = CSA }
-			USA_121 = { is_slave = no remove_core = CSA }
-			USA_116 = { is_slave = no remove_core = CSA }
-			USA_91 = { is_slave = no remove_core = CSA }
-
 			set_country_flag = wilmot_proviso_providing
+			#Colorado
+			random_owned = {
+				limit = {
+					province_id = 103
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_106 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#New Mexico
+			random_owned = {
+				limit = {
+					province_id = 105
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				MEX_103 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Arizona
+			random_owned = {
+				limit = {
+					province_id = 100
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				MEX_100 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Utah
+			random_owned = {
+				limit = {
+					province_id = 97
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				MEX_97 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Nevada
+			random_owned = {
+				limit = {
+					province_id = 94
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				MEX_94 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#California
+			random_owned = {
+				limit = {
+					province_id = 89
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				MEX_85 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Wyoming
+			random_owned = {
+				limit = {
+					province_id = 112
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_111 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Michigan
+			random_owned = {
+				limit = {
+					province_id = 173
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_176 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Wisconsin
+			random_owned = {
+				limit = {
+					province_id = 159
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_162 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Iowa
+			random_owned = {
+				limit = {
+					province_id = 151
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_151 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Minnesota
+			random_owned = {
+				limit = {
+					province_id = 155
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_158 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#North Dakota
+			random_owned = {
+				limit = {
+					province_id = 117
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_118 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#South Dakota
+			random_owned = {
+				limit = {
+					province_id = 120
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_121 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Montana
+			random_owned = {
+				limit = {
+					province_id = 113
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_116 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Idaho
+			random_owned = {
+				limit = {
+					province_id = 91
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_91 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			
+			any_pop = { limit = { location = { state_scope = { is_slave = yes } } } consciousness = 1 }
+			any_pop = { limit = { location = { state_scope = { NOT = { is_slave = yes } } } } consciousness = -2 }
 		}
 	}
 	
@@ -1014,6 +1139,18 @@ political_decisions = {
 		allow = {
 			revolution_n_counterrevolution = 1
 			is_sphere_leader_of = HAW
+			OR = {
+				AND = {
+					year = 1898
+					HAW = { militancy = 1 }
+				}
+				HAW = { militancy = 8 }
+				mass_politics = 1
+			}
+			HAW = {
+				war = no
+				is_mobilised = no
+			}
 		}
 		
 		effect = {
@@ -1028,6 +1165,14 @@ political_decisions = {
 			}
 			random_owned = { limit = { owner = { tag = USA ai = yes } } 658 = { naval_base = 1 } }
 			HAW = { civilized = yes }
+			random_owned = {
+				limit = {
+					owner = { NOT = { is_primary_culture = yankee } }
+					province_id = 658
+					any_pop = { has_pop_culture = yankee }
+				} 
+				658 = { add_core = USA }
+			}
 		}
 	}
 	
@@ -1297,7 +1442,6 @@ political_decisions = {
 			100 = { owned_by = THIS NOT = { is_core = MEX } }
 			104 = { owned_by = THIS NOT = { is_core = MEX } }
 			105 = { owned_by = THIS NOT = { is_core = MEX } }
-			NOT = { check_variable = { which = owed_cash_money value = 1 } }
 		}
 		
 		allow = {
@@ -1387,8 +1531,8 @@ political_decisions = {
 				slavery = yes_slavery
 				slavery = freedom_of_womb
 			}
-			owns = 132
 			TEX = { exists = no }
+			has_country_flag = treaty_of_guadalupe_hidalgo
 			NOT = {
 				has_country_flag = wilmot_proviso_providing
 				has_country_flag = clay_and_douglas_draft_enacted
@@ -1398,26 +1542,221 @@ political_decisions = {
 		allow = {
 			average_consciousness = 2
 			NOT = { has_country_flag = wilmot_proviso_providing }
-			OR = {
-				ruling_party_ideology = conservative
-				ruling_party_ideology = liberal
-			}
+			ruling_party_ideology = conservative
+			owns = 103
+			owns = 104
+			owns = 105
+			owns = 108
+			owns = 107
+			owns = 84
+			owns = 87
+			owns = 89
 		}
 		
 		effect = {
 			any_pop = { consciousness = -4 }
 			TEX = { all_core = { remove_core = TEX } }
-			TEX_132 = { add_core = TEX }
-			MEX_85 = { is_slave = no remove_core = CSA }
-			USA_111 = { is_slave = no remove_core = CSA }
-			USA_176 = { is_slave = no remove_core = CSA }
-			USA_162 = { is_slave = no remove_core = CSA }
-			USA_151 = { is_slave = no remove_core = CSA }
-			USA_158 = { is_slave = no remove_core = CSA }
-			USA_118 = { is_slave = no remove_core = CSA }
-			USA_121 = { is_slave = no remove_core = CSA }
-			USA_116 = { is_slave = no remove_core = CSA }
-			USA_91 = { is_slave = no remove_core = CSA }
+			#Oklahoma
+			random_owned = {
+				limit = {
+					province_id = 129
+					NOT = { has_pop_type = slaves }
+					state_scope = { any_owned_province = { has_pop_type = slaves } }
+				}
+				USA_129 = { add_core = CSA }
+				state_scope = {
+					is_slave = yes
+				}
+			}
+			#Texas
+			random_owned = {
+				limit = {
+					province_id = 133
+					OR = {
+						NOT = { state_scope = { is_slave = yes } }
+						NOT = { is_core = CSA }
+					}
+				}
+				TEX_132 = {
+					add_core = CSA
+					add_core = TEX
+				}
+				state_scope = { is_slave = yes }
+			}
+			#California
+			random_owned = {
+				limit = {
+					province_id = 89
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				MEX_85 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Wyoming
+			random_owned = {
+				limit = {
+					province_id = 112
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_111 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Michigan
+			random_owned = {
+				limit = {
+					province_id = 173
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_176 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Wisconsin
+			random_owned = {
+				limit = {
+					province_id = 159
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_162 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Iowa
+			random_owned = {
+				limit = {
+					province_id = 151
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_151 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Minnesota
+			random_owned = {
+				limit = {
+					province_id = 155
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_158 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#North Dakota
+			random_owned = {
+				limit = {
+					province_id = 117
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_118 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#South Dakota
+			random_owned = {
+				limit = {
+					province_id = 120
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_121 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Montana
+			random_owned = {
+				limit = {
+					province_id = 113
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_116 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Idaho
+			random_owned = {
+				limit = {
+					province_id = 91
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				USA_91 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#New Mexico
+			random_owned = {
+				limit = {
+					province_id = 105
+					owner = { NOT = { 135 = { state_scope = { is_slave = yes } } } }
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				MEX_103 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Arizona
+			random_owned = {
+				limit = {
+					province_id = 100
+					owner = { NOT = { 2148 = { state_scope = { is_slave = yes } } } }
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				MEX_100 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Utah
+			random_owned = {
+				limit = {
+					province_id = 97
+					owner = { NOT = { 100 = { state_scope = { is_slave = yes } } } }
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				MEX_97 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			#Nevada
+			random_owned = {
+				limit = {
+					province_id = 94
+					owner = { NOT = { 97 = { state_scope = { is_slave = yes } } } }
+					OR = {
+						state_scope = { is_slave = yes }
+						is_core = CSA
+					}
+				}
+				MEX_94 = { remove_core = CSA }
+				state_scope = { is_slave = no }
+			}
+			
+			random_owned = { limit = { province_id = 138 } remove_core = RGR }
 			set_country_flag = clay_and_douglas_draft_enacted
 		}
 	}
@@ -1425,12 +1764,17 @@ political_decisions = {
 	offer_to_buy_cuba = {
 		picture = map_caribbean
 		potential = {
-			tag = USA
-			2209 = { owned_by = SPA }
+			OR = {
+				tag = USA
+				tag = CSA
+				tag = TEX
+			}
 			NOT = {
 				has_country_flag = ostend_manifesto_published
 				has_country_flag = maine_incident
 				has_country_flag = trying_to_buy_cuba
+				owns = 2209
+				exists = CUB
 			}
 			has_global_flag = american_civil_war_has_happened
 		}
@@ -1439,25 +1783,28 @@ political_decisions = {
 			war = no
 			is_greater_power = yes
 			money = 1000000
-			2209 = { owner = { NOT = { truce_with = THIS } } }
-			SPA = {
-				exists = yes
-				war = no
-			any_owned_province = {
-				is_core = CUB
-				OR = {
-					controlled_by = REB
-					has_province_modifier = nationalist_agitation
-					average_militancy = 6
+			2209 = {
+				owner = {
+					war = no
+					NOT = { truce_with = THIS }
+					any_owned_province = {
+						is_core = CUB
+						OR = {
+							controlled_by = REB
+							has_province_modifier = nationalist_agitation
+							average_militancy = 6
+						}
 					}
-				}
+				} 
 			}
 			NOT = { has_country_flag = maine_incident }
 		}
 		
 		effect = {
 			set_country_flag = trying_to_buy_cuba
-			2209 = { owner = { country_event = 90131 } }
+			2209 = {
+				owner = { country_event = 90131 }
+			}
 		}
 	}
 
@@ -1519,7 +1866,7 @@ political_decisions = {
 	}
 	
 	guano_islands_act = {
-	picture = dreams_of_empire
+		picture = dreams_of_empire
 		potential = {
 			OR = {
 				owns = 2525
@@ -1553,12 +1900,10 @@ political_decisions = {
 	
 	
 	the_iron_range = {
-	picture = dreams_of_empire
+	picture = iron_range_mountains
 		potential = {
 			owns = 232
-			NOT = { has_country_flag = iron_ranges }
-			NOT = { 232 = { trade_goods = iron } }
-			
+			NOT = { has_global_flag = iron_ranges }
 		}
 		
 		allow = {
@@ -1567,13 +1912,22 @@ political_decisions = {
 		}
 		
 		effect = {
-			set_country_flag = iron_ranges
+			set_global_flag = iron_ranges
 			158 = { trade_goods = iron change_province_name = "Duluth" }
 			177 = { trade_goods = iron }
 			157 = { trade_goods = iron }
-			232 = { trade_goods = iron }
 			235 = { trade_goods = iron }
 			98 = { trade_goods = iron }
+			232 = { life_rating = 5 } #New York
+			163 = { life_rating = 5 } #Chicago
+			173 = { life_rating = 5 } #Detroit
+			243 = { life_rating = 4 } #Boston
+			223 = { life_rating = 5 } #Philadelphia
+			139 = { life_rating = 5 } #New Orleans
+			199 = { life_rating = 4 } #Jacksonville
+			169 = { life_rating = 4 } #Indianapolis
+			179 = { life_rating = 4 } #Columbus
+			209 = { life_rating = 3 } #Charlotte
 		}
 		
 		ai_will_do = { factor = 1 }
@@ -1613,6 +1967,7 @@ political_decisions = {
 				move_pop = 97
 			}
 			97 = {
+				life_rating = 2
 				add_province_modifier = { name = home_of_the_mormons duration = 10950 }
 				any_pop = {
 					limit = { has_pop_culture = native_american_minor }
@@ -1684,17 +2039,8 @@ political_decisions = {
 		
 		effect = {
 			set_global_flag = american_frontier
-			any_owned = {
-				limit = {
-					OR = {
-						province_id = 132
-						province_id = 136
-						province_id = 137
-					}
-				}
-				life_rating = 5
-			}
-			43 = { change_province_name = "Dallas" life_rating = 5 }
+			189 = { life_rating = 3 } #Memphis
+			43 = { change_province_name = "Dallas" }
 			134 = { change_province_name = "Abilene" }
 			135 = { change_province_name = "Lubbock" }
 			92 = { change_province_name = "Coeur D'Alene" }
@@ -1728,4 +2074,234 @@ political_decisions = {
 		
 		ai_will_do = { factor = 1 }
 	}
+	
+	
+	back_to_africa_act = {
+	picture = going_to_liberia
+		potential = {
+			has_country_flag = new_world_nation
+			NOT = { is_culture_group = african_diaspora_cultures }
+			any_owned_province = {
+				is_core = THIS
+				NOT = { continent = africa }
+				any_pop = { is_culture_group = african_diaspora_cultures }
+			}
+			NOT = {
+				has_country_modifier = forceful_back_to_africa
+				has_country_modifier = the_slavery_debate
+			}
+			OR = {
+				government = absolute_monarchy
+				government = bourgeois_dictatorship
+				government = fascist_dictatorship
+				government = presidential_dictatorship
+			}
+		}
+		
+		allow = {
+			war = no
+			money = 250000
+			phenomenalism = 1
+			NOT = { ruling_party_ideology = liberal }
+			NOT = { ruling_party_ideology = communist }
+			NOT = { citizenship_policy = full_citizenship }
+			NOT = { citizens_rights = all_voting_pops }
+			NOT = { has_country_modifier = law_changed_by_force }
+			1887 = {
+				OR = {
+					is_colonial = yes
+					NOT = { owned_by = THIS }
+				}
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+					owner = { vassal_of = THIS }
+				}
+			}
+			1888 = {
+				OR = {
+					is_colonial = yes
+					NOT = { owned_by = THIS }
+				}
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+					owner = { vassal_of = THIS }
+				}
+			}
+		}
+		
+		effect = {
+			treasury = -250000
+			any_owned = {
+				limit = { is_core = LIB }
+				add_province_modifier = { name = plantation duration = -1 }
+			}
+			add_country_modifier = { name = forceful_back_to_africa duration = -1 }
+			any_pop = {
+				limit = { is_culture_group = african_diaspora_cultures }
+				consciousness = 7
+				militancy = 9
+			}
+			
+			any_pop = {
+				limit = { NOT = { is_culture_group = african_diaspora_cultures } }
+				scaled_militancy = {
+					factor = 7
+					ideology = liberal
+				}
+			}
+			
+			random_owned = {
+				limit = { owner = { is_ideology_enabled = communist } }
+				owner = {
+					any_pop = {
+						limit = { NOT = { is_culture_group = african_diaspora_cultures } }
+						scaled_militancy = {
+							factor = 7
+							ideology = communist
+						}
+					}
+				}
+			}
+			
+			random_owned = {
+				limit = { owner = { is_ideology_enabled = socialist } }
+				owner = {
+					any_pop = {
+						limit = { NOT = { is_culture_group = african_diaspora_cultures } }
+						scaled_militancy = {
+							factor = 7
+							ideology = socialist
+						}
+					}
+				}
+			}
+			
+			random_owned = {
+				limit = { has_pop_type = slaves }
+				owner = {
+					any_pop = {
+						limit = { NOT = { is_culture_group = african_diaspora_cultures } }
+						scaled_militancy = {
+							factor = 7
+							issue = no_slavery
+						}
+					}
+				}
+			}
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { money = 1000000 }
+			}
+			
+			modifier = {
+				factor = 0
+				NOT = { war_policy = jingoism }
+			}
+			
+			modifier = {
+				factor = 0
+				NOT = { citizenship_policy = residency  }
+			}
+		}
+	}
+	
+	revoke_back_to_africa_act = {
+	picture = going_to_liberia
+		potential = {
+			has_country_modifier = forceful_back_to_africa
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			remove_country_modifier = forceful_back_to_africa
+			add_country_modifier = { name = law_changed_by_force duration = 1825 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { badboy = 0.4 }
+			}
+			
+			modifier = {
+				factor = 0
+				vote_franschise = none_voting
+				political_parties = underground_parties
+			}
+		}
+	}
+	
+	revoke_back_to_africa_act_player = {
+	picture = going_to_liberia
+		potential = {
+			ai = yes
+			OR = {
+				any_neighbor_country = {
+					ai = no
+					has_country_modifier = forceful_back_to_africa
+					OR = {
+						ruling_party_ideology = liberal
+						ruling_party_ideology = communist
+						NOT = { 
+							government = absolute_monarchy
+							government = bourgeois_dictatorship
+							government = fascist_dictatorship
+							government = presidential_dictatorship
+						}
+					}
+				}
+				any_greater_power = {
+					ai = no
+					has_country_modifier = forceful_back_to_africa
+					OR = {
+						ruling_party_ideology = liberal
+						ruling_party_ideology = communist
+						NOT = { 
+							government = absolute_monarchy
+							government = bourgeois_dictatorship
+							government = fascist_dictatorship
+							government = presidential_dictatorship
+						}
+					}
+				}
+			}
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			any_country = {
+				limit = {
+					ai = no
+					has_country_modifier = forceful_back_to_africa
+					OR = {
+						ruling_party_ideology = liberal
+						ruling_party_ideology = communist
+						NOT = { 
+							government = absolute_monarchy
+							government = bourgeois_dictatorship
+							government = fascist_dictatorship
+							government = presidential_dictatorship
+						}
+					}
+				}
+				remove_country_modifier = forceful_back_to_africa
+				add_country_modifier = { name = law_changed_by_force duration = 1825 }
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
 }

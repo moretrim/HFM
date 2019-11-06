@@ -1086,6 +1086,35 @@ country_event = {
 			who = SPA
 			value = -50
 		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = ostend_manifesto_published }
+			}
+			owner = {
+				random_country = {
+					limit = {
+						owns = 2209
+						2209 = { is_colonial = yes }
+					}
+					add_casus_belli = {
+						target = THIS
+						type = place_in_the_sun
+						months = 30
+					}
+				}
+				random_country = {
+					limit = {
+						owns = 2209
+						2209 = { is_colonial = no }
+					}
+					add_casus_belli = {
+						target = THIS
+						type = acquire_state
+						months = 30
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -1102,6 +1131,13 @@ country_event = {
 		name = "EVT90133OPTA"
 		prestige = 20
 		money = -1000000
+		random_owned = {
+			limit = {
+				province_id = 2209
+				owner = { has_country_flag = ostend_manifesto_published }
+			}
+			state_scope = { is_slave = yes }
+		}
 		relation = {
 			who = SPA
 			value = 100

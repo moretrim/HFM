@@ -13,6 +13,12 @@
 		religion = catholic
 		size = 25
 	}
+	
+	officers = {
+		culture = north_german
+		religion = catholic
+		size = 50
+	}
 
 	clergymen = {
 		culture = north_german
@@ -35,7 +41,13 @@
 	farmers = {
 		culture = north_german
 		religion = catholic
-		size = 14900
+		size = 13580
+	}
+	
+	farmers = {
+		culture = north_german
+		religion = protestant
+		size = 1320
 	}
 
 	aristocrats = {
@@ -79,5 +91,37 @@
 		religion = catholic
 		size = 23375
 	}
+	
+	######Jews
+	aristocrats = {
+		culture = ashkenazi
+		religion = jewish
+		size = 100
+	}
+
+	soldiers = {
+		culture = ashkenazi
+		religion = jewish
+		size = 100
+	}
+
+	clergymen = {
+		culture = ashkenazi
+		religion = jewish
+		size = 100
+	}
+
+	artisans = {
+		culture = ashkenazi
+		religion = jewish
+		size = 100
+	}
+	
+	farmers = {
+		culture = ashkenazi
+		religion = jewish
+		size = 100
+	}
+	########
 
 }

@@ -35,6 +35,13 @@ political_decisions = {
 				remove_core = AUS
 				add_core = KUK
 			}
+			random_owned = {
+				limit = {
+					is_core = KRA
+					is_core = GLM
+				}
+				remove_core = KRA
+			}
 			AUS_771 = { remove_core = HUN }
 			HUN = {
 				all_core = { add_core = KUK }
@@ -227,8 +234,8 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = hungarian_revolution_began
-			small_arms = 100
-			regular_clothes = 100
+			small_arms = 10
+			regular_clothes = 10
 			leadership = 40
 			define_general = {
 				name = "Józef Bem"
@@ -299,9 +306,11 @@ political_decisions = {
 
 		effect = {
 			clr_global_flag = hungarian_revolution_occurred
+			end_war = AUS
+			set_country_flag = annex_to_master
 			AUS = {
 				prestige = 25
-				inherit = HUN
+				create_vassal = HUN
 				any_pop = {
 					scaled_militancy = {
 						ideology = liberal
@@ -905,5 +914,140 @@ political_decisions = {
 		
 		ai_will_do = { factor = 1 }
 	}
+	
+	take_eisenstadt = {
+		picture = budapest_city
+		potential = {
+			tag = AUS
+			owns = 619
+			owns = 620
+			624 = {
+				NOT = { owned_by = THIS }
+				owner = { vassal_of = THIS }
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			random_country = {
+				limit = {
+					tag = HUN
+					vassal_of = THIS
+					owns = 624
+					ai = yes
+				}
+				624 = { remove_core = HUN }
+			}
+			624 = {
+				secede_province = THIS
+				add_core = THIS
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	south_tirol_compromise = {
+		picture = south_tirol_propaganda
+		potential = {
+			owns = 734 #Trentin
+			owns = 735 #Bozen
+			OR = {
+				734 = { is_core = THIS }
+				735 = { is_core = THIS }
+			}
+			any_neighbor_country = {
+				OR = {
+					is_core = 734
+					is_core = 735
+				}
+				OR = {
+					AND = {
+						tag = ITA
+						owns = 730
+						owns = 728
+					}
+					AND = {
+						is_culture_group = germanic
+						owns = 612
+						owns = 615
+					}
+				}
+			}
+			NOT = { has_global_flag = south_tirol_compromise_attempted }
+		}
+		
+		allow = {
+			great_wars_enabled = yes
+			war = no
+			any_neighbor_country = {
+				NOT = { truce_with = THIS }
+				war = no
+				relation = { who = THIS value = 0 }
+				OR = {
+					is_core = 734
+					is_core = 735
+				}
+				OR = {
+					AND = {
+						OR = {
+							primary_culture = north_italian
+							primary_culture = south_italian
+						}
+						owns = 730
+						owns = 728
+					}
+					AND = {
+						OR = {
+							primary_culture = north_german
+							primary_culture = south_german
+						}
+						owns = 612
+						owns = 615
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_global_flag = south_tirol_compromise_attempted
+			badboy = -1
+			random_country = {
+				limit = {
+					neighbour = THIS
+					NOT = {				
+						owns = 734 #Trentin
+						owns = 735 #Bozen
+					}
+					OR = {
+						AND = {
+							tag = ITA
+							owns = 730
+							owns = 728
+						}
+						AND = {
+							is_culture_group = germanic
+							owns = 612
+							owns = 615
+						}
+					}
+				}
+				country_event = 110089
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			#"Benefactor AI will take this decision"
+			modifier = {
+				factor = 0
+				NOT = { has_country_modifier = benefactor_ai }
+			}
+		}
+	}
+	
 }
 

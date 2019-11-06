@@ -12,7 +12,7 @@ non_state_culture_literacy = 0.01
 civilized = yes
 
 #GreaterPowers = prestige
-prestige = 90
+prestige = 120
 
 # Political reforms
 slavery = yes_slavery
@@ -75,9 +75,12 @@ market_structure = 1
 romanticism = 1
 interchangeable_parts = 1
 high_pressure_steam_engine = 1
+#puddling = 1
 
 # Inventions
-#corvettes = yes
+
+secularization = yes
+social_conscience = yes
 
 # Starting Consciousness
 consciousness = 3

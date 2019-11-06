@@ -1,4 +1,2 @@
 trade_goods = grain
-terrain = steppe
 life_rating = 15
-colonial = 1

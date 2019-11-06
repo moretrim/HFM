@@ -8,13 +8,22 @@ country_event = {
 	trigger = {
 		tag = KRA
 		year = 1846
-		month = 1
+		NOT = { year = 1849 }
 	}
 
+	mean_time_to_happen = {
+		months = 3
+		modifier = {
+			factor = 0.05
+			month = 1
+		}
+	}
+	
 	fire_only_once = yes
 	
 	option = {
 		name = "EVT600051OPTA" #Let the Poles be free! Let's Unite Poland and restore its glory!
+		AUS = { country_event = { id = 600050 days = 7 } }
 		set_global_flag = krakow_uprising
 		prestige = 20
 		government = presidential_dictatorship
@@ -23,6 +32,14 @@ country_event = {
 		political_reform = state_controlled
 		political_reform = harassment
 		ruling_party_ideology = conservative
+		clr_country_flag = election_started
+		clr_country_flag = conservative_party_in_power
+		clr_country_flag = liberal_party_in_power
+		clr_country_flag = reactionary_party_in_power
+		clr_country_flag = socialist_party_in_power
+		clr_country_flag = communist_party_in_power
+		clr_country_flag = fascist_party_in_power
+		clr_country_flag = anarcho_liberal_party_in_power
 		
 		any_pop = { limit = { is_culture_group = polish_culture_group } militancy = -4 consciousness = -4 }
 		
@@ -51,6 +68,7 @@ country_event = {
 			diplomatic_influence = { who = KRA value = -300 }
 		}
 		neutrality = yes
+		
 		ai_chance = { factor = 0.99 }
 	}
 		

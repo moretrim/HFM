@@ -15,7 +15,7 @@ civilized = yes
 set_country_flag = serfdom_not_abolished
 
 #GreaterPowers = prestige
-prestige = 80
+prestige = 120
 
 # Political reforms
 slavery = no_slavery
@@ -82,6 +82,7 @@ mechanical_production = 1
 mechanized_mining = 1
 basic_chemistry = 1
 piston_steam_engine = 1
+#puddling = 1
 
 #Inventions
 #corvettes = yes
